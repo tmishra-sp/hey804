@@ -10,7 +10,7 @@ from collections import defaultdict
 from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from starlette.middleware.base import BaseHTTPMiddleware
 
@@ -132,6 +132,12 @@ async def startup():
 @app.get("/health")
 async def health():
     return {"status": "ok", "service": "hey804", "version": "0.1.0"}
+
+
+# --- Redirect root to widget demo ---
+@app.get("/")
+async def root():
+    return RedirectResponse(url="/widget-demo.html")
 
 
 # --- Static files (MUST be last — catch-all for web app) ---
