@@ -19,6 +19,11 @@ TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER", "")
 # Anthropic
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
+# App
+ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
+LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
+PORT = int(os.getenv("PORT", "8000"))
+
 # Admin
 ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
 if not ADMIN_TOKEN and ENVIRONMENT == "production":
@@ -30,8 +35,3 @@ DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'data' / 'hey80
 # LLM
 MAX_LLM_CONCURRENT = int(os.getenv("MAX_LLM_CONCURRENT", "10"))
 LLM_TIMEOUT_SECONDS = int(os.getenv("LLM_TIMEOUT_SECONDS", "8"))
-
-# App
-ENVIRONMENT = os.getenv("ENVIRONMENT", "development")
-LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO")
-PORT = int(os.getenv("PORT", "8000"))
