@@ -25,4 +25,4 @@ def get_311_data():
 
 
 if __name__ == "__main__":
-    data = get_311_data()
+    print(get_311_data())
