@@ -15,6 +15,8 @@ from server.services.response_formatter import (
     format_web,
     format_fallback_sms,
     format_fallback_web,
+    format_partial_web,
+    format_partial_sms,
     GREETING_RESPONSE,
     HELP_RESPONSE,
     STOP_RESPONSE,
@@ -96,19 +98,27 @@ class Hey804Engine:
         if language is None:
             language = detect_language(msg_stripped)
 
-        # Match intent via keywords
-        match, confidence = self.matcher.match(msg_stripped)
+        # Match intent via keywords (three-tier: full match, partial, none)
+        result = self.matcher.match_with_related(msg_stripped)
 
-        if match is None:
-            return self._format_fallback(channel, is_first_message)
+        if result["match"] is not None:
+            match = result["match"]
+            if channel == "sms":
+                response_text = format_sms(match, is_first_message=is_first_message)
+                response_text = validate_response_citations(response_text, match)
+                return response_text
+            else:
+                return format_web(match)
 
-        # Format response for channel
+        if result["related"]:
+            return self._format_partial_match(result["related"], channel, is_first_message)
+
+        return self._format_fallback(channel, is_first_message)
+
+    def _format_partial_match(self, related: list[dict], channel: str, is_first_message: bool = False) -> dict | str:
         if channel == "sms":
-            response_text = format_sms(match, is_first_message=is_first_message)
-            response_text = validate_response_citations(response_text, match)
-            return response_text
-        else:
-            return format_web(match)
+            return format_partial_sms(self.fallback_message, related, is_first_message=is_first_message)
+        return format_partial_web(self.fallback_message, related)
 
     def _format_fallback(self, channel: str, is_first_message: bool = False) -> dict | str:
         if channel == "sms":

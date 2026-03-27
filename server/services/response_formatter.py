@@ -79,6 +79,41 @@ def format_fallback_web(fallback_message: str) -> dict:
     }
 
 
+def format_partial_web(fallback_message: str, related: list[dict]) -> dict:
+    """Partial-match response for web: fallback message + up to 5 related topic links."""
+    return {
+        "answer": fallback_message,
+        "action_steps": [],
+        "sources": [],
+        "deadlines": None,
+        "category": None,
+        "intent": "_partial_match",
+        "handoff_available": True,
+        "handoff_message": "Call RVA 311 at 804-646-7000 (Mon-Fri 8am-7pm, Sat 9am-1pm)",
+        "related": [
+            {
+                "title": r["title"],
+                "answer_preview": r["answer_preview"],
+                "sources": r["sources"],
+                "category": r["category"],
+            }
+            for r in related
+        ],
+    }
+
+
+def format_partial_sms(fallback_message: str, related: list[dict], is_first_message: bool = False) -> str:
+    """Partial-match response for SMS: fallback message + up to 3 related topics with URLs."""
+    lines = [fallback_message, "", "Related topics:"]
+    for i, r in enumerate(related[:3], 1):
+        url = r["sources"][0]["url"] if r["sources"] else ""
+        lines.append(f"{i}. {r['title']}: {url}")
+    text = "\n".join(lines)
+    if is_first_message:
+        text += "\n\n---\nYou'll also get emergency alerts from the City at this number. Reply STOP anytime to opt out."
+    return text
+
+
 GREETING_RESPONSE = (
     "Hi! I'm Hey804 — I help Richmond residents navigate city services. "
     "What do you need help with? You can ask about taxes, benefits, utility bills, "

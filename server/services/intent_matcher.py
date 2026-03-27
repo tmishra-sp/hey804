@@ -266,3 +266,40 @@ class IntentMatcher:
         # Normalize confidence: 5-30 range mapped to 0.5-1.0
         confidence = min(1.0, 0.5 + (best_score - 5) / 50.0)
         return self._intent_by_id[best_id], confidence
+
+    def match_with_related(self, message: str) -> dict:
+        """
+        Three-tier matching: full match, partial match with related topics, or no match.
+        Returns {match, confidence, related}.
+        """
+        msg_lower = self.normalize_message(message)
+        scores: dict[int, int] = {}
+
+        for kw, intent_ids in self.keyword_map.items():
+            if kw in msg_lower:
+                weight = len(kw)
+                for iid in intent_ids:
+                    scores[iid] = scores.get(iid, 0) + weight
+
+        if not scores:
+            return {"match": None, "confidence": 0.0, "related": []}
+
+        best_id = max(scores, key=scores.get)
+        best_score = scores[best_id]
+
+        if best_score >= 5:
+            confidence = min(1.0, 0.5 + (best_score - 5) / 50.0)
+            return {"match": self._intent_by_id[best_id], "confidence": confidence, "related": []}
+
+        # Partial match — collect top 5 related intents
+        sorted_ids = sorted(scores, key=scores.get, reverse=True)[:5]
+        related = []
+        for iid in sorted_ids:
+            q = self._intent_by_id[iid]
+            related.append({
+                "title": q["sample_questions"][0],
+                "answer_preview": q["answer"].split(".")[0] + ".",
+                "sources": q.get("sources", []),
+                "category": q.get("category"),
+            })
+        return {"match": None, "confidence": best_score / 10.0, "related": related}

@@ -3,7 +3,7 @@
     "version": "0.1-hackathon",
     "last_updated": "2026-03-24",
     "coverage": "Top 20 resident questions based on RVA311 call volume analysis",
-    "fallback_message": "I don't have a confident answer for that yet. Here's what I'd suggest: Call RVA 311 at 804-646-7000 (Mon-Fri 8am-7pm, Sat 9am-1pm) or submit a request at rva311.com. Want me to help you prepare what to say when you call?"
+    "fallback_message": "I don't have the right destination for that question \u2014 my knowledge only covers about 30 common city topics, and yours may not be one of them yet. A real person can help: call RVA 311 at 804-646-7000 (Mon\u2013Fri 8am\u20137pm, Sat 9am\u20131pm) or submit a request at rva311.com."
   },
   "questions": [
     {

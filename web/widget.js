@@ -164,8 +164,17 @@
     ".deadline{display:flex;align-items:center;gap:7px;padding:8px 12px;background:#fffbeb;border:1px solid #fde68a;border-radius:10px;font-size:12px;color:#92400e;font-weight:500;margin-bottom:14px}",
 
     /* Source */
+    ".sources-label{font-size:10px;font-weight:600;color:#9A7B6B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}",
     ".source{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:#F0F7F2;border:1px solid #B5DABE;border-radius:7px;font-size:11px;font-weight:500;color:#2D6B42;text-decoration:none;margin-bottom:14px;transition:background .15s}",
     ".source:hover{background:#E0F0E4}",
+
+    /* Related topics (partial match) */
+    ".related-section{margin-top:14px}",
+    ".related-label{font-size:11px;font-weight:600;color:#B0A194;text-transform:uppercase;letter-spacing:.8px;margin-bottom:10px}",
+    ".related-link{display:flex;align-items:center;gap:10px;padding:12px 16px;background:#fff;border:1.5px solid #F0EBE4;border-radius:14px;cursor:pointer;font:400 13.5px/1.4 inherit;color:#4A3A2E;transition:all .18s;text-align:left;width:100%;border-left:3px solid transparent;text-decoration:none;margin-bottom:6px}",
+    ".related-link:hover{border-color:#E8DFD4;border-left-color:#C2633A;background:#FFF8F0;transform:translateX(4px)}",
+    ".related-title{color:#2D1F14;font-weight:500}",
+    ".related-link .arrow{margin-left:auto;color:#C5A572;font-size:16px}",
 
     /* Back link */
     ".back{display:inline-flex;align-items:center;gap:4px;margin-top:8px;font:500 13px/1 inherit;color:#C2633A;background:none;border:none;cursor:pointer;padding:0;transition:color .15s}",
@@ -270,25 +279,12 @@
   shadow.appendChild(panel);
 
   // --- State ---
-  var input, sendBtn, promptsDiv, resultArea;
+  var promptsDiv, resultArea;
   var recognition = null;
   var isRecording = false;
 
   function buildHome() {
     body.innerHTML = "";
-
-    // Input area
-    var inputArea = h("div", "input-area");
-    input = h("input", "input");
-    input.type = "text";
-    input.placeholder = "Tell me what's going on\u2026";
-    input.setAttribute("aria-label", "Type your question");
-    sendBtn = h("button", "send");
-    sendBtn.setAttribute("aria-label", "Send");
-    sendBtn.innerHTML = svgSend;
-    inputArea.appendChild(input);
-    inputArea.appendChild(sendBtn);
-    body.appendChild(inputArea);
 
     // Prompt suggestions
     var label = h("div", "prompts-label");
@@ -309,12 +305,6 @@
     resultArea = h("div", "");
     resultArea.setAttribute("aria-live", "polite");
     body.appendChild(resultArea);
-
-    // Events
-    sendBtn.onclick = function () { if (input.value.trim()) doSend(input.value); };
-    input.onkeydown = function (e) {
-      if (e.key === "Enter") { e.preventDefault(); if (input.value.trim()) doSend(input.value); }
-    };
   }
 
   buildHome();
@@ -326,7 +316,6 @@
     triggerCard.classList.add("hide");
     closeBtn.classList.remove("hide");
     try { sessionStorage.setItem("hey804_open", "1"); } catch (e) {}
-    setTimeout(function () { input && input.focus(); }, 350);
   }
   function closeWidget() {
     panel.classList.remove("open");
@@ -450,8 +439,6 @@
   function doSend(message) {
     message = message.trim();
     if (!message) return;
-    input.value = "";
-    sendBtn.disabled = true;
     promptsDiv.style.display = "none";
     var lbl = body.querySelector(".prompts-label");
     if (lbl) lbl.style.display = "none";
@@ -468,8 +455,7 @@
       .catch(function () {
         resultArea.innerHTML = '<div class="err">Something went wrong. Try again or call <a href="tel:8046467000" style="color:#991b1b">804-646-7000</a>.</div>';
         addBackButton();
-      })
-      .finally(function () { sendBtn.disabled = false; });
+      });
   }
 
   function renderResponse(data, userMessage) {
@@ -516,6 +502,7 @@
 
     // Sources
     if (data.sources && data.sources.length) {
+      html += '<div class="sources-label">Sourced from:</div>';
       data.sources.forEach(function (s) {
         var label = "";
         try {
@@ -523,8 +510,22 @@
           var path = u.pathname.replace(/\/$/, "").split("/").pop() || u.hostname;
           label = u.hostname.replace("www.", "") + "/" + path;
         } catch (e) { label = s.title || s.url; }
-        html += '<a class="source" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + svgCheck + ' ' + esc(s.title || label) + '</a> ';
+        html += '<a class="source" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title || label) + '</a> ';
       });
+    }
+
+    // Related topics (partial match)
+    if (data.related && data.related.length > 0) {
+      html += '<div class="related-section">';
+      html += '<div class="related-label">These might help</div>';
+      data.related.forEach(function (r) {
+        var sourceUrl = (r.sources && r.sources.length) ? r.sources[0].url : '#';
+        html += '<a class="related-link" href="' + esc(sourceUrl) + '" target="_blank" rel="noopener">';
+        html += '<span class="related-title">' + esc(r.title) + '</span>';
+        html += '<span class="arrow">\u203A</span>';
+        html += '</a>';
+      });
+      html += '</div>';
     }
 
     html += '</div>';
@@ -555,8 +556,8 @@
     var back = h("button", "back");
     back.innerHTML = svgBack + " Ask me something else";
     back.onclick = function () {
+      closeWidget();
       buildHome();
-      input.focus();
     };
     resultArea.appendChild(back);
   }
