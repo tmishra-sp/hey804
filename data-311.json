@@ -1,0 +1,1182 @@
+[
+  {
+    "id": "31cd796e-e824-41c0-b770-18b0ed86c93a",
+    "name": "Emergency Preparedness",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/5c005147-4b3a-4d04-8857-547a238a3da2",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=31cd796e-e824-41c0-b770-18b0ed86c93a",
+    "services": [
+      {
+        "id": "new_cs260316001745",
+        "name": "Important Storm-Related Information",
+        "serviceGroup": "Emergency Preparedness",
+        "serviceGroupId": "31cd796e-e824-41c0-b770-18b0ed86c93a",
+        "introText": "<p>To report City issues that may occur due to the severe storm such as:</p><ul><li>DOWNED TREES OR OTHER OBSTACLES BLOCKING ROADS OR RIGHTS OF WAY</li><li>TRAFFIC SIGNALS THAT HAVE BEEN KNOCKED&nbsp;DOWNED OR ARE NOT FUNCTIONING</li></ul><p>Call non-Emergency Police&nbsp;<span style=\"font-weight: bolder\"><span style=\"color: rgba(255, 0, 0, 1)\">804-646-5100&nbsp;</span></span></p><p>For additional helpful resources including contact information for Dominion Power visit our&nbsp;<a href=\"https://rva.gov/citizen-service-and-response/rva-311-helpful-numbers\" target=\"_blank\" title=\"311 page\">Helpful Numbers</a>&nbsp;page on RVA.gov&nbsp;</p>",
+        "keywords": "severe storm, severe weather, thunderstorm, high winds, downed trees, obstacle, tree in road, tree in alley, tree down, traffic signal down, traffic light down, stop light down, obstacle, blocked road",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs260316001745?gid=31cd796e-e824-41c0-b770-18b0ed86c93a"
+      }
+    ]
+  },
+  {
+    "id": "f803d865-2aac-4172-af11-4c9c01239457",
+    "name": "Roads, Alleys, Sidewalks and Ramps",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/ce0fe8bf-838b-4669-b058-19fd8854db6a",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=f803d865-2aac-4172-af11-4c9c01239457",
+    "services": [
+      {
+        "id": "new_cs221019222643",
+        "name": "Pothole on Road",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p><strong>Use to report a pothole on City Streets (not in alleys) so pothole can be patched and immediate hazard addressed.</strong></p><p><strong>DO NOT USE</strong>: To report potholes in alleys or on bridges, report sinkholes or issues with manhole covers. Use Repair Roads to request major pavement or cobblestone repairs. See alternate request links below. </p><p><strong>Emergencies</strong>: Please call&nbsp;<strong style=\"color: rgba(255, 0, 0, 1)\">804-646-5100&nbsp;</strong>for emergencies that pose an immediate danger to persons or property.&nbsp;<span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 112, 192, 1)\"><span style=\"text-decoration: underline\"><ins cite=\"mailto:Breil,%20Peter%20D.%20-%20CSR\" datetime=\"2022-08-17T09:07\"></ins></span></span></p><p><strong>Location:</strong>&nbsp;Please make sure location provided is accurate so inspector can locate the issue.&nbsp;<strong>Intersections&nbsp;</strong>may be provided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;<em>E Broad St &amp; N 2nd St</em>).</p><p><strong>Already Reported?</strong>: Check the pins that appear on the map around the location entered to see if pothole has already been reported.  </p><p><strong>Time to Repair</strong>: Potholes will be repaired with asphalt patch within 14 days, weather permitting. See What Happens Next section for more detail.</p><p><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service request. Your personal information will NOT be displayed but details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p><p><strong>Alternative Request Links Below:</strong><span style=\"color: rgba(0, 0, 0, 1)\"></span></p>",
+        "keywords": "pothole, pothole repair, repair, pot hole, pot, hole, pavement, asphalt, concrete, cobblestone\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638018152546089236.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019222643?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs180228155543",
+        "name": "Report Sinkhole",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p><strong>Report a Sinkhole:&nbsp;</strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">To ensure response within 12 hours please call&nbsp;</span></strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">804-646-4646&nbsp;</span></strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">and press 1.&nbsp; This number is available 24 hours a day.</span></strong></p><p><strong></strong><strong><span style=\"line-height: 12.84px\">Who is Responsible:</span></strong><span style=\"line-height: 12.84px\">&nbsp; Sinkholes are evaluated and repairs scheduled by the Department of Public Utilities. Often a Sinkhole is caused by a larger infrastructure issue.&nbsp; In such cases the immediate safety concern will be addressed but the underlying infrastructure issue may take longer to repair.</span></p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp;</p>&nbsp;<p></p>",
+        "keywords": "Sewer, Sinkhole, street, hole, sink, sink hole, cave-in, caved-in, crater\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515314678368564.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs221019163752",
+        "name": "Repair Road",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p><span style=\"color: rgba(0, 0, 0, 1)\"><strong>Use to request repair of existing roads (e.g. pavement where asphalt is loose or peeled or cobblestone where stones are loose or missing.&nbsp;</strong></span></p><p style=\"margin: 0 0 12pt\"><strong><span style=\"color: rgba(0, 0, 0, 1)\">DO NOT USE</span></strong><span style=\"color: rgba(0, 0, 0, 1)\">: Use the alternate requests linked below to report potholes on road, potholes in alley or alley repairs and potholes or repairs on bridge. Do not report if utility repairs for gas, water, sewer etc. have been made in last 60 days as contractors have 60 days after utility work to repair road. Do not use to request repaving of entire road or alley. Road repaving is considered a capital project and cannot be submitted in 311. Consult our FAQ: <em><span style=\"text-decoration: underline\"><a href=\"https://www.rva311.com/rvaone#/faq?gid=e54771a7-6bd9-4ad8-90f2-3dd115ca4ae1&amp;id=1c9335e8-bec4-4c84-bd56-65201731fab3\" target=\"_blank\" title=\"FAQ for CIP\">How are capital projects funded and prioritized?</a></span></em></span></p><p style=\"margin: 0 0 12pt\"><span style=\"color: rgba(0, 0, 0, 1)\"></span>Guardrails on Bridges are serviced by a different team. Please use Repair Bridge related request below for bridge guardrails.</p><p style=\"margin: 0 0 12pt\"><strong><span style=\"color: rgba(0, 0, 0, 1)\">Location:</span></strong><span style=\"color: rgba(0, 0, 0, 1)\">&nbsp;Please make sure location provided for repair is accurate so inspector can locate the issue.&nbsp;</span><strong><span style=\"color: rgba(0, 0, 0, 1)\">Intersections&nbsp;</span></strong><span style=\"color: rgba(0, 0, 0, 1)\">may be provided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;</span><em><span style=\"color: rgba(0, 0, 0, 1)\">E Broad St &amp; N 2nd St</span></em><span style=\"color: rgba(0, 0, 0, 1)\">).<span>&nbsp;</span></span></p><p style=\"margin: 0 0 12pt\"><strong><span style=\"color: rgba(0, 0, 0, 1)\">Time to Repair</span></strong><span style=\"color: rgba(0, 0, 0, 1)\">: Repair requires favorable weather conditions and may take up to 180 days. All surface types will be patched with ASPHALT to address immediate hazard. Full repair may take longer if a capital improvement project is required or involved. See What Happens Next section for more detail.</span></p><p style=\"margin: 0 0 12pt\"><strong><span style=\"color: rgba(0, 0, 0, 1)\">Privacy Notice:</span></strong><span style=\"color: rgba(0, 0, 0, 1)\">&nbsp; This is a PUBLIC service request. Personal Contact information is NOT displayed but Description field is publicly visible to all users. Do not include personal information about yourself or others in this field.&nbsp;</span></p><strong><span style=\"color: rgba(0, 0, 0, 1)\">Alternative Request Links Below:</span></strong>",
+        "keywords": "road, street, repair road, repair street, pavement, asphalt, damaged pavement; peeling pavement; crumbling, crumbling pavement, crumbled, missing, stones, missing stones, cobblestone, cobblestone road, cobble stone",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638017947414498741.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019163752?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs221019185025",
+        "name": "Repair Sidewalk or Ramp",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong>Use to request SIDEWALK REPAIRS such as damaged curb ramps, crumbling concrete, damaged or missing bricks, multiple cracks, or uplifted panels.&nbsp;</strong></p><p style=\"margin: 0 0 12pt\"><strong>Emergencies</strong>: For&nbsp;emergencies that pose an immediate danger such as missing sidewalk grates, large holes in walkway (missing manhole cover, missing utility cover), please report to&nbsp;<span style=\"color: rgba(255, 0, 0, 1)\"><strong>804-646-5100</strong></span><strong>.</strong><strong><span style=\"font-size: 9pt; color: rgba(255, 0, 0, 1)\">&nbsp;</span></strong><span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-serif; color: rgba(46, 117, 182, 1)\"></span></p><p style=\"margin: 0 0 12pt\"><strong>DO NOT USE</strong>: Repairs to curb and gutter or for issues blocking sidewalk right of way. Use alternate request links below. Do not use to request new sidewalk installation. New sidewalks are considered capital investments and cannot be submitted in 311.&nbsp;Consult our FAQ:&nbsp;<a href=\"https://www.rva311.com/rvaone#/faq?gid=e54771a7-6bd9-4ad8-90f2-3dd115ca4ae1&amp;id=1c9335e8-bec4-4c84-bd56-65201731fab3\" target=\"_blank\" title=\"FAQ for CIP\">How are capital projects funded and prioritized?</a><span style=\"font-size: 9pt\"></span></p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Please make sure location provided is accurate so inspector can locate the damage.&nbsp;<strong>Intersections&nbsp;</strong>may be provided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;<em>E Broad St &amp; N 2nd St</em>)</p><p style=\"margin: 0 0 12pt\"><strong>Time to Repair</strong>: Repair of the sidewalk may take up to 365 days to be completed. If a capital improvement project is required or involved, the repair may take longer. See What Happens Next section for more detail.</p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service request. Personal contact information is NOT be displayed but details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p><strong>Alternative Request Links Below:</strong>",
+        "keywords": "sidewalk, sidewalks, side walk, pedestrian walkway, ramp, ramps, curb ramp, handicap ramp, ADA ramp, repair sidewalk, repair side walk, repair ramp\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638018029190728473.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019185025?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs180221194032",
+        "name": "Repair Alley",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p><strong>Use to request repair of existing gravel or asphalt alley surface area for issues such as excess rutting or damage.</strong></p><p style=\"margin: 0 0 12pt\"><strong>DO NOT USE</strong>: To report drainage issues, water leaks or to request paving or repaving of alley. See alternate request options below.&nbsp; NOTE: Alley paving or repaving are treated as capital improvements and cannot be requested through 311. Consult our FAQ:&nbsp;<em><span style=\"text-decoration-line: underline\"><a href=\"https://www.rva311.com/rvaone#/faq?gid=e54771a7-6bd9-4ad8-90f2-3dd115ca4ae1&amp;id=1c9335e8-bec4-4c84-bd56-65201731fab3\" target=\"_blank\" title=\"CIP FAQ\">How are capital projects funded and prioritized?</a><ins cite=\"mailto:Breil,%20Peter%20D.%20-%20CSR\" datetime=\"2022-08-17T09:13\"></ins></span></em></p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Provide address for home or lot that faces the street in front of the alley.</p><p style=\"margin: 0 0 12pt\"><strong>Time to Repair</strong><span style=\"font-size: 9pt\">: Repair of the issue may</span> take up to 180 days to complete. Note the entire alley will be inspected for needed repairs.&nbsp;<span style=\"font-size: 9pt; font-family: Verdana, sans-serif; color: rgba(0, 112, 192, 1)\"><ins cite=\"mailto:Breil,%20Peter%20D.%20-%20CSR\" datetime=\"2022-08-17T09:14\"></ins></span></p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service request. Personal Contact information is NOT displayed but Description field is publicly visible to all users. Do not include personal information about yourself or others in this field.&nbsp;</p><strong>Alternative Request Links Below:</strong>",
+        "keywords": "alley, repair alley, alley repair, asphalt alley, potholes in alley, potholes alley, cobblestone alley, gravel alley, concrete alley, cobblestone, gravel, concrete, asphalt",
+        "icon": "https://e311production.blob.core.windows.net/rva311qa/RequestIcons/Icon636556154924654123.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221194032?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs221019185751",
+        "name": "Repair Curbs and Gutters",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong>Use to request repair of curbs or gutters where concrete is crumbling or settling, damage has occurred due to accident or impact. </strong></p><p style=\"margin: 0 0 12pt\"><strong>DO NOT USE</strong>: For FLOODING or drainage issues -&nbsp;<strong>Residents are responsible</strong> for removing vegetation or debris obstructing water flow in gutters or drainage ditches adjoining their property. Do not use for issues with Handicapped ramps. Please use the alternate request links below. Do not use to request installation of NEW curb or gutter if none exists. New curbs/gutters are considered capital investments and cannot be requested in 311. Consult our FAQ: <em><span style=\"text-decoration: underline\"><a href=\"https://www.rva311.com/rvaone#/faq?gid=e54771a7-6bd9-4ad8-90f2-3dd115ca4ae1&amp;id=1c9335e8-bec4-4c84-bd56-65201731fab3\" target=\"_blank\" title=\"FAQ for CIP\">How are capital projects funded and prioritized?</a></span></em></p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Please make sure location provided is accurate so inspector can locate the issue.&nbsp;<strong>Intersections&nbsp;</strong>may be provided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;<em>E Broad St &amp; N 2nd St</em>). NOTE: the entire block of the address reported will be inspected.</p><p style=\"margin: 0 0 12pt\"><strong>Time to Repair</strong>: Repair of the issue may take up to 180 days. If a capital improvement project is required or involved, the repair may take longer.&nbsp; See What Happens Next section for more detail.</p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service request. Personal Contact information is NOT displayed but Description field is publicly visible to all users. Do not include personal information about yourself or others in this field.&nbsp;</p><strong>Alternative Request Links Below:</strong>",
+        "keywords": "curb, gutter, repair curb, repair gutter, repair curb and gutter, curb damaged, gutter damaged, crumbling",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638018028807731642.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019185751?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs221019190616",
+        "name": "Pavement Markings",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong>Use to request re-painting of existing pavement markings only</strong> - such as lane dividers, turn lane markings, pedestrian walkway, in areas that have become difficult to see due to damage, re-pavement, age, etc.<strong></strong></p><strong>DO NOT USE:</strong> Not for NEW pavement markings. For details on why, see our FAQ. Not for markings on newly paved surfaces - repainting will be scheduled when weather conditions permit. Not for pavement repairs. See alternative requests below.<p style=\"margin: 0 0 12pt\"></p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Please make sure location provided is\naccurate so inspector can locate the issue.&nbsp;<strong>Intersections&nbsp;</strong>may be\nprovided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;<em>E Broad St\n&amp; N 2nd St</em>).&nbsp; </p><p style=\"margin: 0 0 12pt\"><strong>Time to Respond</strong>: 180 Days – depending on time of\nyear. Pavement markings are applied April through November due to temperature\nrequirements for equipment, and no rain can be expected within 24 hours after\npainting. See What Happens Next section for more detail.<span><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 112, 192, 1)\"><span><span></span></span></span></span><span><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 112, 192, 1)\"><span><span><ins cite=\"mailto:Breil,%20Peter%20D.%20-%20CSR\" datetime=\"2022-08-17T09:54\"></ins></span></span></span></span><span><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\"></span></span></p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service\nrequest. Personal Contact information is NOT displayed but Description field is\npublicly visible to all users. Do not include personal information about\nyourself or others in this field.&nbsp;</p><strong>Alternative Request Links Below:</strong><p></p>",
+        "keywords": "pavement, markings, pavement marking, paint, painting, markings, repaint, marking, crosswalk, pedestrian, school, school crossing, cross walk, lane marking, lane paint, lane divider, traffic, traffic marking, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638018035140373814.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019190616?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs251010192628",
+        "name": "Report Neighborhood Roadway Safety Concern",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong>For residential neighborhood concerns on roadways only.&nbsp;</strong>This request is to report safety concerns on residential neighborhood&nbsp;<strong>streets&nbsp;</strong>related to pedestrian, bicycle, or motorized vehicle roadway safety.&nbsp;</p><p style=\"margin: 0 0 12pt\"><strong>NOTE</strong>: For expressways and major primary roads contact <em><strong>VDOT </strong></em>at&nbsp;1-800-367-7623</p><p style=\"margin: 0 0 12pt\"><strong>Do not use for obstructions or hazards on other public rights of way (e.g. sidewalks, alleys, medians,&nbsp; etc.)&nbsp;</strong></p><p style=\"margin: 0 0 12pt\"><strong>For Public Right of Way hazards or obstructions&nbsp;</strong>please use the&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs220412162457?gid=ce39c864-d47b-4d19-9acf-1a0d58425205\" title=\"311 Right of Way request\">Report Public Right of Way Concerns</a>&nbsp;request.</p><p style=\"margin: 0 0 12pt\"><strong>For speeding concerns</strong> please use our&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180327174102?gid=8928b090-0023-4c67-8655-23cfb89690aa\" title=\"Link to RPD speed violation request\">Report Speed Violations in Community</a> request.</p><p style=\"margin: 0 0 12pt\"><strong>For road repairs, potholes, curbs and ramps or pavement marking concerns</strong>, please visit 311's&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new?gid=f803d865-2aac-4172-af11-4c9c01239457\" title=\"Roads and Alleys Category on 311\">Roads, Alleys, Sidewalks and Ramps</a>&nbsp;category and choose the request best suited to your concern.</p><p style=\"margin: 0 0 12pt\"><strong>For traffic signs or signal repairs</strong>, please visit the <a href=\"https://www.rva311.com/rvaone#/request/new?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af\" title=\"Lights, Signs 311 Category\">Lights, Signs and Signals</a> category and choose the request best suited to your concern. </p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Please make sure location provided is\naccurate. For&nbsp;<strong>Intersections&nbsp;</strong>use “&amp;” or “@” sign.&nbsp;&nbsp;(EX:&nbsp;<em>E Broad St\n&amp; N 2nd St</em>).&nbsp; </p><p style=\"margin: 0 0 12pt\"><strong>Time to Respond</strong>: Please allow 90 Days for <span style=\"font-size: 11pt; font-family: Calibri, sans-serif; margin: 0\">Transportation Engineering </span>team to respond. See What Happens Next section for more detail.</p><p style=\"margin: 0 0 12pt\"><strong>DID YOU KNOW? </strong>Speed data for your street is available on the&nbsp;<a href=\"https://experience.arcgis.com/experience/0993f449422844a48d054041a5e19d33#data_s=id%3AdataSource_1-197ccd0c8b0-layer-6%3A1932\" target=\"_blank\" title=\"City Speed Map\">Citywide Speed Data</a>&nbsp;map. Data for crashes, injuries, fatalities and more on the&nbsp;<a href=\"https://cor.maps.arcgis.com/apps/dashboards/e6097a6342f148ce912ba98e04551e70\" target=\"_blank\" title=\"Vision Zero\">Vision Zero Dashboard</a>. DPW Transportation Engineering team proactively reviews this data to inform their many transportation improvement programs.</p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service\nrequest. Personal Contact information is NOT displayed but Description field is\nvisible to all users. Do not include personal information about\nyourself or others in this field.&nbsp; &nbsp;&nbsp;</p>",
+        "keywords": "pedestrian, bicycle, motor vehicle, safety, unsafe, traffic, speeding, traffic calming, speed table, traffic circle, speed bumps, speed camera, pavement markings, cross walk, beacon, roadway signs, wrong way, one-way. ",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638957285129293438.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs251010192628?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs180221194130",
+        "name": "Repair Bridge",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p>This request type covers Repairs to a Damaged Bridge or Bridge Guardrail. When submitting your request please be as specific as possible regarding the location.&nbsp;&nbsp;</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Bridge Repair, bridge repair, Bridge, Repair, bridge, repair, Guardrail Repair, guardrail repair, Guardrail, Repair, guardrail, repair, Guard Rail, guard rail",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515311687669895.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221194130?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs180228160645",
+        "name": "Report Noisy Sewer Manhole Cover",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p><span style=\"font-size: 9pt; line-height: 107%; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span><strong>When to Use:</strong>&nbsp; Use this request to submit the location of a noisy&nbsp;sewer manhole to the City.&nbsp; When submitting the location, please be as specific as possible.&nbsp;</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp;</p><p style=\"margin: 0 0 12pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0\"></p>",
+        "keywords": "Sewer, manhole, manhole cover, cover, noisy, loud, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515313841003437.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228160645?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      },
+      {
+        "id": "new_cs180228161314",
+        "name": "Raise or Lower Sewer Manhole",
+        "serviceGroup": "Roads, Alleys, Sidewalks and Ramps",
+        "serviceGroupId": "f803d865-2aac-4172-af11-4c9c01239457",
+        "introText": "<p><strong>When to Use</strong>:&nbsp; Use this request to submit the location to the City of a sewer/manhole cover that needs to be raised or lowered.&nbsp;When submitting the location, please be as specific as possible.&nbsp;<br><br><strong>Danger</strong>? For manhole issues that pose a danger to person(s) or property, please call <strong>804-646-4646</strong></p><p><strong>PLEASE NOTE:</strong>&nbsp;This is a PUBLIC service request. Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.&nbsp;</p><p></p>",
+        "keywords": "sewer, manhole, Sewer, Manhole, raise, lower, cover, sewer cover\n\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515314358276697.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228161314?gid=f803d865-2aac-4172-af11-4c9c01239457"
+      }
+    ]
+  },
+  {
+    "id": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+    "name": "Lights, Signs and Signals",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/8a646dc7-325b-4c50-9639-69fb37dae0fc",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+    "services": [
+      {
+        "id": "new_cs221019192349",
+        "name": "Report Stop Sign or Traffic Signal Emergency",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "<p>If a&nbsp;<strong>Stop Sign</strong>&nbsp;is knocked down or stolen or </p><p>Electronic traffic signal is out, down, missing or pole is broken or damaged</p><p>Call Emergency Dispatch so traffic safety measures can be arranged quickly.</p><p><strong><span style=\"font-family: Verdana, sans-serif; color: rgba(255, 0, 0, 1); font-size: small\">804-646-5100</span></strong></p><p>RVA311 is for&nbsp;<strong>NON-EMERGENCY</strong>&nbsp;requests only.</p>",
+        "keywords": "stop sign, stop sign down, stop sign missing, traffic signal out, signal out, traffic light out, traffic emergency",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019192349?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      },
+      {
+        "id": "new_cs180221190516",
+        "name": "Handicap Parking Sign",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "<p><strong>When to Use:</strong>&nbsp; Use this to request a designated disabled parking zone in a residential area, including placement of a Handicap Parking Only sign.&nbsp; Or to request repair or removal of an existing Handicap Parking sign. All requests related to Handicap zones and signs require an on-site inspection.</p><p><strong></strong><strong>Fee:</strong>&nbsp; There is no fee for handicap parking applications or signs.</p><p><strong>For New Signs:</strong>&nbsp; &nbsp;A completed, signed application and all additional documentation requested in the application must be submitted for review and approval.&nbsp; Application form and&nbsp;guidelines available at&nbsp;<a href=\"https://www.rva.gov/sites/default/files/2020-06/Handicap%20%20Guildlines%20and%20Application_06152020.pdf\" target=\"_blank\">Handicap Parking Guidelines and Application Form</a>. Signed, completed applications can be submitted online, by mail or in person.&nbsp;</p><p><strong>ONLINE:&nbsp;</strong>Completed and signed application and copies of supporting documentation can be attached to this RVA311 request.</p><p><strong>By Mail:</strong>&nbsp; Completed and signed application and copies of supporting documentation can be mailed to address indicated on the application form.</p><p><strong>In Person:</strong>&nbsp; Completed and signed application can be delivered in person to:</p><p style=\"margin-left: 30px\">900 E. Broad Street,&nbsp;Room 102.</p><p><strong>What to Expect:</strong>&nbsp; Once your application is received, the City will review it along with the documentation provided within 1-3 business days of receipt and additional steps will be coordinated.&nbsp;<em><strong>What Happens Next</strong></em>&nbsp;section can provide more details.&nbsp;</p><p><strong>For Existing Signs:</strong>&nbsp; The request to remove or repair will be reviewed within 1-3 business days of receipt.&nbsp;&nbsp;</p>",
+        "keywords": "handicap, handicap parking, handicapped parking, handicapped sign, handicapped, disabled parking, disabled, wheelchair, wheel chair; repair handicap, remove handicap sign, remove sign, repair handicap sign, repair sign",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515317981023063.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221190516?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      },
+      {
+        "id": "new_cs221019191659",
+        "name": "Traffic and Street Signs",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong></strong><strong>Use to request repair of damaged or fading sign, replacement of missing&nbsp;</strong><strong>speed limit, street name sign, yield sign, or other sign related to traffic operations, or&nbsp;</strong><strong>report sign hidden or covered by brush, vegetation or graffiti.</strong></p><p style=\"margin-bottom: 12pt\"><strong>MISSING OR DAMAGED STOP SIGNS</strong>&nbsp;are treated as traffic safety emergencies. Please call&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1)\">804-646-5100&nbsp;</span></strong>for emergency dispatch.</p><p style=\"margin: 0 0 12pt\"><strong>DO NOT USE</strong>: NOT for requesting NEW signs.. Not for electronic traffic <strong>SIGNAL </strong>concerns, or for handicap parking sign concerns. See alternate request types listed below. Also do not use for Neighborhood signs such as “Children at Play” “Clean up after your dog” etc. These are not regulatory signs and not installed or maintained by the City.</p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Please make sure location provided is accurate so inspector can locate the issue.&nbsp; <strong>Intersections&nbsp;</strong>may be provided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;<em>E Broad St &amp; N 2nd St</em>).&nbsp; </p><p style=\"margin: 0 0 12pt\"><strong>Time to Respond</strong>: 120 Days to complete investigation of location, confirm next steps and if needed, complete <del cite=\"mailto:Breil,%20Peter%20D.%20-%20CSR\" datetime=\"2022-08-17T10:30\"></del>installation of sign. See What Happens Next section for more detail.</p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service request. Personal Contact information is NOT displayed but Description field is publicly visible to all users. Do not include personal information about yourself or others in this field.&nbsp;</p><strong>Alternative Request Links Below:</strong>",
+        "keywords": "sign, traffic, traffic sign, street, street sign, repair sign, repair traffic sign, repair street sign, replace traffic sign, replace sign, replace existing sign, replace old sign, damaged sign, replace damaged sign, remove sign, sign removal, removal of sign, replacement of sign, obscured sign, sign visibility, sign hazard, hazard, street sign, yield, pedestrian, speed limit, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638018044225593764.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221019191659?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      },
+      {
+        "id": "new_cs180221194251",
+        "name": "Repair Electronic Traffic Signal",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong>Use to request repair of an existing ELECTRONIC traffic signal that is not functioning as needed.</strong></p><p style=\"margin: 0 0 12pt\"><strong><span style=\"color: rgba(255, 0, 0, 1)\">Emergencies:</span></strong>: If a Traffic Signal is not functioning at all, knocked down, pole is knocked down or broken or light is missing please call&nbsp;emergency dispatch at&nbsp;&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1)\">804-646-5100&nbsp;</span></strong></p><p style=\"margin: 0 0 12pt\"><strong>DO NOT USE</strong>: To request installation of NEW electronic traffic SIGNALS. New electronic signals are considered capital projects and cannot be submitted in 311. Consult our FAQ <a href=\"https://www.rva311.com/rvaone#/faq?gid=e54771a7-6bd9-4ad8-90f2-3dd115ca4ae1&amp;id=1c9335e8-bec4-4c84-bd56-65201731fab3\" target=\"_blank\" title=\"CPI FAQ\">“How Capital Projects are Prioritized and Funded.”</a> &nbsp;Do not use to request repairs to regulatory traffic signs or handicap parking sign. See alternate request types listed below.</p><p style=\"margin: 0 0 12pt\"><strong>Location:</strong>&nbsp;Please make sure location provided is accurate so inspector can locate the issue.&nbsp;<strong>Intersections&nbsp;</strong>may be provided by using the “&amp;” or “@” sign.&nbsp;&nbsp;(For example:&nbsp;<em>E Broad St &amp; N 2nd St</em>).&nbsp;</p><p style=\"margin: 0 0 12pt\"><strong>Time to Respond</strong>: 30 Days to investigate and repair issue. See What Happens Next section for more detail.</p><p style=\"margin: 0 0 12pt\"><strong>Privacy Notice:</strong>&nbsp; This is a PUBLIC service request. Personal Contact information is NOT displayed but Description field is publicly visible to all users. Do not include personal information about yourself or others in this field.&nbsp;</p><strong>Alternative Request Links Below:</strong>",
+        "keywords": "signal, traffic signal, stop light, traffic light, signal, pole, signal repair, traffic signal repair, traffic signal timing, timing, turn signal, electronic signal, red light, school, school flasher malfunction, school flasher, school, flasher, malfunction, school flasher down, school flasher repair, changing",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515320268381563.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221194251?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      },
+      {
+        "id": "new_cs180221191708",
+        "name": "Request New Streetlight",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "<p><strong>When to Use: </strong>Use to request a new City streetlight to be placed at a specific location.&nbsp; Please be as specific as possible when providing the desired location.</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Streetlight, street, alley, Light, New",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515320508403115.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221191708?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      },
+      {
+        "id": "new_cs180226204420",
+        "name": "Repair Existing Streetlight",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "<p><strong></strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">For an&nbsp;</span></strong><span style=\"color: rgba(255, 0, 0, 1)\"><strong>EMERGENCY</strong></span>:&nbsp; such as&nbsp;<strong>d</strong><strong>owned or broken light poles, poles hit by a vehicle; hanging wires or cables</strong>,&nbsp;<strong>etc.&nbsp;</strong><strong>please call</strong>&nbsp;&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1); font-size: medium\">804-646-8426</span>&nbsp;</strong><strong>so emergency crews can assess damage and address any immediate danger.</strong></p><p><strong>Do Not Use for Gas Streetlights: </strong>All calls regarding gas lamps should be directed to DPU Emergency Services at 804-646-4646 (option 1).</p><p><strong>When to Use:<span>&nbsp;</span></strong><span>&nbsp;</span>Use to report NON-EMERGENCY issues with an existing street light, such as an outage, light blinking, or damage to the fixture. Your contact information is required so the team can clarify location details if necessary.</p><p><strong>Location:</strong> PLEASE PROVIDE AN ACCURATE ADDRESS OR INTERSECTION. Streetlights are often close together so accurate location details help crews find the correct light. Providing the Pole Number if visible is the best way to make sure crews can identify the <em><strong>exact </strong></em>light in question - even if servicing in daylight when outage or blinking is not visible.&nbsp;</p><p><strong>BE AWARE:</strong>&nbsp; Not all&nbsp;streetlights are maintained by the City of Richmond.<span>&nbsp;</span>Some are the property of and maintained by Dominion Power.<span>&nbsp;</span>The City will assess and transfer the request to Dominion where appropriate but time to repair will depend on Dominion schedule and resources.</p><p><strong>What to Expect:</strong></p><p style=\"margin-left: 90px\"><span></span><strong><em>General Outages</em></strong>:<span>&nbsp;</span>Please allow <strong>45-65 Days</strong> for inspection, assessment and repairs of general issues such as light out or blinking, damaged light fixture, etc. </p><p style=\"margin-left: 90px\"><strong><em>Minor Infrastructure Damage Assessment:</em></strong><span>&nbsp;D</span>amaged or broken pole, down or damaged cables or wires, etc. should be reported as emergencies to&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1); font-size: medium\">804-646-8426.</span></strong>&nbsp;Once any initial danger is managed please allow&nbsp;<strong>90-180 days&nbsp;</strong>for inspection and assessment of any underlying infrastructure issues.</p><p style=\"margin-left: 90px\"><strong><em>Major Infrastructure Repair</em></strong>:<span>&nbsp;</span>Repair of Infrastructure related damage such as damaged poles, cables or wires may take up to <strong>12–24 months</strong>.</p><p><strong></strong><strong></strong><strong>Please Note:</strong>&nbsp;This is a PUBLIC service request. Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Streetlight, Light, Broken, Out, street, alley, Blinking, light blinking, wire, wires, wires hanging, pole damaged, pole broken, cable, cables, cable hanging, laying",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515320714347074.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180226204420?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      },
+      {
+        "id": "new_cs230320200611",
+        "name": "Shade Existing Streetlight - Discontinued",
+        "serviceGroup": "Lights, Signs and Signals",
+        "serviceGroupId": "dabfee1b-4a85-44dd-9c43-daff9c7bd8af",
+        "introText": "As LED streetlights are being installed throughout the City, shading of older streetlights is no longer available. Over time, these older streetlights will be replaced with new energy-efficient LED lights. The new LED lights do not have shades so they may seem brighter at first. Residents usually adjust to the brightness level within 90 days.&nbsp; Read more about DPU's <a href=\"https://www.rva.gov/public-utilities/news/focusing-sustainability-safety-and-security-new-led-streetlights\" target=\"_blank\" title=\"DPU LED on RVA.gov\">LED program on RVA.gov</a>.&nbsp;<br />",
+        "keywords": "shade streetlight, bright light, shade, existing, shining, too bright, shining in window, streetlight too bright, LED, LED streetlight",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638150169885542432.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs230320200611?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+      }
+    ]
+  },
+  {
+    "id": "7cc71a09-423c-4e30-87c2-54cc62570dae",
+    "name": "Trees and Vegetation",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/fed006ee-f71f-4285-9a0d-a3c84aac1294",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=7cc71a09-423c-4e30-87c2-54cc62570dae",
+    "services": [
+      {
+        "id": "new_cs180221191046",
+        "name": "Request New Tree Planting",
+        "serviceGroup": "Trees and Vegetation",
+        "serviceGroupId": "7cc71a09-423c-4e30-87c2-54cc62570dae",
+        "introText": "<p><strong>When to Use:</strong>&nbsp; Use to request a New Tree Planting.&nbsp; Requests received after August 31 cannot be considered until the following year's planting season.</p><p><strong>What to Expect:</strong></p><p><strong></strong>City arborists must inspect the site to confirm it is available and plantable.</p><ul><li>Arborist has final say and will approve species as selected or recommend appropriate species for each site.</li><li>Planting is scheduled during the dormant season - Winter.</li><li>Planting is dependent on available resources.&nbsp;</li><li>The City is unable to accommodate citizens' specific schedule requests.</li></ul><p><strong></strong><strong>Please Note:</strong>&nbsp;It is City policy to plant the largest appropriate species for each available planting site. Large species will not be approved for undersized sites, nor will small species be approved for planting in large sites.</p><p>Sites may be deemed unsuitable for a variety of reasons, including environmental concerns, site is in an area slated for redevelopment, or site has already been adopted for planting through the City's Adopt a Tree Program.</p><p><em>If you would like more information on the Adopt a Tree Program click the links below.</em></p><p><a href=\"https://www.rva.gov/sites/default/files/2019-10/Adopt-A-Tree_Letter2018.pdf\" target=\"_blank\" title=\"Tree Letter\">Adopt a Tree Program Description</a></p><p><a href=\"https://www.rva.gov/sites/default/files/2019-09/applicationAdoptATree2018.pdf\" title=\"Application\">Adopt a Tree Application</a></p><p><strong></strong>Residents may also request a special permit to perform maintenance on a City tree or remove a City tree altogether at their own expense. For more information, please visit the <a href=\"https://rva.gov/public-works/urban-forestry\" target=\"_blank\" title=\"Link to UF page on rva.gov\">Urban Forestry page on RVA.gov</a></p><p><strong>Your Privacy:</strong>&nbsp;The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "tree, planting, new tree, plant, replace tree, plant a tree, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515321363511108.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221191046?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
+      },
+      {
+        "id": "new_cs201027220259",
+        "name": "Assess Existing Tree or Stump ",
+        "serviceGroup": "Trees and Vegetation",
+        "serviceGroupId": "7cc71a09-423c-4e30-87c2-54cc62570dae",
+        "introText": "<p><strong>Please Read...</strong></p><p><strong>If this is an Emergency : </strong>For tree related emergencies such as 1) Trees down on utility lines 2) Trees blocking street, alley or sidewalk please call&nbsp;<strong style=\"color: rgba(255, 0, 0, 1)\">804-646-5100</strong><strong>.</strong></p><p><strong>When to Use:&nbsp;</strong>Use this request to:</p><p><strong>* Report&nbsp;</strong>a&nbsp;<strong>non-emergency</strong>&nbsp;issue with a City tree that requires inspection and assessment</p><p><strong>* Request&nbsp;</strong>removal of stumps left behind 6 months or longer after tree was removed.</p><p><strong>Do Not Use for:</strong></p><p><strong>* Emergencies&nbsp;</strong>- Please use number provided above.</p><p><strong>* Trees in City Alleys</strong>&nbsp;are the responsibility of the private property owner and are NOT maintained by the City of Richmond unless a downed tree is blocking the alley.</p><p><strong>* Trees on private property&nbsp;</strong>are the responsibility of the private property owner,&nbsp;<em><strong>even if they extend into City spaces.</strong></em>&nbsp;</p><p><strong>* Non-city trees. </strong>Not all trees in the City are maintained by the City. To confirm whether the tree in question is a City tree check the latest <a href=\"https://cor.maps.arcgis.com/apps/webappviewer/index.html?id=3dda2aa7521941d8a48dc91f5014a5c8\" rel=\"noopener\" target=\"_blank\" title=\"City Inventory\">Tree Inventory Map</a></p><p><strong>* Roots Damaging Sidewalks</strong> should be submitted as a <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs221019185025?gid=f803d865-2aac-4172-af11-4c9c01239457\" target=\"_blank\" title=\"Repair Sidewalk and Ramp\">Repair Sidewalk or Ramp</a> request even when damage is caused by tree roots.</p><p><strong>What to Expect:</strong></p><p><strong>* A City arborist</strong>&nbsp;will attempt to&nbsp;inspect&nbsp;the tree within 5 business days of a request being received (weather and resources permitting)&nbsp;</p><p><strong>* Arborist&nbsp;</strong>will evaluate the tree to assess what action, if any, is needed.</p><p><strong>* Work&nbsp;</strong>will be prioritized based on the arborist's findings and planned based on safety, urgency and available resources</p><p><strong>* Note&nbsp;</strong>that in some cases, the arborist may determine no safety issue exists and NO IMMEDIATE ACTION is needed.&nbsp;</p><p><strong>Please be patient</strong>. If arborist recommends removal of a tree, this can be a lengthy process, sometimes taking 12 months.</p><p><strong>Stump Removal:&nbsp;</strong>&nbsp;Stump removal is part of a tree removal job, however, it is completed at a later time to allow Ms. Utility to confirm presence of underground utility lines in the vicinity.&nbsp;</p><p><strong>Please only submit a separate stump removal request if the stump has been left longer than 6 months after the tree was removed.</strong></p><p>Residents may also request a special permit to perform maintenance on a City tree or remove a City tree altogether at their own expense. For more information, please visit the&nbsp;<a href=\"https://rva.gov/public-works/urban-forestry\" target=\"_blank\" title=\"Link to UF page on rva.gov\">Urban Forestry page on RVA.gov</a></p><p><strong>Duplicate Requests:</strong> Your concern may already be reported. Requests deemed to be duplicates may be closed (<em><strong>before the work has been completed</strong></em>) and the concern addressed using the previously submitted request. Duplicate requests create extra administrative process and can be a hindrance to teams in addressing concerns, so please avoid duplicate submissions when possible.</p><p><a href=\"https://www.rva311.com/rvaone/requests/requestsummary?entityName=new_CS201027183415\" rel=\"noopener\" target=\"_blank\" title=\"Storm Cleanup\"></a><strong>Questions about STORM RELATED CLEANUP? <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs201027183415?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462\" target=\"_blank\">CLICK HERE</a></strong></p><p><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. <em><strong>Please do not include personal information about yourself or others in this field.</strong></em></p><p style=\"text-align: left\"></p>",
+        "keywords": "standard tree maintenance, tree maintenance, pruning, stump removal, stump, removal, tree removal, tree, tree Maintenance, tree maintenance, pruning, dead tree, inspect tree, evaluate tree, assess tree, dead limbs, dying tree, lightning, struck by lightning, damaged tree, damaged, tree hazard, dropping limbs, falling limbs, fallen tree, limb, limbs",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515321648294711.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs201027220259?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
+      },
+      {
+        "id": "new_cs180221194457",
+        "name": "Maintain Grass or Vegetation in Public Right of Way",
+        "serviceGroup": "Trees and Vegetation",
+        "serviceGroupId": "7cc71a09-423c-4e30-87c2-54cc62570dae",
+        "introText": "<p><strong>FOR&nbsp;</strong><strong>ISSUES with&nbsp;</strong><strong>VEGETATION OBSTRUCTING PUBLIC RIGHT OF WAY.</strong>&nbsp; Use to request inspection of vegetation (bushes, tree limbs or tall grass 12 inches or higher) that blocks visibility or causes an obstruction to traffic signs or signals, creates a line-of-sight hazard for traffic flow, or prevents vehicles or pedestrians from freely moving through a City street, alley or sidewalk.</p><p><strong>DO NOT USE FOR:</strong></p><ul><li><strong></strong>Vegetation on or extending into ROW from Private Property. Use&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180227192811?gid=ce39c864-d47b-4d19-9acf-1a0d58425205\" target=\"_blank\" title=\"Link to PDR request\">Private Property Maintenance</a>&nbsp;request.&nbsp;</li><li>Leaves left in the ROW outside of leaf pick-up season. Use the&nbsp;<span style=\"text-decoration-line: underline\"><span style=\"color: rgba(51, 51, 204, 1)\"><a href=\"https://www.rva311.com/rvaone#/request/new/new_cs220412162457?gid=ce39c864-d47b-4d19-9acf-1a0d58425205\" target=\"_blank\" title=\"ROW Concerns\">ROW Concerns</a></span></span>&nbsp;request.</li><li>Brush or debris piled in the ROW. See&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs191003161345?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462\" target=\"_blank\" title=\"Free brush pickup\">Free Brush and Bulk</a>&nbsp;pick or request a&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180221192959?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462\" target=\"_blank\" title=\"Paid pickup\">Paid Bulk</a>&nbsp;pickup.</li></ul><p><strong>LOCATION</strong>: Please provide the street address or intersection closest to the area of concern, and provide more specific details for inspectors about what to look for or where to find the concern in the additional field provided.</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request. Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p><p></p>",
+        "keywords": "sign, signal, line of sight, visibility, traffic flow, intersection, curve, dangerous, line of sight, maintain vegetation, maintain, vegetation, limbs, branches, bushes, grass, alley, sidewalk, overhanging, alley blocked, sidewalk blocked, obscured, traffic signal obscured, obscure, can’t see, traffic signal, traffic, signal, traffic sign obscured, sign, blocked, traffic signal blocked, traffic sign blocked",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515322177478439.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221194457?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
+      }
+    ]
+  },
+  {
+    "id": "1a5ba7d3-7a84-4a07-9f84-0fe79197b92e",
+    "name": "Parks and Public Spaces",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/219ce61a-752a-43fe-9353-e54610aaa3ec",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=1a5ba7d3-7a84-4a07-9f84-0fe79197b92e",
+    "services": [
+      {
+        "id": "new_cs230425145744",
+        "name": "Report Issue on Richmond Park Trail",
+        "serviceGroup": "Parks and Public Spaces",
+        "serviceGroupId": "1a5ba7d3-7a84-4a07-9f84-0fe79197b92e",
+        "introText": "<p style=\"text-align: left\"><strong>If this is an Emergency:&nbsp; </strong>Call&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1); font-size: medium\">9-1-1</span></strong>&nbsp;and provide the nearest trail marker ID for medical or safety emergencies while on the trail.</p><p style=\"text-align: left\"><strong>FOR TRAILS ISSUES ONLY: </strong>Use this Request&nbsp;to report a&nbsp;<strong>non-emergency</strong> issue on hiking trails within a Richmond City Park. (e.g. downed trees or limbs, damaged bridge or boardwalk, missing signs or markers, etc.)&nbsp; See our OTHER Parks Issues, request for non-trail concerns.</p><p style=\"text-align: left\"><strong>PLEASE INCLUDE PHOTOS</strong> whenever possible. Photos help inform trails team as to urgency and location of issue as well as what tools or equipment that may be needed when inspecting.</p><p><strong>Do Not Use for&nbsp;</strong><strong>Emergencies:&nbsp;</strong>&nbsp;3-1-1 is for non-emergency issues only and response is not immediate. Call&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1); font-size: medium\">9-1-1&nbsp;</span></strong>for any emergency.</p><p><strong>Do not Use for NON TRAIL issues</strong>: For other general parks related concerns email <span style=\"font-size: 11pt; font-family: &quot;Calibri&quot;, sans-serif; color: rgba(31, 73, 125, 1)\"><a>askparkrec@rva.gov</a></span></p><p><strong>What to Expect:</strong>&nbsp; </p><ul><li>A trails team member will attempt to <strong>inspect </strong>issues reported within 7 days to assess what action is needed (weather and resources permitting)&nbsp;</li><li>Needed work will be prioritized based on safety, urgency and available resources<br></li><li>Team will attempt to complete necessary work within 30 days (NOTE: Inspection may reveal NO ACTION is needed)</li></ul><p><strong></strong><strong>Duplicate Requests:</strong>&nbsp; Richmond trails are heavily used so your concern may already be reported. When reporting an issue, review the Open Requests Nearby to avoid submitting a duplicate request. </p><p><strong>YOUR PRIVACY:</strong>&nbsp; &nbsp;The personal contact information provided in this request will never be displayed.&nbsp; However, this is a PUBLIC request so details entered in the Description will be publicly visible to all users.&nbsp;<em><strong>Do not include personal information about yourself or others in this field.</strong></em></p>",
+        "keywords": "trails, parks trail, kiosk, bench, fence, muddy, flooded, swampy, tree, tree down, downed tree, blocking trail, tree blocking trail, fallen tree, trail marker, trail sign, vegetation; overgrown; overgrown vegetation, poison ivy, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638180320253027026.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs230425145744?gid=1a5ba7d3-7a84-4a07-9f84-0fe79197b92e"
+      },
+      {
+        "id": "new_cs230425151341",
+        "name": "Richmond Parks General (non-trail) Concerns",
+        "serviceGroup": "Parks and Public Spaces",
+        "serviceGroupId": "1a5ba7d3-7a84-4a07-9f84-0fe79197b92e",
+        "introText": "<p>To report other concerns NOT RELATED to trails or trail maintenance such as those listed below, email the Richmond Parks team at&nbsp;<span style=\"font-size: 11pt; font-family: Calibri, sans-serif; color: rgba(31, 73, 125, 1)\"><a>askparkrec@rva.gov</a>.</span><br></p><ul><li>Trash receptacles overflowing</li><li>Damaged parks or parking signs</li><li>Issues with Parks facility or shelter</li><li>Concerns with lakes or fountains</li><li>Pavement / pothole issues in parking areas or service roads</li><li>Sidewalks &amp; ADA ramp maintenance issues</li><li>Vegetation overgrowth - non-trail. </li><li>Non-emergency tree maintenance concerns </li></ul><p>For issues ON the park trails, use&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs230425145744?gid=1a5ba7d3-7a84-4a07-9f84-0fe79197b92e\" target=\"_blank\" title=\"Link to Trails request\">Report Issues on Parks Trail</a>&nbsp;for issues on park trails.</p>",
+        "keywords": "parks, ",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs230425151341?gid=1a5ba7d3-7a84-4a07-9f84-0fe79197b92e"
+      },
+      {
+        "id": "new_cs231207172948",
+        "name": "Report Community Garden Issue",
+        "serviceGroup": "Parks and Public Spaces",
+        "serviceGroupId": "1a5ba7d3-7a84-4a07-9f84-0fe79197b92e",
+        "introText": "<p style=\"text-align: left\"><strong>If this is an Emergency:&nbsp; </strong>Call&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1); font-size: medium\">9-1-1</span></strong>&nbsp;</p><p style=\"text-align: left\"><strong>FOR COMMUNITY GARDEN ISSUES ONLY: </strong>Use this Request&nbsp;to report a&nbsp;<strong>non-emergency</strong> issue in one of the City's Community Gardens. See our Parks Issues General or Parks Trail Issues requests to report general park or trail related issues.</p><p style=\"text-align: left\"><strong>PLEASE INCLUDE PHOTOS</strong> whenever possible. Photos help the parks team assess urgency, pinpoint the location and identify what tools or equipment may be needed when inspecting.</p><p><strong>Do Not Use for&nbsp;</strong><strong>Emergencies:&nbsp;</strong>&nbsp;3-1-1 is for non-emergency issues only and response is not immediate. Call&nbsp;<strong><span style=\"color: rgba(255, 0, 0, 1); font-size: medium\">9-1-1&nbsp;</span></strong>for any emergency.</p><p><strong>General Parks or Park Trails Concerns:</strong> For other general parks related concerns see our Parks request. And for issues on City Parks trails, visit our Richmond Trails request.</p><p><strong>What to Expect:</strong>&nbsp; </p><ul><li>A parks team member will attempt to <strong>inspect </strong>issues reported within 7 days to assess what action is needed (weather and resources permitting)&nbsp;</li><li>Needed work will be prioritized based on safety, urgency and available resources<br></li><li>Team will attempt to complete necessary work within 30 days (NOTE: Inspection may reveal NO ACTION is needed)</li></ul><p><strong></strong><strong>Duplicate Requests:</strong>&nbsp; Richmond community gardens are maintained through highly proactive partnerships between neighborhood organizations and Richmond Parks team members. Your concern may already be reported by another dedicated gardener, so when reporting an issue please review the Open Requests Nearby to avoid submitting a duplicate requests.</p><p><strong>YOUR PRIVACY:</strong>&nbsp; &nbsp;The personal contact information provided in this request will never be displayed.&nbsp; However, this is a PUBLIC request so details entered in the Description will be publicly visible to all users.&nbsp;<em><strong>Do not include personal information about yourself or others in this field.</strong></em></p>",
+        "keywords": "garden, gardens, community garden, rats, compost, neglected, overgrown, rotting, rotten, neighborhood garden, smelling, smelly, homeless, plants, planting",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638460448202330103.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs231207172948?gid=1a5ba7d3-7a84-4a07-9f84-0fe79197b92e"
+      }
+    ]
+  },
+  {
+    "id": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+    "name": "Collection and Cleaning",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/153ea8e8-1815-428b-8e28-7b95cb2fcd8d",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+    "services": [
+      {
+        "id": "new_cs191003160817",
+        "name": "Report Missed Trash Collection",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p style=\"text-align:center;\">To report missed trash, please call</p><p style=\"margin-bottom:0.0001pt;line-height:normal;text-align:center;\"><strong><span style=\"font-size:13.5pt;color:red;\">804 646-1798</span></strong></p>",
+        "keywords": "trash, garbage, missed, missed trash, missed garbage collection, missed collection, collection, missed garbage, truck, garbage truck,",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515342955482754.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003160817?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs191003161039",
+        "name": "Report Missed Recycling Collection",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p>For missed Recycling Collection please contact:</p><p>Central Virginia Waste Management Authority&nbsp;</p><p><strong>804 340-0900</strong></p>",
+        "keywords": "recycling, missed recycling, missed collection, collection",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515324109994681.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003161039?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs191031204100",
+        "name": "Request Residential Trash Can",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p><strong>When to Use:</strong> Use this request to:</p><ul><li><strong>Request </strong>a standard trash can(Supercan) for new account holders.\n<ul><li>The City provides one trash can per residential address/account</li></ul></li><li>&nbsp;<strong>Purchase </strong>extra trash can(s).\n<ul><li>Up to three extra trash cans may be purchased at $55.00 each.</li></ul></li><li><strong>Request</strong> replacement of a missing trash can.\n<ul><li><strong>Important: </strong><em>If an extra can you purchased is missing, the City is not responsible for replacement. You will need to purchase a new can.</em></li></ul></li><li><strong>Request</strong> replacement of a damaged can.\n<ul><li><strong>Important:</strong> This will require investigation.&nbsp;<em>Please allow 10 business days</em>.</li><li>If an extra can you purchased is damaged, you may need to purchase a new can as the City is not responsible for replacement unless\n<ul><li>1) it can be proven that the City caused the damage, or</li><li>2) the purchased can is still within a 5 year warranty period.</li></ul></li></ul></li></ul><p><strong>Did you know?</strong> City trash cans are all individually imprinted with an identification number. This number is registered with the residential address where the trash can is issued.</p><p><strong>What to Expect:</strong> Delivery of trash cans is based on available resources, so please be patient.</p><p><strong>Please Note:</strong>&nbsp;A maximum of 4 trash cans are allowed per residential address/account. For sites requiring more than this, private collection may be required by the City per City Code.</p>",
+        "keywords": "Trash, trashcan, trash can, supercan, super can, super, can, residential, new trashcan, replacement, replace trashcan, replace trash can, damaged, damaged trashcan, damaged trash can, broken, missing, missing trashcan, stolen, stolen trash can, stolen trashcan,   ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515325920109080.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191031204100?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs191031213431",
+        "name": "Request Business Trash Can or Service Change",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p><strong>When to Use:&nbsp;&nbsp;FOR BUSINESS USE ONLY</strong></p><p>Use this request to:</p><ul><li><strong>Request a standard trash can&nbsp;(Supercan) for new account holders.</strong>&nbsp;&nbsp;\n<ul><li>The City automatically provides trash service for one can per business address/account</li><li>The service fee is $23.75</li></ul></li><li><strong>Request extra trash can(s).</strong>\n<ul><li>Up to three (3) extra trash cans may be added. There is an additional service fee of $23.75 per month for each can.&nbsp;</li></ul></li><li><strong>Request replacement of a missing or damaged trash can.</strong></li><li><strong>Cancel or Reduce City trash services.</strong>\n<ul><li>If business is being closed or sold to a new owner.</li><li>If business contracting with a commercial trash service.\n<ul><li>Important: Verification is required. Business must submit copy of signed contract with commercial vendor before city trash services can be stopped.</li></ul></li><li>If business wants to reduce number of cans serviced.\n<ul><li>Important: Verification of reduced trash volume required. Please allow 30 days.</li></ul></li></ul></li></ul><p><strong>Did you know?</strong> City trash cans are all individually imprinted with an identification number. This number is registered to the address where the trash can is issued.</p><p><strong>What to Expect:</strong> Delivery of trash cans is based on available inventory, please be patient.</p><p><strong>Please note:</strong> A maximum of 4 trash cans are allowed per business address/account. For sites requiring more than this, business may need to obtain commercial trash collection services as required by City Code.</p>",
+        "keywords": "business Trash, business trashcan, business trash can, business supercan, business super can, super, can, business, new trashcan, replacement, replace trash can, damaged, damaged trashcan, damaged trash can, change trash service, cancel, cancel trash, cancel trash service, pickup trash cans, reduce trash service, decrease trash service, trash service,  business, business trash, commercial trash",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515325611976435.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191031213431?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs180221192959",
+        "name": "Request Paid Bulk or Appliance Pick Up",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p style=\"text-align: left\"><strong></strong><strong>When to Use:</strong>&nbsp; Use to request the following City services: </p><p style=\"text-align: left\">Request Paid Same Day Bulk or Brush Pick-up</p><p style=\"text-align: left\"><strong>* Fee = $100.00 per request</strong></p><p style=\"text-align: left\">Request Paid Appliance Pick-up</p><p style=\"text-align: left\"><strong>* Fee = $50.00 per appliance</strong></p><p style=\"text-align: left\"><strong>What to Expect:</strong>&nbsp; Requests received before noon will be scheduled for same day pickup. If request is received after noon, the pickup may not occur until the next business day.&nbsp; </p><p style=\"text-align: left\">Payment must be received prior to service date.</p><p style=\"text-align: left\">If mailing or delivering payment, please remit to:</p><ul><li>Department of Public Works Customer Care</li><li>900 E. Broad St., Room 704</li><li>Richmond, VA 23219</li></ul><p><strong></strong></p><p><strong>Note</strong>: Be sure to include the request ID and your service address so your payment can be matched with your request.</p>",
+        "keywords": "bulk, bulk trash, junk, debris, paid bulk pickup, paid bulk, appliance pick up, appliance pickup, pickup appliance, pickup bulk trash, remove bulk trash, remove appliances, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515344378060187.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180221192959?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs191003161345",
+        "name": "How to Get Free Bulk Trash Pick Up",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<div><p><strong>FREE Bulk Items Pick Up - Every Two Weeks</strong></p><p>The Department of Public Works' Bulk Items crew will attempt to pick up your bulk items every other week&nbsp;<strong>on the same week as your recycling</strong>. No call or special scheduling required.</p><p><strong>Who is Responsible:</strong> City of Richmond - Department of Public Works. The Bulk collection happens&nbsp;<strong>on your recycling week</strong>, but our Recycling Vendor CVWMA is NOT responsible for picking up bulk items. The Bulk Collection program is managed directly by the City.<br /><br /><strong>What to Expect: </strong>Note that bulk pickup is dependent on available resources; therefore it may sometimes take up to two recycling cycles for items to be collected by our crews.</p><ul><li>On your recycling week, place bulk items out by your trash on your scheduled collection day&nbsp;in the same location as household trash&nbsp;</li><li>Bulk Collection will typically occur on your collection day.&nbsp;</li><li>If not collected on your collection day, the crew will attempt to return and collect by Saturday of your recycling week, depending on available resources.&nbsp;</li><li>If not collected by the Saturday of your second scheduled recycling week, the crew should collect on your&nbsp;next&nbsp;scheduled recycling week.</li><li>If items are not collected by your&nbsp;second&nbsp;scheduled recycling week after being placed out for pickup, please contact 3-1-1</li><li>Do not contact CVWMA&ndash;this is NOT a recycling program.</li></ul><p></p><p><strong>Prohibited items:</strong></p><ul><li>Construction debris</li><li>Tires</li><li>Carpet</li><li>Auto parts</li><li>Appliances (a <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180221192959?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462\" rel=\"noopener\" target=\"_blank\" title=\"Paid Services Request page\">Paid Services</a>&nbsp;request is needed for appliance pickup)&nbsp;</li></ul><p></p><p><strong>Did You Know?</strong> SAME DAY pick up can be requested for a fee. Use the&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180221192959?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462\" rel=\"noopener\" target=\"_blank\" title=\"link to paid service request\">Paid Services Request Page</a>&nbsp;to request a paid pick up.</p><p>Visit the City's&nbsp;<a href=\"https://www.rva.gov/public-works/bulk-and-brush\" rel=\"noopener\" target=\"_blank\" title=\"Link to city page\">Bulk and Brush Pickup</a>&nbsp;for more details.</p></div>",
+        "keywords": "bulk, bulk pick up, tires, old tires, construction debris, carpet, old carpet, auto parts, bulk items, brush, brush pickup, piles,",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637057160249994418.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003161345?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs180926171636",
+        "name": "Paid Leaf Vacuum Service",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p><strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">When to Use:&nbsp;</span></strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">&nbsp;Use this request to purchase&nbsp;</span><strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(255, 0, 0, 1)\">PAID</span></strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(255, 0, 0, 1)\">&nbsp;</span><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">leaf vacuum service from the City. Vacuum collection to begin Monday, November 4, 2025.&nbsp;</span></p><p style=\"margin-bottom: 12pt; line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">Cost:&nbsp;<strong>$30.00 per request.</strong></span></p><p style=\"margin-bottom: 12pt; line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">Payment Options:</span></p><ul type=\"disc\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">COR&nbsp;</span></strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Utility Account - $30 fee will be added to your utility bill</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Via Mail</span></strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">&nbsp;(Check or Money Order</span></li><ul type=\"circle\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Include your RVA311 Request ID on Check or Money       Order</span></li></ul></ul><p style=\"margin-bottom: 12pt; line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">Mail check or money order&nbsp;<em>Payable to City of Richmond</em></span></p><ul type=\"disc\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Richmond Department of Public Works - Attn: DPW      Vacuum Service</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">900 East Broad Street, Room 704</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Richmond, VA 23219</span></li></ul><p style=\"margin-bottom: 12pt; line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">Additional Requirements:</span></p><ul type=\"disc\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Payment must be received before collection will be      scheduled</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Leaves must be raked to front of property      line&nbsp;</span></li><ul type=\"circle\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">DO NOT&nbsp;block ditches, gutter or street</span></li></ul><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Leaves will not be collected from the alley</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Leaves must be raked and ready for pickup at the      time of request.&nbsp;</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Remove any sticks, stones or other objects that      may damage equipment</span></li></ul><p style=\"margin-bottom: 12pt; line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">What to Expect:</span></p><ul type=\"disc\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Once payment confirmed, leaves will be collected      within 15&nbsp;<strong>business&nbsp;</strong>days of submitting Service Request.</span></li><ul type=\"disc\"><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Weather Permitting: Significant weather events       may delay service.</span></li></ul><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Scheduled appointments for leaf collection&nbsp;<strong>cannot&nbsp;</strong>be accommodated. Leaves should be ready for collection at the time the      request is made.</span></li><li style=\"color: rgba(0, 0, 0, 1); line-height: normal\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif\">Leaves left in the alley will not be collected</span></li></ul><p style=\"margin-bottom: 12pt; line-height: normal\"><strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">If service not received:</span></strong><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\">&nbsp;If collection does not occur within 15 business days of your request and there have been no significant weather events, please call: 3-1-1.&nbsp;</span></p>",
+        "keywords": "leaf, leaf vacuum, leaves, vacuum, paid, leaf collection, pickup, paid leaf collection, leaf service, collection. collect leaves, vacuum leaves, leafs",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515334963562364.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180926171636?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs191031201305",
+        "name": "Report Litter on Public Property",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p style=\"line-height: normal; margin-bottom: 12pt\"><strong></strong><strong>For Issues on Public Property Only </strong></p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong>When to Use:</strong>&nbsp; &nbsp;Use this request to report <strong>EXCESSIVE ACCUMULATIONS</strong> of litter or debris,&nbsp;<strong>on public property, including bike lanes. </strong>This applies to junk, demolition materials, upholstered furniture or <strong>excessive </strong>amounts of trash, garbage or leaves that have been piled in a specific place on the property.&nbsp; A few bottles, leaves or stray pieces of trash is not considered an excess accumulation.&nbsp; &nbsp;</p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong>Location:</strong> Note that public spaces do not always have a distinct address. If necessary use the nearest valid address and provide more specific location details in the description field. &nbsp;Intersections may be entered by using the “&amp;” or “@” sign.&nbsp; (For example: E Broad St &amp; N 2nd St).</p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong>Who is Responsible:&nbsp;</strong>&nbsp;Please note that <strong>YOU </strong>may be responsible.</p><p style=\"line-height: normal; margin-bottom: 12pt\">If the excess accumulation is&nbsp;<strong>1)</strong> on someone's Private Property or&nbsp;<strong>2)</strong> on public property, alleys or rights-of-way that join or are otherwise against someone's private property, <strong>the</strong>&nbsp;<strong>private </strong><strong>property owner </strong><strong>is responsible </strong>for removal of the accumulation.&nbsp; &nbsp;This includes excess garbage, mattresses, couches, chairs or other types of indoor furniture left on public property - REGARDLESS OF HOW IT GOT THERE.&nbsp; To report issues related to private property you may submit an <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180227201252?gid=ce39c864-d47b-4d19-9acf-1a0d58425205\" target=\"_blank\" title=\"PDR Unlawful Accumulation Request\">Unlawful Accumulation of Debris </a>request to Code Enforcement.</p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong></strong>The City will collect any excess accumulations that are clearly on free-standing public property, such as parks, schools, medians on multi-lane roads, expressway roadsides, etc.</p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong>What to Expect:&nbsp; </strong>Once requests are received and the City confirms the accumulation is clearly on public property, the City will schedule cleanup as soon as resources are available.&nbsp; This will typically be within 3-5 business days.&nbsp; &nbsp;If the City determines the accumulation is on or adjoined to private property, they will transfer the request to Code Enforcement for investigation and the private property owner may be cited and fined.</p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong>DO NOT USE this request&nbsp;</strong>to report a missed trash collection, including trash over flow in parks or other public space.&nbsp; To report missed trash collection, please see <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs191003160817?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462\" target=\"_blank\">Report Missed Trash Collection </a></p><p style=\"line-height: normal; margin-bottom: 12pt\"><strong></strong><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.&nbsp;</p>&nbsp;<p style=\"margin-bottom: 12pt; line-height: normal\"></p>",
+        "keywords": "litter pickup, litter pick up, accumulation, litter accumulated, litter accumulation, garbage, overflow, overflowing, strewn, blown, trash accumulation, litter, pickup, pick up, litter on Public Property, public trash, city trashcan, median, park, roadside, junk, debris, bike, bike lane, trash, debris, leaves in bike lane, bicycle lane, trash in bike lane, debris in bike lane",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637081502144380981.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191031201305?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs201027183415",
+        "name": "Storm Cleanup for Branches and Tree Debris",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p style=\"margin-bottom:12pt;line-height:normal;text-align:left;\"><strong>FOR STORM RELATED EMERGENCIES such as downed power lines, blocked roadways, alleys or sidewalks, please call non-emergency police at&nbsp;</strong></p><p style=\"margin-bottom:12pt;line-height:normal;text-align:left;\"><strong></strong><strong><span style=\"color:red;font-size:medium;\">804-646-5100.&nbsp;&nbsp;</span></strong></p><p style=\"margin-bottom:12pt;line-height:normal;\"><strong></strong><strong>Assistance with non-emergency r</strong><strong>emoval of limbs, branches and other tree debris&nbsp;</strong>related to a storm event is handled as part of the City's bi-weekly Bulk and Brush pickup program.&nbsp;&nbsp;<strong>YOU DO NOT NEED TO CALL OR SUBMIT A REQUEST FOR PICKUP.</strong></p><p style=\"margin-bottom:12pt;line-height:normal;\"><strong></strong><strong>What to Expect:</strong>&nbsp; After major storm events City crews are usually working 24/7.&nbsp; First priority is given to emergency situations that pose a threat to citizens' health and safety.&nbsp; Once all emergencies have been addressed, extra trucks and crews will help clear remaining debris on behalf of citizens.&nbsp;</p><p style=\"margin-bottom:12pt;line-height:normal;\"><strong>Please be aware:</strong>&nbsp;<strong><span style=\"line-height:12.84px;color:red;\">City crews do not enter private property&nbsp;<em>even if a City tree is involved</em>.&nbsp;</span></strong>&nbsp;It is the responsibility of the property owner to place any debris at the property line where it is accessible to City crews.</p><p style=\"margin-bottom:12pt;line-height:normal;\"><strong>To have storm debris collected:&nbsp;</strong>&nbsp;</p><ul><li>Remove any fallen tree, limbs or branches from structures, driveways or yard</li><li>Cut tree debris into sizes that can be handled by the Bulk and Brush crews<ul><li>Bulk and Brush crews do not have chain saws or other cutting equipment</li><li>Pieces can be no larger than 48\" (4 feet) in order to be picked up</li></ul></li><li>Place the debris&nbsp;<strong>at your property line</strong></li><li>Debris will be collected as soon as crews are available</li></ul><p style=\"margin-bottom:12pt;line-height:normal;\"><strong></strong></p><p style=\"margin-bottom:12pt;line-height:normal;\"><strong>Please be patient</strong>.&nbsp; Depending on the severity of the damage, the need may be high.&nbsp; &nbsp;Crews will work through the City's neighborhoods as quickly as possible, beginning with those our inspectors report have sustained the most damage.&nbsp;</p>",
+        "keywords": "Storm Debris Removal, storm debris, removal, storm, debris, fallen limbs, storm damage, limbs, storm debris pickup, lightning, strike, struck, fallen tree, downed tree,",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637394204558074858.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs201027183415?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs191031202406",
+        "name": "Report Graffiti",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p><strong>What is Graffiti</strong>:&nbsp; <em>Graffiti&nbsp;is the <strong><span style=\"color: rgba(255, 0, 0, 1)\">unauthorized</span></strong><span style=\"color: rgba(255, 0, 0, 1)\"> </span>application of any writing, painting, drawing, etching, scratching or marking of an inscription, word, figure, or design of any type on any public or private building. </em></p><p><strong>When to Use:</strong>&nbsp; Use this request to report graffiti on public or private property.&nbsp; </p><p><strong>Who is Responsible:&nbsp; </strong></p><p><strong>Graffiti on <span style=\"color: rgba(255, 0, 0, 1)\">PRIVATE </span>Property: </strong></p><p>The City retains the right to remove graffiti on private property that is visible from public property such as roads or alleys, and is deemed offensive, vulgar or promotes gang-related activities.&nbsp; However, generally it is the responsibility of the property owner to remove graffiti on their property.&nbsp; &nbsp;</p><p style=\"margin-left: 0.5in\"><strong><em>If you are the property owner</em></strong>, check with your insurance provider to see if graffiti is covered by your policy as an act of vandalism. &nbsp;</p><p style=\"margin-left: 0.5in\"><strong><em>If you are not the property owner</em></strong>, report the incident to the landlord or property owner.&nbsp; <strong></strong></p><p><strong>Additional Requirement:&nbsp;</strong> The city cannot take any action to remove graffiti on private property without the written consent of the property owner.&nbsp; Use this link to obtain the needed <a href=\"https://www.rva.gov/sites/default/files/2019-12/Grafitti%20Removal%20Release%20of%20Liability%2011.9.17.pdf\" target=\"_blank\" title=\"City Consent form\">Consent To Enter and Release of Liability Agreement</a>&nbsp;form.&nbsp; This form must be completed and signed by the property owner and returned to the address below.</p><p style=\"margin-left: 60px\">City of Richmond&nbsp;<br>Department of Public Works&nbsp;<br>900 E. Broad St., Room 704&nbsp;<br>Richmond, VA 23219</p><p><strong></strong><strong>Graffiti on <span style=\"color: rgba(255, 0, 0, 1)\">PUBLIC </span>Property:</strong></p><p>The City will investigate reports of graffiti on public property but removal is based upon available resources.&nbsp;&nbsp;</p><p><strong>What to Expect:</strong></p><p>While graffiti can be an unsightly nuisance and a blight on our communities, it rarely poses a public safety threat.&nbsp; Therefore, City resources to remove it are reserved for the most extreme cases such as those involving hate speech, language that is vulgar or promotes gang activity.</p><p><strong>Graffiti on <span style=\"color: rgba(255, 0, 0, 1)\">PRIVATE </span>Property: </strong></p><ul><li>The City will send a letter to the property owner requesting the graffiti be removed.</li><li>If the property owner does not comply, the City is authorized to remove graffiti.&nbsp; </li><li>If the City exercises its authority to remove, the City is held harmless of any damage to the structure or surrounding error that may occur as part of the removal.</li><li>In some cases, the cost of removal may be charged back to the property owner. </li></ul><p><strong></strong><strong>Graffiti on <span style=\"color: rgba(255, 0, 0, 1)\">PUBLIC </span>Property</strong></p><ul><li>The City will inspect and document any graffiti reported on publicly owned structures (e.g. public sidewalk, building, bridge abutment, etc.).&nbsp; </li><li>However, the City may determine that removal is not feasible depending on safety risks, cost and available resources.&nbsp;&nbsp; </li></ul><p><strong></strong><strong>Please Note:</strong>&nbsp; Sometimes removal on historical buildings is not permitted due to risk of irreparable damage to the structure.&nbsp; </p><p><strong>HELP PREVENT GRAFFITI:</strong>&nbsp; If you know of individuals or groups who are defacing property in your neighborhood, (click here) or call non-emergency police at 804.646-5100 to report and request an investigation.</p><p>Please be a specific as possible regarding the location. </p><p><strong></strong><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Graffiti Removal, grafitti removal, Graffiti, vandalism, gang tags, tagged, vandals, public graffiti, remove graffiti, clean graffiti, clean up graffiti, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515351652960285.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191031202406?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      },
+      {
+        "id": "new_cs180327173306",
+        "name": "Report Illegal Dumping ",
+        "serviceGroup": "Collection and Cleaning",
+        "serviceGroupId": "aa058868-75aa-4f1d-b1f4-ba7f3cc99462",
+        "introText": "<p>To report illegal dumping concerns and request cleanup of illegally dumped materials.</p><p>Littering or dumping trash is a Class 1 misdemeanor, punishable by up to 12 months in jail and/or a fine up to $2,500.</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "illegal, illegal dumping, neighborhood dumping, toxic, debris, dumped, dumping, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515366567046803.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180327173306?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+      }
+    ]
+  },
+  {
+    "id": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+    "name": "Stormwater and Drainage",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/103b5875-7f3a-4c77-b8c0-8afd6b01c8ce",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa",
+    "services": [
+      {
+        "id": "new_cs221012215646",
+        "name": "Report a Water Leak or Missing Utility Cover",
+        "serviceGroup": "Stormwater and Drainage",
+        "serviceGroupId": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+        "introText": "<p><strong>Water leaks and missing utility covers are handled as emergencies and should be reported immediately.</strong></p><p><span style=\"font-weight: bolder; color: rgba(50, 49, 48, 1); font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgba(255, 255, 255, 1)\"><span style=\"color: rgba(255, 0, 0, 1)\">To ensure response within 12 hours please call</span>&nbsp;</span><span style=\"font-weight: bolder; color: rgba(50, 49, 48, 1); font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgba(255, 255, 255, 1)\"><span style=\"color: rgba(255, 0, 0, 1)\">804-646-4646 and press 1. This number is available 24 hours a day.</span></span></p><p></p>",
+        "keywords": "Water, water leak, leaking, cover missing, manhole cover, cover, lid, cap, missing lid, missing cap",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221012215646?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
+      },
+      {
+        "id": "new_cs180228212904",
+        "name": "Assess Standing Water",
+        "serviceGroup": "Stormwater and Drainage",
+        "serviceGroupId": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+        "introText": "<p style=\"margin: 0 0 12pt\"><span style=\"color: rgba(0, 0, 0, 1)\"><strong>When to Use:</strong>&nbsp;Use to request the city evaluate issues with standing stormwater.&nbsp; When submitting the location, </span><span style=\"color: rgba(0, 0, 0, 1)\">please</span><span style=\"color: rgba(0, 0, 0, 1)\"> be as specific as\npossible.&nbsp;</span></p><p style=\"margin: 0 0 12pt\"><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp;</p>",
+        "keywords": "Stormwater, standing water, basin, drain, drainage, system, assessment, review, ditch, easement, curb & gutter, problem\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515354408182985.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228212904?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
+      },
+      {
+        "id": "new_cs180228212504",
+        "name": "Clean Stormwater Drain",
+        "serviceGroup": "Stormwater and Drainage",
+        "serviceGroupId": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+        "introText": "<p>This request type is used to submit a request for a stormwater basin cleaning.&nbsp; The City works to clean and maintain its stormwater basins by cleaning debris that collects&nbsp;within the basins. When reporting a stormwater basin location for cleaning please be as specific as possible.&nbsp;</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp; &nbsp;</p>",
+        "keywords": "Stormwater, basin, clean, dirty, water, stagnant, clogged drain, debris, storm, drain, catch basin, stormsewer, inlet, culvert\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515355337223119.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228212504?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
+      },
+      {
+        "id": "new_cs180301142929",
+        "name": "Repair Stormwater Drain",
+        "serviceGroup": "Stormwater and Drainage",
+        "serviceGroupId": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+        "introText": "<p>This request type is used to submit a request relating to stormwater drain (basin) repair.</p><p>Please be sure to indicate the exact site desired for service, so that proper review can take place. Complete repair may take several months to complete.</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p><p></p><p></p>",
+        "keywords": "Stormwater, basin, drain, drainage, system, repair, erosion, damaged, broken, culvert\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515355575649415.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180301142929?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
+      },
+      {
+        "id": "new_cs180301143939",
+        "name": "Report Illicit Discharge to Stormwater",
+        "serviceGroup": "Stormwater and Drainage",
+        "serviceGroupId": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+        "introText": "<p style=\"margin: 0 0 12pt\"><span style=\"color: rgba(0, 0, 0, 1)\"><strong>When to Use:</strong>&nbsp; Use to request investigation or report the location/site of unlawful </span>disposing, dumping, spilling, emitting, or other discharge of any substance other than storm water into the storm water drainage system.&nbsp;&nbsp;When submitting the location, please be as specific as possible.&nbsp;&nbsp;For illicit discharge emergencies that pose a danger,&nbsp;please&nbsp;call 9-1-1.</p><p style=\"margin: 0 0 12pt\"><strong>Illicit Discharge Examples:</strong></p>•&nbsp; Paint being poured into or near the storm drainage system<br>•&nbsp; Changing oil or antifreeze over or near a storm structure<br>•&nbsp; Washing motor pool vehicles where the runoff could drain into the storm drainage system<br>•&nbsp; Washing dumpster pads and allowing the runoff to drain into the storm drainage system<br>•&nbsp; Discharging swimming pool water directly into the storm drain system without de-chlorinating the water<br>•&nbsp; Discharging swimming pool water backwash (containing bacteria, sediment, chlorine, etc.)<br>",
+        "keywords": "Overflow, sewage, discharge, into, dumping, illegal\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515356273761673.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180301143939?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
+      },
+      {
+        "id": "new_cs180301150531",
+        "name": "Missing Stormwater Manhole Cover",
+        "serviceGroup": "Stormwater and Drainage",
+        "serviceGroupId": "74a89c81-b6f8-42e7-b101-1f60edd996aa",
+        "introText": "<p><strong>Report Missing Manhole Cover:&nbsp;</strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">To ensure response within 12 hours please call&nbsp;</span></strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">804-646-4646 and press 1. This number is available 24 hours a day.</span></strong></p><p>You may also submit this 311 request to serve as a record of reporting this issue.</p><p><strong></strong><strong><span style=\"line-height: 12.84px\">Who is Responsible:</span></strong><span style=\"line-height: 12.84px\">&nbsp; Sewer and stormwater manholes are managed by the Department of Public Utilities.</span></p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Sewer, Manhole, cover, missing, drain cover, drain, storm, stormwater\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515356715863431.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180301150531?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
+      }
+    ]
+  },
+  {
+    "id": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+    "name": "Sewer and Wastewater",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/3ac652e4-6ddd-475a-90c8-ad0bb189b492",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+    "services": [
+      {
+        "id": "new_cs221012215842",
+        "name": "Report Water Leak or Missing Utility Cover",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p><strong>Water leaks and missing utility covers are handled as emergencies and should be reported immediately.</strong></p><p><span style=\"font-weight: bolder; color: rgba(50, 49, 48, 1); font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgba(255, 255, 255, 1)\"><span style=\"color: rgba(255, 0, 0, 1)\">To ensure response within 12 hours please call</span>&nbsp;</span><span style=\"font-weight: bolder; color: rgba(50, 49, 48, 1); font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgba(255, 255, 255, 1)\"><span style=\"color: rgba(255, 0, 0, 1)\">804-646-4646. This number is available 24 hours a day.</span></span></p><p></p>",
+        "keywords": "water leak, water, leaking, cover, missing cover, manhole cover, missing manhole cover, utility cover, missing cap, missing lid, lid, cap",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs221012215842?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180301153010",
+        "name": "Report Missing Sewer Manhole Cover",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p><strong>Report Missing Manhole Cover:&nbsp;</strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">To ensure response within 12 hours please call&nbsp;</span></strong><strong><span style=\"color: rgba(255, 0, 0, 1)\">804-646-4646 and press 1.&nbsp; This number is available 24 hours a day.</span></strong></p><p>You may also submit this 311 request to serve as a record of reporting this issue.</p><p><strong></strong><strong><span style=\"line-height: 12.84px\">Who is Responsible:</span></strong><span style=\"line-height: 12.84px\">&nbsp; Sewer and stormwater manholes are managed by the Department of Public Utilities.</span></p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p><p></p>",
+        "keywords": "Sewer, manhole, cover, missing\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515359988968532.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180301153010?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180227210204",
+        "name": "Report Backup of Sewer",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p>This request type is used to submit the location of a sewer backup to the City.&nbsp; When submitting the location, please be as specific as possible. </p><p>For sewer backup emergencies that pose a danger to person(s) or property, please call 804-646-4646.\n</p>",
+        "keywords": "Sewer, backup, house\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515356982947939.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227210204?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228154912",
+        "name": "Request TV of Sewer",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p>This request type is used to submit a location for a TV request of a City sewer.&nbsp; When submitting the location, please be as specific as possible.&nbsp;</p><p>For sewer emergencies that pose a danger to person(s) or property, please call 804-646-4646.&nbsp;</p><p></p><p></p>",
+        "keywords": "TV, Request, Sewer\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515357173819788.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228154912?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180227211103",
+        "name": "Report Overflow of Sewer",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p style=\"margin: 0 0 12pt\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span>This request type is used to submit the location of a sewer overflow to the City.&nbsp; When submitting the location, please be as specific as possible.&nbsp;</p><p style=\"margin: 0 0 12pt\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span><strong>Danger?</strong> For sewer overflow emergencies that pose a danger to person(s) or property, please call 804-646-4646.</p>",
+        "keywords": "Sewer, overflow, house, ground\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515357382721968.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227211103?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228141848",
+        "name": "Report Odor from Sewer",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "&nbsp;<p>This request type is used to submit the location of an odor coming from a City sewer.&nbsp; When submitting the location, please be as specific as possible.&nbsp;</p><p><strong>PLEASE NOTE:&nbsp;</strong> This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp;</p>",
+        "keywords": "Sewer, odor, house, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515357617065020.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228141848?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228162734",
+        "name": "Request Location Sewer Manhole",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p><span style=\"font-size: 9pt; line-height: 107%; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span><span style=\"color: rgba(0, 0, 0, 1)\">This request type is used to submit a request to locate a sewer manhole the City.&nbsp; When submitting the location, please be as specific as possible.&nbsp;</span></p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp;</p><p style=\"margin: 0 0 12pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0\"></p>",
+        "keywords": "Sewer, manhole, location\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515357978936403.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228162734?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228204004",
+        "name": "Report sewer manhole problem",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p><span style=\"font-size: 9pt; line-height: 107%; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span><span style=\"color: rgba(0, 0, 0, 1)\">This request type is used to submit the location for the City to assess a sewer manhole condition or problem.&nbsp; When submitting the location, please be as specific as possible.&nbsp;</span></p><p style=\"margin: 0 0 12pt\"><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span>For sewer manhole emergencies that pose a danger to person(s) or property, please call 804-646-4646.&nbsp;</p><p><span style=\"font-size: 9pt; line-height: 107%; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.&nbsp;</p><p></p><p style=\"margin: 0 0 12pt\"></p><p style=\"margin: 0 0 12pt; font-variant-ligatures: normal; font-variant-caps: normal; orphans: 2; widows: 2; text-decoration-style: initial; text-decoration-color: initial; word-spacing: 0\"></p><span style=\"font-size: 9pt; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(0, 0, 0, 1)\"></span>",
+        "keywords": "Sewer, manhole, assess\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515359044914762.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228204004?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228204645",
+        "name": "Request Location Sewer Lateral",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "This request type is used to request that the City identify the location of a sewer lateral.&nbsp; When submitting the location, please be as specific as possible.",
+        "keywords": "Sewer, service, lateral, locate\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515359574069525.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228204645?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228210557",
+        "name": "Request Install Sewer Cleanout",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "<p style=\"margin: 0 0 12pt\">This request type is used to submit to the City a location to install a sewer cleanout. When submitting the location, please be as specific as possible.</p>",
+        "keywords": "Sewer, cleanout, install\n",
+        "icon": "https://e311production.blob.core.windows.net/rva311qa/RequestIcons/Icon636589728114550918.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228210557?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      },
+      {
+        "id": "new_cs180228210238",
+        "name": "Report Broken Sewer Cleanout",
+        "serviceGroup": "Sewer and Wastewater",
+        "serviceGroupId": "a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef",
+        "introText": "Use to report a broken sewer cleanout.&nbsp; When submitting the location please be as specific as possible.",
+        "keywords": "Sewer, cleanout, broken\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515359288355662.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228210238?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+      }
+    ]
+  },
+  {
+    "id": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+    "name": "Taxes, Billing and Licensing Inquiries",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/a53e2d9f-45bf-474b-982d-9727dff2ac91",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+    "services": [
+      {
+        "id": "new_cs250328203329",
+        "name": "RVAPay Account Registration Support",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>Use for <span style=\"font-size: 9pt; line-height: 107%; color: rgba(255, 0, 0, 1)\"><strong>RVAPay</strong></span>&nbsp;account registration issues on the Department of Finance <span style=\"font-size: 9pt; line-height: 107%; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(255, 0, 0, 1)\"><strong>RVAPay Portal</strong></span>.</p><p>Please remember to check your JUNK mail folder as RVAPay account verification emails may go there, and our team members may also attempt to contact you to provide additional instructions. </p><p><span style=\"font-size: 9pt; line-height: 107%; font-family: &quot;Verdana&quot;, sans-serif; color: rgba(255, 0, 0, 1)\"><strong>DO NOT USE FOR</strong></span> Password resets. To reset your password, use the <strong>Forgot Password</strong> link on the RVAPay Sign In screen.</p>",
+        "keywords": "RVAPAY, RVAPay, Rva Pay, Finance portal, Finance payment portal, registration, error, login, signup, sign up, log in\n",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs250328203329?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs240711151153",
+        "name": "Admissions Transient Occupancy and Meals",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>This request type is used to submit inquiries and/or requests relating to Admissions, Transient Occupancy and Meals (ATOM - formerly known as Admissions/Lodging/Meals or ALM) taxes online payment research or requests for waiver of penalty and interest charges.</p><p>Please refer to our sections on Meals Tax, Short Term Rental, Transient Occupancy Tax as well as our FAQs on <a href=\"https://www.rva.gov/finance/business\" target=\"_blank\">RVA.gov</a>&nbsp;before submitting a request for helpful information on such things as:</p><ul><li>Obtaining Admission, Transient Occupancy and Meals (ATOM) fee coupons (previously referred to as Admissions, Lodging, Meals - ALM)</li><li>Details on Meals Tax, Short Term Occupancy / Transient Occupancy tax, and Admissions tax</li><li>ATOM Tax rates and filing deadlines</li><li>ATOM requirements on who must file</li></ul><ul></ul>",
+        "keywords": "penalty; interest; charges; refunds; admissions; lodging; meals; transient occupancy, meals, air bnb, airbnb, vrbo, bed and breakfast, hotel, restaurant, festivals, cover charge, meals tax, admissions tax, occupancy tax, payments; online; ATOM, ALM, short term rental, short-term, motel,\n",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638563078144878990.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs240711151153?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs251208222419",
+        "name": "Business Personal Property and Manufacturing & Tools",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>This request type is used for inquiries and requests relating to Business Personal Property (BPP) and Manufacturing &amp; Tools (M&amp;T).&nbsp;When entering your request, please be sure to enter the physical address of your business.</p><p>Please refer to our sections on Business Personal Property, Machinery and Tools, as well as our FAQs on <a href=\"https://www.rva.gov/finance/business\" target=\"_blank\">RVA.gov</a>&nbsp;before submitting a request for helpful information on such things as:</p><ul><li>Opening a new business or closing a business</li><li>Business Personal Property Tax rates and filing dates</li><li>Machinery and Tools Tax rates and assessment values</li><li>Filing a Business Personal Property Tax Return</li><li>Business Personal Property Penalty and Interest charges</li><li>Business Personal Property payments</li><li>Business Personal Property Tax bill</li><li>Address Change </li><li>Business Personal Property Refunds</li></ul>",
+        "keywords": "New; business, returns, tax ,manufacturing, machinery and tools, machinery, tools, computers, furniture, fixtures; equipment, tax returns; business closing; bill, penalty, interest, charges, address, change, refunds, payments, taxes, personal, property, business \n",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon639008304757869436.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs251208222419?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs251208222916",
+        "name": "Business Professional and Occupational Licenses",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>Use this request to submit inquiries relating to </p><ul><li>Business professional and occupational license (BPOL) renewals</li><li>Payments, penalty and interest charges</li><li>Provide information about change of address or a closing of the business</li><li>Apply for Richmond's New Business Incentive program. Requires a current business license - see more details on the Finance <a href=\"https://www.rva.gov/finance/bpol-exemption\" target=\"_blank\" title=\"BPOL Incentive_Exemption\">BPOL</a> page</li></ul><p>When entering your request, you must provide all required information. </p><p>For basic inquiries, the information needed may be available on the Finance-Business License pages and FAQs on <a href=\"https://www.rva.gov/finance/business\" target=\"_blank\">RVA.gov</a>.&nbsp; These pages provide general and in-depth explanations on many topics such as:</p><ul><li>Opening a new business or closing a business</li><li>Information about Business License requirements</li><li>Business License Cost</li><li>Fees and Tax Rates for Businesses</li><li>Business Personal Property Tax Return Requirements</li><li>Business Personal Property Penalty and Interest charges</li><li>Making Business Personal Property payments</li><li>Business Personal Property Tax bill dates and tax rates</li><li>Making Address Changes</li><li>Business Personal Property Refunds</li></ul><p></p>",
+        "keywords": "Business; License;  renewals; renew business license, closed; registering; open business, closing; closing business, obtain business license, new business, new business license,  copy of bill, penalty; interest; charges; address; change; change address, address change, tax refunds; online payments; professional; business; licenses; business incentive, business exception, business tax exemption, new business incentive, new business exemption\n",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon639008304900791966.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs251208222916?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs240711141643",
+        "name": "Real Estate Taxes",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>This request type is used to submit inquiries specific to City of Richmond Real Estate Taxes such as: </p><ul><li>Tax Relief</li><li>Rehabilitation Credit</li><li>Payoff Quotes</li><li>Payment Research</li><li>Waiver of Penalty and Interest Requests</li></ul>",
+        "keywords": "Real Estate Tax, Refund, Property, Rehabilitation Credit, Tax Billing, Escrow, Tax Address Change, Address Change, Mailing Address Change, Tax Relief, Credit, Refund, Research, Payment Research, Missing Tax Payment, Tax Payment, Account History, Research, Homeowner, Title Company, Lien Holder, Mortgage Company, penalty, interest, waiver, penalty waiver, interest waiver\n",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638563048025111827.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs240711141643?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs251231203424",
+        "name": "RVA Stay - Gap Grant Program - Suspended",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "Effective January 1, 2026, the RVA Stay Gap Grant program will be temporarily suspended to allow the administration time to reevaluate the current process and how we can best move forward with this program.",
+        "keywords": "gap, gap grant, rva stay, housing, housing assistance, ",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon639028100644055681.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs251231203424?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs250106213044",
+        "name": "Real Estate Tax Relief for Older Adults or Persons with Disabilities",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>Use to request assistance with or submit a PRE-SCREEN application for the City's <strong>Real Estate Tax Relief for Older Adults or Persons with Disabilities</strong> (OAPD). Those needing more assistance may also authorize the Finance team to share details with the City's Office of Aging and Disability Services (OADS), a branch of the Department of Human Services, who can offer additional guidance.</p><p><strong>FIRST TIME APPLICANTS</strong> for tax relief can complete the Prescreen option to help determine if they meet minimum eligibility requirements for the OAPD program.&nbsp;A member of Richmond's Department of Finance Real Estate team will reach out to verify eligibility and assist with completing the more detailed application and gathering supporting documentation required. Supporting documents needed may include tax returns, financial statements, bank statements, etc. If the applicant has an authorized representative who acts on their behalf, the appropriate <a title=\"Authorized Representative Form\">Authorized Representative form</a> may also be required.&nbsp;&nbsp;</p><p>For more in-depth details and explanation of this Real Estate Relief program, visit the <a href=\"https://www.rva.gov/finance/oapd-relief\" target=\"_blank\" title=\"OADP Finance Page\">Finance OAPD Real Estate page on RVA.gov.</a></p>",
+        "keywords": "tax relief, elderly tax relief, disabled tax relief, real estate, real estate tax relief, disabled, tax credit, tax relief program, oad, oadp, oads, office of aging, office of aging and disabilities, older adult, disabled person, aging adult, ",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638717960967221783.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs250106213044?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs240711145259",
+        "name": "Delinquent Collections",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p style=\"margin: 0 0 12pt\"><strong>When to Use:</strong>&nbsp;&nbsp;<strong>&nbsp;</strong>Use to submit an inquiry related to prior year's taxes such as:&nbsp;</p><ul><li>Request waiver of penalties and interest related to late/past due taxes</li><li>Request setup of a payment plan for any taxes - (NOTE:&nbsp; EVEN if taxes are not yet past due)</li><li>Report Bankruptcy filing and request stoppage of collection proceedings</li><li>Submit inquiry related to withholding from VA State Tax Refund or VA Lottery winnings</li><li>Request research related to prior year(s) taxes</li></ul><p style=\"margin: 0 0 12pt\">The Delinquent Collections Unit also handles all initial inquiries and research related to past due prior year taxes for all Finance tax units including:</p><ul><li>Business - Admissions, Meals and Lodging</li><li>Business - Professional Occupational Licenses</li><li>Business Personal Property (furniture, fixtures, etc.)</li><li>Vehicle Personal Property - (Includes personal or business vehicles)</li><li>Real Estate Taxes - (Includes personal or business real estate)</li></ul><p><strong></strong>For inquiries related to this calendar year, please use the request for that department:</p><a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180306195936?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6\" target=\"_blank\" title=\"Link to RVA311\">Vehicle Personal Property Taxes</a><br><a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180306201738?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6\" target=\"_blank\" title=\"RVA311.com\">Business Professional Occupational Licenses</a> (BPOL)<br><a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180302162248?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6\" target=\"_blank\" title=\"RVA311.com\">Business Admissions Transient Occupancy &amp; Meals</a> (ATOM - formerly referred to as ALM)<br><a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180306195642?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6\" target=\"_blank\">Real Estate Taxes</a><br><p></p><p><strong>Did you Know?</strong>&nbsp; Delinquent Taxes that are in collection cannot be paid Online via Invoice Cloud.&nbsp; If you have received a notice from a Collection Agency other than the City of Richmond, you must pay those taxes to that Collection agency.&nbsp; &nbsp;</p><p style=\"margin: 0 0 12pt\">According to City Ordinance, Citizens and businesses are responsible for paying their taxes EVEN IF they did not receive a bill. Use this link&nbsp;<a href=\"https://www.rva.gov/finance/important-dates\" target=\"_blank\" title=\"Important Finance Dates\">Important filing and tax deadlines</a> to confirm important due dates and deadlines. It is the Citizen's or Business Owner's responsibility to know these deadlines and plan to pay.&nbsp; &nbsp;</p><p style=\"margin: 0 0 12pt\"><strong>What to Expect:</strong>&nbsp; Once your request is received, it will be assigned to an associate from our Delinquent Collections unit.&nbsp; Please provide the best contact details in case our associate needs to contact you.</p><p style=\"margin: 0 0 12pt\"><strong>DO NOT USE:</strong>&nbsp; For late or delinquent utility bills.&nbsp; Delinquent utility (gas, water, trash service) accounts are handled through Department of Public Utilities Billing.&nbsp; For more information please visit&nbsp;<a href=\"https://www.rva.gov/public-utilities/billing\" target=\"_blank\" title=\"DPU Billing page\">Department of Public Utilities</a>&nbsp;billing page.</p><p style=\"margin: 0 0 12pt\">For a complete list of available forms, please visit our forms page:&nbsp;&nbsp;<a href=\"https://www.rva.gov/finance/forms\" target=\"_blank\" title=\"Finance Forms\">City of Richmond, Department of Finance Forms&nbsp;</a></p>",
+        "keywords": "Taxes, Delinquent admissions taxes, meals taxes, lodging (hotel/motel)taxes, bankruptcy, dismissed case, discharged case, collection agency, collection attorney, late charges, penalty and interest, outsourced account, filings, gross receipts, returns, past due tax, past-due, last year, prior year, delinquent, payment plan, lottery, wages, debt set-off, seizure, garnish, wage garnishment\n",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638563069447367657.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs240711145259?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      },
+      {
+        "id": "new_cs231019200113",
+        "name": "Vehicle Personal Property Taxes",
+        "serviceGroup": "Taxes, Billing and Licensing Inquiries",
+        "serviceGroupId": "a41ff97f-28ae-4c6d-a700-30885dc4bcd6",
+        "introText": "<p>Requests related to Vehicle Personal Property taxes should be submitted through the Department of Finance's new RVA Pay system. Please use the link below to access the new system and register for an account. In RVAPay you will be able to see all outstanding bills, view all of your past bills and make payments.</p><p><a href=\"https://rvapay.rva.gov\">https://rvapay.rva.gov</a></p><p></p>",
+        "keywords": "vehicle, property tax, vehicle personal property, automobile, car, car tax, boat, trailer, truck, ",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638563330052432912.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs231019200113?gid=a41ff97f-28ae-4c6d-a700-30885dc4bcd6"
+      }
+    ]
+  },
+  {
+    "id": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+    "name": "Zoning and Code Enforcement",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/7ac87298-a4a9-44b8-a00a-83121f91959e",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=ce39c864-d47b-4d19-9acf-1a0d58425205",
+    "services": [
+      {
+        "id": "new_cs180227192811",
+        "name": "Report Private Property Maintenance Issues",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><strong>Use For: PRIVATE PROPERTY CONCERNS ONLY</strong><br><span style=\"font-size: 12px\"><br></span><strong>When to Use:</strong>&nbsp;Submit this request type for issues/concerns relating to private property maintenance such as grass over 12 inches high, brush or trees obstructing public spaces, improper tire storage, extreme exterior maintenance issues with fences, siding, roof, stairs, railings, etc. Or interior maintenance concerns such as lead paint, peeling paint, improper or unsafe lighting, stairs or hand rails etc.<br><br><strong>For more detail</strong> on the issues investigated by the City, please review these more detailed <a href=\"https://www.rva.gov/sites/default/files/Planning/PDFDocuments/CodeEnforcement/PropertyMaintenanceGuidelines.pdf\" target=\"_blank\" title=\"Link rva.gov Property Maintenance Guidelines\">Property Maintenance Guidelines</a>.<br><br><strong>Restrictions:</strong> Please note the following restrictions:</p><ul><li>Tall grass must be 1) on PRIVATE property and 2) over 12 inches before the City can take any action.</li><li>Tall grass between the sidewalk and the street is the responsibility of the property owner.</li><li>The City does not investigate interior mold issues.</li></ul><p><strong></strong></p><p><strong>What to Expect:</strong></p><ul><li>Your request will be closed to be transferred to the Zoning and Code Enforcement system and this 311 Request will be marked as Completed</li><li>An inspector will be assigned within the Zoning and Code Enforcement system and will inspect site for possible Violations within 7 business days</li><li>If a violation is found the property owner will be issued a Notice of Violation. (NOV)</li><li>The property owner will have 48 hours to correct violations.</li><li>If corrective action is not taken the city may contract work to be completed.</li><li>If the city corrects the violations, the cost of the work will be billed to the property owner.</li></ul><p><strong></strong></p><p><strong>Who is Responsible:</strong> Private Property owners are responsible for clean-up and maintenance of their property. The city may correct some violations on private property if the owner does not. If the city corrects violations the cost of the work will be billed to the owner.&nbsp;&nbsp;<br><br><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.<br></p>",
+        "keywords": "Brush, Tree, Fence, Paint, peeling, peeling paint, lead paint, stairs, stairwell, railing, hand rail, stair rail, roof, bush, bushes, shrub, shrubs, shrubbery, vegetation, overgrown, grass, weeds, foot tall, too tall, cut, standing water, pooling water, stagnant water, tires, old tires, fence, fencing, roof, disrepair, dilapidated, railing, hand railing, improper lighting, insufficient lighting, unsafe stairs, staircase, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515361987202417.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227192811?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      },
+      {
+        "id": "new_cs180227195724",
+        "name": "Report Zoning, Building Occupancy or Use",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><strong>When to Use: </strong>Use to request an inspection when improper use of a building or other zoning violations is suspected such as:</p><p>Illegal Business in Residence, Illegal short-term rental or Airbnb; Operating a Business without Permits, Parking Commercial Vehicles at Residence, Parking Requirements not met, Building Setback Violation, Too many people in a residence, Zoning Violation of a Special Use or Board of Zoning Appeals (BZA) approval, Fence too high, Buffer or Screening Requirements not met, or Dumpsters that are not screened from view.</p><p><strong>DO NOT USE:</strong>&nbsp; For tall / overgrown grass on Private Property -&nbsp; Instead, use this link to submit a <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180227192811?gid=ce39c864-d47b-4d19-9acf-1a0d58425205\" target=\"_blank\" title=\"Link to correct request type\">Private Property Maintenance Request</a> for Code Enforcement.</p><p><strong>What to Expect:</strong></p><ol><li>Your request <strong>will be closed to be transferred</strong> to the Zoning and Code Enforcement system and this 311 Request will be marked as <em>Completed. </em></li><li>An inspector will be assigned within the Zoning and Code Enforcement system and will inspect site for possible Violations within 10 business days</li><li>If a violation is found the property owner will be issued a Notice of Violation. (NOV)</li><li>The property owner may have up to 30 days to correct the violation OR appeal the inspector’s findings. If violation not resolved after 30 days, the city may take the property owner to court.</li><li>Any legal proceedings initiated may take 30-90 days to conclude.</li></ol><p><strong></strong></p><p><strong>Who is Responsible:</strong>&nbsp; Owners of Private Property are responsible for ensuring their property complies with all City Code.</p><p>For more details on the City’s Zoning regulations, check our&nbsp;<a href=\"https://www.rva.gov/sites/default/files/2021-02/Zoning%20Violations%20A-Z%20-%20February%202021.pdf\" target=\"_blank\" title=\"RVA.gov Zoning violations guide\">Zoning Violations Guide</a>.&nbsp;</p><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.",
+        "keywords": "zoning,\ncar/auto repair,\ncar/auto maintenance,illegal business,boarding house, short-term rental, airbnb, air bnb, air, bnb, short term, short, term, \nrooming house,illegal use, rooming, \nillegal density,No business permit,commercial vehicles, truck, car on private property,Setback,\nbuilding too close to the property line,People,too many people, fence, too high, fence too high, buffer, screening, dumpster, unscreened, unscreened dumpster, conceal dumpster\noccupancy,Units,Too many units,SUP,BZA,Violation,Violation of Conditions\n\n\n\n\n\n\n\n\n\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515362201537655.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227195724?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      },
+      {
+        "id": "new_cs180227201252",
+        "name": "Report Unlawful Accumulation of debris/items",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><span style=\"line-height: 107%\"></span><strong>Use For:</strong>&nbsp;<strong>PRIVATE PROPERTY CONCERNS ONLY</strong></p><p><strong>When to Use:&nbsp;</strong>Submit this request type for issues/concerns relating to accumulation of excess trash (not just a few stray pieces of garbage), junk, or debris on&nbsp;<span style=\"text-decoration-line: underline\">private&nbsp;</span><span style=\"text-decoration-line: underline\">property.</span></p><p style=\"margin-bottom: 12pt\"><strong>What to Expect:</strong></p><ol><li>Your request&nbsp;<strong>will be closed to be transferred</strong>&nbsp;to the Zoning and Code Enforcement system and this 311 Request will be marked as&nbsp;<em>Completed.</em></li><li>An inspector will be assigned within the Zoning and Code Enforcement system and will inspect site for possible Violations within 7 business days</li><li>If a violation is found the property owner will be issued a Notice of Violation. (NOV)</li><li>The property owner will have 48 hours to correct violations.</li><li>If corrective action is not taken the city may contract work to be completed.</li><li>If the city corrects the violations, the cost of the work will be billed to the property owner.</li></ol><p><strong></strong></p><p><strong>Who is Responsible:</strong>&nbsp;Private Property owners are responsible for clean-up and maintenance of their property. The city may correct some violations on private property if the owner does not. If the city corrects violations the cost of the work will be billed to the owner.&nbsp;&nbsp;</p><p><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Accumulation,\ntrash,\ngarbage,\nTires,\njunk,\ndebris,\nexcess garbage\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515362504717595.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227201252?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      },
+      {
+        "id": "new_cs180227191811",
+        "name": "Report Illegal or Excessive Signage on Private Property",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><strong></strong><strong>Use For:</strong>&nbsp;<strong>PRIVATE PROPERTY CONCERNS ONLY</strong></p><p style=\"margin-bottom: 12pt\"><strong>When to Use:&nbsp;</strong>Submit this request to report illegal or excessive signage ON PRIVATE PROPERTY.&nbsp; </p><p style=\"margin-bottom: 12pt\"><strong>What to Expect:</strong></p><ol><li>Your request will be closed to be transferred to the Zoning and Code Enforcement system and this 311 Request will be marked as&nbsp;<em>Completed. </em></li><li>An inspector will be assigned within the Zoning and Code Enforcement system and will inspect site for possible Violations within 7 business days</li><li>If a violation is found the property owner will be issued a Notice of Violation. (NOV)</li><li>The property owner may have up to 30 days to correct the violation OR appeal the inspector’s findings, after which period the city may take the property owner to court.</li><li>Any legal proceedings may take 30-90 days to conclude.</li></ol><p style=\"margin-bottom: 12pt\"><strong></strong></p><p style=\"margin-bottom: 12pt\"><strong>Who is Responsible:&nbsp;</strong>Owners of Private Property are responsible for ensuring their property complies with all City Code.</p><p style=\"margin-bottom: 12pt\">For more details on the City’s Zoning regulations, check our&nbsp;<a href=\"https://www.rva.gov/sites/default/files/2021-02/Zoning%20Violations%20A-Z%20-%20February%202021.pdf\" target=\"_blank\" title=\"RVA.gov Zoning Violations Guide\">Zoning Violations Guide</a> or visit our <a href=\"https://www.rva.gov/planning-development-review/zoning-administration\" target=\"_blank\" title=\"RVA.gov Zoning\">Zoning home page</a>.</p><p style=\"margin-bottom: 12pt\"><strong></strong><strong>Your Privacy</strong>: The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Sign, Signage, Too much signage, Excessive signage, Illegal signage, signs\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515362705784187.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227191811?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      },
+      {
+        "id": "new_cs180227195201",
+        "name": "Report Building/Structural Condition",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><strong>Use For:</strong>&nbsp;<strong>PRIVATE PROPERTY CONCERNS ONLY</strong></p><p><strong>When to Use:&nbsp;</strong>Submit this request type for issues/concerns relating to building conditions such as no electricity/water/heat, or buildings that are open/vacant/unsafe </p>&nbsp;<strong>What to Expect:</strong><ol><li>Your request&nbsp;<strong>will be closed to be transferred</strong>&nbsp;to the Zoning and Code Enforcement system and this 311 Request will be marked as&nbsp;<em>Completed.</em></li><li>An inspector will be assigned within the Zoning and Code Enforcement system and will inspect site for possible Violations within 7 business days</li><li>If a violation is found the property owner will be issued a Notice of Violation. (NOV)</li><li>The property may have up to 30 days to correct violations.</li><li>If corrective action is not taken the city may take the property owner to court.</li><li>Any legal proceedings may take 30-90 days to conclude.</li></ol><p><strong></strong></p><p><strong>Who is Responsible:</strong>&nbsp;Private Property owners are responsible for clean-up and maintenance of their property. They city may correct some violations on private property if the owner does not, such as securing open and vacant structures or removing unsafe structures. If the city corrects violations the cost of the work will be billed to the owner. </p><strong>Your Privacy:</strong> The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.",
+        "keywords": "repairs, trash,needs repair,disrepair, no electricity, no heat, no water, vacant, vacant building, unsafe, unsafe building, unsafe structure, vagrants, squatters, occupy illegally\n\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515364265783335.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227195201?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      },
+      {
+        "id": "new_cs220412162457",
+        "name": "Report Public Right of Way Concern",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><strong>Please Read.&nbsp; </strong></p><p><strong>There are many types of right of way concerns. To get your concern to right team please review below to make sure this is the correct form.</strong></p><p>For open grates or coal chutes in the sidewalk that present an&nbsp;<span style=\"color: rgba(255, 0, 0, 1)\">immediate danger</span>&nbsp;please <strong>call </strong><span style=\"line-height: 107%; color: rgba(255, 0, 0, 1)\"><strong>804-646-5100</strong></span><strong>.&nbsp;</strong>If just deteriorated and in need of repair you may submit this form.</p><p>For fallen trees or limbs blocking street, alley or sidewalk please call&nbsp;<strong style=\"color: rgba(255, 0, 0, 1)\">804-646-5100</strong>.</p><p>See&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs191003152724?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048\" target=\"_blank\">Abandoned Vehicle on City Streets</a>&nbsp;or&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs191003153359?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048\" target=\"_blank\">On Street Parking Violation</a>&nbsp;to report these concerns.</p><p>Use&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180221194457?gid=7cc71a09-423c-4e30-87c2-54cc62570dae\" target=\"_blank\">Maintain Vegetation on Public Property</a>&nbsp;for tree branches or vegetation obstructing street, alley or sidewalk.</p><p>Use&nbsp;<a href=\"http://citizen.citizenservices.org/rva311qa/requests/requestsummary?entityName=new_CS191202181726\" title=\"Construction without Permit\">Report Private Property Construction without a Permit</a>&nbsp;for private property construction without proper permits.</p><p><strong>Use</strong>&nbsp;<span style=\"color: rgba(51, 51, 51, 1); font-weight: 700; background-color: rgba(255, 255, 255, 1)\">THIS form to report</span></p><ol><li><span style=\"color: rgba(51, 51, 51, 1); font-weight: 700; background-color: rgba(255, 255, 255, 1)\">Construction Related Blockage or Hazard in the public Right of Way, including failure to provide pedestrian walkway; </span></li><li><span style=\"color: rgba(51, 51, 51, 1); font-weight: 700; background-color: rgba(255, 255, 255, 1)\">Garbage Cans frequently left blocking the Right of Way</span></li><li><span style=\"color: rgba(51, 51, 51, 1); font-weight: 700; background-color: rgba(255, 255, 255, 1)\">Restaurants that have tables or seating blocking the public Right of Way</span></li><li><span style=\"color: rgba(51, 51, 51, 1); font-weight: 700; background-color: rgba(255, 255, 255, 1)\">Signs placed in the public Right of Way</span></li><li><span style=\"color: rgba(51, 51, 51, 1)\"><span style=\"background-color: rgba(255, 255, 255, 1)\"><strong>Damaged sidewalk grate or coal chute that needs repair BUT DOES NOT pose an immediate danger</strong></span></span></li></ol><p><strong>Please be aware:</strong>&nbsp; The City does issue permits that allow for temporary obstructions to the public right of way.&nbsp; For large scale construction permits can be for long periods of time.&nbsp;&nbsp;Search the&nbsp;<a href=\"https://energov.richmondgov.com/EnerGov_Prod/selfservice#/search\" target=\"_blank\" title=\"Permit Search\">City's Online Permit Portal</a>&nbsp;to see if the address has an active permit.&nbsp;</p><p>For more information on the City's Right of Way Management team visit the&nbsp;<a href=\"https://rva.gov/public-works/right-way-management\" target=\"_blank\">City's Right of Way Management page</a></p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a&nbsp;<strong>PUBLIC&nbsp;</strong>service request.&nbsp; Although your personal information will not be displayed, details entered in the&nbsp;<strong>Description&nbsp;</strong>field will be publicly visible to all users.&nbsp;&nbsp;<em><strong>Please do not include personal information about yourself or others in this field.</strong></em></p>",
+        "keywords": "ROW, row, right of way, rights of way, right of ways, sidewalk, alley, road, street, median, hazard, blocking sidewalk, blocking, blocking traffic, blocking alley, dumpster, storage unit, pod, storage pod, coal chute, grate, sidewalk grate, restaurant tables, restaurant seats, restaurant seating, garbage cans, trash cans, pedestrian traffic, pedestrian walkway, pedestrian barrier; signs, signage, signs in ROW, signs in right of way, illegal signs, leaves in ROW, leaves in right of way, leaf piles",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637853779317164799.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs220412162457?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      },
+      {
+        "id": "new_cs200204232241",
+        "name": "Report Private Property Construction without a Permit",
+        "serviceGroup": "Zoning and Code Enforcement",
+        "serviceGroupId": "ce39c864-d47b-4d19-9acf-1a0d58425205",
+        "introText": "<p><span style=\"box-sizing: border-box; font-weight: 700; color: rgba(51, 51, 51, 1); background-color: rgba(255, 255, 255, 1)\">Use For:</span><span style=\"color: rgba(51, 51, 51, 1); font-family: &quot;Segoe UI&quot;, Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; background-color: rgba(255, 255, 255, 1)\">&nbsp;&nbsp;</span><span style=\"box-sizing: border-box; font-weight: 700; color: rgba(51, 51, 51, 1); background-color: rgba(255, 255, 255, 1)\">PRIVATE PROPERTY CONCERNS ONLY</span></p><p><strong></strong><strong>When to Use:</strong>&nbsp; Use to request investigation of active construction that does not appear to have proper permits, including building or demolition, plumbing, electrical, gas, fire alarms /sprinklers, or other mechanical work. This applies to commercial or residential PRIVATE property.&nbsp;&nbsp;</p><p><strong>Do not Use:</strong>&nbsp;For public right of way concerns (e.g. obstructions or hazards on roads, alleys or sidewalks). Please use the&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs200204224817?gid=ce39c864-d47b-4d19-9acf-1a0d58425205\" target=\"_blank\" title=\"RoW Hazard\">Report Public Right of Way Violation&nbsp;</a>request for those concerns.</p><p><strong>When Submitting your Request:</strong>&nbsp; Please be sure to indicate the exact location of construction so that proper research into whether a permit exists for the construction can take place.&nbsp;&nbsp;</p><p><strong>Please be Aware:</strong>&nbsp; &nbsp;&nbsp;</p><ul><li>Many smaller projects such as sheds, fences, decks, pools, etc., may not require a permit if they meet the exemption requirements.&nbsp; Details about exemptions can be found&nbsp;<a href=\"http://www.richmondgov.com/PlanningAndDevelopmentReview/documents/bldg_residential.pdf\" target=\"_blank\" title=\"Building Permit Code and Exemptions\">here on the City of Richmond Website</a>.</li><li>Construction Permits must be displayed in a window or otherwise near the front entrance.</li><li>Construction Permits display the date issued but do not display an expiration date because they may be renewed multiple times (provided appropriate fees paid and inspections performed.)</li><li>You may be able to determine whether a permit exists by searching the&nbsp;<a href=\"https://energov.richmondgov.com/EnerGov_Prod/selfservice#/search\" target=\"_blank\" title=\"Permit Search\">City's Online Permit Portal</a>&nbsp;for the address where the construction is occurring.</li></ul><p><strong></strong></p><p><strong>What to Expect:</strong>&nbsp; Once your request is received the Permit team will begin investigation within 2 business days. Please allow 15 business days to complete investigation and close your request.</p><ul><li>The City will research the address reported to confirm whether an active permit is on file.</li><li>If YES<ul><li>Your request will be updated to indicate the reported work is covered by permit.</li><li>If needed,&nbsp;the City will remind the permit holder to make sure permits are displayed in a visible location on the site.</li></ul></li><li>If there is NO active permit, the City will issue a Stop Work order until the proper permits are obtained. &nbsp;</li></ul><p><strong></strong></p><p><strong></strong><strong>Your Privacy:</strong>&nbsp;The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "construction, permit, without permit, illegal construction, demolition, electrical, wiring, plumbing, septic, fire alarms, sprinklers, elevator, renovation, remodeling, deck, pool, mechanical, elevator, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637164562468686924.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs200204232241?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
+      }
+    ]
+  },
+  {
+    "id": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+    "name": "Parking and Vehicles",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/dd9e743a-d1b1-4443-8788-5d875028f996",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+    "services": [
+      {
+        "id": "new_cs210505210612",
+        "name": "Parking Citation Concerns",
+        "serviceGroup": "Parking and Vehicles",
+        "serviceGroupId": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+        "introText": "<p><strong>When to Use:</strong>&nbsp; Use to request assistance with issues related to a parking citation/ticket such as DMV holds, delinquent notice received in error, or suspending late fee accrual while you contest a ticket in court. To appeal a citation received, Citizens have two options: Administrative Review or Contest in Court.</p><p><strong>Appeal Citation by Administrative Review:</strong>&nbsp; Visit the Administrative Review section under Tickets on the City's main&nbsp;<a href=\"https://www.rva.gov/public-works/parking-enterprise\" target=\"_blank\" title=\"top level page for parking\">Parking&nbsp;</a>page for more details and to submit an official request for an Administrative appeal. This type of appeal is only for citations received due to issues such as broken meter, disabled vehicle, medical emergencies, stolen license plates or stolen vehicle, missing signage, or other similar issue.&nbsp;</p><p><strong></strong><strong>Inform us you will Contest your Parking Ticket in Court:&nbsp;</strong>&nbsp;To Contest Parking tickets a court date must be scheduled in Richmond Traffic Court and you or a representative must appear in court. Submit this request to inform us you will Contest the citation in court and stop accrual of late fees and delinquent notices while you await your court date.&nbsp; Late fees do not accrue while you await your court date. However, the court may hold you responsible for paying any court fees even if the judge rules in your favor.&nbsp; If the judge rules against you, you will be responsible for paying the original Citation amount as well as any court fees as instructed by the court.</p><p><strong>Request Removal of DMV Hold for Unpaid Ticket:</strong> If you paid your parking ticket but it is not showing as properly credited, DMV may place a hold and prevent you from renewing licenses or registrations.&nbsp; You may submit this request to have your payment verified and the DMV hold removed.<br><br><strong>Delinquent Parking Citation Notice:</strong>&nbsp; If you paid your parking ticket or it was excused but you have received a letter indicating your ticket is past due and additional late penalties are being applied, submit this request so we may investigate and correct the situation.</p><p><strong>DO NOT USE for TOWING</strong>:&nbsp; If your vehicle has been towed from a City right of way or City owned parking, contact Siebert's Towing at 804-233-5757.</p><p><strong>What to Expect:</strong>&nbsp; Parking violations are managed by the Department of Public Works, Parking Division.&nbsp; Our team makes every effort to respond to all requests within five (5) business days.</p>",
+        "keywords": "delinquent parking citation notice, delinquent, parking, citation, notice, parking citation review, parking citation, parking, citation, review, administrative, parking ticket hold, parking ticket, parking, ticket, hold, DMV hold, DMV, appeal citation, appeal ticket, contest citation, contest ticket, administrative review, administrative appeal, broken meter, stolen license plates, stolen plates, stolen vehicle, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637558460008151046.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs210505210612?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
+      },
+      {
+        "id": "new_cs190805205925",
+        "name": "Request Residential Parking Permit",
+        "serviceGroup": "Parking and Vehicles",
+        "serviceGroupId": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+        "introText": "<p><strong>When to Use:</strong>&nbsp; Use this to request a new Residential Parking Permit for one of the City's four (4) designated residential parking districts.&nbsp; </p><p><strong>Residential Parking Districts:</strong>&nbsp; &nbsp;&nbsp;</p><ul><li><strong><em>Carver District</em></strong></li><li><strong><em>Fan District</em></strong></li><li><strong><em>Randolph District </em></strong></li><li><strong><em>South Mulberry District</em></strong></li><li><strong><em>Jackson Ward</em></strong></li></ul><p><strong></strong></p><p><strong>What to Expect:</strong>&nbsp; Once received, a member of the City's parking team will respond to your request within six (6) business days.&nbsp; </p><p><strong>Streamline your Submission:&nbsp; </strong>Visit the <em><strong>Forms </strong></em>tab of the&nbsp;<a href=\"https://www.rva.gov/public-works/parking-enterprise\" target=\"_blank\" title=\"Top level parking page\">RVA,gov Parking Page</a> to locate the appropriate application and cover letter templates for your parking district.&nbsp; Submit the completed and signed forms as an attachment to your request (if possible). </p><p><strong>More Information:</strong>&nbsp; For general information including maps of the defined residential districts, check out the <em><strong>Residential </strong></em>tab on the City's <a href=\"https://www.rva.gov/public-works/parking-enterprise\" target=\"_blank\" title=\"Link to City page\">RVA.gov Parking page</a>&nbsp;page.</p><p></p>",
+        "keywords": "parking, residential, residential parking, permit, parking permit, decal, parking decal, fan parking, special parking districts, special parking, carver district, carver parking, randolph district, randolph parking, south mulberry parking",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637008856590335053.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs190805205925?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
+      },
+      {
+        "id": "new_cs191003152724",
+        "name": "How to Report Abandoned Vehicles on City Streets",
+        "serviceGroup": "Parking and Vehicles",
+        "serviceGroupId": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+        "introText": "<p>Richmond Police ask that Citizens report abandoned, inoperable or improperly tagged vehicles</p><p><strong>ON CITY STREETS</strong></p><p>by contacting Non-Emergency Police at</p><p><strong>804 646-5100</strong></p><p>Abandoned, inoperable or improperly tagged vehicles located on someone's PRIVATE PROPERTY should be reported&nbsp;to Code Enforcement using&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180301161330?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048\" target=\"_blank\" title=\"Link to Code Enforcement\">Report Abandoned Vehicles on Private Property</a>&nbsp;.</p>",
+        "keywords": "vehicle, car, truck, abandoned vehicle, abandoned car, inoperable vehicle, no tags, improperly tagged, vehicle, stranded vehicle, suspicious, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637057132448456934.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003152724?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
+      },
+      {
+        "id": "new_cs180301161330",
+        "name": "Report Abandoned Vehicles on Private Property",
+        "serviceGroup": "Parking and Vehicles",
+        "serviceGroupId": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+        "introText": "<p><span style=\"line-height: 107%\"><strong>For Vehicles on Private Property Only.</strong>&nbsp; This request type is used to contact the City for concerns related to inoperable or abandoned vehicles</span>&nbsp;on&nbsp;<strong>private&nbsp;</strong><strong>property</strong>.&nbsp;Once the&nbsp;private&nbsp;property&nbsp;location is reported, an inspector from the City's\nProperty Maintenance Code Enforcement Division will inspect the reported site\nfor possible City Code Violations. </p><p>For vehicles on the street, alley or public property, please click <a href=\"https://www.rva311.com/rvaone#/request/new/new_cs191003152724?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048\" target=\"_blank\">HERE</a>.</p><p>Read more about what constitutes \"abandoned\" here check out&nbsp; Article VII regarding Abandoned and Inoperable vehicles on the&nbsp;<a href=\"http://richmond-va.elaws.us/code/coor_ptii_ch102_artvii\" title=\"Link to elaws\">VA.eLaws site.</a></p><p><strong>Your Privacy:</strong>&nbsp;The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Investigate, abandoned, vehicle, car, truck, code, junk cars, violation, untagged, untagged vehicle, unlicensed, unlicensed vehicle, no plates, no tags, old cars, old trucks, trucks, tru\n",
+        "icon": "https://e311production.blob.core.windows.net/rva311qa/RequestIcons/Icon636588926024749049.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180301161330?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
+      },
+      {
+        "id": "new_cs191003153359",
+        "name": "How to Report On-Street Parking Violation",
+        "serviceGroup": "Parking and Vehicles",
+        "serviceGroupId": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+        "introText": "<p>To&nbsp;report parking violations ON CITY STREETS please contact:</p><p>SP+ Parking Enforcement at&nbsp;&nbsp;<strong>804 649-3025</strong></p><p>This number is available Monday through Friday, 7 AM - 9PM</p><p>To report violations after hours or on weekends please contact Non Emergency Police at&nbsp;804-646-5100</p><p>Common violations include parking in front of driveways, handicap ramps or fire hydrants, parking on sidewalks or curbs, parking in crosswalks or bus stops, etc.&nbsp;&nbsp;</p><p>Other examples of Common Parking Violations can be found on RVA.gov in the Tickets section of our&nbsp;<a href=\"https://www.rva.gov/public-works/parking-enterprise#collapse-accordion-11238-1\" target=\"_blank\">Parking</a>&nbsp;page.</p><p></p>",
+        "keywords": "parking, illegal parking, hydrant, crosswalk, loading zone, blocking driveway, blocking cross walk, bus stop",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637057136395784199.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003153359?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
+      },
+      {
+        "id": "new_cs230329232552",
+        "name": "Report Issue with Scooter",
+        "serviceGroup": "Parking and Vehicles",
+        "serviceGroupId": "9dd1061f-ac01-4380-b5e3-d2dac31b4048",
+        "introText": "To report NON-EMERGENCY issues related to scooters, use the toll-free number found on each scooter. Scooters are the property of and managed by various independent vendors, so residents must contact the vendor responsible for the particular scooter in question. Scooters are not owned, managed or maintained directly by the City.&nbsp; For accidents and emergencies, call 9-1-1. For more details on the Scooter program, consult <a href=\"https://www.rva.gov/public-works/e-scooter-program\" target=\"_blank\" title=\"Scooters on RVA.gov\">DPWs E-Scooter page</a>.",
+        "keywords": "scooter, scooter abandoned, scooter safety, lime, mobility device, moped, SPIN, Bird, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon638157291527108243.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs230329232552?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
+      }
+    ]
+  },
+  {
+    "id": "8928b090-0023-4c67-8655-23cfb89690aa",
+    "name": "Request Investigation",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/18fa1f16-6ea2-48cb-bef6-771f3872aff5",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=8928b090-0023-4c67-8655-23cfb89690aa",
+    "services": [
+      {
+        "id": "new_cs180327173138",
+        "name": "Request Graffiti Investigation",
+        "serviceGroup": "Request Investigation",
+        "serviceGroupId": "8928b090-0023-4c67-8655-23cfb89690aa",
+        "introText": "<p><strong>When to Use:</strong>&nbsp; Use to request assistance or investigation or report known information regarding graffiti concerns.\n</p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Graffiti, public property, graffiti, private property graffiti, nuisance, blight, obscene, vulgar, profanity, neighborhood, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515366880929710.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180327173138?gid=8928b090-0023-4c67-8655-23cfb89690aa"
+      },
+      {
+        "id": "new_cs180327174102",
+        "name": "Report Speed Violations in Community",
+        "serviceGroup": "Request Investigation",
+        "serviceGroupId": "8928b090-0023-4c67-8655-23cfb89690aa",
+        "introText": "<p><strong>DO NOT USE</strong> <strong>FOR SPEEDING HAPPENING NOW OR THAT JUST HAPPENED.</strong> </p><p>This requests is for reporting frequent and repeated speeding violations or patterns within a neighborhood. Requests are reviewed periodically to identify problem areas for potential monitoring. </p><p><strong>DO NOT USE</strong> for emergency concerns.&nbsp; For an emergency - call 9-1-1.&nbsp;</p><p><strong>BE ADVISED</strong>: these requests are not monitored in \"real-time\" and is not for reporting speeding issues happening now or that just happened. </p><p><strong>PLEASE NOTE:</strong>&nbsp; This is a PUBLIC service request.&nbsp; Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.&nbsp; Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Speeding, Police, speed enforcement, speed violations, speed, exceeding speed limit, wreckless, dangerous driving, drivers, racing, community,\n",
+        "icon": "https://e311production.blob.core.windows.net/rva311qa/RequestIcons/Icon636589731116754396.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180327174102?gid=8928b090-0023-4c67-8655-23cfb89690aa"
+      },
+      {
+        "id": "new_cs190424173915",
+        "name": "Report Clearing or Erosion Issues on Construction Site",
+        "serviceGroup": "Request Investigation",
+        "serviceGroupId": "8928b090-0023-4c67-8655-23cfb89690aa",
+        "introText": "<p><strong>When to Use:&nbsp; </strong>Use this request when: 1) earth work <strong>on a construction site</strong> such as land clearing, grading, tree clearing, or construction work<span>&nbsp; </span>is causing erosion or sediment to leave the site, and/or 2)<span>&nbsp; </span>the work site has insufficient or no protection to prevent sediment leaving the site.<span>&nbsp; </span></p><p><span></span><strong>This request does not apply to</strong> removal of asphalt, pothole repairs, road regrading or repair, or issues from properties not under construction.</p><p><strong>Please Note</strong>:<span>&nbsp; </span>This is a PUBLIC service request.<span>&nbsp; </span>Although your personal information will not be displayed, details entered in the Description field will be publicly visible to all users.<span>&nbsp; </span>Please do not include personal information about yourself or others in this field.</p><p style=\"font-variant-numeric: normal; font-variant-east-asian: normal; margin-bottom: 16px\"></p>",
+        "keywords": "sediment, construction, erosion, construction site, land clearing, clearing, tree clearing, deforestation, land disturbance, land disturbing, construction activity, tree removal, Chesapeake Bay, buffer, grading, subdivision construction, earth work\n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637081727380546063.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs190424173915?gid=8928b090-0023-4c67-8655-23cfb89690aa"
+      },
+      {
+        "id": "new_cs191018165404",
+        "name": "How to Report a Gas Leak",
+        "serviceGroup": "Request Investigation",
+        "serviceGroupId": "8928b090-0023-4c67-8655-23cfb89690aa",
+        "introText": "<p><span style=\"color: rgba(41, 69, 107, 1); background-color: rgba(255, 255, 255, 1)\">All gas leaks are handled as emergencies.&nbsp;</span><span style=\"color: rgba(41, 69, 107, 1); background-color: rgba(255, 255, 255, 1)\">If you think you smell a natural gas leak,&nbsp;</span><span style=\"color: rgba(41, 69, 107, 1); background-color: rgba(255, 255, 255, 1)\">immediately&nbsp;</span><span style=\"color: rgba(41, 69, 107, 1); background-color: rgba(255, 255, 255, 1)\">call</span></p><p><strong><span style=\"color: rgba(255, 0, 0, 1); background: rgba(255, 255, 255, 1); font-size: large\">(804)646-4646</span></strong></p><p style=\"text-align: left\"><span style=\"color: rgba(41, 69, 107, 1); background-color: rgba(255, 255, 255, 1)\">Natural gas has no odor, so a harmless chemical is added to create the distinctive odor of rotten eggs.</span></p><p style=\"text-align: left\"><br><span style=\"color: rgba(41, 69, 107, 1); background-color: rgba(255, 255, 255, 1)\"></span></p>",
+        "keywords": "gas, natural gas, gas leak, leak, emergency",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191018165404?gid=8928b090-0023-4c67-8655-23cfb89690aa"
+      },
+      {
+        "id": "new_cs210225233313",
+        "name": "Report a Water Leak or Missing Utility Cover",
+        "serviceGroup": "Request Investigation",
+        "serviceGroupId": "8928b090-0023-4c67-8655-23cfb89690aa",
+        "introText": "<p><strong>Water leaks and missing utility covers are handled as emergencies and should be reported immediately.</strong> </p><p><span style=\"font-weight: bolder; color: rgba(50, 49, 48, 1); font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgba(255, 255, 255, 1)\"><span style=\"color: rgba(255, 0, 0, 1)\">To ensure response within 12 hours please call</span>&nbsp;</span><span style=\"font-weight: bolder; color: rgba(50, 49, 48, 1); font-family: &quot;Open Sans&quot;, &quot;Segoe UI&quot;, &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; font-size: 14px; background-color: rgba(255, 255, 255, 1)\"><span style=\"color: rgba(255, 0, 0, 1)\">804-646-4646 and press 1. This number is available 24 hours a day.</span></span></p><p></p>",
+        "keywords": "water, leak, meter, main, missing cap, missing lid, cap, lid, missing cover",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs210225233313?gid=8928b090-0023-4c67-8655-23cfb89690aa"
+      }
+    ]
+  },
+  {
+    "id": "8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+    "name": "Animals, Vermin and Infestations",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/714300c5-0a92-4fdc-8ad2-ac3bf6023e35",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+    "services": [
+      {
+        "id": "new_cs191003155944",
+        "name": "Contact Animal Care and Control",
+        "serviceGroup": "Animals, Vermin and Infestations",
+        "serviceGroupId": "8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+        "introText": "<p>If you have a concern related to animals, the Richmond Animal Care and Control center asks that you contact them directly at</p><p><strong>804-646-5573</strong></p><p>There is also more information available on their RVA.gov page accessible here:&nbsp;<a href=\"https://www.rva.gov/animal-care-control/about-us\" target=\"_blank\" title=\"Richmond Animal Care and Control\">RACC</a></p><p>To report dangerous animals or urgent issues&nbsp;<strong>after normal business hours</strong>, please contact non-Emergency Police at</p><p><strong>804-646-5100</strong></p>",
+        "keywords": "animal, shelter, animal shelter, abuse, animal abuse, neglect, animal neglect, vicious, pet, pets, dog, cat, rabbit, snake, chickens, ",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637493677203906540.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003155944?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415"
+      },
+      {
+        "id": "new_cs180227193318",
+        "name": "Report Infestation on Private Property",
+        "serviceGroup": "Animals, Vermin and Infestations",
+        "serviceGroupId": "8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+        "introText": "<p><strong>Use For:</strong>&nbsp;<strong>PRIVATE PROPERTY CONCERNS ONLY</strong></p><p style=\"margin-bottom: 12pt\"><strong>When to Use:&nbsp;</strong>Submit this request type for issues/concerns relating to infestations of pests, vermin or mosquitoes on PRIVATE PROPERTY. </p><p style=\"margin-bottom: 12pt\"><strong style=\"font-family: Verdana, sans-serif; font-size: 9pt\">What to Expect:</strong></p><ol><li>Your request&nbsp;<strong>will be closed to be transferred</strong>&nbsp;to the Zoning and Code Enforcement system and this 311 Request will be marked as&nbsp;<em>Completed.</em></li><li>An inspector will be assigned within the Zoning and Code Enforcement system and will inspect site for possible Violations within 7 business days</li><li>If a violation is found the property owner will be issued a Notice of Violation. (NOV)</li><li>The property owner will have 48 hours to correct violations.</li><li>If corrective action is not taken the city may contract work to be completed.</li><li>If the city corrects the violations, the cost of the work will be billed to the property owner.</li></ol><p style=\"margin-bottom: 12pt\"><strong></strong></p><p style=\"margin-bottom: 12pt\"><strong>Who is Responsible:</strong>&nbsp;Private Property owners are responsible for clean-up and maintenance of their property. The city may correct some violations on private property if the owner does not. If the city corrects violations the cost of the work will be billed to the owner.</p><p style=\"margin-bottom: 12pt\"><strong>Your Privacy:&nbsp;</strong>The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Insect, Insects, Pest, Pests, Vermin, Stagnant water, Mosquitos, infestations, rats, mice, roaches, bees, wasps, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515367392621808.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227193318?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415"
+      },
+      {
+        "id": "new_cs180228160021",
+        "name": "Report Vermin from Sewer",
+        "serviceGroup": "Animals, Vermin and Infestations",
+        "serviceGroupId": "8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+        "introText": "<p><strong>When to Use</strong>:&nbsp; This request type is used to submit the location where vermin (rats, mice, roaches) are coming from a City sewer. When submitting the location, please be as specific as possible.&nbsp;</p><p><span style=\"line-height: 107%\"><strong>Emergency</strong>?&nbsp; For sewer emergencies that pose a danger to person(s) or </span><span style=\"line-height: 107%\">property</span><span style=\"line-height: 107%\">, please call <strong>804-646-4646</strong>.</span></p><p><strong>Your Privacy</strong>: The personal contact information provided in this request will never be displayed. However, this is a PUBLIC request so any details entered in the Description field will be publicly visible to all users. Please do not include personal information about yourself or others in this field.</p>",
+        "keywords": "Vermin, sewer, system, rat, mice, roaches, bugs\n",
+        "icon": "https://e311production.blob.core.windows.net/rva311qa/RequestIcons/Icon636588879289232739.png",
+        "visibility": 0,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180228160021?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415"
+      },
+      {
+        "id": "new_cs191101040445",
+        "name": "How to Report Mosquitoes on Public Property",
+        "serviceGroup": "Animals, Vermin and Infestations",
+        "serviceGroupId": "8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+        "introText": "<p style=\"margin:0in 0in 12pt;\">Mosquito concerns are assessed and addressed by different departments within the city depending on their origin. To help us get your request to the proper team, please use the links below and complete the request that best indicates where you suspect the mosquitoes are coming from.</p><p style=\"margin:0in 0in 12pt;\">For Mosquitoes resulting from issues with standing stormwater, click here to&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180228212904?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa\" title=\"Link to Stormwater Request\" target=\"_blank\">Report Standing Water</a>&nbsp;issues.<o:p></o:p></p><p style=\"margin:0in 0in 9pt;\">For Mosquitoes resulting from issues on someone&rsquo;s PRIVATE property click here to&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180227193318?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415\" title=\"Private Infestation SRT\" target=\"_blank\">Report an Infestation&nbsp;</a>issue.</p><p style=\"margin:0in 0in 9pt;\">For Mosquitoes in potholes or alley ruts, please submit the appropriate&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180301154109?gid=f803d865-2aac-4172-af11-4c9c01239457\" title=\"Repair Road SRT\" target=\"_blank\">Repair Road</a><span style=\"color:#5b9bd5;\">&nbsp;</span>or&nbsp;<a href=\"https://www.rva311.com/rvaone#/request/new/new_cs180221194032?gid=f803d865-2aac-4172-af11-4c9c01239457\" title=\"Repair Alley SRT\" target=\"_blank\"> Repair Alley</a><span style=\"color:#5b9bd5;\">&nbsp;</span>request.</p>",
+        "keywords": "Mosquitoes, standing water, mosquitoes breeding, breeding, stagnant, stagnant water",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637081778852478883.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191101040445?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415"
+      },
+      {
+        "id": "new_cs191003160319",
+        "name": "How to Request Dead Animal Removal",
+        "serviceGroup": "Animals, Vermin and Infestations",
+        "serviceGroupId": "8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415",
+        "introText": "<p>To report or request removal of a dead animal, contact Richmond Animal Care and Control at</p><p><strong>804-646-5573</strong></p><p>To report dangerous animals or urgent issues&nbsp;<strong>after normal business hours</strong>, please contact non-Emergency Police at&nbsp;</p><p><strong>804-646-5100</strong></p>",
+        "keywords": "dead animal, carcass, animal carcass, roadkill, road kill, vultures, rotting, maggots, smell, odor, removal,",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637057153989863760.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191003160319?gid=8e1ea3a5-c4e2-4ab0-ae0f-7e2adb0c1415"
+      }
+    ]
+  },
+  {
+    "id": "2699cbbc-2e73-4831-8a93-9c592b2b4b94",
+    "name": "Request Support Services",
+    "icon": "https://e311production.blob.core.windows.net/rvaone/service-icons/6f8257de-93c4-4833-bde1-1847357a8851",
+    "source": "https://www.rva311.com/rvaone#/request/new?gid=2699cbbc-2e73-4831-8a93-9c592b2b4b94",
+    "services": [
+      {
+        "id": "new_cs180227144317",
+        "name": "Seeking Worker Support",
+        "serviceGroup": "Request Support Services",
+        "serviceGroupId": "2699cbbc-2e73-4831-8a93-9c592b2b4b94",
+        "introText": "<p><strong>When to Use</strong>: Use to submit a request or inquiry to the City for assistance with applying for benefit programs through Social Services, such as: </p><ul><li>Check the status of benefits application</li><li>Update change of address</li><li>Change telephone number</li><li>Request follow-up from your case worker</li><li>Schedule or reschedule a telephone or face-to-face interview for benefits renewal</li></ul><p><strong></strong><strong>More Information:</strong> For additional information on the Department of Social Services and Worker Support, please visit RVA311's <span style=\"line-height: 107%\"><a href=\"https://internal.citizenservices.org/rvaone/home/faq\" target=\"_blank\">FAQs</a></span></p>",
+        "keywords": "new application, pending application, SNAP, TANF, relief, burial, burial assistance, funeral, funeral assistance, cooling assistance, heating assistance, grant, fuel assistance, child care, assistance, Medicaid, benefits, services, programs, address, contact number, persona info., moved, transfer case, missed appointment, schedule appointment. renewal, interim, case worker, social worker, social, social services, \n",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637515367101794824.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs180227144317?gid=2699cbbc-2e73-4831-8a93-9c592b2b4b94"
+      },
+      {
+        "id": "new_cs240403181657",
+        "name": "Request Aging and Disability Care and Support",
+        "serviceGroup": "Request Support Services",
+        "serviceGroupId": "2699cbbc-2e73-4831-8a93-9c592b2b4b94",
+        "introText": "<p>This request type is used to submit a request or inquiry to the City for assistance applying for benefit programs through the Office of Aging and Disability.</p><p>The agency assists adults 55 and older and persons 18 or older with disabilities in exploring available programs, confirming eligibility requirements and submitting applications or requests for services from City departments and/or outside agencies. This includes programs related to:</p><ul><li>Housing Insecurity or unsheltered persons </li><li>Food insecurity or meal delivery assistance </li><li>Transportation Assistance</li><li>Other benefit assistance based on specific needs</li></ul><p>Once your request has been submitted, someone from the Office of Aging and Disabilities will contact you within two (2) business days to help identify available programs and resources.&nbsp; For additional information on the Office of Aging and Disability programs and services, visit our page on <a href=\"https://rva.gov/human-services/office-aging\" target=\"_blank\" title=\"OADS Page - RVA.gov\">RVA.gov</a></p>",
+        "keywords": "age, aging, elderly, old, disability, assistance, disabled, handicapped, handicap, unsheltered, homeless, soup kitchens, meals, meal delivery, medical transportation, medical transport, ride share, disability benefits, new application, pending application, benefits, services, elderly programs",
+        "icon": "https://e311production.blob.core.windows.net/1e1606e1-4220-45b6-982d-40f4a7305158/RequestIcons/Icon638477653189426284.png",
+        "visibility": 1,
+        "category": 0,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs240403181657?gid=2699cbbc-2e73-4831-8a93-9c592b2b4b94"
+      },
+      {
+        "id": "new_cs250203142325",
+        "name": "Family Crisis Fund - Water Recovery - PAUSED",
+        "serviceGroup": "Request Support Services",
+        "serviceGroupId": "2699cbbc-2e73-4831-8a93-9c592b2b4b94",
+        "introText": "<p>Acceptance of Water Crisis Fund applications has been paused. The City of Richmond projects that 100% of currently available Water Recovery Funds will be committed to Richmonders financially impacted by the water crisis. Over 2200 requests have been received since January 31st.</p><p><strong>Note</strong>: Due to the large number of requests, it may take 10-15 business days to contact those who have already applied. </p><p>For more information, please see t<a href=\"https://rva.gov/press-releases-and-announcements/news/city-richmond-expects-100-water-recovery-assistance-funds-now\" target=\"_blank\" title=\"Press Page RVA.gov\">he announcement on RVA.gov</a>.</p>",
+        "keywords": "water fund relief, water crisis relief, water recovery fund, recovery, water fund paused,",
+        "icon": "https://res.cdn.avepointonlineservices.com/citizen/staticcontents/Img/RequestType/default_40x40.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs250203142325?gid=2699cbbc-2e73-4831-8a93-9c592b2b4b94"
+      },
+      {
+        "id": "new_cs191018154917",
+        "name": "How to Request Police Attendance at Community Event",
+        "serviceGroup": "Request Support Services",
+        "serviceGroupId": "2699cbbc-2e73-4831-8a93-9c592b2b4b94",
+        "introText": "<p>Use to request attendance by the Richmond Police at your community meeting or event. Contact the Sector Lieutenant for the Sector where the event will be held to arrange scheduling.</p><p>To verify the correct sector and appropriate contact information, visit the <a href=\"https://www.rva.gov/police/patrol-services\" target=\"_blank\" title=\"Link to Police Page\">Richmond Police Patrol Services page</a></p>",
+        "keywords": "police, speaker, presenter, present, speak, Richmond police, police attendance, police presence, community meeting, special event, community event,",
+        "icon": "https://e311production.blob.core.windows.net/rvaone/RequestIcons/Icon637070123471602089.png",
+        "visibility": 0,
+        "category": 1,
+        "source": "https://www.rva311.com/rvaone#/request/new/new_cs191018154917?gid=2699cbbc-2e73-4831-8a93-9c592b2b4b94"
+      }
+    ]
+  }
+]
