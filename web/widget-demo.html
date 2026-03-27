@@ -3,153 +3,611 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Southside Community Center — Richmond, VA</title>
+    <title>Richmond, VA - Official City Website</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: Georgia, 'Times New Roman', serif; background: #faf9f6; color: #2d2d2d; }
+        body { font-family: 'Open Sans', -apple-system, sans-serif; background: #fff; color: #1a1a1a; }
+        a { color: inherit; text-decoration: none; }
 
-        /* Fake partner site header */
+        /* ── Header ── */
         .site-header {
-            background: #1a3c5e;
-            color: white;
-            padding: 16px 24px;
+            background: #1B3A5C;
+            padding: 0 40px;
             display: flex;
             align-items: center;
-            gap: 16px;
+            justify-content: space-between;
+            height: 90px;
+            position: relative;
         }
-        .site-header h1 { font-size: 1.3rem; font-weight: 700; }
-        .site-header .tagline { font-size: 0.85rem; opacity: 0.7; }
-        .site-nav {
-            background: #15324d;
-            padding: 0 24px;
+        /* Red accent line under header */
+        .site-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #8B1A1A;
+        }
+        .city-seal {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(180deg, #2a4a6e 0%, #1B3A5C 100%);
+            border: 3px solid rgba(255,255,255,0.5);
             display: flex;
-            gap: 0;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            position: relative;
+            overflow: hidden;
         }
-        .site-nav a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            padding: 12px 16px;
+        .city-seal-inner {
+            text-align: center;
+            color: #fff;
+            line-height: 1;
+        }
+        .city-seal-inner .top { font-size: 6.5px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
+        .city-seal-inner .icon { font-size: 26px; margin: 2px 0; }
+        .city-seal-inner .bottom { font-size: 5.5px; font-weight: 600; letter-spacing: 1px; }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .header-nav a {
+            color: rgba(255,255,255,0.9);
+            padding: 8px 16px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: color 0.15s;
+        }
+        .header-nav .sep {
+            color: rgba(255,255,255,0.3);
+            font-weight: 300;
+            font-size: 1.2rem;
+        }
+        .header-nav a:hover { color: #fff; }
+
+        .header-search {
+            display: flex;
+            align-items: center;
+        }
+        .header-search input {
+            background: #fff;
+            border: none;
+            padding: 10px 14px;
             font-size: 0.85rem;
-            font-family: -apple-system, sans-serif;
-            transition: background 0.2s;
+            font-family: inherit;
+            width: 180px;
+            outline: none;
+            color: #333;
         }
-        .site-nav a:hover { background: rgba(255,255,255,0.1); color: white; }
-        .site-nav a.active { color: white; border-bottom: 2px solid #f59e0b; }
+        .header-search input::placeholder { color: #999; }
+        .header-search button {
+            background: #8B1A1A;
+            border: none;
+            width: 42px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            color: #fff;
+            font-size: 16px;
+            transition: background 0.15s;
+        }
+        .header-search button:hover { background: #a02020; }
 
-        /* Fake page content */
-        .page-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 40px 24px 120px;
+        .burger {
+            width: 38px;
+            height: 38px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 4px;
         }
-        .page-content h2 {
-            font-size: 1.8rem;
+        .burger span {
+            display: block;
+            width: 26px;
+            height: 3px;
+            background: #fff;
+            border-radius: 2px;
+        }
+
+        /* ── Hero ── split layout */
+        .hero {
+            display: flex;
+            min-height: 520px;
+        }
+
+        /* Left panel — navy with content */
+        .hero-left {
+            flex: 0 0 52%;
+            background: #1B3A5C;
+            padding: 48px 48px 48px 48px;
+            display: flex;
+            flex-direction: column;
+        }
+        .hero-welcome {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2px;
+        }
+        .hero-city {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 28px;
+        }
+        .quick-links-label {
+            font-size: 0.95rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #fff;
             margin-bottom: 16px;
-            color: #1a3c5e;
         }
-        .page-content p {
+
+        /* Service cards */
+        .svc-cards { display: flex; flex-direction: column; gap: 12px; }
+        .svc-card {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #fff;
+            border-radius: 4px;
+            padding: 18px 20px;
+            cursor: pointer;
+            border-left: 4px solid #8B1A1A;
+            transition: transform 0.15s, box-shadow 0.15s;
+        }
+        .svc-card:hover {
+            transform: translateX(4px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .svc-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 6px;
+            background: #8B1A1A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .svc-icon svg { width: 24px; height: 24px; }
+        .svc-card h3 {
             font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 16px;
-            color: #4a4a4a;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 2px;
         }
-        .page-content .hours-box {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 20px 24px;
-            margin: 24px 0;
+        .svc-card p {
+            font-size: 0.82rem;
+            color: #666;
+            line-height: 1.4;
         }
-        .hours-box h3 { font-size: 1rem; color: #1a3c5e; margin-bottom: 8px; }
-        .hours-box p { font-size: 0.9rem; margin-bottom: 4px; }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin: 24px 0;
-        }
-        .service-card {
-            background: white;
-            border: 1px solid #e5e5e5;
-            border-radius: 8px;
-            padding: 20px;
-        }
-        .service-card h4 { font-size: 0.95rem; color: #1a3c5e; margin-bottom: 6px; }
-        .service-card p { font-size: 0.85rem; line-height: 1.5; margin: 0; }
 
-        /* Demo banner */
+        /* Right panel — photo with overlay carousel */
+        .hero-right {
+            flex: 1;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-photo {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        /* Gradient overlay for the photo side from left */
+        .hero-right::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 80px;
+            height: 100%;
+            background: linear-gradient(90deg, #1B3A5C, transparent);
+            z-index: 1;
+        }
+        /* Carousel card overlay */
+        .carousel-card {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(4px);
+            border-radius: 8px;
+            padding: 28px 32px;
+            max-width: 340px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.2);
+            z-index: 2;
+            text-align: left;
+        }
+        .carousel-card h3 {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #1a1a1a;
+            margin-bottom: 6px;
+            line-height: 1.2;
+        }
+        .carousel-card p {
+            font-size: 0.85rem;
+            color: #5b7a9d;
+            line-height: 1.4;
+        }
+        .carousel-play {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #8B1A1A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 14px;
+            cursor: pointer;
+            transition: transform 0.15s;
+        }
+        .carousel-play:hover { transform: scale(1.08); }
+
+        /* Carousel arrows */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: rgba(0,0,0,0.3);
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 3;
+            font-size: 18px;
+            transition: background 0.15s;
+        }
+        .carousel-arrow:hover { background: rgba(0,0,0,0.5); }
+        .carousel-arrow.left { left: 12px; }
+        .carousel-arrow.right { right: 12px; }
+
+        /* Carousel dots */
+        .carousel-dots {
+            position: absolute;
+            bottom: 16px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+            z-index: 3;
+        }
+        .carousel-dots span {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            border: 2px solid rgba(255,255,255,0.6);
+            background: transparent;
+            cursor: pointer;
+        }
+        .carousel-dots span.active {
+            background: #8B1A1A;
+            border-color: #8B1A1A;
+        }
+
+        /* ── Content below hero ── */
+        .content-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 48px 40px 140px;
+        }
+        .content-section h2 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #1B3A5C;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+        }
+        .dept-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+        .dept-card {
+            background: #f8f8f8;
+            border-radius: 4px;
+            padding: 18px 20px;
+            border-left: 4px solid #1B3A5C;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .dept-card:hover { background: #f0f0f0; }
+        .dept-card h4 { font-size: 0.9rem; font-weight: 700; color: #1B3A5C; margin-bottom: 4px; }
+        .dept-card p { font-size: 0.8rem; color: #777; line-height: 1.4; }
+
+        /* ── Footer ── */
+        .site-footer {
+            background: #1B3A5C;
+            color: rgba(255,255,255,0.6);
+            padding: 36px 40px 20px;
+        }
+        .site-footer::before {
+            content: '';
+            display: block;
+            height: 4px;
+            background: #8B1A1A;
+            margin: -36px -40px 32px;
+        }
+        .footer-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 28px;
+            margin-bottom: 28px;
+        }
+        .footer-col h4 {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 12px;
+        }
+        .footer-col a {
+            display: block;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            padding: 3px 0;
+            transition: color 0.15s;
+        }
+        .footer-col a:hover { color: #fff; }
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.35);
+        }
+
+        /* ── Demo banner ── */
         .demo-banner {
-            background: #fef3c7;
-            border-bottom: 1px solid #f59e0b;
+            background: #ecfd06;
             padding: 10px 24px;
             text-align: center;
-            font-family: -apple-system, sans-serif;
             font-size: 0.8rem;
-            color: #92400e;
+            color: #1a1a1a;
+            font-weight: 600;
         }
-        .demo-banner strong { color: #78350f; }
+
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .hero { flex-direction: column; }
+            .hero-left { flex: none; }
+            .hero-right { min-height: 300px; }
+            .dept-grid { grid-template-columns: 1fr 1fr; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+            .header-nav { display: none; }
+        }
+        @media (max-width: 480px) {
+            .dept-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .hero-left { padding: 32px 24px; }
+        }
     </style>
 </head>
 <body>
 
     <div class="demo-banner">
-        <strong>DEMO:</strong> This is a fake partner website showing how the Hey804 widget embeds on any site.
-        Look at the bottom-right corner — that's the widget.
+        <strong>DEMO:</strong> This mockup shows how the Hey804 widget would look on rva.gov. Check the bottom-right corner.
     </div>
 
+    <!-- Header -->
     <header class="site-header">
-        <div>
-            <h1>Southside Community Center</h1>
-            <div class="tagline">Serving the Southside Richmond community since 1987</div>
+        <div class="city-seal">
+            <div class="city-seal-inner">
+                <div class="top">CITY OF</div>
+                <div class="icon">&#9877;</div>
+                <div class="bottom">RICHMOND</div>
+            </div>
         </div>
+
+        <nav class="header-nav">
+            <a href="#">News & Alerts</a>
+            <span class="sep">|</span>
+            <a href="#">Jobs</a>
+            <span class="sep">|</span>
+            <a href="#">Visit RVA</a>
+        </nav>
+
+        <div class="header-search">
+            <input type="text" placeholder="Search our site">
+            <button>&#128269;</button>
+        </div>
+
+        <button class="burger">
+            <span></span><span></span><span></span>
+        </button>
     </header>
 
-    <nav class="site-nav">
-        <a href="#" class="active">Home</a>
-        <a href="#">Programs</a>
-        <a href="#">Food Pantry</a>
-        <a href="#">Youth Services</a>
-        <a href="#">Contact</a>
-    </nav>
-
-    <div class="page-content">
-        <h2>Welcome to the Southside Community Center</h2>
-        <p>We serve over 2,000 families in the Southside Richmond area with food assistance, youth programs, job readiness training, and community support services.</p>
-
-        <p>Many of our visitors need help navigating city services — paying tax bills, applying for SNAP benefits, understanding utility assistance programs, or finding emergency housing. We partnered with Hey804 to provide instant answers right here on our website.</p>
-
-        <div class="hours-box">
-            <h3>Hours & Location</h3>
-            <p><strong>Address:</strong> 4100 Hull Street Road, Richmond, VA 23224</p>
-            <p><strong>Hours:</strong> Monday-Friday 8:00 AM - 5:00 PM, Saturday 9:00 AM - 1:00 PM</p>
-            <p><strong>Phone:</strong> (804) 555-0100</p>
+    <!-- Hero — split layout like rva.gov -->
+    <section class="hero">
+        <!-- Left: navy panel with welcome + service cards -->
+        <div class="hero-left">
+            <div class="hero-welcome">Welcome to</div>
+            <div class="hero-city">Richmond, VA</div>
+            <div class="quick-links-label">Quick Links</div>
+            <div class="svc-cards">
+                <div class="svc-card">
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <div>
+                        <h3>City Services</h3>
+                        <p>Browse City services by topic.</p>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+                    </div>
+                    <div>
+                        <h3>Richmond Ready Alerts</h3>
+                        <p>Get notified, stay informed.</p>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+                    </div>
+                    <div>
+                        <h3>Pay online</h3>
+                        <p>From real estate taxes to utility bills, pay your bills online.</p>
+                    </div>
+                </div>
+                <div class="svc-card">
+                    <div class="svc-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    </div>
+                    <div>
+                        <h3>RVA 311</h3>
+                        <p>Submit a request for City services.</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <h2>Our Services</h2>
-        <div class="services-grid">
-            <div class="service-card">
-                <h4>Food Pantry</h4>
-                <p>Open Tuesdays and Thursdays. Bring photo ID. No appointment needed.</p>
+        <!-- Right: Richmond skyline photo with carousel overlay -->
+        <div class="hero-right">
+            <!-- Gradient skyline placeholder using CSS -->
+            <div style="width:100%;height:100%;background:linear-gradient(180deg,#D4956B 0%,#C88B63 20%,#7BA3C4 40%,#4A7A9B 55%,#2D6B50 70%,#1E5A3A 85%,#1B3A5C 100%);position:relative;">
+                <!-- Simplified skyline silhouette -->
+                <svg style="position:absolute;bottom:0;left:0;right:0;width:100%;height:45%;opacity:0.25" viewBox="0 0 600 200" preserveAspectRatio="none" fill="#0a1a2a">
+                    <path d="M0 200V140h20v-20h8v20h15V100h8v40h25V110h8v30h30V90h8V70h5v20h8v50h25V120h8v20h15v-15h8v15h25V95h8v45h15V110h5v30h20v-15h8v15h30V100h8v40h20V110h5v30h25V90h8v50h20V120h5v20h25v-20h8v20h15V105h8v35h20V120h5v20h30v60H0z"/>
+                </svg>
+                <!-- River reflection hint -->
+                <div style="position:absolute;bottom:0;left:0;right:0;height:15%;background:linear-gradient(180deg,rgba(74,122,155,0.3),rgba(27,58,92,0.6))"></div>
             </div>
-            <div class="service-card">
-                <h4>Benefits Navigation</h4>
-                <p>Help applying for SNAP, Medicaid, and housing assistance. Walk-ins welcome.</p>
+
+            <!-- Carousel card -->
+            <div class="carousel-card">
+                <h3>Mayor's State of the City</h3>
+                <p>Click to view the recording on YouTube.</p>
+                <div class="carousel-play">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                </div>
             </div>
-            <div class="service-card">
-                <h4>Youth Programs</h4>
-                <p>After-school tutoring, summer camp, and mentorship for ages 6-18.</p>
-            </div>
-            <div class="service-card">
-                <h4>Job Readiness</h4>
-                <p>Resume workshops, interview prep, and computer skills training.</p>
+
+            <!-- Carousel nav -->
+            <div class="carousel-arrow left">&#8249;</div>
+            <div class="carousel-arrow right">&#8250;</div>
+            <div class="carousel-dots">
+                <span class="active"></span>
+                <span></span>
+                <span></span>
+                <span class="active" style="background:#8B1A1A;border-color:#8B1A1A"></span>
             </div>
         </div>
+    </section>
 
-        <p>Need help with a city service? <strong>Click the button in the bottom-right corner</strong> or text <strong>(804) 808-1083</strong> from your phone.</p>
+    <!-- Content below -->
+    <div class="content-section">
+        <h2>City Departments</h2>
+        <div class="dept-grid">
+            <div class="dept-card">
+                <h4>Finance & Revenue</h4>
+                <p>Tax payments, assessments, and financial services.</p>
+            </div>
+            <div class="dept-card">
+                <h4>Public Utilities</h4>
+                <p>Water, gas, and wastewater services for residents.</p>
+            </div>
+            <div class="dept-card">
+                <h4>Social Services</h4>
+                <p>SNAP, Medicaid, housing assistance, and family support.</p>
+            </div>
+            <div class="dept-card">
+                <h4>Public Works</h4>
+                <p>Streets, sidewalks, trash collection, and recycling.</p>
+            </div>
+            <div class="dept-card">
+                <h4>Parks & Recreation</h4>
+                <p>Programs, parks, trails, and community centers.</p>
+            </div>
+            <div class="dept-card">
+                <h4>Housing & Community</h4>
+                <p>Affordable housing, neighborhood revitalization.</p>
+            </div>
+        </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Government</h4>
+                    <a href="#">Mayor's Office</a>
+                    <a href="#">City Council</a>
+                    <a href="#">City Auditor</a>
+                    <a href="#">City Assessor</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <a href="#">Finance / Revenue</a>
+                    <a href="#">Public Utilities</a>
+                    <a href="#">Social Services</a>
+                    <a href="#">Public Works</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Community</h4>
+                    <a href="#">Parks & Recreation</a>
+                    <a href="#">Libraries</a>
+                    <a href="#">Richmond Public Schools</a>
+                    <a href="#">Housing & Community</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Public Safety</h4>
+                    <a href="#">Police Department</a>
+                    <a href="#">Fire & Emergency</a>
+                    <a href="#">Emergency Management</a>
+                    <a href="#">Animal Control</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 City of Richmond, Virginia. All rights reserved.</span>
+                <span>
+                    <a href="#" style="color:rgba(255,255,255,0.4);margin-left:14px">Privacy</a>
+                    <a href="#" style="color:rgba(255,255,255,0.4);margin-left:14px">Accessibility</a>
+                    <a href="#" style="color:rgba(255,255,255,0.4);margin-left:14px">ADA</a>
+                </span>
+            </div>
+        </div>
+    </footer>
+
     <!-- THIS IS THE ONLY LINE A PARTNER ADDS -->
-    <script src="/widget.js" data-partner="southside-community-center"></script>
+    <script src="/widget.js" data-partner="rva-gov"></script>
 
 </body>
 </html>
