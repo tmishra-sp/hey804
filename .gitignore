@@ -9,6 +9,7 @@ data/*.db-shm
 data/*.db-wal
 
 # Python
+.venv/
 venv/
 __pycache__/
 *.pyc
