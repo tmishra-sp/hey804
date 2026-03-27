@@ -30,7 +30,7 @@ build/
 ngrok.yml
 
 # Project context (reference docs, not deployable)
-project-context/
+# project-context/
 
 # Claude Code local settings
 .claude/
