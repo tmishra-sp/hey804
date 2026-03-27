@@ -1,0 +1,13 @@
+venv/
+.env
+.git/
+__pycache__/
+*.pyc
+data/*.db
+data/*.db-shm
+data/*.db-wal
+.claude/
+project-context/CONTEXT.md
+project-context/PRD.md
+project-context/chatbot.py
+project-context/kb_builder.py

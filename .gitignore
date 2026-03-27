@@ -1,0 +1,47 @@
+# Secrets — NEVER commit
+.env
+.env.*
+!.env.example
+
+# Database files
+data/*.db
+data/*.db-shm
+data/*.db-wal
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# ngrok
+ngrok.yml
+
+# Project context (reference docs, not deployable)
+project-context/
+
+# Claude Code local settings
+.claude/
+
+# Hackathon presentation files (local only)
+hackathon_*.html
+
+# Logs
+*.log
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

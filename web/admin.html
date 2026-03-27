@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey804 Admin</title>
+    <link rel="stylesheet" href="/style.css">
+    <style>
+        .admin-wrap { max-width: 600px; margin: 0 auto; padding: 20px 16px; }
+        .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 24px; }
+        .stat-card { background: var(--white); border-radius: var(--radius-sm); padding: 16px; text-align: center; box-shadow: var(--shadow-sm); }
+        .stat-value { font-size: 2rem; font-weight: 800; color: var(--blue-dark); }
+        .stat-label { font-size: 0.8rem; color: var(--gray-500); margin-top: 4px; }
+        .broadcast-section { background: var(--white); border-radius: var(--radius); padding: 20px; box-shadow: var(--shadow-md); }
+        .broadcast-section h2 { font-size: 1.2rem; margin-bottom: 12px; color: var(--blue-dark); }
+        .broadcast-textarea { width: 100%; min-height: 120px; padding: 12px; border: 2px solid var(--gray-200); border-radius: var(--radius-sm); font-family: var(--font); font-size: 0.95rem; resize: vertical; }
+        .broadcast-textarea:focus { border-color: var(--red-alert); outline: none; }
+        .broadcast-btn { width: 100%; padding: 16px; background: var(--red-alert); color: var(--white); border: none; border-radius: var(--radius-sm); font-size: 1.1rem; font-weight: 700; cursor: pointer; margin-top: 12px; }
+        .broadcast-btn:hover { background: #A01830; }
+        .broadcast-btn:disabled { background: var(--gray-500); cursor: not-allowed; }
+        .broadcast-status { margin-top: 12px; padding: 12px; border-radius: var(--radius-sm); font-size: 0.95rem; }
+        .broadcast-status.success { background: #E8F5E9; color: var(--green-ok); }
+        .broadcast-status.error { background: #FFEBEE; color: var(--red-alert); }
+        .auth-form { background: var(--white); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow-md); text-align: center; }
+        .auth-form input { padding: 12px 16px; border: 2px solid var(--gray-200); border-radius: var(--radius-sm); font-size: 1rem; width: 100%; margin: 12px 0; }
+        .auth-form button { padding: 12px 32px; background: var(--blue-dark); color: var(--white); border: none; border-radius: var(--radius-sm); font-size: 1rem; font-weight: 600; cursor: pointer; }
+        .top-intents { margin-top: 20px; }
+        .intent-row { display: flex; justify-content: space-between; padding: 8px 0; border-bottom: 1px solid var(--gray-200); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-inner">
+            <h1 class="logo">Hey<span class="logo-accent">804</span> <small style="font-size:0.5em;opacity:0.7">Admin</small></h1>
+        </div>
+    </header>
+
+    <div class="admin-wrap">
+        <!-- Auth gate -->
+        <div id="auth-gate" class="auth-form">
+            <h2>Admin Access</h2>
+            <input type="password" id="token-input" placeholder="Enter admin token">
+            <br>
+            <button onclick="authenticate()">Enter</button>
+        </div>
+
+        <!-- Dashboard (hidden until auth) -->
+        <div id="dashboard" class="hidden">
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-subs">—</div>
+                    <div class="stat-label">Subscribers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-convos">—</div>
+                    <div class="stat-label">Conversations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-intents">—</div>
+                    <div class="stat-label">Intents matched</div>
+                </div>
+            </div>
+
+            <div id="top-intents" class="top-intents hidden"></div>
+
+            <div class="broadcast-section">
+                <h2>Emergency Broadcast</h2>
+                <p style="font-size:0.75rem;color:var(--gray-500);margin-bottom:8px;font-style:italic;">Prototype — Hack for RVA 2026. Not an official City of Richmond system.</p>
+                <p style="font-size:0.85rem;color:var(--gray-500);margin-bottom:12px;">
+                    Sends to all opted-in SMS subscribers + shows alert banner on web app.
+                </p>
+                <textarea class="broadcast-textarea" id="broadcast-msg">BOIL WATER ADVISORY: Do not drink tap water until further notice. Nearest bottled water: Southside Community Center, 4100 Hull St. Updates at rva.gov/water-crisis. Reply STOP to opt out.</textarea>
+                <button class="broadcast-btn" id="broadcast-btn" onclick="sendBroadcast()">
+                    Send Emergency Alert
+                </button>
+                <div id="broadcast-status" class="broadcast-status hidden"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let adminToken = "";
+
+        function authenticate() {
+            adminToken = document.getElementById("token-input").value.trim();
+            if (!adminToken) return;
+            loadStats();
+        }
+
+        async function loadStats() {
+            try {
+                const res = await fetch("/api/admin/stats", {
+                    headers: { "Authorization": "Bearer " + adminToken }
+                });
+                if (res.status === 403) {
+                    alert("Invalid token");
+                    return;
+                }
+                const data = await res.json();
+                document.getElementById("auth-gate").classList.add("hidden");
+                document.getElementById("dashboard").classList.remove("hidden");
+
+                document.getElementById("stat-subs").textContent = data.total_subscribers || 0;
+                document.getElementById("stat-convos").textContent = data.total_conversations || 0;
+
+                const intents = data.top_intents || {};
+                const total = Object.values(intents).reduce((a, b) => a + b, 0);
+                document.getElementById("stat-intents").textContent = total;
+
+                if (Object.keys(intents).length > 0) {
+                    const div = document.getElementById("top-intents");
+                    div.classList.remove("hidden");
+                    div.innerHTML = "<h3 style='font-size:1rem;margin-bottom:8px;'>Top Intents</h3>";
+                    for (const [intent, count] of Object.entries(intents)) {
+                        div.innerHTML += '<div class="intent-row"><span>' + intent.replace(/_/g, " ") + '</span><span><strong>' + count + '</strong></span></div>';
+                    }
+                }
+            } catch (e) {
+                alert("Connection error");
+            }
+        }
+
+        async function sendBroadcast() {
+            const btn = document.getElementById("broadcast-btn");
+            const status = document.getElementById("broadcast-status");
+            const msg = document.getElementById("broadcast-msg").value.trim();
+            if (!msg) return;
+
+            btn.disabled = true;
+            btn.textContent = "Sending...";
+            status.classList.add("hidden");
+
+            try {
+                const res = await fetch("/api/broadcast", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": "Bearer " + adminToken,
+                    },
+                    body: JSON.stringify({ message_en: msg, broadcast_type: "emergency" }),
+                });
+                const data = await res.json();
+
+                if (res.ok) {
+                    status.className = "broadcast-status success";
+                    status.textContent = "Alert sent to " + data.sms_sent + " subscribers. Broadcast ID: " + data.broadcast_id;
+                } else {
+                    status.className = "broadcast-status error";
+                    status.textContent = "Error: " + (data.error || "Unknown");
+                }
+                status.classList.remove("hidden");
+            } catch (e) {
+                status.className = "broadcast-status error";
+                status.textContent = "Connection error";
+                status.classList.remove("hidden");
+            }
+
+            btn.disabled = false;
+            btn.textContent = "Send Emergency Alert";
+            loadStats();
+        }
+    </script>
+</body>
+</html>

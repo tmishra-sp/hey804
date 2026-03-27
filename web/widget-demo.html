@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Southside Community Center — Richmond, VA</title>
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: Georgia, 'Times New Roman', serif; background: #faf9f6; color: #2d2d2d; }
+
+        /* Fake partner site header */
+        .site-header {
+            background: #1a3c5e;
+            color: white;
+            padding: 16px 24px;
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .site-header h1 { font-size: 1.3rem; font-weight: 700; }
+        .site-header .tagline { font-size: 0.85rem; opacity: 0.7; }
+        .site-nav {
+            background: #15324d;
+            padding: 0 24px;
+            display: flex;
+            gap: 0;
+        }
+        .site-nav a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            padding: 12px 16px;
+            font-size: 0.85rem;
+            font-family: -apple-system, sans-serif;
+            transition: background 0.2s;
+        }
+        .site-nav a:hover { background: rgba(255,255,255,0.1); color: white; }
+        .site-nav a.active { color: white; border-bottom: 2px solid #f59e0b; }
+
+        /* Fake page content */
+        .page-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 24px 120px;
+        }
+        .page-content h2 {
+            font-size: 1.8rem;
+            margin-bottom: 16px;
+            color: #1a3c5e;
+        }
+        .page-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 16px;
+            color: #4a4a4a;
+        }
+        .page-content .hours-box {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px 24px;
+            margin: 24px 0;
+        }
+        .hours-box h3 { font-size: 1rem; color: #1a3c5e; margin-bottom: 8px; }
+        .hours-box p { font-size: 0.9rem; margin-bottom: 4px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin: 24px 0;
+        }
+        .service-card {
+            background: white;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 20px;
+        }
+        .service-card h4 { font-size: 0.95rem; color: #1a3c5e; margin-bottom: 6px; }
+        .service-card p { font-size: 0.85rem; line-height: 1.5; margin: 0; }
+
+        /* Demo banner */
+        .demo-banner {
+            background: #fef3c7;
+            border-bottom: 1px solid #f59e0b;
+            padding: 10px 24px;
+            text-align: center;
+            font-family: -apple-system, sans-serif;
+            font-size: 0.8rem;
+            color: #92400e;
+        }
+        .demo-banner strong { color: #78350f; }
+    </style>
+</head>
+<body>
+
+    <div class="demo-banner">
+        <strong>DEMO:</strong> This is a fake partner website showing how the Hey804 widget embeds on any site.
+        Look at the bottom-right corner — that's the widget.
+    </div>
+
+    <header class="site-header">
+        <div>
+            <h1>Southside Community Center</h1>
+            <div class="tagline">Serving the Southside Richmond community since 1987</div>
+        </div>
+    </header>
+
+    <nav class="site-nav">
+        <a href="#" class="active">Home</a>
+        <a href="#">Programs</a>
+        <a href="#">Food Pantry</a>
+        <a href="#">Youth Services</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="page-content">
+        <h2>Welcome to the Southside Community Center</h2>
+        <p>We serve over 2,000 families in the Southside Richmond area with food assistance, youth programs, job readiness training, and community support services.</p>
+
+        <p>Many of our visitors need help navigating city services — paying tax bills, applying for SNAP benefits, understanding utility assistance programs, or finding emergency housing. We partnered with Hey804 to provide instant answers right here on our website.</p>
+
+        <div class="hours-box">
+            <h3>Hours & Location</h3>
+            <p><strong>Address:</strong> 4100 Hull Street Road, Richmond, VA 23224</p>
+            <p><strong>Hours:</strong> Monday-Friday 8:00 AM - 5:00 PM, Saturday 9:00 AM - 1:00 PM</p>
+            <p><strong>Phone:</strong> (804) 555-0100</p>
+        </div>
+
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h4>Food Pantry</h4>
+                <p>Open Tuesdays and Thursdays. Bring photo ID. No appointment needed.</p>
+            </div>
+            <div class="service-card">
+                <h4>Benefits Navigation</h4>
+                <p>Help applying for SNAP, Medicaid, and housing assistance. Walk-ins welcome.</p>
+            </div>
+            <div class="service-card">
+                <h4>Youth Programs</h4>
+                <p>After-school tutoring, summer camp, and mentorship for ages 6-18.</p>
+            </div>
+            <div class="service-card">
+                <h4>Job Readiness</h4>
+                <p>Resume workshops, interview prep, and computer skills training.</p>
+            </div>
+        </div>
+
+        <p>Need help with a city service? <strong>Click the button in the bottom-right corner</strong> or text <strong>(804) 808-1083</strong> from your phone.</p>
+    </div>
+
+    <!-- THIS IS THE ONLY LINE A PARTNER ADDS -->
+    <script src="/widget.js" data-partner="southside-community-center"></script>
+
+</body>
+</html>

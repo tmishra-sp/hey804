@@ -1,0 +1,417 @@
+/* ═══════════════════════════════════════════════════════
+   Hey804 — Richmond, Virginia
+   An immersive civic experience.
+   ═══════════════════════════════════════════════════════ */
+
+:root {
+    --navy: #1C3A5F;
+    --navy-deep: #0F2440;
+    --brick: #8B4513;
+    --gold: #D4A843;
+    --gold-light: #F0DEB4;
+    --river: #4A6741;
+    --river-light: #D5E5D0;
+    --mural-red: #E63946;
+    --mural-purple: #7C3AED;
+    --sky: #38BDF8;
+    --cream: #F5F0E8;
+    --warm-white: #FAF8F4;
+    --charcoal: #2C2C2C;
+    --text: #3D3229;
+    --text-light: #6B5E52;
+    --border: #E6DDD2;
+    --slate: #708090;
+
+    --serif: 'DM Serif Display', Georgia, serif;
+    --sans: 'Inter', -apple-system, sans-serif;
+    --condensed: 'Oswald', 'Arial Narrow', sans-serif;
+    --radius: 14px;
+    --radius-sm: 10px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 16px; scroll-behavior: smooth; }
+body {
+    font-family: var(--sans);
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100vh;
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* ═══════ MURAL BAR ═══════ */
+.mural-bar {
+    height: 5px;
+    background: linear-gradient(90deg,
+        var(--gold) 0%, var(--brick) 20%, var(--mural-red) 40%,
+        var(--mural-purple) 60%, var(--navy) 80%, var(--sky) 100%);
+}
+
+/* ═══════ ALERT BANNER ═══════ */
+.alert-banner {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: var(--mural-red); color: #fff;
+    transform: translateY(-100%); transition: transform 0.3s ease-out;
+}
+.alert-banner.visible { transform: translateY(0); }
+.alert-inner {
+    max-width: 640px; margin: 0 auto; padding: 12px 16px;
+    display: flex; align-items: flex-start; gap: 10px;
+}
+.alert-label {
+    font-family: var(--condensed); font-size: 0.7rem; font-weight: 700;
+    letter-spacing: 0.1em; background: rgba(255,255,255,0.2);
+    padding: 2px 8px; border-radius: 3px; white-space: nowrap;
+}
+#alert-message { flex: 1; font-weight: 600; font-size: 0.9rem; line-height: 1.4; }
+.alert-x { background: none; border: none; color: #fff; font-size: 1.3rem; cursor: pointer; opacity: 0.7; }
+@keyframes alert-pulse { 0%,100%{background:var(--mural-red)}50%{background:#991B1B} }
+.alert-banner.pulse { animation: alert-pulse 0.5s ease 2; }
+
+/* ═══════════════════════════════════════════════════════
+   HERO — Full-screen immersive Richmond experience
+   Video background with animated CSS fallback
+   ═══════════════════════════════════════════════════════ */
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--navy-deep);
+}
+
+/* Video background */
+.hero-video {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Animated CSS fallback — real Richmond photo with animated overlays */
+.hero-animated-bg {
+    position: absolute; inset: 0; z-index: 0;
+    background:
+        url('https://images.unsplash.com/photo-1569161031895-1af8f8344f10?w=1200&q=80') center/cover no-repeat,
+        linear-gradient(170deg, #070D1A 0%, #0F2440 20%, #1C3A5F 40%, #2D5A87 55%, #1C3A5F 70%, #0F2440 100%);
+}
+
+/* Flowing river animation */
+.river-flow {
+    position: absolute;
+    bottom: 0; left: -50%; width: 200%; height: 45%;
+    background:
+        repeating-linear-gradient(90deg,
+            transparent 0%, rgba(56,189,248,0.03) 10%,
+            rgba(74,103,65,0.04) 20%, transparent 30%);
+    animation: river-move 8s linear infinite;
+}
+@keyframes river-move {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(25%); }
+}
+
+/* Light shimmer — golden hour reflections on water */
+.light-shimmer {
+    position: absolute;
+    bottom: 15%; left: 0; right: 0; height: 40%;
+    background:
+        radial-gradient(ellipse 120% 40% at 30% 70%, rgba(212,168,67,0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 80% 30% at 70% 50%, rgba(212,168,67,0.08) 0%, transparent 50%),
+        radial-gradient(ellipse 60% 25% at 50% 60%, rgba(245,158,11,0.06) 0%, transparent 40%);
+    animation: shimmer-float 6s ease-in-out infinite alternate;
+}
+@keyframes shimmer-float {
+    0% { opacity: 0.6; transform: translateY(0) scaleX(1); }
+    100% { opacity: 1; transform: translateY(-8px) scaleX(1.02); }
+}
+
+/* Dark gradient overlay for text readability */
+.hero-overlay {
+    position: absolute; inset: 0; z-index: 2;
+    background:
+        linear-gradient(180deg,
+            rgba(15,36,64,0.3) 0%,
+            rgba(15,36,64,0.1) 30%,
+            rgba(15,36,64,0.2) 60%,
+            rgba(15,36,64,0.7) 85%,
+            rgba(15,36,64,0.9) 100%),
+        linear-gradient(90deg,
+            rgba(15,36,64,0.5) 0%,
+            transparent 50%,
+            rgba(15,36,64,0.3) 100%);
+}
+
+/* Hero content */
+.hero-content {
+    position: relative; z-index: 3;
+    max-width: 720px; margin: 0 auto;
+    padding: 32px 24px 28px;
+    width: 100%;
+}
+.hero-brand {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 14px;
+}
+.brand-mark {
+    font-family: var(--condensed);
+    font-size: 0.95rem; font-weight: 700;
+    background: var(--gold); color: var(--navy-deep);
+    width: 42px; height: 42px; border-radius: 11px;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 2px 12px rgba(212,168,67,0.4);
+}
+.brand-name {
+    font-family: var(--sans); font-size: 1rem; font-weight: 700;
+    color: rgba(255,255,255,0.85);
+}
+.hero-headline {
+    font-family: var(--serif);
+    font-size: 2.8rem; line-height: 1.08;
+    color: #fff; letter-spacing: -1px;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+}
+.hero-sub {
+    font-size: 0.9rem; line-height: 1.5;
+    color: rgba(255,255,255,0.7);
+    max-width: 380px;
+    margin-bottom: 16px;
+}
+.hero-cta {
+    display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+}
+.hero-btn {
+    font-family: var(--condensed);
+    font-size: 1rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    background: var(--gold); color: var(--navy-deep);
+    padding: 14px 32px; border-radius: var(--radius-sm);
+    text-decoration: none;
+    transition: transform 0.15s, box-shadow 0.2s;
+    box-shadow: 0 4px 16px rgba(212,168,67,0.3);
+}
+.hero-btn:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(212,168,67,0.4); }
+.hero-btn:active { transform: scale(0.97); }
+.hero-or {
+    font-size: 0.85rem; color: rgba(255,255,255,0.5);
+}
+.hero-or strong { color: rgba(255,255,255,0.8); }
+
+/* ═══════ LOCATION ═══════ */
+.location-strip {
+    background: var(--warm-white); border-bottom: 1px solid var(--border);
+    padding: 12px 22px; font-size: 0.88rem;
+    color: var(--navy); font-weight: 500;
+    display: flex; align-items: center; gap: 8px;
+    max-width: 640px; margin: 0 auto;
+}
+
+/* ═══════ MAIN ═══════ */
+main {
+    max-width: 720px; margin: 0 auto;
+    background: var(--cream);
+    padding: 28px 24px 40px;
+    min-height: 50vh;
+}
+.screen { display: none; }
+.screen.active { display: block; }
+.screen-intro {
+    font-family: var(--serif);
+    font-size: 1.4rem; color: var(--charcoal);
+    margin-bottom: 20px;
+}
+
+/* ═══════ CARDS ═══════ */
+.card-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+.category-card {
+    background: var(--warm-white);
+    border-radius: var(--radius); padding: 20px 16px 18px;
+    cursor: pointer; border: 1.5px solid var(--border);
+    border-left: 5px solid transparent;
+    transition: transform 0.12s, box-shadow 0.2s;
+    -webkit-tap-highlight-color: transparent;
+}
+.category-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(44,44,44,0.08); }
+.category-card:active { transform: scale(0.97); }
+
+.category-card[data-cat="money-taxes"]    { border-left-color: var(--gold); }
+.category-card[data-cat="food-benefits"]  { border-left-color: var(--river); }
+.category-card[data-cat="housing-rent"]   { border-left-color: var(--brick); }
+.category-card[data-cat="utilities"]      { border-left-color: var(--sky); }
+.category-card[data-cat="city-services"]  { border-left-color: var(--navy); }
+.category-card[data-cat="ask"]            { border-left-color: var(--slate); border-style: dashed; background: var(--cream); }
+
+.card-icon {
+    width: 36px; height: 36px; border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 10px;
+}
+.category-card[data-cat="money-taxes"]   .card-icon { background: #FDF6E3; color: var(--brick); }
+.category-card[data-cat="food-benefits"] .card-icon { background: #EDF7ED; color: var(--river); }
+.category-card[data-cat="housing-rent"]  .card-icon { background: #FBF0E4; color: #A0522D; }
+.category-card[data-cat="utilities"]     .card-icon { background: #E8F4FD; color: #0369A1; }
+.category-card[data-cat="city-services"] .card-icon { background: #E8EDF4; color: var(--navy); }
+.category-card[data-cat="ask"]           .card-icon { background: #EDEDEB; color: var(--slate); }
+
+.card-label { font-size: 0.93rem; font-weight: 700; color: var(--charcoal); line-height: 1.25; }
+.card-desc { font-size: 0.76rem; color: var(--text-light); margin-top: 4px; line-height: 1.3; }
+
+.sms-strip {
+    margin-top: 20px; text-align: center; padding: 16px;
+    background: var(--warm-white); border-radius: var(--radius-sm); border: 1.5px solid var(--border);
+}
+.sms-or {
+    display: block; font-family: var(--condensed);
+    font-size: 0.72rem; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.08em; color: var(--slate); margin-bottom: 4px;
+}
+.sms-num {
+    font-family: var(--condensed);
+    font-size: 1.25rem; font-weight: 700; color: var(--navy);
+    text-decoration: none;
+}
+
+/* ═══════ BACK / HEADINGS ═══════ */
+.back-btn {
+    background: none; border: none; color: var(--navy);
+    font-size: 0.88rem; font-weight: 600; cursor: pointer;
+    padding: 8px 0; margin-bottom: 14px;
+    display: flex; align-items: center; gap: 4px;
+}
+.section-heading { font-family: var(--serif); font-size: 1.25rem; color: var(--charcoal); margin-bottom: 14px; }
+
+/* ═══════ SUBTOPICS ═══════ */
+.card-list { display: flex; flex-direction: column; gap: 8px; }
+.subtopic-card {
+    background: var(--warm-white); border-radius: var(--radius-sm); padding: 16px 18px;
+    cursor: pointer; border: 1.5px solid var(--border);
+    transition: border-color 0.15s, transform 0.1s;
+    display: flex; align-items: center; justify-content: space-between;
+    -webkit-tap-highlight-color: transparent;
+}
+.subtopic-card:hover { border-color: var(--navy); box-shadow: 0 3px 10px rgba(0,0,0,0.05); }
+.subtopic-card:active { transform: scale(0.99); }
+.subtopic-label { font-size: 0.93rem; font-weight: 500; color: var(--text); }
+.subtopic-arrow { color: var(--slate); font-size: 1.2rem; }
+
+/* ═══════ PLAN CARD ═══════ */
+.plan-card {
+    background: var(--warm-white); border-radius: var(--radius);
+    padding: 26px 22px; box-shadow: 0 4px 16px rgba(44,44,44,0.06);
+    border: 1px solid var(--border);
+}
+.plan-answer { font-size: 0.94rem; line-height: 1.75; color: var(--text); margin-bottom: 22px; }
+.label-heading {
+    font-family: var(--condensed); font-size: 0.78rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--navy); margin-bottom: 10px;
+}
+#steps-list { padding: 0; list-style: none; counter-reset: steps; }
+#steps-list li {
+    counter-increment: steps; padding: 13px 14px 13px 50px;
+    position: relative; border-radius: var(--radius-sm);
+    margin-bottom: 6px; background: #FDF9F2;
+    font-size: 0.9rem; line-height: 1.5;
+    cursor: pointer; transition: opacity 0.2s; border: 1px solid #F0E8DA;
+}
+#steps-list li::before {
+    content: counter(steps); position: absolute; left: 12px; top: 13px;
+    width: 28px; height: 28px; background: var(--navy); color: #fff;
+    border-radius: 8px; font-family: var(--serif); font-size: 0.85rem;
+    display: flex; align-items: center; justify-content: center;
+}
+#steps-list li.completed { opacity: 0.4; text-decoration: line-through; }
+#steps-list li.completed::before { content: "\2713"; background: var(--river); font-family: var(--sans); }
+
+.plan-deadline {
+    margin: 18px 0; padding: 12px 14px;
+    background: #FEF7E6; border-radius: var(--radius-sm);
+    border-left: 4px solid var(--gold);
+    font-size: 0.88rem; font-weight: 500; color: var(--brick);
+    display: flex; align-items: center; gap: 8px;
+}
+.plan-sources { margin: 18px 0; }
+.source-tag {
+    display: inline-flex; align-items: center; gap: 4px;
+    background: #EDF7ED; color: var(--river);
+    font-family: var(--condensed); font-size: 0.72rem; font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.06em;
+    padding: 4px 10px; border-radius: 6px; margin-bottom: 8px;
+}
+#sources-list a { display: block; color: var(--navy); font-size: 0.82rem; word-break: break-all; margin-top: 4px; text-decoration: none; }
+#sources-list a:hover { text-decoration: underline; }
+
+.plan-actions { display: flex; gap: 10px; margin-top: 24px; }
+.btn {
+    flex: 1; padding: 14px 16px; border-radius: var(--radius-sm);
+    font-size: 0.9rem; font-weight: 600; text-align: center;
+    text-decoration: none; cursor: pointer; border: none;
+    display: flex; align-items: center; justify-content: center; gap: 6px;
+    transition: transform 0.1s;
+}
+.btn:active { transform: scale(0.97); }
+.btn-cta { background: var(--navy); color: #fff; }
+.btn-cta:hover { background: #244B75; }
+.btn-outline { background: var(--cream); color: var(--text); border: 1.5px solid var(--border); }
+.plan-note { margin-top: 20px; font-size: 0.8rem; color: var(--slate); text-align: center; }
+.plan-note a { color: var(--navy); text-decoration: none; }
+
+/* ═══════ ASK ═══════ */
+.ask-hint { font-size: 0.9rem; color: var(--text-light); margin-bottom: 14px; }
+.ask-form { display: flex; gap: 8px; margin-bottom: 20px; }
+.ask-input {
+    flex: 1; padding: 14px 16px; border: 1.5px solid var(--border);
+    border-radius: var(--radius-sm); font-size: 0.95rem; font-family: var(--sans);
+    background: var(--warm-white); outline: none; color: var(--text);
+    transition: border-color 0.15s;
+}
+.ask-input:focus { border-color: var(--navy); box-shadow: 0 0 0 3px rgba(28,58,95,0.1); }
+.ask-go {
+    width: 50px; min-width: 50px; background: var(--navy); color: #fff;
+    border: none; border-radius: var(--radius-sm); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+}
+
+/* ═══════ SHIMMER ═══════ */
+.shimmer .shimmer-line {
+    height: 14px;
+    background: linear-gradient(90deg, #EDE8DF 25%, #F5F0E8 50%, #EDE8DF 75%);
+    background-size: 200% 100%; animation: loading-shimmer 1.5s infinite;
+    border-radius: 6px; margin-bottom: 14px;
+}
+.w80{width:80%}.w60{width:60%}.w90{width:90%}.w70{width:70%}
+@keyframes loading-shimmer { 0%{background-position:200% 0}100%{background-position:-200% 0} }
+
+/* ═══════ TOAST ═══════ */
+.share-toast {
+    position: fixed; bottom: 24px; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: var(--charcoal); color: #fff;
+    padding: 10px 22px; border-radius: 10px; font-size: 0.85rem;
+    opacity: 0; transition: opacity 0.3s, transform 0.3s; z-index: 500;
+}
+.share-toast.visible { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+/* ═══════ FOOTER ═══════ */
+.footer { background: var(--navy-deep); color: rgba(255,255,255,0.5); }
+.footer-inner { max-width: 640px; margin: 0 auto; text-align: center; padding: 22px 20px; font-size: 0.8rem; }
+.footer-inner a { color: var(--gold-light); text-decoration: none; }
+.footer-sub { margin-top: 4px; font-size: 0.72rem; color: rgba(255,255,255,0.3); }
+
+/* ═══════ EMBED ═══════ */
+body.embed { background: var(--warm-white); }
+body.embed .hero { display: none; }
+body.embed .footer { display: none; }
+body.embed .location-strip, body.embed .sms-strip { display: none; }
+
+.hidden { display: none !important; }
+
+@media (max-width: 480px) {
+    .hero-headline { font-size: 2rem; }
+    .hero-content { padding: 24px 20px 22px; }
+}
+@media (max-width: 380px) {
+    .card-grid { grid-template-columns: 1fr; }
+    .hero-headline { font-size: 1.7rem; }
+}

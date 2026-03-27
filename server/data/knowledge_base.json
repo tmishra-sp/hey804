@@ -1,0 +1,973 @@
+{
+  "meta": {
+    "version": "0.1-hackathon",
+    "last_updated": "2026-03-24",
+    "coverage": "Top 20 resident questions based on RVA311 call volume analysis",
+    "fallback_message": "I don't have a confident answer for that yet. Here's what I'd suggest: Call RVA 311 at 804-646-7000 (Mon-Fri 8am-7pm, Sat 9am-1pm) or submit a request at rva311.com. Want me to help you prepare what to say when you call?"
+  },
+  "questions": [
+    {
+      "id": 1,
+      "category": "finance",
+      "intent": "tax_bill_cant_pay",
+      "sample_questions": [
+        "I got a tax bill I can't pay",
+        "Can't afford my real estate taxes",
+        "What happens if I don't pay my property tax",
+        "I'm behind on taxes what do I do",
+        "Tax bill too high need help",
+        "owe the city money for taxes",
+        "got a letter about unpaid property taxes",
+        "scared im gonna lose my house over taxes",
+        "how to set up a tax payment plan"
+      ],
+      "answer": "You have several options if you can't pay your full real estate tax bill by the due date. You can set up a payment arrangement through the Delinquent Collections Unit — you can do this even BEFORE your taxes are past due. Contact RVA 311 at 804-646-7000 to set one up. Important: you can only have one payment plan for one tax type at a time, and you can't enter a new arrangement for 5 years after the last one. If you're 65+ or permanently disabled, you may qualify for the OAPD Tax Relief Program (see question about senior/disabled tax relief). Don't ignore the bill — if you don't pay, consequences include: your state tax refund can be seized, and you may be unable to register vehicles at the DMV.",
+      "action_steps": [
+        "Call RVA 311 at 804-646-7000 and ask for a payment arrangement",
+        "Or submit a request online at rva311.com",
+        "If 65+ or disabled, ask about the OAPD Tax Relief Program",
+        "Have your tax bill or account number ready when you call"
+      ],
+      "deadlines": "Real estate tax: 1st half due January 14, 2nd half due June 14",
+      "sources": [
+        {
+          "title": "Delinquent Collections | Richmond",
+          "url": "https://www.rva.gov/finance/delinquent-collections"
+        },
+        {
+          "title": "Real Estate | Richmond",
+          "url": "https://www.rva.gov/finance/real-estate"
+        }
+      ],
+      "handoff_trigger": "If the person mentions they've already received a collections notice from an outside agency, tell them they must work with that agency directly, not the city."
+    },
+    {
+      "id": 2,
+      "category": "finance",
+      "intent": "senior_disabled_tax_relief",
+      "sample_questions": [
+        "I'm a senior can I get tax relief",
+        "Tax relief for elderly",
+        "Disabled tax exemption Richmond",
+        "OAPD program",
+        "My mom is 70 and can't pay property tax",
+        "im 70 years old and cant afford my taxes",
+        "tax break for disabled homeowners",
+        "do veterans get tax relief in richmond",
+        "tax freeze program how do I apply"
+      ],
+      "answer": "Richmond has the OAPD (Older Adults and Persons with Disabilities) Real Estate Tax Relief Program. If you're 65+ or permanently/totally disabled, you may qualify for partial or full exemption from real estate taxes on your primary residence. There's also a Tax Freeze option (recently expanded by City Council for 2025+) that freezes your assessment to the prior year's value. Even if you were denied before, the expanded Freeze option may now cover you. Veterans with 100% service-connected disability are fully exempt with no income requirement.",
+      "action_steps": [
+        "Get the OAPD application from rva.gov/finance/oapd-relief",
+        "Submit application by September 30 for timely processing (legal deadline is December 31)",
+        "Bring: proof of income, bank/investment statements, proof of disability (if under 65)",
+        "Apply at City Hall Real Estate Unit: 900 E. Broad St, Room 100",
+        "For recertification in years 2-3, return the form by December 31"
+      ],
+      "deadlines": "Legal filing deadline: December 31 annually. Submit by September 30 for timely processing on your next tax bill.",
+      "sources": [
+        {
+          "title": "OAPD Relief | Richmond",
+          "url": "https://www.rva.gov/finance/oapd-relief"
+        },
+        {
+          "title": "Finance Assistance | Richmond",
+          "url": "https://www.rva.gov/finance/assistance"
+        }
+      ],
+      "handoff_trigger": "If they have delinquent taxes AND qualify for OAPD, there are special exceptions to the one-plan-at-a-time rule. Route to 311."
+    },
+    {
+      "id": 3,
+      "category": "finance",
+      "intent": "real_estate_tax_wrong",
+      "sample_questions": [
+        "My tax bill is wrong",
+        "Property assessment too high",
+        "How to appeal real estate tax",
+        "My house is not worth that much",
+        "Tax bill seems incorrect",
+        "my property assessment is way too high",
+        "how to dispute my tax bill",
+        "they overvalued my house"
+      ],
+      "answer": "If you think your real estate tax bill is wrong, there are two different issues to check. First: is the ASSESSMENT (property value) wrong? You can appeal through the Real Estate Assessor's Office. Use the Richmond Parcel Mapper to check your current assessed value. The tax is calculated as: (assessed value / $100) × $1.20 rate. Second: is there a BILLING error? The city has had known issues with incorrect bills. For billing discrepancies, contact RVA 311.",
+      "action_steps": [
+        "Check your assessed value at the Richmond Parcel Mapper (Assessor's website)",
+        "For assessment appeals: contact the Real Estate Assessor's Office",
+        "For billing errors: call RVA 311 at 804-646-7000",
+        "Keep your bill and any supporting documents (comparable sales, etc.)"
+      ],
+      "deadlines": "Appeals must be filed within the timeframe specified on your assessment notice",
+      "sources": [
+        {
+          "title": "Real Estate | Richmond",
+          "url": "https://www.rva.gov/finance/real-estate"
+        }
+      ],
+      "handoff_trigger": "Always route to 311 for billing discrepancies. The system should not attempt to resolve specific account issues."
+    },
+    {
+      "id": 4,
+      "category": "finance",
+      "intent": "personal_property_tax_car",
+      "sample_questions": [
+        "How do I pay my car tax",
+        "Personal property tax on vehicle",
+        "Car tax bill Richmond",
+        "PPTRA what is it",
+        "Can I get my car tax reduced",
+        "how much is car tax in richmond",
+        "vehicle tax bill when is it due",
+        "my car value is wrong on the tax bill",
+        "do I get relief on my car tax"
+      ],
+      "answer": "Personal property tax in Richmond covers motor vehicles, boats, trailers, and manufactured homes. You may qualify for Personal Property Tax Relief (PPTRA): vehicles with assessed value of $1,000 or less get full exemption; vehicles over $1,000 get partial relief on the first $20,000 of value. The vehicle must be for personal use (not >50% business). If your car's value seems too high, you can request a reassessment based on high mileage or poor condition using forms on the Finance Assistance page. Veterans with 100% service-connected disability can get full motor vehicle exemption.",
+      "action_steps": [
+        "Pay online at the Finance Department Online Payment Portal",
+        "For reassessment: download the High Mileage or Condition form from rva.gov/finance/assistance",
+        "Submit reassessment with mileage/condition as of January 1 (the tax date)",
+        "For disabled veteran exemption: submit VA letter + certification form"
+      ],
+      "deadlines": "Personal property tax due date varies — check your bill",
+      "sources": [
+        {
+          "title": "Finance Assistance | Richmond",
+          "url": "https://www.rva.gov/finance/assistance"
+        },
+        {
+          "title": "Online Payments | Richmond",
+          "url": "https://www.rva.gov/online-payments"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 5,
+      "category": "utilities",
+      "intent": "utility_bill_cant_pay",
+      "sample_questions": [
+        "Can't pay my water bill",
+        "Help with utility bills",
+        "Utility assistance programs Richmond",
+        "My gas bill is too high",
+        "Going to get disconnected need help",
+        "about to get my water shut off",
+        "what is metrocare program",
+        "help paying electric bill",
+        "lights about to get cut off need help"
+      ],
+      "answer": "Richmond has several programs to help with utility bills. MetroCare Assistance Program: provides up to $1,500/year for water, wastewater, and gas bills if your household income is at or below 225% of the Federal Poverty Guidelines. Call 804-646-4646. PromisePay Payment Plans: flexible payment options for gas and water customers who can't pay in full. Call 804-646-4646 to set up. LIHEAP (Low Income Heating Energy Assistance): administered by Social Services at 804-646-7046. Also check: United Way, Catholic Charities, Salvation Army, and Dominion Energy's EnergyShare program. NEW: United Healthcare UCard members may be eligible to pay DPU bills with their UCard.",
+      "action_steps": [
+        "Call DPU at 804-646-4646 to ask about MetroCare and PromisePay",
+        "For heating assistance (LIHEAP): call Social Services at 804-646-7046",
+        "Have your DPU account number ready (same for gas and water)",
+        "If service is already off: pay bill, then call 804-646-4646 for same-day reconnection ($35 extra fee)"
+      ],
+      "deadlines": "Apply for MetroCare anytime (subject to funding). PromisePay plans: new plans after Sept 1 2025 limited to 12 months.",
+      "sources": [
+        {
+          "title": "DPU Billing | Richmond",
+          "url": "https://www.rva.gov/public-utilities/billing"
+        },
+        {
+          "title": "DPU FAQ | Richmond",
+          "url": "https://www.rva.gov/PublicUtilities/FAQ"
+        }
+      ],
+      "handoff_trigger": "If service is already disconnected and they need same-day reconnection, route directly to 804-646-4646."
+    },
+    {
+      "id": 6,
+      "category": "utilities",
+      "intent": "water_safety",
+      "sample_questions": [
+        "Is the water safe to drink",
+        "Is there a boil water advisory",
+        "Water crisis update",
+        "Something wrong with my water",
+        "Water smells funny",
+        "my water looks brown",
+        "tap water tastes weird",
+        "is my water contaminated",
+        "water smells like chlorine is it safe"
+      ],
+      "answer": "For the most current water safety status, check rva.gov or call 311 at 804-646-7000. The city's water treatment plant has implemented new standard operating procedures since the January 2025 crisis. If you notice discolored water, unusual smell, or low pressure, report it immediately through RVA 311. For emergencies, call DPU at 804-646-4646.",
+      "action_steps": [
+        "Check rva.gov for current advisories",
+        "Sign up for Richmond Ready Alerts for emergency notifications",
+        "If water looks/smells wrong: call DPU at 804-646-4646 immediately",
+        "For general updates: call 311 at 804-646-7000"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Public Utilities | Richmond",
+          "url": "https://www.rva.gov/public-utilities"
+        }
+      ],
+      "handoff_trigger": "ALWAYS check for active advisories before responding. This answer must be dynamically updated. In an emergency, push alerts proactively."
+    },
+    {
+      "id": 7,
+      "category": "utilities",
+      "intent": "utility_bill_wrong",
+      "sample_questions": [
+        "Water bill too high",
+        "Utility bill doesn't look right",
+        "Getting charged too much for water",
+        "Bill doubled for no reason",
+        "my water bill is way higher than normal",
+        "being overcharged for water",
+        "DPU charged me wrong",
+        "how to dispute my utility bill"
+      ],
+      "answer": "Richmond has had known issues with incorrect utility bills. If your bill seems wrong: First, look up your account using the DPU Account Look-Up Tool at apps.richmondgov.com. You'll need your street number, street name, and last 4 of your SSN. Then call DPU at 804-646-4646 to dispute. You can also check if your meter has been misread. The city has been working to improve billing accuracy as part of the Mayoral Action Plan.",
+      "action_steps": [
+        "Look up your account at apps.richmondgov.com/applications/DPUAccountLookUp",
+        "Call DPU Customer Service at 804-646-4646",
+        "Have your account number and recent bills ready",
+        "Ask about the Equal Monthly Payment Plan to smooth out seasonal variation"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "DPU Billing | Richmond",
+          "url": "https://www.rva.gov/public-utilities/billing"
+        },
+        {
+          "title": "DPU Account Look-Up",
+          "url": "https://apps.richmondgov.com/applications/DPUAccountLookUp"
+        }
+      ],
+      "handoff_trigger": "Route to DPU for all billing disputes."
+    },
+    {
+      "id": 8,
+      "category": "social_services",
+      "intent": "apply_snap_food",
+      "sample_questions": [
+        "How do I get food stamps",
+        "Apply for SNAP",
+        "Need help buying food",
+        "EBT card application",
+        "I'm hungry and need help",
+        "where do I apply for food stamps in richmond",
+        "lost my job need food help",
+        "how to get an EBT card",
+        "cant afford groceries for my family",
+        "food stamp office near me"
+      ],
+      "answer": "You can apply for SNAP (food stamps) several ways. Fastest: apply online at commonhelp.virginia.gov. You can also call 855-635-4370, or fax a paper application to 804-646-7018, or drop it off at the Southside Plaza office (4100 Hull Street). You'll need an interview with a benefit program specialist. Bring: photo ID, proof of residence, proof of income, and housing cost info. Income limits for FY2026: $2,888/month gross for a household of 3 (130% FPL). Virginia uses broad-based categorical eligibility at 200% FPL, which raises the gross income limit to approximately $4,440/month for a household of 3. Benefits are loaded onto an EBT card monthly. You can also use SNAP at farmers markets — check the Virginia Fresh Match program for half-price produce.",
+      "action_steps": [
+        "Apply online at commonhelp.virginia.gov (fastest)",
+        "Or call 855-635-4370",
+        "Or drop off paper application at 4100 Hull Street Road",
+        "Gather: photo ID, proof of address, income proof, housing costs",
+        "Wait for interview scheduling — keep your phone available"
+      ],
+      "deadlines": "Apply anytime. Benefits are prorated from the date you apply, so apply ASAP.",
+      "sources": [
+        {
+          "title": "Virginia CommonHelp",
+          "url": "https://commonhelp.virginia.gov/"
+        },
+        {
+          "title": "Social Services | Richmond",
+          "url": "https://www.rva.gov/social-services/social-services-main"
+        },
+        {
+          "title": "Benefits | Virginia DSS",
+          "url": "https://www.dss.virginia.gov/benefit/"
+        }
+      ],
+      "handoff_trigger": "If the person says they have no food right now, also provide: Central Virginia Food Bank 804-521-2500 and FeedMore food pantry locator."
+    },
+    {
+      "id": 9,
+      "category": "social_services",
+      "intent": "apply_medicaid",
+      "sample_questions": [
+        "How to get Medicaid",
+        "Need health insurance can't afford it",
+        "Medical coverage for my kids",
+        "FAMIS application",
+        "No health insurance what do I do",
+        "free health insurance for kids",
+        "how to apply for medicaid in virginia",
+        "lost my job no health insurance",
+        "coverva how does it work"
+      ],
+      "answer": "Apply for Medicaid online at commonhelp.virginia.gov or through Virginia's Insurance Marketplace at marketplace.virginia.gov. You can also call 855-635-4370. If you apply at the Marketplace and are found eligible for Medicaid or FAMIS (children's coverage), you'll be automatically enrolled. Children may qualify for FAMIS even if parents don't qualify for Medicaid. Paper applications can be dropped off at Richmond Social Services offices: Downtown at 300 E. Franklin Street, or Southside at 4100 Hull Street Road.",
+      "action_steps": [
+        "Apply at commonhelp.virginia.gov or marketplace.virginia.gov",
+        "Or call 855-635-4370",
+        "Or visit Social Services at 300 E. Franklin St (Downtown) or 4100 Hull St (Southside)",
+        "Have: SSNs for everyone applying, income proof, current insurance info if any"
+      ],
+      "deadlines": "Apply anytime. Coverage can be retroactive to beginning of the month you apply.",
+      "sources": [
+        {
+          "title": "How to Apply | CoverVA",
+          "url": "https://coverva.dmas.virginia.gov/apply/how-to-apply/"
+        },
+        {
+          "title": "Virginia CommonHelp",
+          "url": "https://commonhelp.virginia.gov/"
+        }
+      ],
+      "handoff_trigger": "If they need immediate medical care and are uninsured, provide: Richmond Health District 804-482-5525 and RVA Health free/low-cost clinics."
+    },
+    {
+      "id": 10,
+      "category": "social_services",
+      "intent": "rent_help",
+      "sample_questions": [
+        "I need help paying rent",
+        "About to be evicted",
+        "Rental assistance programs",
+        "Can't afford my apartment",
+        "Emergency housing help",
+        "facing eviction need help now",
+        "behind on rent 2 months",
+        "nowhere to go about to be homeless",
+        "landlord is kicking me out what do I do"
+      ],
+      "answer": "For rental assistance in Richmond, start with these: Virginia 211 (dial 2-1-1) connects you to local emergency rental assistance 24/7. Contact Richmond Social Services through RVA 311 at 804-646-7000. For after-hours Adult Protective Services emergencies: 888-832-3858. Also check: RRHA (Richmond Redevelopment and Housing Authority) for Section 8/Housing Choice Voucher waitlist status. The Virginia Rent Relief Program website (if still active) or CommonHelp may have additional options. Community organizations like United Way, Salvation Army, and local churches may also provide one-time emergency help.",
+      "action_steps": [
+        "Call 2-1-1 (Virginia 211) for immediate referrals",
+        "Contact Richmond Social Services via RVA 311 at 804-646-7000",
+        "After hours Adult Protective Services: 888-832-3858",
+        "Check commonhelp.virginia.gov for benefit programs",
+        "If facing eviction: contact Virginia Legal Aid at 866-534-5243"
+      ],
+      "deadlines": "If you have an eviction notice, act immediately — call 211 first.",
+      "sources": [
+        {
+          "title": "Social Services | Richmond",
+          "url": "https://www.rva.gov/social-services/social-services-main"
+        }
+      ],
+      "handoff_trigger": "If imminent eviction (court date set), route to Virginia Legal Aid and 211 immediately."
+    },
+    {
+      "id": 11,
+      "category": "social_services",
+      "intent": "benefits_status_check",
+      "sample_questions": [
+        "Check my benefits status",
+        "When will I get my SNAP",
+        "Application still pending",
+        "How long does it take to get approved",
+        "Haven't heard back about my benefits",
+        "I applied for snap 3 weeks ago no answer",
+        "where is my medicaid approval",
+        "my commonhelp application is still pending",
+        "how long does snap take to get approved"
+      ],
+      "answer": "Check the status of any benefits application (SNAP, Medicaid, TANF, Energy Assistance) at commonhelp.virginia.gov — log into your account to see updates. You can also call the Enterprise Customer Service Center at 855-635-4370. Processing times vary: SNAP applications must be processed within 30 days (7 days for expedited/emergency cases). Medicaid: typically 45 days. If you haven't heard back within these windows, call to follow up.",
+      "action_steps": [
+        "Log in at commonhelp.virginia.gov to check status",
+        "Or call 855-635-4370",
+        "Have your case number or SSN ready",
+        "If past the processing deadline, ask to speak to a supervisor"
+      ],
+      "deadlines": "SNAP: 30 days (7 days expedited). Medicaid: 45 days.",
+      "sources": [
+        {
+          "title": "Virginia CommonHelp",
+          "url": "https://commonhelp.virginia.gov/"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 12,
+      "category": "social_services",
+      "intent": "where_to_go_in_person",
+      "sample_questions": [
+        "Where do I go to apply for help",
+        "Social services office location",
+        "Need to talk to someone in person",
+        "Where is the welfare office",
+        "DSS office hours Richmond",
+        "where is the richmond social services office",
+        "hull street office address",
+        "I need to go somewhere to apply for benefits",
+        "can I walk in to social services"
+      ],
+      "answer": "Richmond Social Services has two main offices. Downtown: 300 E. Franklin Street, Richmond VA 23219. South Richmond: Southside Community Services Center, 4100 Hull Street Road, Richmond VA 23224 (has a drop box for applications). You can also skip the line by applying online at commonhelp.virginia.gov. For general city services: City Hall is at 900 E. Broad Street. For 311 requests: call 804-646-7000 or visit rva311.com.",
+      "action_steps": [
+        "Downtown office: 300 E. Franklin Street",
+        "Southside office: 4100 Hull Street Road (has drop box)",
+        "City Hall: 900 E. Broad Street",
+        "Or skip the line: commonhelp.virginia.gov"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Social Services Main | Richmond",
+          "url": "https://www.rva.gov/social-services/social-services-main"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 13,
+      "category": "social_services",
+      "intent": "energy_heating_assistance",
+      "sample_questions": [
+        "Help with heating bill",
+        "LIHEAP application",
+        "Can't afford to heat my house",
+        "Energy assistance program",
+        "Fuel assistance",
+        "no heat in my house and its cold",
+        "dominion energy bill assistance",
+        "gas got turned off need help",
+        "winter heating help programs"
+      ],
+      "answer": "LIHEAP (Low Income Heating Energy Assistance) helps with heating costs. Apply through CommonHelp online or call Richmond Social Services at 804-646-7046. Other options: Dominion Energy's EnergyShare program, Salvation Army, Catholic Charities, United Way, and local churches. For DPU gas customers: the MetroCare program provides up to $1,500/year — call 804-646-4646.",
+      "action_steps": [
+        "Apply at commonhelp.virginia.gov",
+        "Or call Social Services at 804-646-7046",
+        "For DPU gas bills: call 804-646-4646 for MetroCare",
+        "Also try Dominion Energy EnergyShare: 866-366-4357"
+      ],
+      "deadlines": "LIHEAP typically available October through March (heating season), subject to funding.",
+      "sources": [
+        {
+          "title": "DPU Billing | Richmond",
+          "url": "https://www.rva.gov/public-utilities/billing"
+        },
+        {
+          "title": "Virginia CommonHelp",
+          "url": "https://commonhelp.virginia.gov/"
+        }
+      ],
+      "handoff_trigger": "If the person has no heat and it's winter, this is urgent. Provide 211 and Social Services emergency number 888-832-3858."
+    },
+    {
+      "id": 14,
+      "category": "city_services",
+      "intent": "report_pothole_streetlight",
+      "sample_questions": [
+        "How to report a pothole",
+        "Streetlight out on my street",
+        "Road needs repair",
+        "Broken sidewalk",
+        "Street flooding",
+        "huge pothole on my block",
+        "street light been out for weeks",
+        "who do I call about road damage"
+      ],
+      "answer": "Report infrastructure issues through RVA 311. You can: call 804-646-7000, use the RVA311 app (iOS/Android), or submit online at rva311.com. For potholes, include the exact address or nearest intersection. The request gets routed to the Department of Public Works. You can track your request status through the portal.",
+      "action_steps": [
+        "Call 311 (804-646-7000)",
+        "Or use the RVA311 app",
+        "Or submit at rva311.com",
+        "Include: exact location, description, photo if possible"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "About RVA 311 | Richmond",
+          "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 15,
+      "category": "city_services",
+      "intent": "trash_recycling",
+      "sample_questions": [
+        "When is trash pickup",
+        "Missed trash collection",
+        "Recycling schedule",
+        "Bulk pickup request",
+        "My trash wasn't picked up",
+        "they didnt pick up my trash this week",
+        "how do I get rid of a couch",
+        "when does recycling get picked up"
+      ],
+      "answer": "For your specific trash and recycling pickup schedule, check rva.gov and enter your address, or call RVA 311 at 804-646-7000. If your trash was missed, submit a report through RVA 311 — they'll schedule a makeup pickup. For bulk/large item pickup, you need to request it through 311 in advance. Recycling is collected on the same day of the week as trash, but every other week (biweekly).",
+      "action_steps": [
+        "Check your schedule at rva.gov (search 'trash collection')",
+        "For missed pickup: call 311 or submit at rva311.com",
+        "For bulk items: request through 311 in advance",
+        "Put carts at the curb by 7 AM on collection day"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "About RVA 311 | Richmond",
+          "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 16,
+      "category": "city_services",
+      "intent": "business_license",
+      "sample_questions": [
+        "How to get a business license",
+        "Start a business in Richmond",
+        "BPOL tax",
+        "Small business license cost",
+        "Home business permit",
+        "I want to open a shop in richmond",
+        "how much does a business license cost",
+        "do I need a permit for a home business"
+      ],
+      "answer": "To operate a business in Richmond, you need a Business, Professional, and Occupational License (BPOL). Apply through the RVA Business Portal online. You'll need your business information, EIN or SSN, and estimated gross receipts. The Department of Finance handles business licenses. You may also need zoning approval depending on your business type and location. For help navigating the process, call RVA 311 or the Department of Finance.",
+      "action_steps": [
+        "Apply at the RVA Business Portal (online)",
+        "Or visit Finance Department at 900 E. Broad Street",
+        "Have ready: business name, type, address, EIN, estimated revenue",
+        "Check zoning requirements for your location",
+        "Call 311 if unsure which permits you need"
+      ],
+      "deadlines": "Must obtain license before operating. Annual renewal required.",
+      "sources": [
+        {
+          "title": "Finance Online Payment | Richmond",
+          "url": "https://www.rva.gov/finance/online-payment"
+        }
+      ],
+      "handoff_trigger": "If they're asking about permits for construction/renovation, route to Development Review."
+    },
+    {
+      "id": 17,
+      "category": "city_services",
+      "intent": "free_internet_computer",
+      "sample_questions": [
+        "Where can I use a computer for free",
+        "Free internet access Richmond",
+        "Library with WiFi near me",
+        "Need to print something",
+        "Don't have internet at home",
+        "closest library with free wifi",
+        "I need to get online but dont have internet",
+        "can I use a computer at the library",
+        "where to go if you dont have wifi"
+      ],
+      "answer": "Richmond Public Libraries offer free computer and internet access. Multiple branches across the city have computers available for public use and free WiFi. The city's Community Resources page lists libraries as a primary access point. Main Library: 101 E. Franklin Street. For hours and locations of all branches, check rvalibrary.org or call 804-646-7223. Libraries also offer free faxing, free scanning, and technology help.",
+      "action_steps": [
+        "Find your nearest library at rvalibrary.org",
+        "Or call 804-646-7223 for hours and locations",
+        "Bring a photo ID for computer use",
+        "WiFi is free — no library card needed for WiFi"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Community Resources | Richmond",
+          "url": "https://www.rva.gov/mayors-office/community-resources"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 18,
+      "category": "finance",
+      "intent": "pay_parking_ticket",
+      "sample_questions": [
+        "How to pay a parking ticket",
+        "Got a parking violation",
+        "Contest a parking ticket",
+        "Parking fine Richmond",
+        "where do I pay my parking fine",
+        "can I fight a parking ticket",
+        "got ticketed downtown how to pay",
+        "parking citation payment"
+      ],
+      "answer": "Pay parking tickets online through the City's Online Payment page at rva.gov/online-payments (uses Remit Online portal). You can also pay at City Hall (900 E. Broad Street) or by mail. If you want to contest a ticket, check the back of the citation for instructions or contact RVA 311. Note: speed camera violations (school zone cameras) use a separate portal at cite-web.com, also linked from the Online Payments page.",
+      "action_steps": [
+        "Pay online at rva.gov/online-payments",
+        "Or pay at City Hall, 900 E. Broad Street",
+        "To contest: follow instructions on the back of the ticket",
+        "Have your citation number ready"
+      ],
+      "deadlines": "Pay within the timeframe on your ticket to avoid additional penalties.",
+      "sources": [
+        {
+          "title": "Online Payments | Richmond",
+          "url": "https://www.rva.gov/online-payments"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 19,
+      "category": "emergency",
+      "intent": "emergency_alerts",
+      "sample_questions": [
+        "How do I get emergency alerts",
+        "Sign up for water alerts",
+        "Richmond Ready alerts",
+        "Emergency notification system",
+        "How will I know about emergencies",
+        "how to sign up for city alerts",
+        "text alerts for water emergencies",
+        "richmond emergency notification signup"
+      ],
+      "answer": "Sign up for Richmond Ready Alerts to get emergency notifications via text, email, or phone. You can sign up at rva.gov (search 'emergency alerts'). This is how the city communicates about water advisories, severe weather, and other emergencies. You should also follow @CityRichmondVA on social media. For real-time updates during an active emergency, call 311 (though during the water crisis, 311 info was sometimes delayed — so check multiple sources).",
+      "action_steps": [
+        "Sign up for Richmond Ready Alerts at rva.gov",
+        "Follow @CityRichmondVA on social media",
+        "Save 311 number (804-646-7000) in your phone",
+        "During emergencies: check rva.gov and local news"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "We're Here to Help | Richmond",
+          "url": "https://www.rva.gov/common/were-here-help"
+        }
+      ],
+      "handoff_trigger": "If there's an active emergency, switch to push-notification mode."
+    },
+    {
+      "id": 20,
+      "category": "social_services",
+      "intent": "childcare_help",
+      "sample_questions": [
+        "Help paying for childcare",
+        "Child care assistance program",
+        "Can't afford daycare",
+        "Childcare subsidy Richmond",
+        "Need help with child care so I can work",
+        "need help paying for daycare so I can work",
+        "free preschool programs richmond",
+        "child care voucher virginia",
+        "head start program near me"
+      ],
+      "answer": "Virginia's Child Care Subsidy Program helps eligible families pay for childcare so they can work or attend education programs. Apply through CommonHelp at commonhelp.virginia.gov or call 855-635-4370. Richmond Social Services administers the program locally. Eligibility is based on income, family size, and whether you're working or in school. The program also covers after-school care. For Head Start (free pre-K for low-income families), contact the local Head Start program.",
+      "action_steps": [
+        "Apply at commonhelp.virginia.gov",
+        "Or call 855-635-4370",
+        "Or visit Social Services at 4100 Hull Street Road or 300 E. Franklin St",
+        "Have: proof of employment/school enrollment, income, childcare provider info"
+      ],
+      "deadlines": "Apply anytime. Benefits start from date of application.",
+      "sources": [
+        {
+          "title": "Virginia CommonHelp",
+          "url": "https://commonhelp.virginia.gov/"
+        },
+        {
+          "title": "Social Services | Richmond",
+          "url": "https://www.rva.gov/social-services/social-services-main"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 21,
+      "category": "city_services",
+      "intent": "animal_control",
+      "sample_questions": [
+        "stray dog in my yard",
+        "how to report animal cruelty",
+        "loose dog on my street",
+        "where is animal control in richmond",
+        "found a stray cat what do I do",
+        "neighbor's dog keeps getting loose",
+        "animal shelter richmond",
+        "where to report a dangerous animal"
+      ],
+      "answer": "Richmond Animal Care and Control handles stray animals, loose animals, animal cruelty reports, and dangerous animal complaints. Call 804-646-5573 to report any of these issues. The facility is located at 1600 Chamberlayne Avenue, Richmond VA 23222. Hours: Wednesday-Friday 12-6 PM, Saturday 12-5 PM, Sunday 12-4 PM, Monday-Tuesday by appointment only.",
+      "action_steps": [
+        "Call Animal Care and Control at 804-646-5573",
+        "Visit the shelter at 1600 Chamberlayne Avenue, Richmond VA 23222",
+        "Hours: Wed-Fri 12-6 PM, Sat 12-5 PM, Sun 12-4 PM, Mon-Tue by appointment",
+        "Provide the exact location and description of the animal when reporting"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Animal Care & Control | Richmond",
+          "url": "https://www.rva.gov/animal-care-control/animal-control"
+        }
+      ],
+      "handoff_trigger": "If the person reports an animal that is actively attacking or posing immediate danger, advise them to call 911 first."
+    },
+    {
+      "id": 22,
+      "category": "city_services",
+      "intent": "jury_duty",
+      "sample_questions": [
+        "got a jury duty summons what do I do",
+        "how much does jury duty pay in richmond",
+        "do I have to go to jury duty",
+        "jury duty phone number richmond",
+        "where do I go for jury duty",
+        "can I postpone jury duty",
+        "jury duty excuse letter",
+        "what happens if I miss jury duty"
+      ],
+      "answer": "Jury duty in Richmond takes place at the John Marshall Courts Building, 400 North 9th Street, Richmond VA 23219. Hours are 8:30 AM-4:30 PM, Monday-Friday. Jury duty pays $50 per day, and the term is one day per week for one month. Call the jury duty line at 804-646-0802 the night before your scheduled date to confirm whether you need to report. For general jury questions, call 804-646-6501.",
+      "action_steps": [
+        "Call the jury duty line at 804-646-0802 the night before to confirm reporting",
+        "For questions about your summons, call 804-646-6501",
+        "Report to John Marshall Courts Building, 400 North 9th Street, Richmond VA 23219",
+        "Bring your jury summons and a photo ID"
+      ],
+      "deadlines": "Call 804-646-0802 the night before each scheduled jury date to confirm whether you must report.",
+      "sources": [
+        {
+          "title": "Jury | Office of the Circuit Court Clerk | Richmond",
+          "url": "https://www.rva.gov/office-circuit-court-clerk/jury"
+        }
+      ],
+      "handoff_trigger": "If the person needs to request a postponement or exemption, direct them to call 804-646-6501."
+    },
+    {
+      "id": 23,
+      "category": "city_services",
+      "intent": "marriage_license",
+      "sample_questions": [
+        "how to get a marriage license in richmond",
+        "how much is a marriage license",
+        "what do I need for a marriage license",
+        "courthouse wedding richmond",
+        "marriage license appointment",
+        "can I get married at city hall",
+        "marriage license requirements virginia",
+        "where to get married in richmond"
+      ],
+      "answer": "Marriage licenses in Richmond are issued at the John Marshall Courts Building, 400 North 9th Street, Richmond VA 23219. The fee is $30 (cash or card accepted, no checks). Both parties must appear in person with a valid photo ID. An appointment is required — call 804-646-6767 to schedule. Office hours are Monday-Friday 8:30 AM-4:15 PM. The license is valid for 60 days once issued. Both parties must be 18 or older. No blood test is required.",
+      "action_steps": [
+        "Call 804-646-6767 to schedule a required appointment",
+        "Both parties must appear in person with photo ID",
+        "Bring $30 (cash or card, no checks)",
+        "Go to John Marshall Courts Building, 400 North 9th Street, Richmond VA 23219",
+        "Hours: Monday-Friday 8:30 AM-4:15 PM"
+      ],
+      "deadlines": "The marriage license is valid for 60 days after issuance.",
+      "sources": [
+        {
+          "title": "Marriages & Licenses | Office of the Circuit Court Clerk | Richmond",
+          "url": "https://rva.gov/office-circuit-court-clerk/marriages-licenses"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 24,
+      "category": "city_services",
+      "intent": "building_permit",
+      "sample_questions": [
+        "do I need a building permit",
+        "how to get a building permit in richmond",
+        "permit for home renovation",
+        "deck permit richmond",
+        "fence permit do I need one",
+        "zoning question for my property",
+        "building inspection richmond",
+        "how to apply for a construction permit"
+      ],
+      "answer": "Building permits, zoning, and inspections in Richmond are handled by the Department of Planning and Development Review. An online permit portal is available for applications. For help navigating the permit process, contact RVA 311 at 804-646-7000. Forms are available at rva.gov/planning-development-review/forms. If you need to appeal a zoning decision, the Board of Zoning Appeals handles those cases.",
+      "action_steps": [
+        "Visit rva.gov/planning-development-review for the online permit portal",
+        "Download forms at rva.gov/planning-development-review/forms",
+        "Call RVA 311 at 804-646-7000 for help navigating the permit process",
+        "For zoning appeals, contact the Board of Zoning Appeals through the same department"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Planning and Development Review | Richmond",
+          "url": "https://www.rva.gov/planning-development-review"
+        }
+      ],
+      "handoff_trigger": "If the person is unsure whether their project needs a permit, route them to RVA 311 at 804-646-7000 for guidance."
+    },
+    {
+      "id": 25,
+      "category": "city_services",
+      "intent": "voter_registration",
+      "sample_questions": [
+        "how to register to vote in richmond",
+        "voter registration deadline",
+        "can I register to vote online",
+        "where do I vote in richmond",
+        "am I registered to vote",
+        "change my voter registration address",
+        "register to vote virginia",
+        "when is the deadline to register"
+      ],
+      "answer": "You can register to vote online at elections.virginia.gov/citizen-portal/. You must be a US citizen, a Virginia resident, and 18 or older to vote (17-year-olds can pre-register). You will need your Social Security Number to register. The registration deadline is 11 days before each election. You can also register at the DMV, public libraries, and government offices. For questions, call the toll-free voter line at 800-552-9745.",
+      "action_steps": [
+        "Register online at elections.virginia.gov/citizen-portal/",
+        "Or register in person at the DMV, libraries, or government offices",
+        "Have your Social Security Number ready",
+        "For questions, call 800-552-9745"
+      ],
+      "deadlines": "Voter registration deadline is 11 days before each election.",
+      "sources": [
+        {
+          "title": "How to Register | Virginia Department of Elections",
+          "url": "https://www.elections.virginia.gov/registration/how-to-register/"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 26,
+      "category": "social_services",
+      "intent": "school_enrollment",
+      "sample_questions": [
+        "how to enroll my kid in richmond public schools",
+        "school registration documents needed",
+        "kindergarten enrollment richmond",
+        "when does school registration start",
+        "RPS enrollment phone number",
+        "RPS school enrollment online portal",
+        "transfer my child to a new school",
+        "what school is my child zoned for"
+      ],
+      "answer": "Richmond Public Schools enrollment is handled through the online portal at enrollrps.schoolmint.com. You can also call 804-780-7710 or email enrollrps@rvaschools.net for assistance. The enrollment office is at 301 North Ninth Street, Richmond VA. You will need two proofs of residency to enroll. Free preschool programs are available for children turning 3 or 4 by September 30 through Head Start and the Virginia Preschool Initiative (VPI).",
+      "action_steps": [
+        "Enroll online at enrollrps.schoolmint.com",
+        "Or call 804-780-7710 for enrollment help",
+        "Or email enrollrps@rvaschools.net",
+        "Gather two proofs of residency before applying",
+        "For free preschool (ages 3-4), ask about Head Start and VPI programs"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Enroll RPS | Richmond Public Schools",
+          "url": "https://www.rvaschools.net/chief-of-staff/enrollrps"
+        }
+      ],
+      "handoff_trigger": "If the family is newly arrived or experiencing homelessness, they may be eligible for immediate enrollment under the McKinney-Vento Act. Route to 804-780-7710."
+    },
+    {
+      "id": 27,
+      "category": "city_services",
+      "intent": "birth_death_certificate",
+      "sample_questions": [
+        "how to get a birth certificate in richmond",
+        "copy of my birth certificate",
+        "death certificate richmond virginia",
+        "how much does a birth certificate cost",
+        "where do I get vital records",
+        "birth certificate office location",
+        "order birth certificate online virginia",
+        "replacement birth certificate"
+      ],
+      "answer": "Birth and death certificates in Richmond are available through the Virginia Department of Health, Richmond City Health District. The fee is $12 per certificate. The office is located at Room 126, 400 East Cary Street, Richmond VA 23219. Phone: 804-205-3911. Hours: Monday-Friday 8 AM-4 PM. You will need a completed application and a photo ID. You can also apply online at vr-fhs.vdh.virginia.gov, or by mail or fax.",
+      "action_steps": [
+        "Visit the office at Room 126, 400 East Cary Street, Richmond VA 23219",
+        "Or apply online at vr-fhs.vdh.virginia.gov",
+        "Bring a completed application and photo ID",
+        "Fee is $12 per certificate",
+        "Call 804-205-3911 for questions"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Vital & Medical Records | Richmond City Health District",
+          "url": "https://www.vdh.virginia.gov/richmond-city/vital-medical-records/"
+        }
+      ],
+      "handoff_trigger": null
+    },
+    {
+      "id": 28,
+      "category": "social_services",
+      "intent": "senior_services",
+      "sample_questions": [
+        "meals on wheels richmond",
+        "senior services in richmond",
+        "help for elderly parent",
+        "disability services richmond",
+        "my grandma needs help at home",
+        "senior meal delivery program",
+        "aging services richmond virginia",
+        "homebound senior needs assistance"
+      ],
+      "answer": "Richmond's Office of Aging and Disability Services provides help for adults 55+ and persons with disabilities 18+. Services include home visits, care coordination, Medicaid applications, fuel assistance, and SNAP help. Call the senior help line at 804-646-1082 or email oads@rva.gov. The office is at 7945 Forest Hill Avenue, Building 26, Richmond VA 23225. For Meals on Wheels and meal delivery, contact FeedMore at 804-521-5200.",
+      "action_steps": [
+        "Call the senior help line at 804-646-1082",
+        "Or email oads@rva.gov",
+        "Visit the office at 7945 Forest Hill Avenue, Building 26, Richmond VA 23225",
+        "For Meals on Wheels: call FeedMore at 804-521-5200",
+        "Services available for adults 55+ and persons with disabilities 18+"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Aging and Disability Services | Richmond",
+          "url": "https://www.rva.gov/neighborhood-and-community-services/aging-and-disability-services"
+        }
+      ],
+      "handoff_trigger": "If the person describes an elder abuse or neglect situation, route to Adult Protective Services at 888-832-3858."
+    },
+    {
+      "id": 29,
+      "category": "city_services",
+      "intent": "towed_vehicle",
+      "sample_questions": [
+        "my car got towed where is it",
+        "towed vehicle lookup richmond",
+        "how to find my towed car",
+        "car was towed from my street",
+        "abandoned car on my block",
+        "report abandoned vehicle richmond",
+        "tow lot richmond virginia",
+        "how to get my car back after towing"
+      ],
+      "answer": "If your car was towed in Richmond, use the tow lookup tool at apps.richmondgov.com/applications/towviewing to find it. The tool shows the vehicle's make, model, color, VIN, and plate number. Records are available for 14 days. Check the tow website before reporting your car stolen. For further help, call the non-emergency police line at 804-646-5100 or RVA 311 at 804-646-7000.",
+      "action_steps": [
+        "Search the tow lookup tool at apps.richmondgov.com/applications/towviewing",
+        "Records are available for 14 days after towing",
+        "If your vehicle is not listed, call non-emergency police at 804-646-5100",
+        "Or call RVA 311 at 804-646-7000 for additional help",
+        "Check the tow website before reporting your car as stolen"
+      ],
+      "deadlines": "Tow records are available for 14 days. Act quickly to avoid additional storage fees.",
+      "sources": [
+        {
+          "title": "Towed Vehicles | Richmond",
+          "url": "https://www.rva.gov/911/towed-vehicles"
+        }
+      ],
+      "handoff_trigger": "If the person believes their car was towed illegally or from private property, advise them to contact the non-emergency police line at 804-646-5100."
+    },
+    {
+      "id": 30,
+      "category": "social_services",
+      "intent": "legal_aid",
+      "sample_questions": [
+        "free legal help in richmond",
+        "legal aid for eviction",
+        "tenant rights virginia",
+        "my landlord won't fix things",
+        "free lawyer for low income",
+        "being evicted need legal help",
+        "landlord tenant dispute richmond",
+        "how to fight an eviction in court"
+      ],
+      "answer": "Free civil legal help is available through Virginia Legal Aid. Call the Legal Aid Hotline at 866-534-5243. For seniors, call the Senior Legal Helpline at 844-802-5910. Services cover evictions, foreclosure, landlord-tenant rights, consumer issues, family law, and debt. The website at valegalaid.org also has self-help tools with DIY forms for common legal issues. This is free civil legal information and assistance for those who qualify.",
+      "action_steps": [
+        "Call the Legal Aid Hotline at 866-534-5243",
+        "For seniors: call the Senior Legal Helpline at 844-802-5910",
+        "Visit valegalaid.org for self-help tools and DIY legal forms",
+        "Have your documents ready: lease, notices, correspondence with landlord, court papers"
+      ],
+      "deadlines": null,
+      "sources": [
+        {
+          "title": "Virginia Legal Aid",
+          "url": "https://www.valegalaid.org"
+        }
+      ],
+      "handoff_trigger": "If the person has a court date coming up soon, urge them to call 866-534-5243 immediately as legal aid may be able to provide same-day assistance for eviction cases."
+    }
+  ]
+}

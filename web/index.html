@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Hey804 — Navigate Richmond city services.">
+    <title>Hey804 — Richmond City Services</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Alert Banner -->
+    <div id="alert-banner" class="alert-banner hidden" role="alert" aria-live="assertive">
+        <div class="alert-inner">
+            <span class="alert-label">EMERGENCY</span>
+            <span id="alert-message"></span>
+            <button id="alert-dismiss" class="alert-x">&times;</button>
+        </div>
+    </div>
+
+    <!-- ═══ HERO — Immersive Richmond ═══ -->
+    <header id="app-header" class="hero">
+        <!-- Video background — river flowing -->
+        <video class="hero-video" autoplay muted loop playsinline poster="">
+            <source src="/river.mp4" type="video/mp4">
+        </video>
+        <!-- Animated CSS fallback if video doesn't load -->
+        <div class="hero-animated-bg">
+            <div class="river-flow"></div>
+            <div class="light-shimmer"></div>
+        </div>
+        <!-- Dark overlay for text readability -->
+        <div class="hero-overlay"></div>
+        <!-- Content -->
+        <div class="hero-content">
+            <div class="hero-brand">
+                <span class="brand-mark">804</span>
+                <span class="brand-name">Hey804</span>
+            </div>
+            <h1 class="hero-headline">Navigate<br>Richmond.</h1>
+            <p class="hero-sub">Real answers about taxes, benefits, utilities &amp; city services. Sourced from rva.gov.</p>
+            <div class="hero-cta">
+                <a href="#topics" class="hero-btn" id="hero-start">Get Started</a>
+                <span class="hero-or">or text <strong>(804) 808-1083</strong></span>
+            </div>
+        </div>
+        <div class="mural-bar"></div>
+    </header>
+
+    <!-- Location Greeting -->
+    <div id="location-greeting" class="location-strip hidden">
+        <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M8 1C5.24 1 3 3.24 3 6c0 3.75 5 9 5 9s5-5.25 5-9c0-2.76-2.24-5-5-5zm0 7a2 2 0 110-4 2 2 0 010 4z" fill="currentColor"/></svg>
+        <span id="location-text"></span>
+    </div>
+
+    <!-- ═══ MAIN ═══ -->
+    <main id="app-main">
+        <section id="screen-categories" class="screen active">
+            <p class="screen-intro" id="topics">What do you need help with?</p>
+            <div class="card-grid" id="category-grid"></div>
+            <div class="sms-strip">
+                <span class="sms-or">Or text your question to</span>
+                <a href="sms:+18048081083" class="sms-num">(804) 808-1083</a>
+            </div>
+        </section>
+
+        <section id="screen-subtopics" class="screen">
+            <button class="back-btn" id="back-to-categories"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> All topics</button>
+            <h2 id="subtopic-heading" class="section-heading"></h2>
+            <div class="card-list" id="subtopic-list"></div>
+        </section>
+
+        <section id="screen-plan" class="screen">
+            <button class="back-btn" id="back-to-subtopics"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Back</button>
+            <div id="plan-loading" class="plan-card shimmer hidden">
+                <div class="shimmer-line w80"></div><div class="shimmer-line w60"></div>
+                <div class="shimmer-line w90"></div><div class="shimmer-line w70"></div>
+            </div>
+            <div id="plan-content" class="plan-card hidden">
+                <div class="plan-answer" id="plan-answer"></div>
+                <div class="plan-steps"><h3 class="label-heading">What to do</h3><ol id="steps-list"></ol></div>
+                <div id="plan-deadline" class="plan-deadline hidden">
+                    <svg width="15" height="15" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><path d="M8 4v4l3 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+                    <span id="deadline-text"></span>
+                </div>
+                <div id="plan-sources" class="plan-sources">
+                    <span class="source-tag"><svg width="12" height="12" viewBox="0 0 16 16" fill="none"><path d="M13.5 4.5l-7 7L3 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg> Verified source</span>
+                    <div id="sources-list"></div>
+                </div>
+                <div class="plan-actions">
+                    <a id="call-311-btn" href="tel:8046467000" class="btn btn-cta">Call RVA 311</a>
+                    <button id="share-btn" class="btn btn-outline">Share</button>
+                </div>
+                <p class="plan-note">Need more help? <a href="tel:8046467000">804-646-7000</a> · Mon-Fri 8am-7pm</p>
+            </div>
+        </section>
+
+        <section id="screen-ask" class="screen">
+            <button class="back-btn" id="back-from-ask"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M10 12L6 8l4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> All topics</button>
+            <h2 class="section-heading">Ask a question</h2>
+            <p class="ask-hint">Ask about any Richmond city service.</p>
+            <form id="ask-form" class="ask-form">
+                <input type="text" id="ask-input" class="ask-input" placeholder='Try "I can\'t pay my tax bill"' autocomplete="off" maxlength="500">
+                <button type="submit" class="ask-go"><svg width="18" height="18" viewBox="0 0 16 16" fill="none"><path d="M14 2L7 9M14 2l-4 12-3-5-5-3 12-4z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+            </form>
+            <div id="ask-result"></div>
+        </section>
+    </main>
+
+    <footer id="app-footer" class="footer">
+        <div class="mural-bar"></div>
+        <div class="footer-inner">
+            <p>All answers sourced from <a href="https://www.rva.gov" target="_blank">rva.gov</a> and official Virginia state resources.</p>
+            <p class="footer-sub">Hey804 is a prototype built for <a href="https://rvahacks.org" target="_blank">Hack for RVA 2026</a>. Not an official City of Richmond service.</p>
+        </div>
+    </footer>
+
+    <div id="share-toast" class="share-toast hidden">Copied to clipboard</div>
+    <script src="/app.js"></script>
+</body>
+</html>
