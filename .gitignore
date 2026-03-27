@@ -36,8 +36,6 @@ ngrok.yml
 # Claude Code local settings
 .claude/
 
-# Hackathon presentation files (local only)
-hackathon_*.html
 
 # Logs
 *.log
