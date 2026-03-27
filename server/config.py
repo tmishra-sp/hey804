@@ -20,7 +20,9 @@ TWILIO_PHONE_NUMBER = os.getenv("TWILIO_PHONE_NUMBER", "")
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY", "")
 
 # Admin
-ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "changeme")
+ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
+if not ADMIN_TOKEN and ENVIRONMENT == "production":
+    raise ValueError("ADMIN_TOKEN must be set in production")
 
 # Database
 DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'data' / 'hey804.db'}")
