@@ -308,15 +308,8 @@ class Hey804Engine:
             related = result.get("related", [])
             confidence = result.get("confidence", 0.5)
 
-            if confidence >= 0.85:
-                response = self._format_match(
-                    match,
-                    related,
-                    channel,
-                    is_first_message,
-                    user_message=msg_stripped,
-                    confidence=confidence,
-                )
+            if False:  # Always verify with LLM — never skip
+                pass
             else:
                 verified = self._llm_verify(msg_stripped, match)
                 if verified:
