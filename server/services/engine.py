@@ -67,6 +67,14 @@ EMERGENCY_PATTERNS = [
         re.compile(r"\b(heart attack|choking|seizure|bleeding.{0,10}(badly|out|heavily))\b", re.I),
         "medical emergency",
     ),
+    (
+        re.compile(r"\b(break(ing)? in(to)?|broke.{0,5}in|intruder|someone.{0,10}(in |into )(my |the )?(house|home|apartment)|home invasion|being robbed)\b", re.I),
+        "active break-in",
+    ),
+    (
+        re.compile(r"\b(water main.{0,5}(break|burst|broke)|main.{0,5}break|flood.{0,10}street|geyser.{0,10}street)\b", re.I),
+        "water main break",
+    ),
 ]
 
 EMERGENCY_RESPONSE = (
@@ -120,7 +128,7 @@ CRISIS_PATTERNS = [
     ),
     (
         re.compile(
-            r"\b(homeless tonight|sleeping (outside|in my car|on the street)|warming shelter|emergency shelter|no.{0,10}(place|where) to (go|sleep|stay))\b",
+            r"\b(homeless|need.{0,10}shelter|sleeping (outside|in my car|on the street)|warming shelter|emergency shelter|no.{0,10}(place|where) to (go|sleep|stay)|need.{0,10}(place|somewhere) to (sleep|stay))\b",
             re.I,
         ),
         "For immediate shelter assistance, call 211 (Virginia 211) — available 24/7.\n\n"
@@ -412,7 +420,7 @@ class Hey804Engine:
         ui_messages = {
             "you_asked": "You asked",
             "first_step": "Here's your first step",
-            "see_steps": f"See all {len(response['action_steps']) if isinstance(response, dict) and 'action_steps' in response else 0} steps",
+            "see_steps": "Next steps",
             "also_see": "Also see",
             "might_help": "These might help",
             "back_button": "Ask me something else",
