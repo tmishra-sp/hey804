@@ -695,8 +695,8 @@
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs260316001745?gid=31cd796e-e824-41c0-b770-18b0ed86c93a"
         },
         {
-          "title": "RVA 311 - How to Request Police Attendance at Community Event",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs191018154917?gid=2699cbbc-2e73-4831-8a93-9c592b2b4b94"
+          "title": "About RVA 311 | Richmond",
+          "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"
         }
       ],
       "handoff_trigger": "If there's an active emergency, switch to push-notification mode."
@@ -1073,35 +1073,61 @@
         "alley behind my house needs repair",
         "road is falling apart on my block",
         "curb is crumbling in front of my house",
-        "there's a sinkhole on my street",
         "bridge near me needs repair",
         "pavement markings faded on my road",
         "who fixes sidewalks in richmond"
       ],
-      "answer": "Report road, sidewalk, alley, curb, bridge, or sinkhole damage through RVA 311. The Department of Public Works handles these repairs. For sinkholes, call 804-646-4646 and press 1 for a response within 12 hours — sinkholes are often caused by underground infrastructure issues. Sidewalk repairs may take up to 365 days. Road and alley repairs may take up to 180 days. Curb and gutter repairs may take up to 180 days. For emergencies posing immediate danger, call 804-646-5100.",
+      "answer": "Report road, sidewalk, alley, curb, or bridge damage through RVA 311. The Department of Public Works handles these repairs. Sidewalk repairs may take up to 365 days. Road and alley repairs may take up to 180 days. Curb and gutter repairs may take up to 180 days. For emergencies posing immediate danger, call 804-646-5100.",
       "action_steps": [
         "Submit a request at rva311.com for your specific issue",
-        "For sinkholes: call 804-646-4646 and press 1 (24-hour, response within 12 hours)",
         "For emergencies: call 804-646-5100",
         "Include: exact address or intersection, description, photo if possible",
         "Track your request status at rva311.com"
       ],
-      "deadlines": "Sidewalks: up to 365 days. Roads/alleys/curbs: up to 180 days. Sinkholes: 12-hour response.",
+      "deadlines": "Sidewalks: up to 365 days. Roads/alleys/curbs: up to 180 days.",
       "sources": [
         {
           "title": "RVA 311 - Repair Road",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019163752?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
-          "title": "RVA 311 - Report Sinkhole",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
           "title": "RVA 311 - Repair Sidewalk or Ramp",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019185025?gid=f803d865-2aac-4172-af11-4c9c01239457"
         }
       ],
-      "handoff_trigger": "If reporting a sinkhole, stress urgency: call 804-646-4646 and press 1 immediately. Sinkholes can indicate major infrastructure failure."
+      "handoff_trigger": "For emergencies posing immediate danger to persons or property, call 804-646-5100."
+    },
+    {
+      "id": 43,
+      "category": "city_services",
+      "intent": "report_sinkhole",
+      "sample_questions": [
+        "there's a sinkhole on my street",
+        "sinkhole in the road",
+        "sinkhole in my yard",
+        "road is caving in",
+        "ground is collapsing",
+        "huge hole opening up in the street",
+        "the road is sinking",
+        "cave in on my street",
+        "ground collapsing near my house"
+      ],
+      "answer": "Sinkholes are emergencies handled by the Department of Public Utilities (DPU), not Public Works. Call 804-646-4646 and press 1 immediately for a response within 12 hours. Sinkholes are often caused by underground infrastructure failure (water, sewer, stormwater pipes). You can also submit a report at rva311.com. Do NOT use the Repair Road form — use the Report Sinkhole form specifically. If the sinkhole poses immediate danger to people or vehicles, also call 804-646-5100.",
+      "action_steps": [
+        "Call DPU at 804-646-4646 and press 1 immediately (24-hour, 12-hour response)",
+        "Submit a report at rva311.com using the Report Sinkhole form",
+        "If immediate danger: also call 804-646-5100",
+        "Include: exact address or intersection, size of hole, photo if possible",
+        "Do NOT enter or drive over a sinkhole"
+      ],
+      "deadlines": "DPU responds to sinkholes within 12 hours.",
+      "sources": [
+        {
+          "title": "RVA 311 - Report Sinkhole",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
+        }
+      ],
+      "handoff_trigger": "Sinkholes are urgent — call 804-646-4646 and press 1 immediately. They can indicate major underground infrastructure failure."
     },
     {
       "id": 32,
@@ -1204,12 +1230,12 @@
       "deadlines": null,
       "sources": [
         {
-          "title": "RVA 311 - Request New Tree Planting",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221191046?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
-        },
-        {
           "title": "RVA 311 - Assess Existing Tree or Stump",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs201027220259?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
+        },
+        {
+          "title": "RVA 311 - Request New Tree Planting",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221191046?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
         },
         {
           "title": "RVA 311 - Maintain Vegetation in Right of Way",
@@ -1334,6 +1360,10 @@
         {
           "title": "RVA 311 - Report Sewer Odor",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228141848?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
+        },
+        {
+          "title": "RVA 311 - Report Missing Sewer Manhole Cover",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180301153010?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
         }
       ],
       "handoff_trigger": "If sewage is flooding into their home, this is an emergency. Direct them to call 804-646-4646 and press 1 immediately."

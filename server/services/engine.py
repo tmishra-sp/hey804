@@ -76,7 +76,7 @@ EMERGENCY_PATTERNS = [
     ),
     (
         re.compile(
-            r"\b(water main.{0,5}(break|burst|broke)|main.{0,5}break|flood.{0,10}street|geyser.{0,10}street)\b",
+            r"\b(water main.{0,5}(break|burst|broke)|main.{0,5}break|geyser.{0,10}street)\b",
             re.I,
         ),
         "water main break",

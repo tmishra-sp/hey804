@@ -178,9 +178,11 @@ BOOST_KEYWORDS = {
     "report_pothole_streetlight": [
         "pothole", "pot hole", "road needs repair",
         "report a pothole", "pothole on my",
-        # From 311: Pothole on Road keywords
         "pothole repair", "asphalt", "pavement",
         "pothole on road", "pothole on street",
+        "crater", "crater in the road",
+        "big hole in the road", "big hole in the street",
+        "pothole damaged", "pothole damage",
     ],
     "trash_recycling": [
         "trash", "garbage", "recycling", "bulk pickup", "pickup",
@@ -204,7 +206,7 @@ BOOST_KEYWORDS = {
         "library hours", "library location", "nearest library",
     ],
     "pay_parking_ticket": [
-        "parking", "parking ticket", "citation", "fine", "towed",
+        "parking", "parking ticket", "citation", "fine",
         "parking violation",
         # From 311: Parking Citation keywords
         "contest ticket", "contest citation", "appeal ticket",
@@ -245,9 +247,6 @@ BOOST_KEYWORDS = {
         "permit", "building permit", "zoning", "renovation", "deck",
         "fence", "construction permit", "building inspection",
         "home improvement permit",
-        # From 311: Zoning/Building keywords
-        "airbnb", "short-term rental", "illegal business",
-        "boarding house", "commercial vehicles",
     ],
     "voter_registration": [
         "vote", "voter", "register to vote", "voter registration",
@@ -271,7 +270,7 @@ BOOST_KEYWORDS = {
         "elderly programs", "disability benefits", "soup kitchens",
     ],
     "towed_vehicle": [
-        "towed", "tow", "towing", "car towed", "vehicle towed",
+        "towed", "tow", "towing", "car towed", "car was towed", "vehicle towed",
         "abandoned car", "abandoned vehicle", "tow lot",
         "find my car", "car missing",
         # From 311: Abandoned Vehicle keywords
@@ -285,21 +284,23 @@ BOOST_KEYWORDS = {
     ],
     "road_sidewalk_repair": [
         "sidewalk", "sidewalk repair", "alley repair", "curb", "gutter",
-        "bridge repair", "sinkhole", "cobblestone", "road repair",
+        "bridge repair", "cobblestone", "road repair",
         "crumbling sidewalk", "broken sidewalk", "ramp repair",
         "side walk", "pedestrian walkway", "ADA ramp",
-        # From 311: Roads/Sidewalks/Alleys/Sinkhole keywords
         "handicap ramp", "curb ramp", "gravel alley", "asphalt alley",
-        "cobblestone alley", "concrete alley", "cave-in", "caved-in",
-        "crater", "sink hole", "crumbling pavement", "missing stones",
+        "cobblestone alley", "concrete alley",
+        "crumbling pavement", "missing stones",
         "repair sidewalk", "repair alley",
         "cobblestone road", "repair road", "repair street",
-        # From simulation fixes
         "fix this street", "fix the street", "fix the road", "fix my street",
         "road is falling apart", "road falling apart",
-        # Sinkhole/collapse language
-        "ground collapsing", "ground is collapsing", "road collapsing",
+        "paving", "repaving", "needs paving", "needs repaving",
+    ],
+    "report_sinkhole": [
+        "sinkhole", "sink hole", "cave-in", "caved-in", "caving in",
+        "cave in", "ground collapsing", "ground is collapsing", "road collapsing",
         "road is sinking", "street is sinking", "ground caving",
+        "road caving", "hole opening up", "ground sinking",
     ],
     "traffic_signs_signals": [
         "traffic signal", "traffic light", "stop sign", "stop light",
@@ -374,6 +375,8 @@ BOOST_KEYWORDS = {
         "fire alarms", "plumbing",
         "roof damage", "without permit", "remodeling",
         "occupy illegally", "too many units",
+        "airbnb", "short-term rental", "illegal business",
+        "boarding house", "commercial vehicles",
         # From simulation fixes
         "building falling down", "building gonna collapse",
         "about to collapse", "unsafe structure", "condemned",
