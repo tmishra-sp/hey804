@@ -2,6 +2,7 @@
 Channel-aware response formatter.
 Same answer, shaped for SMS vs web vs widget.
 """
+from __future__ import annotations
 
 import re
 
@@ -43,9 +44,9 @@ def format_sms(match: dict, is_first_message: bool = False) -> str:
     return "\n".join(lines)
 
 
-def format_web(match: dict) -> dict:
-    """Web/widget JSON response with full detail."""
-    return {
+def format_web(match: dict, related: list[dict] | None = None) -> dict:
+    """Web/widget JSON response with full detail + related topics for transparency."""
+    result = {
         "answer": match["answer"],
         "action_steps": match["action_steps"],
         "deadlines": match.get("deadlines"),
@@ -55,6 +56,17 @@ def format_web(match: dict) -> dict:
         "handoff_available": True,
         "handoff_message": "Need more help? Call RVA 311 at 804-646-7000",
     }
+    if related:
+        result["related"] = [
+            {
+                "title": r["title"],
+                "answer_preview": r["answer_preview"],
+                "sources": r["sources"],
+                "category": r["category"],
+            }
+            for r in related
+        ]
+    return result
 
 
 def format_fallback_sms(fallback_message: str, is_first_message: bool = False) -> str:
@@ -127,7 +139,9 @@ HELP_RESPONSE = (
     "- SNAP, Medicaid, benefits\n"
     "- Utility bills & assistance\n"
     "- Rent help & housing\n"
-    "- City services (311, trash, permits)\n\n"
+    "- City services (311, trash, permits)\n"
+    "- Roads, sidewalks, sewer, trees, parks\n"
+    "- Code violations, dumping, pests, parking\n\n"
     "Or call RVA 311 at 804-646-7000 (Mon-Fri 8am-7pm, Sat 9am-1pm)."
 )
 

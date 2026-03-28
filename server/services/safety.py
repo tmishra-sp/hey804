@@ -27,6 +27,8 @@ ALLOWED_PHONE_NUMBERS = {
     "804-521-2500",  # Central Virginia Food Bank (in handoff_trigger)
     "804-482-5525",  # Richmond Health District (in handoff_trigger)
     "866-366-4357",  # Dominion Energy EnergyShare
+    "804-646-5100",  # Non-emergency police (road/sewer emergencies, towed vehicles)
+    "911",  # Emergency services
 }
 
 # Normalized versions for matching (digits only)
@@ -69,8 +71,11 @@ def validate_response_citations(response_text: str, kb_entry: dict | None) -> st
     entry_phones.add("804-646-7000")  # 311 is always allowed
     entry_phones.add("311")
 
+    # Strip URLs before scanning for phone numbers (URLs contain long digit sequences)
+    text_without_urls = re.sub(r'https?://[^\s\)]+', '', response_text)
+
     # Check response for phone numbers not in KB
-    response_phones = re.findall(r'\d{3}[-.]?\d{3}[-.]?\d{4}', response_text)
+    response_phones = re.findall(r'\d{3}[-.]?\d{3}[-.]?\d{4}', text_without_urls)
     for phone in response_phones:
         if phone not in entry_phones and phone not in ALLOWED_PHONE_NUMBERS:
             response_text = response_text.replace(phone, "804-646-7000 (RVA 311)")
