@@ -232,8 +232,16 @@
     );
     // Bare domains (rva311.com, rva.gov, commonhelp.virginia.gov, etc.)
     safe = safe.replace(
-      /(?<![\/\w])((?:rva311\.com|rva\.gov|commonhelp\.virginia\.gov|coverva\.dmas\.virginia\.gov|valegalaid\.org|elections\.virginia\.gov|apps\.richmondgov\.com|rvalibrary\.org|enrollrps\.schoolmint\.com|dmv\.virginia\.gov|dominionenergy\.com)[^\s<,)]*)/g,
+      /(?<![\/\w])((?:rva\.gov|commonhelp\.virginia\.gov|coverva\.dmas\.virginia\.gov|valegalaid\.org|elections\.virginia\.gov|apps\.richmondgov\.com|rvalibrary\.org|enrollrps\.schoolmint\.com|dmv\.virginia\.gov|dominionenergy\.com)[^\s<,)]*)/g,
       '<a href="https://$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>',
+    );
+    // rva311.com — bare domain links to service directory, paths link directly
+    safe = safe.replace(
+      /(?<![\/\w])(rva311\.com)(\/[^\s<,)]+)?/g,
+      function(match, domain, path) {
+        if (path) return '<a href="https://' + domain + path + '" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">' + domain + path + '</a>';
+        return '<a href="https://www.rva311.com/rvaone" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">' + domain + '</a>';
+      },
     );
     // Phone numbers (804-646-7000 format) — inline, no word-break
     safe = safe.replace(
@@ -879,10 +887,16 @@
 
     // 2. Steps (always visible, no toggle)
     if (steps.length > 0) {
+      var primaryUrl = sources.length > 0 ? sources[0].url : "";
       html += '<div style="font-size:12px;font-weight:600;color:#7A6A5E;margin-bottom:8px;">Next steps</div>';
       html += '<ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
-        html += '<li data-n="' + (i + 1) + '">' + linkify(steps[i]) + "</li>";
+        var stepHtml = linkify(steps[i]);
+        // Step 1 links to same form as the source button
+        if (i === 0 && primaryUrl && stepHtml.indexOf("rva311.com/rvaone") > -1) {
+          stepHtml = stepHtml.replace(/href="https:\/\/www\.rva311\.com\/rvaone"/, 'href="' + esc(primaryUrl) + '"');
+        }
+        html += '<li data-n="' + (i + 1) + '">' + stepHtml + "</li>";
       }
       html += "</ol>";
     }
