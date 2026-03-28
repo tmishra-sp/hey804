@@ -47,7 +47,7 @@
     "*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}",
 
     /* ── Trigger card ── warm floating guide card */
-    ".trigger-card{position:fixed;bottom:24px;right:24px;z-index:99998;width:300px;background:#FFFCF8;border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 8px 40px rgba(45,31,20,0.12),0 2px 8px rgba(45,31,20,0.06),0 0 0 1px rgba(45,31,20,0.04);transition:opacity .3s,transform .3s cubic-bezier(.34,1.56,.64,1)}",
+    ".trigger-card{position:fixed;bottom:24px;right:24px;z-index:99998;width:300px;background:#FFFCF8;border-radius:22px;padding:16px;display:flex;flex-direction:column;gap:12px;box-shadow:0 12px 48px rgba(45,31,20,0.2),0 4px 12px rgba(45,31,20,0.1),0 0 0 1.5px rgba(194,99,58,0.15);transition:opacity .3s,transform .3s cubic-bezier(.34,1.56,.64,1)}",
 
     /* Avatar row at top of trigger */
     ".trigger-header{display:flex;align-items:center;gap:10px;padding:0 2px 2px}",
@@ -221,10 +221,10 @@
     safe = safe.replace(/(https?:\/\/[^\s<,)]+)/g, '<a href="$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>');
     // Bare domains (rva311.com, rva.gov, commonhelp.virginia.gov, etc.)
     safe = safe.replace(/(?<![\/\w])((?:rva311\.com|rva\.gov|commonhelp\.virginia\.gov|coverva\.dmas\.virginia\.gov|valegalaid\.org|elections\.virginia\.gov|apps\.richmondgov\.com|rvalibrary\.org|enrollrps\.schoolmint\.com|dmv\.virginia\.gov|dominionenergy\.com)[^\s<,)]*)/g, '<a href="https://$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>');
-    // Phone numbers (804-646-7000 format)
-    safe = safe.replace(/(\d{3}[-.]?\d{3}[-.]?\d{4})/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
-    // Short codes (311, 211, 911, 988)
-    safe = safe.replace(/\b(911|311|211|988)\b/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
+    // Phone numbers (804-646-7000 format) — inline, no word-break
+    safe = safe.replace(/(\d{3}[-.]?\d{3}[-.]?\d{4})/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline;white-space:nowrap">$1</a>');
+    // Short codes (311, 211, 911, 988) — tappable to call, inline (no word-break)
+    safe = safe.replace(/\b(911|988|311|211)\b/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
     return safe;
   }
 
@@ -238,7 +238,7 @@
   var triggerAvatar = h("div", "trigger-avatar");
   triggerAvatar.innerHTML = svgCompass;
   var triggerGreetEl = h("div", "trigger-greeting");
-  triggerGreetEl.innerHTML = "Your RVA Guide<br><span>I know my way around Richmond</span>";
+  triggerGreetEl.innerHTML = "Your RVA Guide<br><span>Find the right city service, fast</span>";
   triggerHdr.appendChild(triggerAvatar);
   triggerHdr.appendChild(triggerGreetEl);
   triggerCard.appendChild(triggerHdr);
@@ -246,7 +246,7 @@
   var triggerInputRow = h("div", "trigger-input-row");
   var triggerInput = h("input", "trigger-input");
   triggerInput.type = "text";
-  triggerInput.placeholder = "What do you need help with?";
+  triggerInput.placeholder = "Pothole, water bill, food stamps...";
   triggerInput.setAttribute("aria-label", "Ask about Richmond city services");
   var triggerSendBtn = h("button", "trigger-send");
   triggerSendBtn.setAttribute("aria-label", "Send");
@@ -266,9 +266,7 @@
   for (var wi = 0; wi < 4; wi++) { waveDiv.appendChild(h("span", "")); }
   triggerActions.appendChild(waveDiv);
 
-  var triggerLabel = h("span", "trigger-label");
-  triggerLabel.textContent = "Hey804";
-  triggerActions.appendChild(triggerLabel);
+  // Removed Hey804 label — shown in panel footer instead
 
   triggerCard.appendChild(triggerActions);
   shadow.appendChild(triggerCard);
