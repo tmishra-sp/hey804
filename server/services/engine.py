@@ -487,7 +487,7 @@ class Hey804Engine:
         user_message: str = "",
         confidence: float = 0.0,
     ) -> dict | str:
-        # Rerank sources so the most relevant one for this query is first
+        # Filter and rerank sources: only show sources relevant to the query
         if user_message and len(match.get("sources", [])) > 1:
             msg_words = set(user_message.lower().split())
 
@@ -496,7 +496,11 @@ class Hey804Engine:
                 return len(msg_words & title_words)
 
             match = dict(match)  # don't mutate the KB entry
-            match["sources"] = sorted(match["sources"], key=source_relevance, reverse=True)
+            scored = [(source_relevance(s), s) for s in match["sources"]]
+            scored.sort(key=lambda x: x[0], reverse=True)
+            # Always keep the top source; only include others if they scored > 0
+            filtered = [scored[0][1]] + [s for score, s in scored[1:] if score > 0]
+            match["sources"] = filtered
 
         if channel == "sms":
             response_text = format_sms(match, is_first_message=is_first_message)

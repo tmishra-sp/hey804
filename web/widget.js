@@ -62,7 +62,7 @@
     ".trigger-input{flex:1;border:1.5px solid #E8DFD4;border-radius:14px;padding:11px 14px;font:400 13.5px/1.4 inherit;background:#FAF7F2;color:#2D1F14;outline:none;transition:all .2s}",
     ".trigger-input:focus{border-color:#C2633A;background:#fff;box-shadow:0 0 0 3px rgba(194,99,58,0.1)}",
     ".trigger-input::placeholder{color:#B0A194}",
-    ".trigger-send{width:34px;height:34px;flex-shrink:0;border:none;border-radius:50%;background:linear-gradient(135deg,#B85C38,#C2633A);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(0.8);transition:opacity .2s,transform .2s;pointer-events:none}",
+    ".trigger-send{width:34px;height:34px;flex-shrink:0;border:none;border-radius:50%;background:linear-gradient(135deg,#B85C38,#C2633A);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .2s}",
     ".trigger-send.visible{opacity:1;transform:scale(1);pointer-events:auto}",
     ".trigger-send:hover{transform:scale(1.08)}",
     ".trigger-actions{display:flex;align-items:center;gap:10px;padding:0 2px}",
@@ -92,6 +92,7 @@
     /* ── Panel ── */
     ".panel{position:fixed;bottom:92px;right:24px;z-index:100000;width:400px;max-height:600px;background:#FFFCF8;border-radius:22px;box-shadow:0 25px 60px rgba(45,31,20,.14),0 8px 24px rgba(45,31,20,.06),0 0 0 1px rgba(45,31,20,.04);display:flex;flex-direction:column;overflow:hidden;transform:translateY(16px) scale(.95);opacity:0;pointer-events:none;transition:transform .35s cubic-bezier(.34,1.56,.64,1),opacity .25s}",
     ".panel.open{transform:none;opacity:1;pointer-events:auto}",
+    ".widget-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:99997;opacity:1;pointer-events:auto}",
 
     /* ── Header — Richmond sunset warmth ── */
     ".hdr{background:linear-gradient(160deg,#1E1209 0%,#3D2014 30%,#6B3A25 70%,#8B4A2E 100%);padding:30px 24px 22px;position:relative;overflow:hidden}",
@@ -284,8 +285,8 @@
     "button",
     speechSupported ? "trigger-mic" : "trigger-mic unsupported",
   );
-  micBtn.setAttribute("aria-label", "Submit");
-  micBtn.innerHTML = svgSend;
+  micBtn.setAttribute("aria-label", "Voice input");
+  micBtn.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
   triggerActions.appendChild(micBtn);
 
   var waveDiv = h("div", "trigger-wave");
@@ -304,6 +305,10 @@
   closeBtn.setAttribute("aria-label", "Close");
   closeBtn.innerHTML = svgX;
   shadow.appendChild(closeBtn);
+
+  // --- Overlay (dims background when widget is open) ---
+  var overlay = h("div", "widget-overlay");
+  shadow.appendChild(overlay);
 
   // --- Panel ---
   var panel = h("div", "panel");
@@ -579,6 +584,9 @@
       '<input type="text" class="you-asked-input" value="' +
       esc(userMessage).replace(/"/g, "&quot;") +
       '" style="flex:1;border:1.5px solid #D9CFC3;border-radius:8px;background:#fff;padding:5px 8px;font:inherit;font-size:13px;color:#4A3A2E;outline:none;min-width:0;" />' +
+      '<button class="you-asked-mic" style="width:28px;height:28px;border-radius:50%;border:1.5px solid #E8DFD4;background:#FAF7F2;color:#9A7B6B;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;' + (speechSupported ? '' : 'opacity:0.4;cursor:not-allowed;') + '">' +
+      '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>' +
+      "</button>" +
       '<button class="you-asked-send" style="width:28px;height:28px;border-radius:50%;border:none;background:#C2633A;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
       svgSend +
       "</button>" +
@@ -589,20 +597,50 @@
   function wireYouAsked(container) {
     var input = container.querySelector(".you-asked-input");
     var btn = container.querySelector(".you-asked-send");
+    var mic = container.querySelector(".you-asked-mic");
     if (!input || !btn) return;
-    function showSend() {
-      btn.style.opacity = "1";
-    }
     function submit() {
       var v = input.value.trim();
       if (v) doSend(v);
     }
-    input.addEventListener("input", showSend);
-    input.addEventListener("focus", showSend);
     input.addEventListener("keydown", function (e) {
       if (e.key === "Enter") submit();
     });
     btn.onclick = submit;
+    if (mic && speechSupported && recognition) {
+      mic.onclick = function () {
+        // Reuse the same recognition instance from the trigger card
+        // Temporarily redirect its handlers to this input
+        var origOnResult = recognition.onresult;
+        var origOnEnd = recognition.onend;
+        var origOnError = recognition.onerror;
+
+        mic.style.borderColor = "#ef4444";
+        mic.style.color = "#ef4444";
+
+        recognition.onresult = function (e) {
+          var transcript = e.results[0][0].transcript;
+          input.value = transcript;
+          if (e.results[0].isFinal && transcript.trim()) {
+            mic.style.borderColor = "#E8DFD4";
+            mic.style.color = "#9A7B6B";
+            recognition.onresult = origOnResult;
+            recognition.onend = origOnEnd;
+            recognition.onerror = origOnError;
+            submit();
+          }
+        };
+        recognition.onend = function () {
+          mic.style.borderColor = "#E8DFD4";
+          mic.style.color = "#9A7B6B";
+          recognition.onresult = origOnResult;
+          recognition.onend = origOnEnd;
+          recognition.onerror = origOnError;
+        };
+        recognition.onerror = recognition.onend;
+        recognition.start();
+      };
+    }
   }
 
   function renderResponse(data, userMessage) {
