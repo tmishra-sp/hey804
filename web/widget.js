@@ -308,8 +308,9 @@
   function buildHome() {
     body.innerHTML = "";
 
-    // Input row inside panel
+    // Input field (only on home screen — gets hidden when response loads)
     var panelInputRow = h("div", "input-area");
+    panelInputRow.id = "hey804-home-input";
     var panelInput = h("input", "input");
     panelInput.type = "text";
     panelInput.placeholder = "Tell me what\u2019s going on\u2026";
@@ -486,6 +487,8 @@
     promptsDiv.style.display = "none";
     var lbl = body.querySelector(".prompts-label");
     if (lbl) lbl.style.display = "none";
+    var homeInput = shadow.getElementById("hey804-home-input");
+    if (homeInput) homeInput.style.display = "none";
 
     resultArea.innerHTML = '<div class="loading"><div class="shimmer"></div><div class="shimmer"></div><div class="shimmer"></div></div>';
 
@@ -560,26 +563,65 @@
       return;
     }
 
-    // --- FALLBACK / HELP: show options ---
+    // --- FALLBACK / HELP ---
     if (isFallback) {
-      var flines = answer.split("\n").filter(function(l) { return l.trim(); });
-      for (var fi = 0; fi < flines.length; fi++) {
-        var fl = flines[fi].trim();
-        if (fl.match(/^- /)) {
-          html += '<div style="padding-left:12px;margin:3px 0;font-size:13.5px;">' + linkify(fl) + '</div>';
-        } else {
-          html += '<div style="margin:5px 0;font-size:14px;">' + linkify(fl) + '</div>';
+      if (data.intent === "_help") {
+        // Help menu — tappable category buttons
+        var helpQueries = {
+          "Tax bills & payment plans": "I can't pay my tax bill",
+          "SNAP, Medicaid, benefits": "How do I get food stamps",
+          "Utility bills & assistance": "Can't pay my water bill",
+          "Rent help & housing": "I need help paying rent",
+          "City services (311, trash, permits)": "When is trash pickup",
+          "Roads, sidewalks, sewer, trees, parks": "How to report a pothole",
+          "Code violations, dumping, pests, parking": "My neighbor's yard is full of junk",
+        };
+        html += '<div style="margin-bottom:12px;font-size:14px;color:#4A3A2E;">I can help with:</div>';
+        var flines = answer.split("\n").filter(function(l) { return l.trim(); });
+        for (var fi = 0; fi < flines.length; fi++) {
+          var fl = flines[fi].trim();
+          if (fl.match(/^- /)) {
+            var label = fl.replace(/^- /, "");
+            var query = helpQueries[label];
+            if (query) {
+              html += '<button class="prompt help-cat" data-query="' + esc(query) + '" style="width:100%;text-align:left;margin-bottom:4px;">';
+              html += '<span class="q">' + esc(label) + '</span><span class="arrow">\u203A</span></button>';
+            } else {
+              html += '<div style="padding-left:12px;margin:3px 0;font-size:13.5px;">' + linkify(fl) + '</div>';
+            }
+          } else if (!fl.match(/You can ask/)) {
+            html += '<div style="margin:5px 0;font-size:14px;">' + linkify(fl) + '</div>';
+          }
         }
-      }
-      if (data.related && data.related.length > 0) {
-        html += '<div style="margin-top:14px;">';
+        // Wire up tappable categories
+        setTimeout(function() {
+          var cats = resultArea.querySelectorAll(".help-cat");
+          cats.forEach(function(btn) {
+            btn.onclick = function() { doSend(btn.getAttribute("data-query")); };
+          });
+        }, 0);
+      } else if (data.related && data.related.length > 0) {
+        // Vague but city-related — nudge with contextual options
+        html += '<div style="margin-bottom:14px;font-size:14px;color:#4A3A2E;">I want to make sure I point you to the right place. Did you mean:</div>';
         data.related.forEach(function (r) {
-          var sourceUrl = (r.sources && r.sources.length) ? r.sources[0].url : '#';
-          html += '<a class="related-link" href="' + esc(sourceUrl) + '" target="_blank" rel="noopener">';
-          html += '<span class="related-title">' + esc(r.title) + '</span>';
-          html += '<span class="arrow">\u203A</span></a>';
+          html += '<button class="prompt" style="width:100%;text-align:left;margin-bottom:6px;" onclick="(function(){})()"><span class="q">' + esc(r.title) + '</span><span class="arrow">\u203A</span></button>';
         });
+        // Wire up the buttons to send as queries
+        setTimeout(function() {
+          var btns = resultArea.querySelectorAll(".prompt");
+          var relatedData = data.related;
+          btns.forEach(function(btn, idx) {
+            if (relatedData[idx]) {
+              btn.onclick = function() { doSend(relatedData[idx].title); };
+            }
+          });
+        }, 0);
+      } else {
+        // Totally off-topic — no related matches at all
+        html += '<div style="margin-bottom:14px;font-size:14px;color:#4A3A2E;">';
+        html += "That's not something I can help with. I handle Richmond city services like taxes, utilities, roads, and benefits.";
         html += '</div>';
+        html += '<div style="font-size:13px;color:#7A6A5E;">Try asking about a specific issue, like a pothole, water bill, or food stamps.</div>';
       }
       html += '</div>';
       resultArea.innerHTML = html;
@@ -630,15 +672,14 @@
       html += '</div>';
     }
 
-    // Verified footer (small, not competing)
-    var sourceHost = "";
+    // Verified footer — only on matched intents (not emergency/crisis/redirect/fallback)
     if (sources.length > 0) {
+      var sourceHost = "";
       try { sourceHost = new URL(sources[0].url).hostname.replace("www.", ""); } catch(e) { sourceHost = "rva.gov"; }
+      html += '<div style="text-align:center;margin-top:14px;padding-top:10px;border-top:1px solid #E8DFD4;font-size:11px;color:#9A8E82;">';
+      html += '\u2713 Sourced from ' + esc(sourceHost);
+      html += '</div>';
     }
-    html += '<div style="text-align:center;margin-top:14px;padding-top:10px;border-top:1px solid #E8DFD4;font-size:11px;color:#9A8E82;">';
-    html += '\u2713 Sourced from ' + esc(sourceHost);
-    html += ' \u00B7 <a href="tel:8046467000" style="color:#9A8E82;text-decoration:underline;">Wrong? Call 311</a>';
-    html += '</div>';
 
     html += '</div>';
 
