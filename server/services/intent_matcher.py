@@ -67,7 +67,7 @@ EXPANSIONS = {
 
 # High-signal keywords per intent (manually tuned for accuracy)
 BOOST_KEYWORDS = {
-    "tax_bill_cant_pay": [
+    "tax_bill_help": [
         "tax", "taxes", "tax bill", "can't pay", "cant pay", "behind on taxes",
         "owe", "delinquent", "payment plan", "payment arrangement", "property tax",
         "real estate tax", "owe taxes",
@@ -77,6 +77,9 @@ BOOST_KEYWORDS = {
         "past due tax", "past-due", "wage garnishment", "garnish",
         "collection agency", "late charges", "penalty and interest",
         "bankruptcy", "debt set-off", "seizure",
+        # Pay / lookup keywords
+        "pay my taxes", "pay tax bill", "look up my tax", "how much are my taxes",
+        "where to pay taxes", "tax bill lookup", "check my tax",
     ],
     "senior_disabled_tax_relief": [
         "senior", "elderly", "disabled", "disability", "oapd", "relief",
@@ -105,7 +108,7 @@ BOOST_KEYWORDS = {
         # From 311: Vehicle Personal Property keywords
         "truck", "automobile", "boat", "trailer",
     ],
-    "utility_bill_cant_pay": [
+    "utility_bill_help": [
         "utility", "water bill", "gas bill", "metrocare", "promisepay",
         "disconnected", "shut off", "utility bill", "can't pay water",
         "can't pay gas", "utility assistance",
@@ -114,6 +117,9 @@ BOOST_KEYWORDS = {
         # From simulation fixes
         "turned back on", "turn back on", "reconnect", "reconnection",
         "water back on", "turn water on", "turn my water",
+        # Pay keywords
+        "pay my water bill", "pay my bill", "pay utility bill",
+        "where to pay my water", "pay DPU",
     ],
     "water_safety": [
         "water safe", "boil", "advisory", "water crisis", "drinking water",

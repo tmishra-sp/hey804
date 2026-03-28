@@ -3,7 +3,8 @@ Hey804 Engine — the unified brain.
 Intent match -> response generation -> channel formatting -> safety validation.
 All surfaces (SMS, web, widget, QR) use this single engine.
 
-Fallback chain: keyword match -> LLM classification -> honest "I don't know"
+Pipeline: emergency check -> crisis check -> redirect check ->
+          keyword match -> LLM classification -> honest fallback
 All responses flow through _finalize() for translation/post-processing.
 """
 
@@ -11,6 +12,7 @@ from __future__ import annotations
 
 import json
 import logging
+import re
 from pathlib import Path
 
 from server.services.language import detect_language, translate_text
@@ -35,31 +37,89 @@ from server.config import ANTHROPIC_API_KEY, MAX_LLM_CONCURRENT, LLM_TIMEOUT_SEC
 
 logger = logging.getLogger(__name__)
 
-# Language detection heuristic
-SPANISH_INDICATORS = {
-    "hola",
-    "ayuda",
-    "necesito",
-    "como",
-    "puedo",
-    "pagar",
-    "impuestos",
-    "agua",
-    "comida",
-    "español",
-    "por",
-    "favor",
-    "donde",
-    "quiero",
-    "tengo",
-    "factura",
-    "dinero",
-}
-
 STOP_WORDS = {"stop", "unsubscribe", "cancel", "quit"}
 HELP_WORDS = {"help", "info"}
 GREETING_WORDS = {"hi", "hello", "hey", "hola", "sup", "yo"}
 LANGUAGE_SWITCH_WORDS = {"es", "español", "spanish"}
+
+# ------------------------------------------------------------------
+# Priority layers (checked BEFORE intent matching)
+# ------------------------------------------------------------------
+
+EMERGENCY_PATTERNS = [
+    (re.compile(r'\b(gas leak|leaking gas|smell.{0,10}gas)\b', re.I), "gas leak"),
+    (re.compile(r'\b(shooting|shots fired|gunshots|someone.{0,10}shot)\b', re.I), "active violence"),
+    (re.compile(r'\b(house.{0,10}fire|building.{0,10}fire|fire.{0,10}building|on fire)\b', re.I), "structure fire"),
+    (re.compile(r'\b(child.{0,10}missing|missing.{0,10}child|kidnap)\b', re.I), "missing child"),
+    (re.compile(r'\b(overdos|someone.{0,10}(passed out|not breathing|unconscious|collapsed))\b', re.I), "medical emergency"),
+    (re.compile(r'\b(heart attack|choking|seizure|bleeding.{0,10}(badly|out|heavily))\b', re.I), "medical emergency"),
+]
+
+EMERGENCY_RESPONSE = (
+    "This sounds like an emergency. Call 911 immediately.\n\n"
+    "For non-emergency police: 804-646-5100\n"
+    "For city utility emergencies (water/sewer/gas): 804-646-4646 press 1\n\n"
+    "If this is not an emergency, please describe your question "
+    "and I'll help you find the right city service."
+)
+
+CRISIS_PATTERNS = [
+    (re.compile(r'\b(domestic violence|abusive.{0,15}(husband|wife|partner|boyfriend|girlfriend)|hits? me|beating me)\b', re.I),
+     "If you are in immediate danger, call 911.\n\n"
+     "National Domestic Violence Hotline: 1-800-799-7233 (24/7)\n"
+     "Virginia Family Violence & Sexual Assault Hotline: 1-800-838-8238\n"
+     "For legal help: Virginia Legal Aid at 866-534-5243"),
+    (re.compile(r'\b(kill myself|suicide|suicidal|end.{0,5}(my life|it all)|want to die|don.?t want to live)\b', re.I),
+     "Please reach out — help is available right now.\n\n"
+     "988 Suicide & Crisis Lifeline: call or text 988 (24/7)\n"
+     "Crisis Text Line: text HOME to 741741\n\n"
+     "You are not alone. These services are free and confidential."),
+    (re.compile(r'\b(elder.{0,10}abuse|abus.{0,15}(elderly|senior|parent|grandparent|older)|neglect.{0,15}(elderly|senior|parent)|(parent|grandparent|grandmother|grandfather).{0,15}(abuse|abused|being abused|neglect))\b', re.I),
+     "Report elder abuse or neglect to Adult Protective Services.\n\n"
+     "Virginia APS Hotline: 888-832-3858 (24/7)\n"
+     "Richmond Office of Aging: 804-646-1082\n"
+     "If in immediate danger, call 911."),
+    (re.compile(r'\b(child.{0,10}abuse|abus.{0,10}(child|kid|minor)|neglect.{0,10}(child|kid)|hurt.{0,10}(child|kid))\b', re.I),
+     "Report suspected child abuse or neglect.\n\n"
+     "Virginia Child Abuse Hotline: 800-552-7096 (24/7)\n"
+     "Richmond Social Services: 804-646-7000\n"
+     "If a child is in immediate danger, call 911."),
+    (re.compile(r'\b(homeless tonight|sleeping (outside|in my car|on the street)|warming shelter|emergency shelter|no.{0,10}(place|where) to (go|sleep|stay))\b', re.I),
+     "For immediate shelter assistance, call 211 (Virginia 211) — available 24/7.\n\n"
+     "Richmond Emergency Shelter: contact 211 for current availability\n"
+     "Salvation Army: 804-644-9471\n"
+     "CARITAS: 804-358-0964\n"
+     "Commonwealth Catholic Charities: 804-285-5900\n\n"
+     "For ongoing housing help, contact Richmond Social Services at 804-646-7000."),
+]
+
+REDIRECT_PATTERNS = [
+    (re.compile(r'\b(hit and run|car accident|robbery|robbed|assault|break.?in|broke into|stolen|theft|trespass)\b', re.I),
+     "This is a police matter.\n\n"
+     "Richmond Police non-emergency: 804-646-5100\n"
+     "If this is happening NOW or someone is in danger: call 911\n"
+     "You can also file a police report online at richmondva.policereports.us"),
+    (re.compile(r'\b(power.{0,5}(out|outage)|electricity.{0,5}(out|off)|dominion)\b', re.I),
+     "Power outages are handled by Dominion Energy, not the city.\n\n"
+     "Dominion Energy outage line: 866-366-4357\n"
+     "Report outages: dominionenergy.com/outages\n"
+     "For city gas service (DPU): call 804-646-4646"),
+    (re.compile(r'\b(driver.?s? licen|dmv|license plate|vehicle registration|car registration)\b', re.I),
+     "Driver's licenses and vehicle registration are handled by the Virginia DMV, not the city.\n\n"
+     "Virginia DMV: dmv.virginia.gov\n"
+     "DMV Customer Service: 804-497-7100\n"
+     "For city personal property tax on vehicles: call RVA 311 at 804-646-7000"),
+    (re.compile(r'\b(divorce.{0,10}(decree|papers|record|certificate))\b', re.I),
+     "Divorce records are handled by the Circuit Court, not the Health Department.\n\n"
+     "Richmond Circuit Court Clerk: 804-646-6505\n"
+     "John Marshall Courts Building, 400 N. 9th Street, Richmond VA 23219\n"
+     "For birth or death certificates: call 804-205-3911"),
+    (re.compile(r'\b(pipes? burst|burst.{0,5}pipe|plumb(er|ing).{0,10}(emergency|broken|leak))\b', re.I),
+     "Burst pipes inside your home are a private plumbing issue — the city does not repair private plumbing.\n\n"
+     "For emergencies: shut off your main water valve and call a licensed plumber\n"
+     "If the leak is in the STREET (not your home): call DPU at 804-646-4646 press 1\n"
+     "For help paying water bills: call DPU at 804-646-4646 about MetroCare"),
+]
 
 
 class Hey804Engine:
@@ -74,7 +134,6 @@ class Hey804Engine:
         self.fallback_message = data["meta"]["fallback_message"]
         self.matcher = IntentMatcher(self.questions)
 
-        # LLM fallback (for queries that don't match keywords)
         self.llm_client = None
         if ANTHROPIC_API_KEY:
             try:
@@ -136,6 +195,32 @@ class Hey804Engine:
             )
             return self._finalize(response, channel, language)
 
+        # --- PRIORITY 1: Emergency check ---
+        emergency = self._check_emergency(msg_lower)
+        if emergency:
+            response = self._wrap_response(emergency, channel, intent="_emergency")
+            return self._finalize(response, channel, language)
+
+        # --- PRIORITY 2: Crisis check ---
+        crisis = self._check_crisis(msg_lower)
+        if crisis:
+            response = self._wrap_response(crisis, channel, intent="_crisis")
+            return self._finalize(response, channel, language)
+
+        # --- PRIORITY 3: Redirect check ---
+        redirect = self._check_redirect(msg_lower)
+        if redirect:
+            response = self._wrap_response(redirect, channel, intent="_redirect")
+            return self._finalize(response, channel, language)
+
+        # --- PRIORITY 4: Single-word ambiguity guard ---
+        words = msg_lower.split()
+        if len(words) == 1:
+            result = self.matcher.match_with_related(msg_stripped)
+            if result["related"]:
+                response = self._format_partial(result["related"], channel, is_first_message)
+                return self._finalize(response, channel, language)
+
         # --- Intent matching ---
         result = self.matcher.match_with_related(msg_stripped)
 
@@ -147,12 +232,10 @@ class Hey804Engine:
             if confidence >= 0.85:
                 response = self._format_match(match, related, channel, is_first_message)
             else:
-                # Low confidence — LLM verify before committing
                 verified = self._llm_verify(msg_stripped, match)
                 if verified:
                     response = self._format_match(match, related, channel, is_first_message)
                 else:
-                    # LLM disagreed — try full reclassification
                     llm_result = self._llm_classify(msg_stripped, language)
                     if llm_result is not None:
                         logger.info(
@@ -167,7 +250,6 @@ class Hey804Engine:
             return self._finalize(response, channel, language)
 
         if result["related"]:
-            # Partial keyword match — try LLM to resolve
             llm_result = self._llm_classify(msg_stripped, language)
             if llm_result is not None:
                 logger.info(
@@ -181,7 +263,7 @@ class Hey804Engine:
 
             return self._finalize(response, channel, language)
 
-        # No keyword match at all — LLM fallback
+        # No keyword match — LLM fallback
         llm_result = self._llm_classify(msg_stripped, language)
         if llm_result is not None:
             logger.info(f"LLM classified '{msg_stripped[:50]}' as intent={llm_result['intent']}")
@@ -192,7 +274,6 @@ class Hey804Engine:
         return self._finalize(response, channel, language)
 
     def get_intent_info(self, message: str) -> dict:
-        """Get intent match info for logging purposes."""
         match, confidence = self.matcher.match(message.strip())
         return {
             "intent": match["intent"] if match else None,
@@ -201,36 +282,49 @@ class Hey804Engine:
         }
 
     # ------------------------------------------------------------------
-    # Single exit point — hook translation / post-processing here
+    # Priority layers
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _check_emergency(msg_lower: str) -> str | None:
+        for pattern, _ in EMERGENCY_PATTERNS:
+            if pattern.search(msg_lower):
+                return EMERGENCY_RESPONSE
+        return None
+
+    @staticmethod
+    def _check_crisis(msg_lower: str) -> str | None:
+        for pattern, response_text in CRISIS_PATTERNS:
+            if pattern.search(msg_lower):
+                return response_text
+        return None
+
+    @staticmethod
+    def _check_redirect(msg_lower: str) -> str | None:
+        for pattern, response_text in REDIRECT_PATTERNS:
+            if pattern.search(msg_lower):
+                return response_text
+        return None
+
+    # ------------------------------------------------------------------
+    # Single exit point — translation (Ben's code)
     # ------------------------------------------------------------------
 
     def _finalize(self, response: dict | str, channel: str, language: str) -> dict | str:
-        """
-        Every response passes through here before returning to the caller.
-        This is the single place to add:
-          - Outgoing translation (language == "es")
-          - Response logging / analytics
-          - Any other cross-cutting concern
-        """
         if language == "en":
             return response
-        # Account for different response shapes
         if isinstance(response, str):
-            translated = translate_text(response, src_lang="en", target_lang=language)
-            return translated
+            return translate_text(response, src_lang="en", target_lang=language)
         else:
-            translated_answer = translate_text(
+            response["answer"] = translate_text(
                 response["answer"], src_lang="en", target_lang=language
             )
-            response["answer"] = translated_answer
-            translated_action_steps = translate_text(
+            response["action_steps"] = translate_text(
                 "\n".join(response["action_steps"]), src_lang="en", target_lang=language
-            )
-            response["action_steps"] = translated_action_steps.split("\n")
-            translated_handoff_message = translate_text(
+            ).split("\n")
+            response["handoff_message"] = translate_text(
                 response["handoff_message"], src_lang="en", target_lang=language
             )
-            response["handoff_message"] = translated_handoff_message
             if "related" in response:
                 for r in response["related"]:
                     r["title"] = translate_text(r["title"], src_lang="en", target_lang=language)
@@ -240,13 +334,12 @@ class Hey804Engine:
         return response
 
     # ------------------------------------------------------------------
-    # Response formatters (build the response shape)
+    # Response formatters
     # ------------------------------------------------------------------
 
     def _format_match(
         self, match: dict, related: list, channel: str, is_first_message: bool
     ) -> dict | str:
-        """Format a full intent match for the given channel."""
         if channel == "sms":
             response_text = format_sms(match, is_first_message=is_first_message)
             response_text = validate_response_citations(response_text, match)
@@ -256,7 +349,6 @@ class Hey804Engine:
     def _format_partial(
         self, related: list[dict], channel: str, is_first_message: bool = False
     ) -> dict | str:
-        """Format a partial match (no confident intent, but related topics)."""
         if channel == "sms":
             return format_partial_sms(
                 self.fallback_message, related, is_first_message=is_first_message
@@ -264,19 +356,19 @@ class Hey804Engine:
         return format_partial_web(self.fallback_message, related)
 
     def _format_fallback(self, channel: str, is_first_message: bool = False) -> dict | str:
-        """Format the honest 'I don't know' fallback."""
         if channel == "sms":
             return format_fallback_sms(self.fallback_message, is_first_message=is_first_message)
         return format_fallback_web(self.fallback_message)
 
     def _wrap_response(self, text: str, channel: str, intent: str = None) -> dict | str:
-        """Wrap a plain text response (special commands) for the given channel."""
         if channel == "sms":
             return text
         return {
             "answer": text,
             "action_steps": [],
-            "sources": [],
+            "sources": [
+                {"title": "About RVA 311 | Richmond", "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"},
+            ],
             "deadlines": None,
             "category": None,
             "intent": intent,
@@ -285,18 +377,12 @@ class Hey804Engine:
         }
 
     # ------------------------------------------------------------------
-    # LLM helpers (classify and verify)
+    # LLM helpers
     # ------------------------------------------------------------------
 
     def _llm_verify(self, message: str, match: dict) -> bool:
-        """
-        Ask LLM to verify a low-confidence keyword match.
-        Returns True if the match is correct, False if the LLM disagrees.
-        Falls back to True (trust keyword match) if LLM is unavailable.
-        """
         if not self.llm_client:
             return True
-
         try:
             prompt = (
                 f'A Richmond VA resident said: "{message}"\n\n'
@@ -319,20 +405,11 @@ class Hey804Engine:
             return True
 
     def _llm_classify(self, message: str, language: str) -> dict | None:
-        """
-        LLM fallback: ask Claude to classify the user's message into one of our intents.
-        Returns the KB entry if classified, None if LLM unavailable or says NONE.
-
-        This does NOT generate free-form text — it only picks an intent.
-        The response still comes from the curated KB, so every fact is cited.
-        """
         if not self.llm_client:
             return None
-
         intent_list = [
             {"intent": q["intent"], "description": q["sample_questions"][0]} for q in self.questions
         ]
-
         system_prompt = (
             "You are classifying a Richmond, Virginia resident's message into a city service category.\n"
             "Pick the BEST matching intent from this list. Pick the CLOSEST match even if not perfect — "
@@ -342,7 +419,6 @@ class Hey804Engine:
             'Respond with ONLY the intent name or "NONE". Nothing else.\n\n'
             "INTENTS:\n" + "\n".join(f"- {i['intent']}: {i['description']}" for i in intent_list)
         )
-
         try:
             response = self.llm_client.messages.create(
                 model="claude-sonnet-4-20250514",
@@ -352,18 +428,14 @@ class Hey804Engine:
                 timeout=LLM_TIMEOUT_SECONDS,
             )
             intent_name = response.content[0].text.strip().strip('"').strip()
-
             if intent_name == "NONE":
                 logger.info(f"LLM classified '{message[:50]}' as NONE")
                 return None
-
             match = next((q for q in self.questions if q["intent"] == intent_name), None)
             if match:
                 return match
-
             logger.warning(f"LLM returned unknown intent: {intent_name}")
             return None
-
         except Exception as e:
             logger.warning(f"LLM classify failed: {e}")
             return None

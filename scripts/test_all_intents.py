@@ -98,11 +98,11 @@ def main():
 
     # One representative sample question per intent
     test_cases = [
-        (1,  "tax_bill_cant_pay",           "I got a tax bill I can't pay"),
+        (1,  "tax_bill_help",           "I got a tax bill I can't pay"),
         (2,  "senior_disabled_tax_relief",   "I'm a senior can I get tax relief"),
         (3,  "real_estate_tax_wrong",        "My tax bill seems wrong"),
         (4,  "personal_property_tax_car",    "How do I pay my car tax"),
-        (5,  "utility_bill_cant_pay",        "Can't pay my water bill"),
+        (5,  "utility_bill_help",        "Can't pay my water bill"),
         (6,  "water_safety",                 "Is the water safe to drink"),
         (7,  "utility_bill_wrong",           "My water bill is way too high"),
         (8,  "apply_snap_food",              "How do I get food stamps"),
@@ -267,15 +267,15 @@ def main():
     print("=" * 90)
 
     adversarial_tests = [
-        ("tx bill", "tax_bill_cant_pay"),
+        ("tx bill", "tax_bill_help"),
         ("water taste weird", "water_safety"),
         ("medicaide", "apply_medicaid"),
         ("my kids are hungry", "apply_snap_food"),
-        ("scared im gonna lose my house over taxes", "tax_bill_cant_pay"),
+        ("scared im gonna lose my house over taxes", "tax_bill_help"),
         ("no heat in my house", "energy_heating_assistance"),
         ("eviction notice", "rent_help"),
         ("where is the welfare office", "where_to_go_in_person"),
-        ("lights about to get cut off", "utility_bill_cant_pay"),
+        ("lights about to get cut off", "utility_bill_help"),
         ("I need an EBT card", "apply_snap_food"),
         ("my water looks brown", "water_safety"),
         ("behind on rent 2 months", "rent_help"),

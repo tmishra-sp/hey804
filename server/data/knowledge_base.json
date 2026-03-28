@@ -9,7 +9,7 @@
     {
       "id": 1,
       "category": "finance",
-      "intent": "tax_bill_cant_pay",
+      "intent": "tax_bill_help",
       "sample_questions": [
         "I got a tax bill I can't pay",
         "Can't afford my real estate taxes",
@@ -19,14 +19,18 @@
         "owe the city money for taxes",
         "got a letter about unpaid property taxes",
         "scared im gonna lose my house over taxes",
-        "how to set up a tax payment plan"
+        "how to set up a tax payment plan",
+        "how much are my real estate taxes",
+        "look up my tax bill",
+        "where to pay my taxes"
       ],
-      "answer": "You have several options if you can't pay your full real estate tax bill by the due date. You can set up a payment arrangement through the Delinquent Collections Unit — you can do this even BEFORE your taxes are past due. Contact RVA 311 at 804-646-7000 to set one up. Important: you can only have one payment plan for one tax type at a time, and you can't enter a new arrangement for 5 years after the last one. If you're 65+ or permanently disabled, you may qualify for the OAPD Tax Relief Program (see question about senior/disabled tax relief). Don't ignore the bill — if you don't pay, consequences include: your state tax refund can be seized, and you may be unable to register vehicles at the DMV.",
+      "answer": "Look up your Richmond real estate tax bill and pay online at rva.gov/online-payments. The tax rate is (assessed value / $100) x $1.20. Due dates: 1st half January 14, 2nd half June 14. If you can't pay by the due date, you can set up a payment arrangement through the Delinquent Collections Unit — you can do this even BEFORE your taxes are past due. Contact RVA 311 at 804-646-7000 to set one up. Important: you can only have one payment plan for one tax type at a time. If you're 65+ or permanently disabled, you may qualify for the OAPD Tax Relief Program. Don't ignore the bill — consequences include state tax refund seizure and inability to register vehicles at DMV.",
       "action_steps": [
-        "Call RVA 311 at 804-646-7000 and ask for a payment arrangement",
-        "Or submit a request online at rva311.com",
-        "If 65+ or disabled, ask about the OAPD Tax Relief Program",
-        "Have your tax bill or account number ready when you call"
+        "Look up and pay your bill at rva.gov/online-payments",
+        "Or pay at City Hall, 900 E. Broad Street",
+        "If you can't pay: call RVA 311 at 804-646-7000 for a payment arrangement",
+        "If 65+ or disabled: ask about the OAPD Tax Relief Program",
+        "Have your tax bill or account number ready"
       ],
       "deadlines": "Real estate tax: 1st half due January 14, 2nd half due June 14",
       "sources": [
@@ -165,7 +169,7 @@
     {
       "id": 5,
       "category": "utilities",
-      "intent": "utility_bill_cant_pay",
+      "intent": "utility_bill_help",
       "sample_questions": [
         "Can't pay my water bill",
         "Help with utility bills",
@@ -175,14 +179,18 @@
         "about to get my water shut off",
         "what is metrocare program",
         "help paying electric bill",
-        "lights about to get cut off need help"
+        "lights about to get cut off need help",
+        "where do I pay my water bill",
+        "pay my utility bill online",
+        "how to pay my water bill"
       ],
-      "answer": "Richmond has several programs to help with utility bills. MetroCare Assistance Program: provides up to $1,500/year for water, wastewater, and gas bills if your household income is at or below 225% of the Federal Poverty Guidelines. Call 804-646-4646. PromisePay Payment Plans: flexible payment options for gas and water customers who can't pay in full. Call 804-646-4646 to set up. LIHEAP (Low Income Heating Energy Assistance): administered by Social Services at 804-646-7046. Also check: United Way, Catholic Charities, Salvation Army, and Dominion Energy's EnergyShare program. NEW: United Healthcare UCard members may be eligible to pay DPU bills with their UCard.",
+      "answer": "Pay your City of Richmond utility bill (water, gas, wastewater) online at apps.richmondgov.com/applications/DPUAccountLookUp or by calling DPU at 804-646-4646. If you need help paying: MetroCare Assistance Program provides up to $1,500/year for water, wastewater, and gas bills if your household income is at or below 225% of the Federal Poverty Guidelines. PromisePay Payment Plans offer flexible options for customers who can't pay in full. Call 804-646-4646 for either program. LIHEAP (heating assistance): call Social Services at 804-646-7046. If service is already disconnected: pay your bill, then call 804-646-4646 for same-day reconnection ($35 extra fee).",
       "action_steps": [
-        "Call DPU at 804-646-4646 to ask about MetroCare and PromisePay",
+        "Pay online at apps.richmondgov.com/applications/DPUAccountLookUp",
+        "Or call DPU at 804-646-4646 to pay by phone",
+        "For help paying: ask about MetroCare and PromisePay at 804-646-4646",
         "For heating assistance (LIHEAP): call Social Services at 804-646-7046",
-        "Have your DPU account number ready (same for gas and water)",
-        "If service is already off: pay bill, then call 804-646-4646 for same-day reconnection ($35 extra fee)"
+        "If disconnected: pay bill, then call 804-646-4646 for reconnection"
       ],
       "deadlines": "Apply for MetroCare anytime (subject to funding). PromisePay plans: new plans after Sept 1 2025 limited to 12 months.",
       "sources": [
@@ -536,32 +544,16 @@
       "deadlines": null,
       "sources": [
         {
-          "title": "About RVA 311 | Richmond",
-          "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"
-        },
-        {
           "title": "RVA 311 - Report Missed Trash",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs191003160817?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
-        },
-        {
-          "title": "RVA 311 - Report Missed Recycling",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs191003161039?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
         },
         {
           "title": "RVA 311 - Request Bulk Pickup",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221192959?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
         },
         {
-          "title": "RVA 311 - Request Residential Trash Can",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs191031204100?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
-        },
-        {
-          "title": "RVA 311 - Request Business Trash Can or Service Change",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs191031213431?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
-        },
-        {
-          "title": "RVA 311 - How to Get Free Bulk Trash Pick Up",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs191003161345?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
+          "title": "About RVA 311 | Richmond",
+          "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"
         }
       ],
       "handoff_trigger": null
@@ -1105,28 +1097,12 @@
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019185025?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
-          "title": "RVA 311 - Repair Road",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019163752?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
           "title": "RVA 311 - Report Sinkhole",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
-          "title": "RVA 311 - Repair Alley",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221194032?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
-          "title": "RVA 311 - Repair Curbs and Gutters",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019185751?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
-          "title": "RVA 311 - Pavement Markings",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019190616?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
-          "title": "RVA 311 - Repair Bridge",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221194130?gid=f803d865-2aac-4172-af11-4c9c01239457"
+          "title": "RVA 311 - Repair Road",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019163752?gid=f803d865-2aac-4172-af11-4c9c01239457"
         }
       ],
       "handoff_trigger": "If reporting a sinkhole, stress urgency: call 804-646-4646 and press 1 immediately. Sinkholes can indicate major infrastructure failure."
@@ -1167,10 +1143,6 @@
         {
           "title": "RVA 311 - Repair Electronic Traffic Signal",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221194251?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
-        },
-        {
-          "title": "RVA 311 - Report Neighborhood Roadway Safety Concern",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs251010192628?gid=f803d865-2aac-4172-af11-4c9c01239457"
         }
       ],
       "handoff_trigger": "If a stop sign is down or traffic signal is completely out at a busy intersection, this is a safety emergency. Direct to 804-646-5100 immediately."
@@ -1246,10 +1218,6 @@
         {
           "title": "RVA 311 - Maintain Vegetation in Right of Way",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221194457?gid=7cc71a09-423c-4e30-87c2-54cc62570dae"
-        },
-        {
-          "title": "RVA 311 - Storm Cleanup for Branches and Tree Debris",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs201027183415?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
         }
       ],
       "handoff_trigger": "If a tree has fallen and is blocking a road or posing immediate danger, call 804-646-5100 (non-emergency police) for immediate response."
@@ -1330,26 +1298,6 @@
         {
           "title": "RVA 311 - Repair Stormwater Drain",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180301142929?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
-        },
-        {
-          "title": "RVA 311 - Report a Water Leak or Missing Utility Cover",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs210225233313?gid=8928b090-0023-4c67-8655-23cfb89690aa"
-        },
-        {
-          "title": "RVA 311 - Report Illicit Discharge to Stormwater",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180301143939?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
-        },
-        {
-          "title": "RVA 311 - Missing Stormwater Manhole Cover",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180301150531?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
-        },
-        {
-          "title": "RVA 311 - Report Clearing or Erosion Issues on Construction Site",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs190424173915?gid=8928b090-0023-4c67-8655-23cfb89690aa"
-        },
-        {
-          "title": "RVA 311 - Report Water Leak or Missing Utility Cover",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221012215646?gid=74a89c81-b6f8-42e7-b101-1f60edd996aa"
         }
       ],
       "handoff_trigger": "If reporting a missing manhole cover, this is a safety emergency. Direct to 804-646-4646 press 1 immediately."
@@ -1390,46 +1338,6 @@
         {
           "title": "RVA 311 - Report Sewer Odor",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228141848?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Report Noisy Sewer Manhole Cover",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228160645?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
-          "title": "RVA 311 - Raise or Lower Sewer Manhole",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228161314?gid=f803d865-2aac-4172-af11-4c9c01239457"
-        },
-        {
-          "title": "RVA 311 - Report Water Leak or Missing Utility Cover",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221012215842?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Report Missing Sewer Manhole Cover",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180301153010?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Request TV of Sewer",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228154912?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Request Location Sewer Manhole",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228162734?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Report sewer manhole problem",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228204004?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Request Location Sewer Lateral",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228204645?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Request Install Sewer Cleanout",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228210557?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
-        },
-        {
-          "title": "RVA 311 - Report Broken Sewer Cleanout",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228210238?gid=a0ff7cf7-8193-4fcf-91e9-b86c9d3abeef"
         }
       ],
       "handoff_trigger": "If sewage is flooding into their home, this is an emergency. Direct them to call 804-646-4646 and press 1 immediately."
@@ -1470,18 +1378,6 @@
         {
           "title": "RVA 311 - Construction without Permit",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs200204232241?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
-        },
-        {
-          "title": "RVA 311 - Report Unlawful Accumulation of debris/items",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180227201252?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
-        },
-        {
-          "title": "RVA 311 - Report Illegal or Excessive Signage on Private Property",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180227191811?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
-        },
-        {
-          "title": "RVA 311 - Report Public Right of Way Concern",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs220412162457?gid=ce39c864-d47b-4d19-9acf-1a0d58425205"
         }
       ],
       "handoff_trigger": "If reporting a building that poses immediate danger (about to collapse, exposed wiring, gas leak), call 804-646-5100 for emergency response."
@@ -1522,10 +1418,6 @@
         {
           "title": "RVA 311 - Report Litter on Public Property",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs191031201305?gid=aa058868-75aa-4f1d-b1f4-ba7f3cc99462"
-        },
-        {
-          "title": "RVA 311 - Request Graffiti Investigation",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180327173138?gid=8928b090-0023-4c67-8655-23cfb89690aa"
         }
       ],
       "handoff_trigger": "If the dumping involves hazardous materials (chemicals, medical waste), advise calling 804-646-5100 for environmental response."
@@ -1606,18 +1498,6 @@
         {
           "title": "RVA 311 - Report On-Street Parking Violation",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs191003153359?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
-        },
-        {
-          "title": "RVA 311 - Handicap Parking Sign",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180221190516?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
-        },
-        {
-          "title": "RVA 311 - Report Abandoned Vehicles on Private Property",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180301161330?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
-        },
-        {
-          "title": "RVA 311 - Report Issue with Scooter",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs230329232552?gid=9dd1061f-ac01-4380-b5e3-d2dac31b4048"
         }
       ],
       "handoff_trigger": "For vehicles blocking a driveway or fire hydrant, call 804-646-5100 for immediate response."
