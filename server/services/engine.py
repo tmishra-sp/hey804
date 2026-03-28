@@ -435,10 +435,7 @@ class Hey804Engine:
             "too_vague_1": "That's not something I can help with. I handle Richmond city services like taxes, utilities, roads, and benefits.",
             "too_vague_2": "Try asking about a specific issue, like a pothole, water bill, or food stamps.",
         }
-        if language == "en":
-            if isinstance(response, str):
-                return response
-            return {**response, "ui_messages": ui_messages}
+
         if isinstance(response, str):
             return translate_text(response, src_lang="en", target_lang=language)
         else:
