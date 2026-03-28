@@ -574,6 +574,29 @@
       });
   }
 
+  var svgPencil = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>';
+
+  function buildYouAskedHtml(data, userMessage) {
+    var label = data.ui_messages ? data.ui_messages.you_asked : "You asked";
+    return '<div class="you-asked-row" style="background:#F5EDE3;border-radius:12px;padding:8px 10px 8px 14px;margin-bottom:12px;display:flex;align-items:center;gap:6px;">' +
+      '<b style="font-size:13px;color:#7A6A5E;white-space:nowrap;">' + esc(label) + ':</b>' +
+      '<input type="text" class="you-asked-input" value="' + esc(userMessage).replace(/"/g, '&quot;') + '" style="flex:1;border:1.5px solid #D9CFC3;border-radius:8px;background:#fff;padding:5px 8px;font:inherit;font-size:13px;color:#4A3A2E;outline:none;min-width:0;" />' +
+      '<button class="you-asked-send" style="width:28px;height:28px;border-radius:50%;border:none;background:#C2633A;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + svgSend + '</button>' +
+      '</div>';
+  }
+
+  function wireYouAsked(container) {
+    var input = container.querySelector(".you-asked-input");
+    var btn = container.querySelector(".you-asked-send");
+    if (!input || !btn) return;
+    function showSend() { btn.style.opacity = "1"; }
+    function submit() { var v = input.value.trim(); if (v) doSend(v); }
+    input.addEventListener("input", showSend);
+    input.addEventListener("focus", showSend);
+    input.addEventListener("keydown", function(e) { if (e.key === "Enter") submit(); });
+    btn.onclick = submit;
+  }
+
   function renderResponse(data, userMessage) {
     var html = '<div class="resp">';
 
@@ -659,6 +682,9 @@
 
     // --- FALLBACK / HELP ---
     if (isFallback) {
+      if (userMessage) {
+        html += buildYouAskedHtml(data, userMessage);
+      }
       if (data.intent === "_help") {
         // Help menu — tappable category buttons
         var helpQueries = {
@@ -746,29 +772,26 @@
         html +=
           '<div style="font-size:13px;color:#7A6A5E;">Try asking about a specific issue, like a pothole, water bill, or food stamps.</div>';
       }
+      // Always show 311 handoff on fallback
+      if (data.handoff_message) {
+        html += '<div style="margin-top:14px;padding-top:12px;border-top:1px solid #E8DFD4;font-size:13px;color:#4A3A2E;">' + linkify(data.handoff_message) + '</div>';
+      }
       html += "</div>";
       resultArea.innerHTML = html;
       body.scrollTop = 0;
+      wireYouAsked(resultArea);
       addBackButton();
       return;
     }
 
     // --- MATCHED INTENT: clean 3-part layout ---
 
-    // What you asked
+    // What you asked — editable so user can tweak and resubmit
     if (userMessage) {
-      var youAskedLabel = data.ui_messages
-        ? data.ui_messages.you_asked
-        : "You asked";
-      html +=
-        '<div style="background:#F5EDE3;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#7A6A5E;"><b>' +
-        esc(youAskedLabel) +
-        ":</b> " +
-        esc(userMessage) +
-        "</div>";
+      html += buildYouAskedHtml(data, userMessage);
     }
 
-    // 1. Action button + secondary sources right underneath
+    // 1. Action button + secondary sources
     if (sources.length > 0) {
       var primary = sources[0];
       html +=
@@ -798,30 +821,11 @@
       }
     }
 
-    // 2. Key info (2 sentences + deadline if relevant)
-    var sentences = answer.match(/[^.!?]+[.!?]+/g) || [answer];
-    var shortAnswer = sentences.slice(0, 2).join(" ").trim();
-    html += '<div class="answer">' + linkify(shortAnswer) + "</div>";
-
-    if (data.deadlines) {
-      html +=
-        '<div class="deadline">' +
-        svgClock +
-        " " +
-        linkify(data.deadlines) +
-        "</div>";
-    }
-
-    // 3. Expandable details (steps, secondary sources)
+    // 2. Steps (open by default, collapsible)
     if (steps.length > 0) {
-      var seeStepsLabel = data.ui_messages
-        ? data.ui_messages.see_steps
-        : "Details & next steps";
-      html +=
-        '<button class="more-toggle" id="hey804-more-toggle"><span class="chevron">\u203A</span> ' +
-        esc(seeStepsLabel) +
-        "</button>";
-      html += '<div class="more-steps" id="hey804-more-steps">';
+      var seeStepsLabel = data.ui_messages ? data.ui_messages.see_steps : "Next steps";
+      html += '<button class="more-toggle expanded" id="hey804-more-toggle"><span class="chevron">\u203A</span> ' + esc(seeStepsLabel) + '</button>';
+      html += '<div class="more-steps show" id="hey804-more-steps">';
       html += '<ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
         html += '<li data-n="' + (i + 1) + '">' + linkify(steps[i]) + "</li>";
@@ -830,25 +834,16 @@
       html += "</div>";
     }
 
-    // Verified footer — only on matched intents (not emergency/crisis/redirect/fallback)
-    if (sources.length > 0) {
-      var sourceHost = "";
-      try {
-        sourceHost = new URL(sources[0].url).hostname.replace("www.", "");
-      } catch (e) {
-        sourceHost = "rva.gov";
-      }
-      html +=
-        '<div style="text-align:center;margin-top:14px;padding-top:10px;border-top:1px solid #E8DFD4;font-size:11px;color:#9A8E82;">';
-      html +=
-        "\u2713 " + esc(data.ui_messages.sourced_from) + " " + esc(sourceHost);
-      html += "</div>";
+    // 3. Deadline
+    if (data.deadlines) {
+      html += '<div class="deadline">' + svgClock + ' ' + linkify(data.deadlines) + '</div>';
     }
 
     html += "</div>";
 
     resultArea.innerHTML = html;
     body.scrollTop = 0;
+    wireYouAsked(resultArea);
 
     // Wire up the "more steps" toggle
     var toggle = shadow.getElementById("hey804-more-toggle");
