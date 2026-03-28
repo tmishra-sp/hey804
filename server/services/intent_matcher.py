@@ -175,7 +175,7 @@ BOOST_KEYWORDS = {
         "no heat", "no gas", "gas turned off", "heat turned off",
         "pipes frozen", "cold in my house",
     ],
-    "report_pothole_streetlight": [
+    "report_pothole": [
         "pothole", "pot hole", "road needs repair",
         "report a pothole", "pothole on my",
         "pothole repair", "asphalt", "pavement",
