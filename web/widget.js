@@ -574,26 +574,42 @@
       });
   }
 
-  var svgPencil = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>';
+  var svgPencil =
+    '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.85 2.85 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"/></svg>';
 
   function buildYouAskedHtml(data, userMessage) {
     var label = data.ui_messages ? data.ui_messages.you_asked : "You asked";
-    return '<div class="you-asked-row" style="background:#F5EDE3;border-radius:12px;padding:8px 10px 8px 14px;margin-bottom:12px;display:flex;align-items:center;gap:6px;">' +
-      '<b style="font-size:13px;color:#7A6A5E;white-space:nowrap;">' + esc(label) + ':</b>' +
-      '<input type="text" class="you-asked-input" value="' + esc(userMessage).replace(/"/g, '&quot;') + '" style="flex:1;border:1.5px solid #D9CFC3;border-radius:8px;background:#fff;padding:5px 8px;font:inherit;font-size:13px;color:#4A3A2E;outline:none;min-width:0;" />' +
-      '<button class="you-asked-send" style="width:28px;height:28px;border-radius:50%;border:none;background:#C2633A;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' + svgSend + '</button>' +
-      '</div>';
+    return (
+      '<div class="you-asked-row" style="background:#F5EDE3;border-radius:12px;padding:8px 10px 8px 14px;margin-bottom:12px;display:flex;align-items:center;gap:6px;">' +
+      '<b style="font-size:13px;color:#7A6A5E;white-space:nowrap;">' +
+      esc(label) +
+      ":</b>" +
+      '<input type="text" class="you-asked-input" value="' +
+      esc(userMessage).replace(/"/g, "&quot;") +
+      '" style="flex:1;border:1.5px solid #D9CFC3;border-radius:8px;background:#fff;padding:5px 8px;font:inherit;font-size:13px;color:#4A3A2E;outline:none;min-width:0;" />' +
+      '<button class="you-asked-send" style="width:28px;height:28px;border-radius:50%;border:none;background:#C2633A;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;">' +
+      svgSend +
+      "</button>" +
+      "</div>"
+    );
   }
 
   function wireYouAsked(container) {
     var input = container.querySelector(".you-asked-input");
     var btn = container.querySelector(".you-asked-send");
     if (!input || !btn) return;
-    function showSend() { btn.style.opacity = "1"; }
-    function submit() { var v = input.value.trim(); if (v) doSend(v); }
+    function showSend() {
+      btn.style.opacity = "1";
+    }
+    function submit() {
+      var v = input.value.trim();
+      if (v) doSend(v);
+    }
     input.addEventListener("input", showSend);
     input.addEventListener("focus", showSend);
-    input.addEventListener("keydown", function(e) { if (e.key === "Enter") submit(); });
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") submit();
+    });
     btn.onclick = submit;
   }
 
@@ -618,7 +634,9 @@
       html +=
         '<div style="background:#DC2626;color:#fff;border-radius:12px;padding:20px;margin-bottom:14px;text-align:center;">';
       html +=
-        '<div style="font-size:22px;font-weight:700;margin-bottom:10px;">\u26A0\uFE0F Call 911</div>';
+        '<div style="font-size:22px;font-weight:700;margin-bottom:10px;">\u26A0\uFE0F ' +
+        esc(data.ui_messages.emergency) +
+        "</div>";
       html += "</div>";
       var elines = answer.split("\n").filter(function (l) {
         return l.trim();
@@ -632,7 +650,7 @@
       html += "</div>";
       resultArea.innerHTML = html;
       body.scrollTop = 0;
-      addBackButton();
+      addBackButton(data.ui_messages.back_button);
       return;
     }
 
@@ -641,7 +659,9 @@
       html +=
         '<div style="background:#7C3AED;color:#fff;border-radius:12px;padding:18px;margin-bottom:14px;">';
       html +=
-        '<div style="font-size:13px;font-weight:600;opacity:0.85;margin-bottom:8px;">Help is available right now</div>';
+        '<div style="font-size:13px;font-weight:600;opacity:0.85;margin-bottom:8px;">' +
+        esc(data.ui_messages.crisis) +
+        "</div>";
       var clines = answer.split("\n").filter(function (l) {
         return l.trim();
       });
@@ -658,7 +678,7 @@
       html += "</div>";
       resultArea.innerHTML = html;
       body.scrollTop = 0;
-      addBackButton();
+      addBackButton(data.ui_messages.back_button);
       return;
     }
 
@@ -676,7 +696,7 @@
       html += "</div>";
       resultArea.innerHTML = html;
       body.scrollTop = 0;
-      addBackButton();
+      addBackButton(data.ui_messages.back_button);
       return;
     }
 
@@ -698,7 +718,9 @@
             "My neighbor's yard is full of junk",
         };
         html +=
-          '<div style="margin-bottom:12px;font-size:14px;color:#4A3A2E;">I can help with:</div>';
+          '<div style="margin-bottom:12px;font-size:14px;color:#4A3A2E;">' +
+          esc(data.ui_messages.fallback) +
+          ":</div>";
         var flines = answer.split("\n").filter(function (l) {
           return l.trim();
         });
@@ -766,21 +788,25 @@
         // Totally off-topic — no related matches at all
         html +=
           '<div style="margin-bottom:14px;font-size:14px;color:#4A3A2E;">';
-        html +=
-          "That's not something I can help with. I handle Richmond city services like taxes, utilities, roads, and benefits.";
+        html += esc(data.ui_messages.too_vague_1);
         html += "</div>";
         html +=
-          '<div style="font-size:13px;color:#7A6A5E;">Try asking about a specific issue, like a pothole, water bill, or food stamps.</div>';
+          '<div style="font-size:13px;color:#7A6A5E;">' +
+          esc(data.ui_messages.too_vague_2) +
+          "</div>";
       }
       // Always show 311 handoff on fallback
       if (data.handoff_message) {
-        html += '<div style="margin-top:14px;padding-top:12px;border-top:1px solid #E8DFD4;font-size:13px;color:#4A3A2E;">' + linkify(data.handoff_message) + '</div>';
+        html +=
+          '<div style="margin-top:14px;padding-top:12px;border-top:1px solid #E8DFD4;font-size:13px;color:#4A3A2E;">' +
+          linkify(data.handoff_message) +
+          "</div>";
       }
       html += "</div>";
       resultArea.innerHTML = html;
       body.scrollTop = 0;
       wireYouAsked(resultArea);
-      addBackButton();
+      addBackButton(data.ui_messages.back_button);
       return;
     }
 
@@ -823,8 +849,13 @@
 
     // 2. Steps (open by default, collapsible)
     if (steps.length > 0) {
-      var seeStepsLabel = data.ui_messages ? data.ui_messages.see_steps : "Next steps";
-      html += '<button class="more-toggle expanded" id="hey804-more-toggle"><span class="chevron">\u203A</span> ' + esc(seeStepsLabel) + '</button>';
+      var seeStepsLabel = data.ui_messages
+        ? data.ui_messages.see_steps
+        : "Next steps";
+      html +=
+        '<button class="more-toggle expanded" id="hey804-more-toggle"><span class="chevron">\u203A</span> ' +
+        esc(seeStepsLabel) +
+        "</button>";
       html += '<div class="more-steps show" id="hey804-more-steps">';
       html += '<ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
@@ -836,7 +867,12 @@
 
     // 3. Deadline
     if (data.deadlines) {
-      html += '<div class="deadline">' + svgClock + ' ' + linkify(data.deadlines) + '</div>';
+      html +=
+        '<div class="deadline">' +
+        svgClock +
+        " " +
+        linkify(data.deadlines) +
+        "</div>";
     }
 
     html += "</div>";

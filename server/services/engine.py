@@ -68,11 +68,17 @@ EMERGENCY_PATTERNS = [
         "medical emergency",
     ),
     (
-        re.compile(r"\b(break(ing)? in(to)?|broke.{0,5}in|intruder|someone.{0,10}(in |into )(my |the )?(house|home|apartment)|home invasion|being robbed)\b", re.I),
+        re.compile(
+            r"\b(break(ing)? in(to)?|broke.{0,5}in|intruder|someone.{0,10}(in |into )(my |the )?(house|home|apartment)|home invasion|being robbed)\b",
+            re.I,
+        ),
         "active break-in",
     ),
     (
-        re.compile(r"\b(water main.{0,5}(break|burst|broke)|main.{0,5}break|flood.{0,10}street|geyser.{0,10}street)\b", re.I),
+        re.compile(
+            r"\b(water main.{0,5}(break|burst|broke)|main.{0,5}break|flood.{0,10}street|geyser.{0,10}street)\b",
+            re.I,
+        ),
         "water main break",
     ),
 ]
@@ -419,21 +425,17 @@ class Hey804Engine:
     def _finalize(self, response: dict | str, channel: str, language: str) -> dict | str:
         ui_messages = {
             "you_asked": "You asked",
-            "first_step": "Here's your first step",
             "see_steps": "Next steps",
             "also_see": "Also see",
-            "might_help": "These might help",
             "back_button": "Ask me something else",
-            "sourced_from": "Sourced from",
-            "learn_more": "Learn more",
-            "footer": "Your Richmond Navigator",
-            "error": "Something went wrong. Try again or call",
             "make_sure": "I want to make sure I point you to the right place. Did you mean",
+            "emergency": "Call 911",
+            "crisis": "Help is available right now",
+            "fallback": "I can help with",
+            "too_vague_1": "That's not something I can help with. I handle Richmond city services like taxes, utilities, roads, and benefits.",
+            "too_vague_2": "Try asking about a specific issue, like a pothole, water bill, or food stamps.",
         }
-        if language == "en":
-            if isinstance(response, str):
-                return response
-            return {**response, "ui_messages": ui_messages}
+
         if isinstance(response, str):
             return translate_text(response, src_lang="en", target_lang=language)
         else:
