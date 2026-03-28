@@ -6,12 +6,14 @@ All surfaces (SMS, web, widget, QR) use this single engine.
 Fallback chain: keyword match -> LLM classification -> honest "I don't know"
 All responses flow through _finalize() for translation/post-processing.
 """
+
 from __future__ import annotations
 
 import json
 import logging
 from pathlib import Path
 
+from server.services.language import detect_language, translate_text
 from server.services.intent_matcher import IntentMatcher
 from server.services.response_formatter import (
     format_sms,
@@ -24,30 +26,40 @@ from server.services.response_formatter import (
     HELP_RESPONSE,
     STOP_RESPONSE,
 )
-from server.services.safety import validate_response_citations, contains_pii, sanitize_message_for_storage
+from server.services.safety import (
+    validate_response_citations,
+    contains_pii,
+    sanitize_message_for_storage,
+)
 from server.config import ANTHROPIC_API_KEY, MAX_LLM_CONCURRENT, LLM_TIMEOUT_SECONDS
 
 logger = logging.getLogger(__name__)
 
 # Language detection heuristic
 SPANISH_INDICATORS = {
-    'hola', 'ayuda', 'necesito', 'como', 'puedo', 'pagar',
-    'impuestos', 'agua', 'comida', 'español', 'por', 'favor',
-    'donde', 'quiero', 'tengo', 'factura', 'dinero',
+    "hola",
+    "ayuda",
+    "necesito",
+    "como",
+    "puedo",
+    "pagar",
+    "impuestos",
+    "agua",
+    "comida",
+    "español",
+    "por",
+    "favor",
+    "donde",
+    "quiero",
+    "tengo",
+    "factura",
+    "dinero",
 }
 
 STOP_WORDS = {"stop", "unsubscribe", "cancel", "quit"}
 HELP_WORDS = {"help", "info"}
 GREETING_WORDS = {"hi", "hello", "hey", "hola", "sup", "yo"}
 LANGUAGE_SWITCH_WORDS = {"es", "español", "spanish"}
-
-
-def detect_language(text: str) -> str:
-    words = set(text.lower().split())
-    spanish_count = sum(1 for w in words if w in SPANISH_INDICATORS)
-    if spanish_count >= 2 or text.lower().strip() in LANGUAGE_SWITCH_WORDS:
-        return "es"
-    return "en"
 
 
 class Hey804Engine:
@@ -67,12 +79,15 @@ class Hey804Engine:
         if ANTHROPIC_API_KEY:
             try:
                 import anthropic
+
                 self.llm_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
                 logger.info("LLM fallback enabled (Anthropic API)")
             except Exception as e:
                 logger.warning(f"LLM fallback unavailable: {e}")
 
-        logger.info(f"Hey804 engine loaded: {len(self.questions)} intents, {len(self.matcher.keyword_map)} keywords")
+        logger.info(
+            f"Hey804 engine loaded: {len(self.questions)} intents, {len(self.matcher.keyword_map)} keywords"
+        )
 
     # ------------------------------------------------------------------
     # Public API
@@ -90,12 +105,14 @@ class Hey804Engine:
         Main entry point. Every code path builds a response,
         then returns through _finalize() for translation/post-processing.
         """
-        msg_stripped = message.strip()
-        msg_lower = msg_stripped.lower()
+        language = detect_language(message)
 
-        # Detect language early — _finalize needs it
-        if language is None:
-            language = detect_language(msg_stripped)
+        translated_input = message
+        if language != "en":
+            translated_input = translate_text(message, src_lang=language, target_lang="en")
+
+        msg_stripped = translated_input.strip()
+        msg_lower = msg_stripped.lower()
 
         # --- Special commands ---
         if msg_lower in STOP_WORDS:
@@ -138,7 +155,9 @@ class Hey804Engine:
                     # LLM disagreed — try full reclassification
                     llm_result = self._llm_classify(msg_stripped, language)
                     if llm_result is not None:
-                        logger.info(f"LLM reclassified '{msg_stripped[:50]}' from {match['intent']} to {llm_result['intent']}")
+                        logger.info(
+                            f"LLM reclassified '{msg_stripped[:50]}' from {match['intent']} to {llm_result['intent']}"
+                        )
                         response = self._format_match(llm_result, [], channel, is_first_message)
                     elif related:
                         response = self._format_partial(related, channel, is_first_message)
@@ -151,8 +170,12 @@ class Hey804Engine:
             # Partial keyword match — try LLM to resolve
             llm_result = self._llm_classify(msg_stripped, language)
             if llm_result is not None:
-                logger.info(f"LLM classified partial-match '{msg_stripped[:50]}' as {llm_result['intent']}")
-                response = self._format_match(llm_result, result["related"], channel, is_first_message)
+                logger.info(
+                    f"LLM classified partial-match '{msg_stripped[:50]}' as {llm_result['intent']}"
+                )
+                response = self._format_match(
+                    llm_result, result["related"], channel, is_first_message
+                )
             else:
                 response = self._format_partial(result["related"], channel, is_first_message)
 
@@ -189,14 +212,40 @@ class Hey804Engine:
           - Response logging / analytics
           - Any other cross-cutting concern
         """
-        # Future: if language == "es", translate response text here
+        if language == "en":
+            return response
+        # Account for different response shapes
+        if isinstance(response, str):
+            translated = translate_text(response, src_lang="en", target_lang=language)
+            return translated
+        else:
+            translated_answer = translate_text(
+                response["answer"], src_lang="en", target_lang=language
+            )
+            response["answer"] = translated_answer
+            translated_action_steps = translate_text(
+                "\n".join(response["action_steps"]), src_lang="en", target_lang=language
+            )
+            response["action_steps"] = translated_action_steps.split("\n")
+            translated_handoff_message = translate_text(
+                response["handoff_message"], src_lang="en", target_lang=language
+            )
+            response["handoff_message"] = translated_handoff_message
+            if "related" in response:
+                for r in response["related"]:
+                    r["title"] = translate_text(r["title"], src_lang="en", target_lang=language)
+                    r["answer_preview"] = translate_text(
+                        r["answer_preview"], src_lang="en", target_lang=language
+                    )
         return response
 
     # ------------------------------------------------------------------
     # Response formatters (build the response shape)
     # ------------------------------------------------------------------
 
-    def _format_match(self, match: dict, related: list, channel: str, is_first_message: bool) -> dict | str:
+    def _format_match(
+        self, match: dict, related: list, channel: str, is_first_message: bool
+    ) -> dict | str:
         """Format a full intent match for the given channel."""
         if channel == "sms":
             response_text = format_sms(match, is_first_message=is_first_message)
@@ -204,10 +253,14 @@ class Hey804Engine:
             return response_text
         return format_web(match, related=related)
 
-    def _format_partial(self, related: list[dict], channel: str, is_first_message: bool = False) -> dict | str:
+    def _format_partial(
+        self, related: list[dict], channel: str, is_first_message: bool = False
+    ) -> dict | str:
         """Format a partial match (no confident intent, but related topics)."""
         if channel == "sms":
-            return format_partial_sms(self.fallback_message, related, is_first_message=is_first_message)
+            return format_partial_sms(
+                self.fallback_message, related, is_first_message=is_first_message
+            )
         return format_partial_web(self.fallback_message, related)
 
     def _format_fallback(self, channel: str, is_first_message: bool = False) -> dict | str:
@@ -248,7 +301,7 @@ class Hey804Engine:
             prompt = (
                 f'A Richmond VA resident said: "{message}"\n\n'
                 f'Our system matched this to the topic: "{match["intent"]}" — which is about: "{match["sample_questions"][0]}"\n\n'
-                f'Is this a reasonable match? Answer YES or NO only.'
+                f"Is this a reasonable match? Answer YES or NO only."
             )
             response = self.llm_client.messages.create(
                 model="claude-sonnet-4-20250514",
@@ -277,19 +330,17 @@ class Hey804Engine:
             return None
 
         intent_list = [
-            {"intent": q["intent"], "description": q["sample_questions"][0]}
-            for q in self.questions
+            {"intent": q["intent"], "description": q["sample_questions"][0]} for q in self.questions
         ]
 
         system_prompt = (
             "You are classifying a Richmond, Virginia resident's message into a city service category.\n"
             "Pick the BEST matching intent from this list. Pick the CLOSEST match even if not perfect — "
             "a close match is better than no match for someone who needs help.\n"
-            "Only respond \"NONE\" if the message is truly unrelated to any city service "
+            'Only respond "NONE" if the message is truly unrelated to any city service '
             "(e.g., homework help, weather, sports, general chat).\n\n"
-            "Respond with ONLY the intent name or \"NONE\". Nothing else.\n\n"
-            "INTENTS:\n"
-            + "\n".join(f"- {i['intent']}: {i['description']}" for i in intent_list)
+            'Respond with ONLY the intent name or "NONE". Nothing else.\n\n'
+            "INTENTS:\n" + "\n".join(f"- {i['intent']}: {i['description']}" for i in intent_list)
         )
 
         try:
