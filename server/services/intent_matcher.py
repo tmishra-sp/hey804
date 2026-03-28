@@ -292,13 +292,11 @@ BOOST_KEYWORDS = {
         "handicap ramp", "curb ramp", "gravel alley", "asphalt alley",
         "cobblestone alley", "concrete alley", "cave-in", "caved-in",
         "crater", "sink hole", "crumbling pavement", "missing stones",
-        "repair sidewalk", "repair alley", "potholes in alley",
+        "repair sidewalk", "repair alley",
         "cobblestone road", "repair road", "repair street",
         # From simulation fixes
         "fix this street", "fix the street", "fix the road", "fix my street",
         "road is falling apart", "road falling apart",
-        # From 311 DO-NOT-USE rules: pothole in alley goes to alley repair, not pothole form
-        "pothole in alley", "pothole in the alley", "alley pothole",
         # Sinkhole/collapse language
         "ground collapsing", "ground is collapsing", "road collapsing",
         "road is sinking", "street is sinking", "ground caving",
