@@ -4,7 +4,7 @@
 
 Richmond's 311 system handles 163,000+ calls per year. Most are people trying to find the right department: *How do I report a sinkhole? Where do I apply for SNAP? Is the water safe?* Hey804 routes them to the exact right form, phone number, and department — in seconds.
 
-[Live Demo](https://hey804-production.up.railway.app) | [Widget Demo](https://hey804-production.up.railway.app/widget-demo.html) | [SMS: 804-808-1083](sms:8048081083)
+[Live Demo](https://hey804-production.up.railway.app) | [Widget Demo](https://hey804-production.up.railway.app/widget-demo.html)
 
 ---
 
@@ -85,11 +85,13 @@ Every response includes the source URL (rva.gov, rva311.com) so citizens and cit
 
 | Surface | How | Use Case |
 |---------|-----|----------|
-| **SMS** | Text 804-808-1083 | Any phone, no internet needed |
+| **SMS** | Text the Twilio number* | Any phone, no internet needed |
 | **Web App** | Browse at hey804-production.up.railway.app | Desktop, mobile, library kiosks |
 | **Widget** | One-line embed on partner sites | Nonprofits, community orgs, city pages |
 | **QR Codes** | Scan a poster, get context-aware help | Libraries, city offices |
 | **Admin** | Broadcast alerts + view stats | City staff, emergency comms |
+
+*\*SMS number is pending Twilio A2P 10DLC registration for public use. Currently functional for demo/testing.*
 
 **Embed the widget on any site:**
 ```html
