@@ -715,7 +715,9 @@
       } else if (data.related && data.related.length > 0) {
         // Vague but city-related — nudge with contextual options
         html +=
-          '<div style="margin-bottom:14px;font-size:14px;color:#4A3A2E;">I want to make sure I point you to the right place. Did you mean:</div>';
+          '<div style="margin-bottom:14px;font-size:14px;color:#4A3A2E;">' +
+          esc(data.ui_messages.make_sure) +
+          ":</div>";
         data.related.forEach(function (r) {
           html +=
             '<button class="prompt" style="width:100%;text-align:left;margin-bottom:6px;" onclick="(function(){})()"><span class="q">' +

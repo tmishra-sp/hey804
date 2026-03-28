@@ -420,6 +420,7 @@ class Hey804Engine:
             "learn_more": "Learn more",
             "footer": "Your Richmond Navigator",
             "error": "Something went wrong. Try again or call",
+            "make_sure": "I want to make sure I point you to the right place. Did you mean",
         }
         if language == "en":
             if isinstance(response, str):
