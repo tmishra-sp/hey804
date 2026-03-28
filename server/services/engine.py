@@ -3,12 +3,14 @@ Hey804 Engine — the unified brain.
 Intent match -> response generation -> channel formatting -> safety validation.
 All surfaces (SMS, web, widget, QR) use this single engine.
 """
+
 from __future__ import annotations
 
 import json
 import logging
 from pathlib import Path
 
+from server.services.language import detect_language, translate_text
 from server.services.intent_matcher import IntentMatcher
 from server.services.response_formatter import (
     format_sms,
@@ -21,29 +23,39 @@ from server.services.response_formatter import (
     HELP_RESPONSE,
     STOP_RESPONSE,
 )
-from server.services.safety import validate_response_citations, contains_pii, sanitize_message_for_storage
+from server.services.safety import (
+    validate_response_citations,
+    contains_pii,
+    sanitize_message_for_storage,
+)
 
 logger = logging.getLogger(__name__)
 
 # Language detection heuristic
 SPANISH_INDICATORS = {
-    'hola', 'ayuda', 'necesito', 'como', 'puedo', 'pagar',
-    'impuestos', 'agua', 'comida', 'español', 'por', 'favor',
-    'donde', 'quiero', 'tengo', 'factura', 'dinero',
+    "hola",
+    "ayuda",
+    "necesito",
+    "como",
+    "puedo",
+    "pagar",
+    "impuestos",
+    "agua",
+    "comida",
+    "español",
+    "por",
+    "favor",
+    "donde",
+    "quiero",
+    "tengo",
+    "factura",
+    "dinero",
 }
 
 STOP_WORDS = {"stop", "unsubscribe", "cancel", "quit"}
 HELP_WORDS = {"help", "info"}
 GREETING_WORDS = {"hi", "hello", "hey", "hola", "sup", "yo"}
 LANGUAGE_SWITCH_WORDS = {"es", "español", "spanish"}
-
-
-def detect_language(text: str) -> str:
-    words = set(text.lower().split())
-    spanish_count = sum(1 for w in words if w in SPANISH_INDICATORS)
-    if spanish_count >= 2 or text.lower().strip() in LANGUAGE_SWITCH_WORDS:
-        return "es"
-    return "en"
 
 
 class Hey804Engine:
@@ -57,7 +69,9 @@ class Hey804Engine:
         self.questions = data["questions"]
         self.fallback_message = data["meta"]["fallback_message"]
         self.matcher = IntentMatcher(self.questions)
-        logger.info(f"Hey804 engine loaded: {len(self.questions)} intents, {len(self.matcher.keyword_map)} keywords")
+        logger.info(
+            f"Hey804 engine loaded: {len(self.questions)} intents, {len(self.matcher.keyword_map)} keywords"
+        )
 
     def respond(
         self,
@@ -73,7 +87,13 @@ class Hey804Engine:
           - dict for web/widget/qr channels
         Also returns metadata dict with intent info for logging.
         """
-        msg_stripped = message.strip()
+        detected_language = detect_language(message)
+
+        translated_input = message
+        if detected_language != "en":
+            translated_input = translate_text(message, src_lang=detected_language, target_lang="en")
+
+        msg_stripped = translated_input.strip()
         msg_lower = msg_stripped.lower()
 
         # Handle special commands (SMS only but safe for all channels)
@@ -94,10 +114,6 @@ class Hey804Engine:
                 intent="_language_switch",
             )
 
-        # Detect language if not provided
-        if language is None:
-            language = detect_language(msg_stripped)
-
         # Match intent via keywords (three-tier: full match, partial, none)
         result = self.matcher.match_with_related(msg_stripped)
 
@@ -115,9 +131,13 @@ class Hey804Engine:
 
         return self._format_fallback(channel, is_first_message)
 
-    def _format_partial_match(self, related: list[dict], channel: str, is_first_message: bool = False) -> dict | str:
+    def _format_partial_match(
+        self, related: list[dict], channel: str, is_first_message: bool = False
+    ) -> dict | str:
         if channel == "sms":
-            return format_partial_sms(self.fallback_message, related, is_first_message=is_first_message)
+            return format_partial_sms(
+                self.fallback_message, related, is_first_message=is_first_message
+            )
         return format_partial_web(self.fallback_message, related)
 
     def _format_fallback(self, channel: str, is_first_message: bool = False) -> dict | str:
