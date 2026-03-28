@@ -632,7 +632,8 @@
 
     // What you asked
     if (userMessage) {
-      html += '<div style="background:#F5EDE3;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#7A6A5E;"><b>You asked:</b> ' + esc(userMessage) + '</div>';
+      var youAskedLabel = data.ui_messages ? data.ui_messages.you_asked : "You asked";
+      html += '<div style="background:#F5EDE3;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#7A6A5E;"><b>' + esc(youAskedLabel) + ':</b> ' + esc(userMessage) + '</div>';
     }
 
     // 1. Action button + secondary sources right underneath
@@ -640,7 +641,8 @@
       var primary = sources[0];
       html += '<a class="primary-source" href="' + esc(primary.url) + '" target="_blank" rel="noopener">' + esc(primary.title) + ' \u2197</a>';
       if (sources.length > 1) {
-        html += '<div style="font-size:11px;color:#9A8E82;margin-top:6px;margin-bottom:14px;">';
+        var alsoSeeLabel = data.ui_messages ? data.ui_messages.also_see : "Also see";
+        html += '<div style="font-size:11px;color:#9A8E82;margin-top:6px;margin-bottom:14px;">' + esc(alsoSeeLabel) + ': ';
         for (var si = 1; si < sources.length; si++) {
           if (si > 1) html += ' \u00B7 ';
           html += '<a href="' + esc(sources[si].url) + '" target="_blank" rel="noopener" style="color:#7A6A5E;text-decoration:underline">' + esc(sources[si].title) + '</a>';
@@ -660,7 +662,8 @@
 
     // 3. Expandable details (steps, secondary sources)
     if (steps.length > 0) {
-      html += '<button class="more-toggle" id="hey804-more-toggle"><span class="chevron">\u203A</span> Details & next steps</button>';
+      var seeStepsLabel = data.ui_messages ? data.ui_messages.see_steps : "Details & next steps";
+      html += '<button class="more-toggle" id="hey804-more-toggle"><span class="chevron">\u203A</span> ' + esc(seeStepsLabel) + '</button>';
       html += '<div class="more-steps" id="hey804-more-steps">';
       html += '<ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
@@ -700,12 +703,12 @@
       };
     }
 
-    addBackButton();
+    addBackButton(data.ui_messages ? data.ui_messages.back_button : null);
   }
 
-  function addBackButton() {
+  function addBackButton(msg) {
     var back = h("button", "back");
-    back.innerHTML = svgBack + " Ask me something else";
+    back.innerHTML = svgBack + " " + esc(msg || "Ask me something else");
     back.onclick = function () {
       closeWidget();
       buildHome();

@@ -321,27 +321,50 @@ class Hey804Engine:
     # ------------------------------------------------------------------
 
     def _finalize(self, response: dict | str, channel: str, language: str) -> dict | str:
+        ui_messages = {
+            "you_asked": "You asked",
+            "first_step": "Here's your first step",
+            "see_steps": f"See all {len(response['action_steps']) if isinstance(response, dict) and 'action_steps' in response else 0} steps",
+            "also_see": "Also see",
+            "might_help": "These might help",
+            "back_button": "Ask me something else",
+            "learn_more": "Learn more",
+            "footer": "Your Richmond Navigator",
+            "error": "Something went wrong. Try again or call",
+        }
         if language == "en":
-            return response
+            if isinstance(response, str):
+                return response
+            return {**response, "ui_messages": ui_messages}
         if isinstance(response, str):
             return translate_text(response, src_lang="en", target_lang=language)
         else:
+            for k, v in ui_messages.items():
+                ui_messages[k] = translate_text(v, src_lang="en", target_lang=language)
+
             response["answer"] = translate_text(
                 response["answer"], src_lang="en", target_lang=language
             )
+            response["deadlines"] = (
+                translate_text(response["deadlines"], src_lang="en", target_lang=language)
+                if response.get("deadlines")
+                else None
+            )
             response["action_steps"] = translate_text(
-                "\n".join(response["action_steps"]), src_lang="en", target_lang=language
-            ).split("\n")
+                " || ".join(response["action_steps"]), src_lang="en", target_lang=language
+            ).split(" || ")
             response["handoff_message"] = translate_text(
                 response["handoff_message"], src_lang="en", target_lang=language
             )
+            for s in response.get("sources", []):
+                s["title"] = translate_text(s["title"], src_lang="en", target_lang=language)
             if "related" in response:
                 for r in response["related"]:
                     r["title"] = translate_text(r["title"], src_lang="en", target_lang=language)
                     r["answer_preview"] = translate_text(
                         r["answer_preview"], src_lang="en", target_lang=language
                     )
-        return response
+        return {**response, "ui_messages": ui_messages}
 
     # ------------------------------------------------------------------
     # Response formatters
