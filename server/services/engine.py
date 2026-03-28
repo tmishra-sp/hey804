@@ -47,12 +47,26 @@ LANGUAGE_SWITCH_WORDS = {"es", "español", "spanish"}
 # ------------------------------------------------------------------
 
 EMERGENCY_PATTERNS = [
-    (re.compile(r'\b(gas leak|leaking gas|smell.{0,10}gas)\b', re.I), "gas leak"),
-    (re.compile(r'\b(shooting|shots fired|gunshots|someone.{0,10}shot)\b', re.I), "active violence"),
-    (re.compile(r'\b(house.{0,10}fire|building.{0,10}fire|fire.{0,10}building|on fire)\b', re.I), "structure fire"),
-    (re.compile(r'\b(child.{0,10}missing|missing.{0,10}child|kidnap)\b', re.I), "missing child"),
-    (re.compile(r'\b(overdos|someone.{0,10}(passed out|not breathing|unconscious|collapsed))\b', re.I), "medical emergency"),
-    (re.compile(r'\b(heart attack|choking|seizure|bleeding.{0,10}(badly|out|heavily))\b', re.I), "medical emergency"),
+    (re.compile(r"\b(gas leak|leaking gas|smell.{0,10}gas)\b", re.I), "gas leak"),
+    (
+        re.compile(r"\b(shooting|shots fired|gunshots|someone.{0,10}shot)\b", re.I),
+        "active violence",
+    ),
+    (
+        re.compile(r"\b(house.{0,10}fire|building.{0,10}fire|fire.{0,10}building|on fire)\b", re.I),
+        "structure fire",
+    ),
+    (re.compile(r"\b(child.{0,10}missing|missing.{0,10}child|kidnap)\b", re.I), "missing child"),
+    (
+        re.compile(
+            r"\b(overdos|someone.{0,10}(passed out|not breathing|unconscious|collapsed))\b", re.I
+        ),
+        "medical emergency",
+    ),
+    (
+        re.compile(r"\b(heart attack|choking|seizure|bleeding.{0,10}(badly|out|heavily))\b", re.I),
+        "medical emergency",
+    ),
 ]
 
 EMERGENCY_RESPONSE = (
@@ -64,61 +78,103 @@ EMERGENCY_RESPONSE = (
 )
 
 CRISIS_PATTERNS = [
-    (re.compile(r'\b(domestic violence|abusive.{0,15}(husband|wife|partner|boyfriend|girlfriend)|hits? me|beating me)\b', re.I),
-     "If you are in immediate danger, call 911.\n\n"
-     "National Domestic Violence Hotline: 1-800-799-7233 (24/7)\n"
-     "Virginia Family Violence & Sexual Assault Hotline: 1-800-838-8238\n"
-     "For legal help: Virginia Legal Aid at 866-534-5243"),
-    (re.compile(r'\b(kill myself|suicide|suicidal|end.{0,5}(my life|it all)|want to die|don.?t want to live)\b', re.I),
-     "Please reach out — help is available right now.\n\n"
-     "988 Suicide & Crisis Lifeline: call or text 988 (24/7)\n"
-     "Crisis Text Line: text HOME to 741741\n\n"
-     "You are not alone. These services are free and confidential."),
-    (re.compile(r'\b(elder.{0,10}abuse|abus.{0,15}(elderly|senior|parent|grandparent|older)|neglect.{0,15}(elderly|senior|parent)|(parent|grandparent|grandmother|grandfather).{0,15}(abuse|abused|being abused|neglect))\b', re.I),
-     "Report elder abuse or neglect to Adult Protective Services.\n\n"
-     "Virginia APS Hotline: 888-832-3858 (24/7)\n"
-     "Richmond Office of Aging: 804-646-1082\n"
-     "If in immediate danger, call 911."),
-    (re.compile(r'\b(child.{0,10}abuse|abus.{0,10}(child|kid|minor)|neglect.{0,10}(child|kid)|hurt.{0,10}(child|kid))\b', re.I),
-     "Report suspected child abuse or neglect.\n\n"
-     "Virginia Child Abuse Hotline: 800-552-7096 (24/7)\n"
-     "Richmond Social Services: 804-646-7000\n"
-     "If a child is in immediate danger, call 911."),
-    (re.compile(r'\b(homeless tonight|sleeping (outside|in my car|on the street)|warming shelter|emergency shelter|no.{0,10}(place|where) to (go|sleep|stay))\b', re.I),
-     "For immediate shelter assistance, call 211 (Virginia 211) — available 24/7.\n\n"
-     "Richmond Emergency Shelter: contact 211 for current availability\n"
-     "Salvation Army: 804-644-9471\n"
-     "CARITAS: 804-358-0964\n"
-     "Commonwealth Catholic Charities: 804-285-5900\n\n"
-     "For ongoing housing help, contact Richmond Social Services at 804-646-7000."),
+    (
+        re.compile(
+            r"\b(domestic violence|abusive.{0,15}(husband|wife|partner|boyfriend|girlfriend)|hits? me|beating me)\b",
+            re.I,
+        ),
+        "If you are in immediate danger, call 911.\n\n"
+        "National Domestic Violence Hotline: 1-800-799-7233 (24/7)\n"
+        "Virginia Family Violence & Sexual Assault Hotline: 1-800-838-8238\n"
+        "For legal help: Virginia Legal Aid at 866-534-5243",
+    ),
+    (
+        re.compile(
+            r"\b(kill myself|suicide|suicidal|end.{0,5}(my life|it all)|want to die|don.?t want to live)\b",
+            re.I,
+        ),
+        "Please reach out — help is available right now.\n\n"
+        "988 Suicide & Crisis Lifeline: call or text 988 (24/7)\n"
+        "Crisis Text Line: text HOME to 741741\n\n"
+        "You are not alone. These services are free and confidential.",
+    ),
+    (
+        re.compile(
+            r"\b(elder.{0,10}abuse|abus.{0,15}(elderly|senior|parent|grandparent|older)|neglect.{0,15}(elderly|senior|parent)|(parent|grandparent|grandmother|grandfather).{0,15}(abuse|abused|being abused|neglect))\b",
+            re.I,
+        ),
+        "Report elder abuse or neglect to Adult Protective Services.\n\n"
+        "Virginia APS Hotline: 888-832-3858 (24/7)\n"
+        "Richmond Office of Aging: 804-646-1082\n"
+        "If in immediate danger, call 911.",
+    ),
+    (
+        re.compile(
+            r"\b(child.{0,10}abuse|abus.{0,10}(child|kid|minor)|neglect.{0,10}(child|kid)|hurt.{0,10}(child|kid))\b",
+            re.I,
+        ),
+        "Report suspected child abuse or neglect.\n\n"
+        "Virginia Child Abuse Hotline: 800-552-7096 (24/7)\n"
+        "Richmond Social Services: 804-646-7000\n"
+        "If a child is in immediate danger, call 911.",
+    ),
+    (
+        re.compile(
+            r"\b(homeless tonight|sleeping (outside|in my car|on the street)|warming shelter|emergency shelter|no.{0,10}(place|where) to (go|sleep|stay))\b",
+            re.I,
+        ),
+        "For immediate shelter assistance, call 211 (Virginia 211) — available 24/7.\n\n"
+        "Richmond Emergency Shelter: contact 211 for current availability\n"
+        "Salvation Army: 804-644-9471\n"
+        "CARITAS: 804-358-0964\n"
+        "Commonwealth Catholic Charities: 804-285-5900\n\n"
+        "For ongoing housing help, contact Richmond Social Services at 804-646-7000.",
+    ),
 ]
 
 REDIRECT_PATTERNS = [
-    (re.compile(r'\b(hit and run|car accident|robbery|robbed|assault|break.?in|broke into|stole|stolen|theft|trespass)\b', re.I),
-     "This is a police matter.\n\n"
-     "Richmond Police non-emergency: 804-646-5100\n"
-     "If this is happening NOW or someone is in danger: call 911\n"
-     "You can also file a police report online at richmondva.policereports.us"),
-    (re.compile(r'\b(power.{0,5}(out|outage)|electricity.{0,5}(out|off)|dominion)\b', re.I),
-     "Power outages are handled by Dominion Energy, not the city.\n\n"
-     "Dominion Energy outage line: 866-366-4357\n"
-     "Report outages: dominionenergy.com/outages\n"
-     "For city gas service (DPU): call 804-646-4646"),
-    (re.compile(r'\b(driver.?s? licen|dmv|license plate|vehicle registration|car registration)\b', re.I),
-     "Driver's licenses and vehicle registration are handled by the Virginia DMV, not the city.\n\n"
-     "Virginia DMV: dmv.virginia.gov\n"
-     "DMV Customer Service: 804-497-7100\n"
-     "For city personal property tax on vehicles: call RVA 311 at 804-646-7000"),
-    (re.compile(r'\b(divorce.{0,10}(decree|papers|record|certificate))\b', re.I),
-     "Divorce records are handled by the Circuit Court, not the Health Department.\n\n"
-     "Richmond Circuit Court Clerk: 804-646-6505\n"
-     "John Marshall Courts Building, 400 N. 9th Street, Richmond VA 23219\n"
-     "For birth or death certificates: call 804-205-3911"),
-    (re.compile(r'\b(pipes? burst|burst.{0,5}pipe|plumb(er|ing).{0,10}(emergency|broken|leak))\b', re.I),
-     "Burst pipes inside your home are a private plumbing issue — the city does not repair private plumbing.\n\n"
-     "For emergencies: shut off your main water valve and call a licensed plumber\n"
-     "If the leak is in the STREET (not your home): call DPU at 804-646-4646 press 1\n"
-     "For help paying water bills: call DPU at 804-646-4646 about MetroCare"),
+    (
+        re.compile(
+            r"\b(hit and run|car accident|robbery|robbed|assault|break.?in|broke into|stole|stolen|theft|trespass)\b",
+            re.I,
+        ),
+        "This is a police matter.\n\n"
+        "Richmond Police non-emergency: 804-646-5100\n"
+        "If this is happening NOW or someone is in danger: call 911\n"
+        "You can also file a police report online at richmondva.policereports.us",
+    ),
+    (
+        re.compile(r"\b(power.{0,5}(out|outage)|electricity.{0,5}(out|off)|dominion)\b", re.I),
+        "Power outages are handled by Dominion Energy, not the city.\n\n"
+        "Dominion Energy outage line: 866-366-4357\n"
+        "Report outages: dominionenergy.com/outages\n"
+        "For city gas service (DPU): call 804-646-4646",
+    ),
+    (
+        re.compile(
+            r"\b(driver.?s? licen|dmv|license plate|vehicle registration|car registration)\b", re.I
+        ),
+        "Driver's licenses and vehicle registration are handled by the Virginia DMV, not the city.\n\n"
+        "Virginia DMV: dmv.virginia.gov\n"
+        "DMV Customer Service: 804-497-7100\n"
+        "For city personal property tax on vehicles: call RVA 311 at 804-646-7000",
+    ),
+    (
+        re.compile(r"\b(divorce.{0,10}(decree|papers|record|certificate))\b", re.I),
+        "Divorce records are handled by the Circuit Court, not the Health Department.\n\n"
+        "Richmond Circuit Court Clerk: 804-646-6505\n"
+        "John Marshall Courts Building, 400 N. 9th Street, Richmond VA 23219\n"
+        "For birth or death certificates: call 804-205-3911",
+    ),
+    (
+        re.compile(
+            r"\b(pipes? burst|burst.{0,5}pipe|plumb(er|ing).{0,10}(emergency|broken|leak))\b", re.I
+        ),
+        "Burst pipes inside your home are a private plumbing issue — the city does not repair private plumbing.\n\n"
+        "For emergencies: shut off your main water valve and call a licensed plumber\n"
+        "If the leak is in the STREET (not your home): call DPU at 804-646-4646 press 1\n"
+        "For help paying water bills: call DPU at 804-646-4646 about MetroCare",
+    ),
 ]
 
 
@@ -239,18 +295,39 @@ class Hey804Engine:
             confidence = result.get("confidence", 0.5)
 
             if confidence >= 0.85:
-                response = self._format_match(match, related, channel, is_first_message, user_message=msg_stripped, confidence=confidence)
+                response = self._format_match(
+                    match,
+                    related,
+                    channel,
+                    is_first_message,
+                    user_message=msg_stripped,
+                    confidence=confidence,
+                )
             else:
                 verified = self._llm_verify(msg_stripped, match)
                 if verified:
-                    response = self._format_match(match, related, channel, is_first_message, user_message=msg_stripped, confidence=confidence)
+                    response = self._format_match(
+                        match,
+                        related,
+                        channel,
+                        is_first_message,
+                        user_message=msg_stripped,
+                        confidence=confidence,
+                    )
                 else:
                     llm_result = self._llm_classify(msg_stripped, language)
                     if llm_result is not None:
                         logger.info(
                             f"LLM reclassified '{msg_stripped[:50]}' from {match['intent']} to {llm_result['intent']}"
                         )
-                        response = self._format_match(llm_result, [], channel, is_first_message, user_message=msg_stripped, confidence=0.75)
+                        response = self._format_match(
+                            llm_result,
+                            [],
+                            channel,
+                            is_first_message,
+                            user_message=msg_stripped,
+                            confidence=0.75,
+                        )
                     elif related:
                         response = self._format_partial(related, channel, is_first_message)
                     else:
@@ -265,8 +342,12 @@ class Hey804Engine:
                     f"LLM classified partial-match '{msg_stripped[:50]}' as {llm_result['intent']}"
                 )
                 response = self._format_match(
-                    llm_result, result["related"], channel, is_first_message,
-                    user_message=msg_stripped, confidence=0.75,
+                    llm_result,
+                    result["related"],
+                    channel,
+                    is_first_message,
+                    user_message=msg_stripped,
+                    confidence=0.75,
                 )
             else:
                 response = self._format_partial(result["related"], channel, is_first_message)
@@ -277,7 +358,14 @@ class Hey804Engine:
         llm_result = self._llm_classify(msg_stripped, language)
         if llm_result is not None:
             logger.info(f"LLM classified '{msg_stripped[:50]}' as intent={llm_result['intent']}")
-            response = self._format_match(llm_result, [], channel, is_first_message, user_message=msg_stripped, confidence=0.70)
+            response = self._format_match(
+                llm_result,
+                [],
+                channel,
+                is_first_message,
+                user_message=msg_stripped,
+                confidence=0.70,
+            )
         else:
             response = self._format_fallback(channel, is_first_message)
 
@@ -328,6 +416,7 @@ class Hey804Engine:
             "also_see": "Also see",
             "might_help": "These might help",
             "back_button": "Ask me something else",
+            "sourced_from": "Sourced from",
             "learn_more": "Learn more",
             "footer": "Your Richmond Navigator",
             "error": "Something went wrong. Try again or call",
@@ -379,15 +468,22 @@ class Hey804Engine:
         return None
 
     def _format_match(
-        self, match: dict, related: list, channel: str, is_first_message: bool,
-        user_message: str = "", confidence: float = 0.0,
+        self,
+        match: dict,
+        related: list,
+        channel: str,
+        is_first_message: bool,
+        user_message: str = "",
+        confidence: float = 0.0,
     ) -> dict | str:
         # Rerank sources so the most relevant one for this query is first
         if user_message and len(match.get("sources", [])) > 1:
             msg_words = set(user_message.lower().split())
+
             def source_relevance(s):
                 title_words = set(s.get("title", "").lower().replace("-", " ").split())
                 return len(msg_words & title_words)
+
             match = dict(match)  # don't mutate the KB entry
             match["sources"] = sorted(match["sources"], key=source_relevance, reverse=True)
 
@@ -423,7 +519,10 @@ class Hey804Engine:
             "answer": text,
             "action_steps": [],
             "sources": [
-                {"title": "About RVA 311 | Richmond", "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311"},
+                {
+                    "title": "About RVA 311 | Richmond",
+                    "url": "https://www.rva.gov/citizen-service-and-response/about-rva-311",
+                },
             ],
             "deadlines": None,
             "category": None,
