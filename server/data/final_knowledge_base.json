@@ -498,6 +498,7 @@
       "action_steps": [
         "Submit a pothole report at rva311.com",
         "Or call 311 (804-646-7000)",
+        "For sinkholes: submit a sinkhole report at rva311.com",
         "For alley potholes: use the alley repair form at rva311.com instead",
         "Include: exact location, description, photo if possible"
       ],
@@ -506,6 +507,10 @@
         {
           "title": "RVA 311 - Report Pothole on Road",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019222643?gid=f803d865-2aac-4172-af11-4c9c01239457"
+        },
+        {
+          "title": "RVA 311 - Report Sinkhole",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
           "title": "About RVA 311 | Richmond",
