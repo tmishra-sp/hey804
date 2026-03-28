@@ -105,18 +105,14 @@ class Hey804Engine:
         Main entry point. Every code path builds a response,
         then returns through _finalize() for translation/post-processing.
         """
-        detected_language = detect_language(message)
+        language = detect_language(message)
 
         translated_input = message
-        if detected_language != "en":
-            translated_input = translate_text(message, src_lang=detected_language, target_lang="en")
+        if language != "en":
+            translated_input = translate_text(message, src_lang=language, target_lang="en")
 
         msg_stripped = translated_input.strip()
         msg_lower = msg_stripped.lower()
-
-        # Detect language early — _finalize needs it
-        if language is None:
-            language = detect_language(msg_stripped)
 
         # --- Special commands ---
         if msg_lower in STOP_WORDS:
@@ -216,7 +212,31 @@ class Hey804Engine:
           - Response logging / analytics
           - Any other cross-cutting concern
         """
-        # Future: if language == "es", translate response text here
+        if language == "en":
+            return response
+        # Account for different response shapes
+        if isinstance(response, str):
+            translated = translate_text(response, src_lang="en", target_lang=language)
+            return translated
+        else:
+            translated_answer = translate_text(
+                response["answer"], src_lang="en", target_lang=language
+            )
+            response["answer"] = translated_answer
+            translated_action_steps = translate_text(
+                "\n".join(response["action_steps"]), src_lang="en", target_lang=language
+            )
+            response["action_steps"] = translated_action_steps.split("\n")
+            translated_handoff_message = translate_text(
+                response["handoff_message"], src_lang="en", target_lang=language
+            )
+            response["handoff_message"] = translated_handoff_message
+            if "related" in response:
+                for r in response["related"]:
+                    r["title"] = translate_text(r["title"], src_lang="en", target_lang=language)
+                    r["answer_preview"] = translate_text(
+                        r["answer_preview"], src_lang="en", target_lang=language
+                    )
         return response
 
     # ------------------------------------------------------------------
