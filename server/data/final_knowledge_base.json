@@ -494,11 +494,11 @@
         "report pothole in richmond",
         "pothole on my road needs fixing"
       ],
-      "answer": "Report potholes on city streets through RVA 311. You can: call 804-646-7000, use the RVA311 app (iOS/Android), or submit online at rva311.com. Potholes on city streets are patched with asphalt within 14 days, weather permitting. Important: for potholes in ALLEYS, use the alley repair request instead (different form). For sinkholes (road caving in, large collapse), call DPU at 804-646-4646 press 1 for 12-hour emergency response — sinkholes are handled by Public Utilities, not Public Works. For streetlight outages, submit a separate streetlight repair request.",
+      "answer": "Report potholes on city streets through RVA 311. You can: call 804-646-7000, use the RVA311 app (iOS/Android), or submit online at rva311.com. Potholes on city streets are patched with asphalt within 14 days, weather permitting. Important: for potholes in ALLEYS, use the alley repair request instead (different form). For sinkholes (road caving in, large collapse), call DPU at 804-646-4646 press 1 for 12-hour emergency response — sinkholes are handled by Public Utilities, not Public Works.",
       "action_steps": [
         "Call 311 (804-646-7000)",
         "Or submit a pothole report directly at rva311.com",
-        "Or submit a streetlight repair at rva311.com",
+        "Or submit a sinkhole report at rva311.com",
         "Include: exact location, description, photo if possible"
       ],
       "deadlines": "Potholes: patched within 14 days, weather permitting. Streetlights: varies by issue.",
@@ -512,8 +512,8 @@
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019222643?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
-          "title": "RVA 311 - Repair Existing Streetlight",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180226204420?gid=dabfee1b-4a85-44dd-9c43-daff9c7bd8af"
+          "title": "RVA 311 - Report Sinkhole",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
         }
       ],
       "handoff_trigger": "For emergencies that pose immediate danger to persons or property, call 804-646-5100 (non-emergency police)."
