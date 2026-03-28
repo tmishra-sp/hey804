@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Test all 30 intents: match accuracy, citation safety, SMS length.
+Test all 42 intents: match accuracy, citation safety, SMS length.
 Run: python3 -m scripts.test_all_intents
 """
 from __future__ import annotations
@@ -43,6 +43,7 @@ ALLOWED_PHONES = {
     "8046465100",   # Non-emergency police
     "8448025910",   # Senior legal helpline
     "8668304501",   # Predatory loan helpline
+    "911",          # Emergency services
 }
 
 SMS_MAX_CHARS = 1000
@@ -127,10 +128,22 @@ def main():
         (28, "senior_services",         "meals on wheels for my grandma"),
         (29, "towed_vehicle",           "My car got towed where is it"),
         (30, "legal_aid",               "I need free legal help for eviction"),
+        (31, "road_sidewalk_repair",    "The sidewalk on my street is broken"),
+        (32, "traffic_signs_signals",   "A traffic light is out on my street"),
+        (33, "streetlight_new_repair",  "The streetlight on my block is out"),
+        (34, "tree_vegetation",         "I need a tree trimmed on my street"),
+        (35, "parks_trails",            "Something is broken at my local park"),
+        (36, "stormwater_flooding",     "Standing water won't drain on my street"),
+        (37, "sewer_issues",            "There's a sewer smell on my street"),
+        (38, "code_enforcement",        "My neighbor's property is falling apart"),
+        (39, "illegal_dumping_graffiti","Someone dumped trash in the alley"),
+        (40, "pest_control",            "There are rats in my neighborhood"),
+        (41, "residential_parking",     "How do I get a residential parking permit"),
+        (42, "report_speeding_safety",  "Cars keep speeding on my street"),
     ]
 
     print("=" * 90)
-    print("Hey804 — Full Intent Test Suite (30 intents)")
+    print(f"Hey804 — Full Intent Test Suite ({len(test_cases)} intents)")
     print("=" * 90)
 
     results = []
@@ -213,9 +226,10 @@ def main():
                 print(f"     ^ SMS too long: {r['length']} chars (max {SMS_MAX_CHARS})")
 
     print("-" * 90)
-    print(f"\nTier 0 RESULT: {pass_count}/30 passed")
+    total_tier0 = len(test_cases)
+    print(f"\nTier 0 RESULT: {pass_count}/{total_tier0} passed")
 
-    any_failure = pass_count < 30
+    any_failure = pass_count < total_tier0
 
     # ------------------------------------------------------------------
     # TIER A: Sample Question Round-Trip Test
@@ -268,6 +282,12 @@ def main():
         ("how to get a biz license", "business_license"),
         ("free wifi near me", "free_internet_computer"),
         ("got a parking fine", "pay_parking_ticket"),
+        # New infrastructure intents
+        ("broken sidewalk near me", "road_sidewalk_repair"),
+        ("sewer smells bad", "sewer_issues"),
+        ("rats coming from the sewer", "pest_control"),
+        ("someone dumped a couch in the alley", "illegal_dumping_graffiti"),
+        ("my street floods every time it rains", "stormwater_flooding"),
     ]
 
     tier_b_pass = 0
@@ -339,10 +359,10 @@ def main():
     # FINAL SUMMARY
     # ------------------------------------------------------------------
     total_pass = pass_count + tier_a_pass + tier_b_pass + tier_c_pass
-    total_tests = 30 + tier_a_total + tier_b_total + tier_c_total
+    total_tests = total_tier0 + tier_a_total + tier_b_total + tier_c_total
     print("\n" + "=" * 90)
     print(f"OVERALL: {total_pass}/{total_tests} tests passed "
-          f"(Tier 0: {pass_count}/30, A: {tier_a_pass}/{tier_a_total}, "
+          f"(Tier 0: {pass_count}/{total_tier0}, A: {tier_a_pass}/{tier_a_total}, "
           f"B: {tier_b_pass}/{tier_b_total}, C: {tier_c_pass}/{tier_c_total})")
     print("=" * 90)
 

@@ -21,6 +21,10 @@
     "How do I register to vote?",
     "Stray dog on my street",
     "I got jury duty",
+    "The sidewalk near me is broken",
+    "There's a sewer backup on my street",
+    "Someone dumped trash in the alley",
+    "How do I get a residential parking permit",
   ];
 
   function pickPrompts() {
