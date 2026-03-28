@@ -169,7 +169,12 @@
 
     /* Source */
     ".sources-label{font-size:10px;font-weight:600;color:#9A7B6B;text-transform:uppercase;letter-spacing:.8px;margin-bottom:6px}",
-    ".source{display:inline-flex;align-items:center;gap:5px;padding:4px 10px;background:#F0F7F2;border:1px solid #B5DABE;border-radius:7px;font-size:11px;font-weight:500;color:#2D6B42;text-decoration:none;margin-bottom:14px;transition:background .15s}",
+    ".primary-source{display:block;text-align:center;padding:12px 16px;background:#2D6B42;color:#fff;border-radius:10px;font-size:13.5px;font-weight:600;text-decoration:none;margin:14px 0 8px;transition:background .15s;cursor:pointer}",
+    ".primary-source:hover{background:#245A36}",
+    ".sources-footnote{font-size:11px;color:#7A6A5E;margin-bottom:14px;line-height:1.6}",
+    ".sources-footnote .sources-label{font-weight:600;text-transform:uppercase;letter-spacing:0.5px;font-size:9.5px}",
+    ".source{display:inline-flex;align-items:center;gap:5px;padding:6px 12px;background:#F0F7F2;border:1px solid #B5DABE;border-radius:7px;font-size:11.5px;font-weight:500;color:#2D6B42;text-decoration:underline;text-underline-offset:2px;margin-bottom:14px;transition:background .15s;cursor:pointer}",
+    ".source:hover{background:#DFF0E3;border-color:#7BC48A}",
     ".source:hover{background:#E0F0E4}",
 
     /* Related topics (partial match) */
@@ -209,6 +214,19 @@
     return el;
   }
   function esc(t) { var d = document.createElement("span"); d.textContent = t; return d.innerHTML; }
+  function linkify(t) {
+    // Escape first for safety, then convert URLs and phone numbers to clickable links
+    var safe = esc(t);
+    // URLs
+    safe = safe.replace(/(https?:\/\/[^\s<,)]+)/g, '<a href="$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>');
+    // Bare domains (rva311.com, rva.gov, commonhelp.virginia.gov, etc.)
+    safe = safe.replace(/(?<![\/\w])((?:rva311\.com|rva\.gov|commonhelp\.virginia\.gov|coverva\.dmas\.virginia\.gov|valegalaid\.org|elections\.virginia\.gov|apps\.richmondgov\.com|rvalibrary\.org|enrollrps\.schoolmint\.com|dmv\.virginia\.gov|dominionenergy\.com)[^\s<,)]*)/g, '<a href="https://$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>');
+    // Phone numbers (804-646-7000 format)
+    safe = safe.replace(/(\d{3}[-.]?\d{3}[-.]?\d{4})/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
+    // Short codes (311, 211, 911, 988)
+    safe = safe.replace(/\b(911|311|211|988)\b/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
+    return safe;
+  }
 
   // --- Trigger Card ---
   var triggerCard = h("div", "trigger-card");
@@ -465,6 +483,11 @@
   function renderResponse(data, userMessage) {
     var html = '<div class="resp">';
 
+    // Show what the user asked
+    if (userMessage) {
+      html += '<div style="background:#F5EDE3;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:13px;color:#7A6A5E;"><b>You asked:</b> ' + esc(userMessage) + '</div>';
+    }
+
     var steps = data.action_steps || [];
     var answer = data.answer || "";
 
@@ -472,10 +495,10 @@
     if (steps.length > 0) {
       var firstStep = steps[0];
       var phoneMatch = firstStep.match(/(\d{3}[-.]?\d{3}[-.]?\d{4})/);
-      var firstHtml = esc(firstStep);
+      var firstHtml = linkify(firstStep);
       if (phoneMatch) {
-        var digits = phoneMatch[1].replace(/\D/g, "");
-        firstHtml = firstHtml.replace(phoneMatch[1], '<a href="tel:' + digits + '" style="color:#F5D89A;text-decoration:underline;font-size:16px">' + phoneMatch[1] + '</a>');
+        // linkify already handled the phone link, just restyle it for dark bg
+        firstHtml = firstHtml.replace('style="color:#C2633A', 'style="color:#F5D89A;font-size:16px');
       }
       html += '<div class="first-action">';
       html += '<div class="first-action-label">Here\u2019s your first step</div>';
@@ -483,15 +506,32 @@
       html += '</div>';
     }
 
-    // Answer
-    var sentences = answer.match(/[^.!?]+[.!?]+/g) || [answer];
-    var shortAnswer = sentences.slice(0, 2).join(" ").trim();
-    if (sentences.length > 2) shortAnswer += "..";
-    html += '<div class="answer">' + esc(shortAnswer) + '</div>';
+    // Answer — preserve line breaks, handle bullet lists
+    var answerHtml = "";
+    if (answer.indexOf("\n") !== -1) {
+      // Multi-line answer (help menu, emergency, crisis, redirect)
+      var lines = answer.split("\n");
+      for (var li = 0; li < lines.length; li++) {
+        var line = lines[li].trim();
+        if (!line) continue;
+        if (line.match(/^- /)) {
+          answerHtml += '<div style="padding-left:12px;margin:2px 0;">' + linkify(line) + '</div>';
+        } else {
+          answerHtml += '<div style="margin:4px 0;">' + linkify(line) + '</div>';
+        }
+      }
+    } else {
+      // Single paragraph — show first 2 sentences
+      var sentences = answer.match(/[^.!?]+[.!?]+/g) || [answer];
+      var shortAnswer = sentences.slice(0, 2).join(" ").trim();
+      if (sentences.length > 2) shortAnswer += "..";
+      answerHtml = linkify(shortAnswer);
+    }
+    html += '<div class="answer">' + answerHtml + '</div>';
 
     // Deadline
     if (data.deadlines) {
-      html += '<div class="deadline">' + svgClock + ' ' + esc(data.deadlines) + '</div>';
+      html += '<div class="deadline">' + svgClock + ' ' + linkify(data.deadlines) + '</div>';
     }
 
     // All steps (expandable)
@@ -499,23 +539,27 @@
       html += '<button class="more-toggle" id="hey804-more-toggle"><span class="chevron">\u203A</span> See all ' + steps.length + ' steps</button>';
       html += '<div class="more-steps" id="hey804-more-steps"><ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
-        html += '<li data-n="' + (i + 1) + '">' + esc(steps[i]) + '</li>';
+        html += '<li data-n="' + (i + 1) + '">' + linkify(steps[i]) + '</li>';
       }
       html += '</ol></div>';
     }
 
     // Sources
     if (data.sources && data.sources.length) {
-      html += '<div class="sources-label">Sourced from:</div>';
-      data.sources.forEach(function (s) {
-        var label = "";
-        try {
-          var u = new URL(s.url);
-          var path = u.pathname.replace(/\/$/, "").split("/").pop() || u.hostname;
-          label = u.hostname.replace("www.", "") + "/" + path;
-        } catch (e) { label = s.title || s.url; }
-        html += '<a class="source" href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.title || label) + '</a> ';
-      });
+      // Primary source — one clear action link
+      var primary = data.sources[0];
+      html += '<a class="primary-source" href="' + esc(primary.url) + '" target="_blank" rel="noopener">' + esc(primary.title) + ' \u2197</a>';
+      // Secondary sources — small footnote
+      if (data.sources.length > 1) {
+        html += '<div class="sources-footnote">';
+        html += '<span class="sources-label">Also see: </span>';
+        for (var si = 1; si < data.sources.length; si++) {
+          var s = data.sources[si];
+          if (si > 1) html += ' · ';
+          html += '<a href="' + esc(s.url) + '" target="_blank" rel="noopener" style="color:#7A6A5E;font-size:11px;text-decoration:underline">' + esc(s.title) + '</a>';
+        }
+        html += '</div>';
+      }
     }
 
     // Related topics (partial match)
