@@ -550,7 +550,19 @@ class IntentMatcher:
         best_score = scores[best_id]
 
         if best_score >= 5:
-            confidence = min(1.0, 0.5 + (best_score - 5) / 50.0)
+            # Check if this is a real match or a coin flip
+            # If the #2 intent is within 30% of #1, keywords are guessing — lower confidence
+            sorted_all = sorted(scores.values(), reverse=True)
+            second_score = sorted_all[1] if len(sorted_all) > 1 else 0
+            gap = (best_score - second_score) / best_score if best_score > 0 else 1.0
+
+            if gap < 0.3:
+                # Close race — keywords can't distinguish, signal low confidence for LLM
+                confidence = min(0.55, 0.3 + gap)
+            else:
+                # Clear winner
+                confidence = min(1.0, 0.5 + (best_score - 5) / 50.0)
+
             # Runner-ups must score at least 70% of the winner to be shown
             min_related_score = max(5, int(best_score * 0.7))
             other_ids = sorted(

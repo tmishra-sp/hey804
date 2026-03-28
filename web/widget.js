@@ -28,9 +28,7 @@
   ];
 
   function pickPrompts() {
-    var shuffled = prompts.slice().sort(function () {
-      return Math.random() - 0.5;
-    });
+    var shuffled = prompts.slice().sort(function () { return Math.random() - 0.5; });
     return shuffled.slice(0, 4);
   }
 
@@ -40,8 +38,7 @@
 
   /* ── Fonts ── */
   var fontLink = document.createElement("style");
-  fontLink.textContent =
-    "@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');";
+  fontLink.textContent = "@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');";
   shadow.appendChild(fontLink);
 
   var style = document.createElement("style");
@@ -201,57 +198,33 @@
   shadow.appendChild(style);
 
   // SVGs
-  var svgSend =
-    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
-  var svgX =
-    '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
-  var svgCheck =
-    '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
-  var svgClock =
-    '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
-  var svgBack =
-    '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
-  var svgMic =
-    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
-  var svgSkyline =
-    '<svg class="skyline" viewBox="0 0 400 28" preserveAspectRatio="none" fill="white"><path d="M0 28V20h8v-5h3v5h6V14h3v6h8V10h3v10h10V15h3v5h10v-6h3v6h6V8h3V5h2v3h3v12h10V16h3v4h6v-5h3v5h10V12h3v8h6V14h2v6h8v-5h3v5h10v-6h3v6h6V10h3v10h10V14h2v6h8v-5h3v5h10V12h3v8h6V14h2v6h10V10h3v10h10V16h2v4h10v8H0z"/></svg>';
+  var svgSend = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+  var svgX = '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>';
+  var svgCheck = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>';
+  var svgClock = '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
+  var svgBack = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
+  var svgMic = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
+  var svgSkyline = '<svg class="skyline" viewBox="0 0 400 28" preserveAspectRatio="none" fill="white"><path d="M0 28V20h8v-5h3v5h6V14h3v6h8V10h3v10h10V15h3v5h10v-6h3v6h6V8h3V5h2v3h3v12h10V16h3v4h6v-5h3v5h10V12h3v8h6V14h2v6h8v-5h3v5h10v-6h3v6h6V10h3v10h10V14h2v6h8v-5h3v5h10V12h3v8h6V14h2v6h10V10h3v10h10V16h2v4h10v8H0z"/></svg>';
   // Compass icon for avatar
-  var svgCompass =
-    '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.3)" stroke="white"/></svg>';
+  var svgCompass = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.3)" stroke="white"/></svg>';
 
   function h(tag, cls) {
     var el = document.createElement(tag);
     if (cls) el.className = cls;
     return el;
   }
-  function esc(t) {
-    var d = document.createElement("span");
-    d.textContent = t;
-    return d.innerHTML;
-  }
+  function esc(t) { var d = document.createElement("span"); d.textContent = t; return d.innerHTML; }
   function linkify(t) {
     // Escape first for safety, then convert URLs and phone numbers to clickable links
     var safe = esc(t);
     // URLs
-    safe = safe.replace(
-      /(https?:\/\/[^\s<,)]+)/g,
-      '<a href="$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>',
-    );
+    safe = safe.replace(/(https?:\/\/[^\s<,)]+)/g, '<a href="$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>');
     // Bare domains (rva311.com, rva.gov, commonhelp.virginia.gov, etc.)
-    safe = safe.replace(
-      /(?<![\/\w])((?:rva311\.com|rva\.gov|commonhelp\.virginia\.gov|coverva\.dmas\.virginia\.gov|valegalaid\.org|elections\.virginia\.gov|apps\.richmondgov\.com|rvalibrary\.org|enrollrps\.schoolmint\.com|dmv\.virginia\.gov|dominionenergy\.com)[^\s<,)]*)/g,
-      '<a href="https://$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>',
-    );
+    safe = safe.replace(/(?<![\/\w])((?:rva311\.com|rva\.gov|commonhelp\.virginia\.gov|coverva\.dmas\.virginia\.gov|valegalaid\.org|elections\.virginia\.gov|apps\.richmondgov\.com|rvalibrary\.org|enrollrps\.schoolmint\.com|dmv\.virginia\.gov|dominionenergy\.com)[^\s<,)]*)/g, '<a href="https://$1" target="_blank" rel="noopener" style="color:#C2633A;text-decoration:underline;word-break:break-all">$1</a>');
     // Phone numbers (804-646-7000 format)
-    safe = safe.replace(
-      /(\d{3}[-.]?\d{3}[-.]?\d{4})/g,
-      '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>',
-    );
+    safe = safe.replace(/(\d{3}[-.]?\d{3}[-.]?\d{4})/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
     // Short codes (311, 211, 911, 988)
-    safe = safe.replace(
-      /\b(911|311|211|988)\b/g,
-      '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>',
-    );
+    safe = safe.replace(/\b(911|311|211|988)\b/g, '<a href="tel:$1" style="color:#C2633A;text-decoration:underline">$1</a>');
     return safe;
   }
 
@@ -265,8 +238,7 @@
   var triggerAvatar = h("div", "trigger-avatar");
   triggerAvatar.innerHTML = svgCompass;
   var triggerGreetEl = h("div", "trigger-greeting");
-  triggerGreetEl.innerHTML =
-    "Your RVA Guide<br><span>I know my way around Richmond</span>";
+  triggerGreetEl.innerHTML = "Your RVA Guide<br><span>I know my way around Richmond</span>";
   triggerHdr.appendChild(triggerAvatar);
   triggerHdr.appendChild(triggerGreetEl);
   triggerCard.appendChild(triggerHdr);
@@ -278,28 +250,20 @@
   triggerInput.setAttribute("aria-label", "Ask about Richmond city services");
   var triggerSendBtn = h("button", "trigger-send");
   triggerSendBtn.setAttribute("aria-label", "Send");
-  triggerSendBtn.innerHTML =
-    '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+  triggerSendBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
   triggerInputRow.appendChild(triggerInput);
   triggerInputRow.appendChild(triggerSendBtn);
   triggerCard.appendChild(triggerInputRow);
 
   var triggerActions = h("div", "trigger-actions");
-  var speechSupported = !!(
-    window.SpeechRecognition || window.webkitSpeechRecognition
-  );
-  var micBtn = h(
-    "button",
-    speechSupported ? "trigger-mic" : "trigger-mic unsupported",
-  );
+  var speechSupported = !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+  var micBtn = h("button", speechSupported ? "trigger-mic" : "trigger-mic unsupported");
   micBtn.setAttribute("aria-label", "Voice input");
   micBtn.innerHTML = svgMic;
   triggerActions.appendChild(micBtn);
 
   var waveDiv = h("div", "trigger-wave");
-  for (var wi = 0; wi < 4; wi++) {
-    waveDiv.appendChild(h("span", ""));
-  }
+  for (var wi = 0; wi < 4; wi++) { waveDiv.appendChild(h("span", "")); }
   triggerActions.appendChild(waveDiv);
 
   var triggerLabel = h("span", "trigger-label");
@@ -322,11 +286,7 @@
 
   // Header
   var hdr = h("div", "hdr");
-  hdr.innerHTML =
-    '<div class="hdr-inner"><div class="hdr-avatar">' +
-    svgCompass +
-    '</div><div class="hdr-text"><div class="greeting">Hey <b>neighbor!</b></div><div class="subtitle">Let me help you navigate Richmond</div></div></div>' +
-    svgSkyline;
+  hdr.innerHTML = '<div class="hdr-inner"><div class="hdr-avatar">' + svgCompass + '</div><div class="hdr-text"><div class="greeting">Hey <b>neighbor!</b></div><div class="subtitle">Let me help you navigate Richmond</div></div></div>' + svgSkyline;
   panel.appendChild(hdr);
 
   // Body
@@ -348,6 +308,28 @@
   function buildHome() {
     body.innerHTML = "";
 
+    // Input row inside panel
+    var panelInputRow = h("div", "input-area");
+    var panelInput = h("input", "input");
+    panelInput.type = "text";
+    panelInput.placeholder = "Tell me what\u2019s going on\u2026";
+    panelInput.setAttribute("aria-label", "Ask about Richmond city services");
+    var panelSendBtn = h("button", "send");
+    panelSendBtn.innerHTML = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>';
+    panelSendBtn.onclick = function () {
+      var msg = panelInput.value.trim();
+      if (msg) { panelInput.value = ""; doSend(msg); }
+    };
+    panelInput.onkeydown = function (e) {
+      if (e.key === "Enter") {
+        var msg = panelInput.value.trim();
+        if (msg) { panelInput.value = ""; doSend(msg); }
+      }
+    };
+    panelInputRow.appendChild(panelInput);
+    panelInputRow.appendChild(panelSendBtn);
+    body.appendChild(panelInputRow);
+
     // Prompt suggestions
     var label = h("div", "prompts-label");
     label.textContent = "Neighbors often ask";
@@ -357,13 +339,8 @@
     var selected = pickPrompts();
     selected.forEach(function (text) {
       var btn = h("button", "prompt");
-      btn.innerHTML =
-        '<span class="q">\u201C' +
-        esc(text) +
-        '\u201D</span><span class="arrow">\u203A</span>';
-      btn.onclick = function () {
-        doSend(text);
-      };
+      btn.innerHTML = '<span class="q">\u201C' + esc(text) + '\u201D</span><span class="arrow">\u203A</span>';
+      btn.onclick = function () { doSend(text); };
       promptsDiv.appendChild(btn);
     });
     body.appendChild(promptsDiv);
@@ -382,22 +359,16 @@
     panel.classList.add("open");
     triggerCard.classList.add("hide");
     closeBtn.classList.remove("hide");
-    try {
-      sessionStorage.setItem("hey804_open", "1");
-    } catch (e) {}
+    try { sessionStorage.setItem("hey804_open", "1"); } catch (e) {}
   }
   function closeWidget() {
     panel.classList.remove("open");
     triggerCard.classList.remove("hide");
     closeBtn.classList.add("hide");
-    try {
-      sessionStorage.setItem("hey804_open", "0");
-    } catch (e) {}
+    try { sessionStorage.setItem("hey804_open", "0"); } catch (e) {}
   }
   closeBtn.onclick = closeWidget;
-  panel.addEventListener("keydown", function (e) {
-    if (e.key === "Escape") closeWidget();
-  });
+  panel.addEventListener("keydown", function (e) { if (e.key === "Escape") closeWidget(); });
 
   // --- Trigger card events ---
   triggerInput.oninput = function () {
@@ -504,9 +475,7 @@
     triggerCard.appendChild(tip);
     setTimeout(function () {
       tip.classList.remove("show");
-      setTimeout(function () {
-        if (tip.parentNode) tip.parentNode.removeChild(tip);
-      }, 200);
+      setTimeout(function () { if (tip.parentNode) tip.parentNode.removeChild(tip); }, 200);
     }, 2500);
   }
 
@@ -518,172 +487,160 @@
     var lbl = body.querySelector(".prompts-label");
     if (lbl) lbl.style.display = "none";
 
-    resultArea.innerHTML =
-      '<div class="loading"><div class="shimmer"></div><div class="shimmer"></div><div class="shimmer"></div></div>';
+    resultArea.innerHTML = '<div class="loading"><div class="shimmer"></div><div class="shimmer"></div><div class="shimmer"></div></div>';
 
     fetch(baseUrl + "/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        message: message,
-        channel: "widget",
-        context: { partner: partner },
-      }),
+      body: JSON.stringify({ message: message, channel: "widget", context: { partner: partner } }),
     })
-      .then(function (r) {
-        if (!r.ok) throw new Error();
-        return r.json();
-      })
-      .then(function (d) {
-        renderResponse(d, message);
-      })
+      .then(function (r) { if (!r.ok) throw new Error(); return r.json(); })
+      .then(function (d) { renderResponse(d, message); })
       .catch(function () {
-        resultArea.innerHTML =
-          '<div class="err">Something went wrong. Try again or call <a href="tel:8046467000" style="color:#991b1b">804-646-7000</a>.</div>';
+        resultArea.innerHTML = '<div class="err">Something went wrong. Try again or call <a href="tel:8046467000" style="color:#991b1b">804-646-7000</a>.</div>';
         addBackButton();
       });
   }
 
   function renderResponse(data, userMessage) {
-    console.log("Response data:", data);
     var html = '<div class="resp">';
-
-    // Show what the user asked
-    if (userMessage) {
-      html +=
-        '<div style="background:#F5EDE3;border-radius:12px;padding:10px 14px;margin-bottom:14px;font-size:13px;color:#7A6A5E;"><b>' +
-        esc(data.ui_messages.you_asked) +
-        ":</b> " +
-        esc(userMessage) +
-        "</div>";
-    }
 
     var steps = data.action_steps || [];
     var answer = data.answer || "";
+    var sources = data.sources || [];
+    var dept = data.department;
+    var isEmergency = data.intent === "_emergency";
+    var isCrisis = data.intent === "_crisis";
+    var isRedirect = data.intent === "_redirect";
+    var isSpecial = isEmergency || isCrisis || isRedirect;
+    var isFallback = !data.intent || data.intent === "_partial_match" || data.intent === "_help";
 
-    // First action — the hero card
-    if (steps.length > 0) {
-      var firstStep = steps[0];
-      var phoneMatch = firstStep.match(/(\d{3}[-.]?\d{3}[-.]?\d{4})/);
-      var firstHtml = linkify(firstStep);
-      if (phoneMatch) {
-        // linkify already handled the phone link, just restyle it for dark bg
-        firstHtml = firstHtml.replace(
-          'style="color:#C2633A',
-          'style="color:#F5D89A;font-size:16px',
-        );
+    // --- EMERGENCY: red alert, nothing else ---
+    if (isEmergency) {
+      html += '<div style="background:#DC2626;color:#fff;border-radius:12px;padding:20px;margin-bottom:14px;text-align:center;">';
+      html += '<div style="font-size:22px;font-weight:700;margin-bottom:10px;">\u26A0\uFE0F Call 911</div>';
+      html += '</div>';
+      var elines = answer.split("\n").filter(function(l) { return l.trim(); });
+      for (var ei = 0; ei < elines.length; ei++) {
+        html += '<div style="margin:4px 0;font-size:13.5px;">' + linkify(elines[ei].trim()) + '</div>';
       }
-      html += '<div class="first-action">';
-      html +=
-        '<div class="first-action-label">' +
-        esc(data.ui_messages.first_step) +
-        "</div>";
-      html += '<div class="first-action-text">' + firstHtml + "</div>";
-      html += "</div>";
+      html += '</div>';
+      resultArea.innerHTML = html;
+      body.scrollTop = 0;
+      addBackButton();
+      return;
     }
 
-    // Answer — preserve line breaks, handle bullet lists
-    var answerHtml = "";
-    if (answer.indexOf("\n") !== -1) {
-      // Multi-line answer (help menu, emergency, crisis, redirect)
-      var lines = answer.split("\n");
-      for (var li = 0; li < lines.length; li++) {
-        var line = lines[li].trim();
-        if (!line) continue;
-        if (line.match(/^- /)) {
-          answerHtml +=
-            '<div style="padding-left:12px;margin:2px 0;">' +
-            linkify(line) +
-            "</div>";
+    // --- CRISIS: purple card with hotlines ---
+    if (isCrisis) {
+      html += '<div style="background:#7C3AED;color:#fff;border-radius:12px;padding:18px;margin-bottom:14px;">';
+      html += '<div style="font-size:13px;font-weight:600;opacity:0.85;margin-bottom:8px;">Help is available right now</div>';
+      var clines = answer.split("\n").filter(function(l) { return l.trim(); });
+      for (var ci = 0; ci < clines.length; ci++) {
+        html += '<div style="margin:4px 0;font-size:14px;">' + linkify(clines[ci].trim()).replace(/color:#C2633A/g, 'color:#E9D5FF') + '</div>';
+      }
+      html += '</div>';
+      html += '</div>';
+      resultArea.innerHTML = html;
+      body.scrollTop = 0;
+      addBackButton();
+      return;
+    }
+
+    // --- REDIRECT: honest "not us, here's who" ---
+    if (isRedirect) {
+      var rlines = answer.split("\n").filter(function(l) { return l.trim(); });
+      for (var ri = 0; ri < rlines.length; ri++) {
+        html += '<div style="margin:5px 0;font-size:14px;">' + linkify(rlines[ri].trim()) + '</div>';
+      }
+      html += '</div>';
+      resultArea.innerHTML = html;
+      body.scrollTop = 0;
+      addBackButton();
+      return;
+    }
+
+    // --- FALLBACK / HELP: show options ---
+    if (isFallback) {
+      var flines = answer.split("\n").filter(function(l) { return l.trim(); });
+      for (var fi = 0; fi < flines.length; fi++) {
+        var fl = flines[fi].trim();
+        if (fl.match(/^- /)) {
+          html += '<div style="padding-left:12px;margin:3px 0;font-size:13.5px;">' + linkify(fl) + '</div>';
         } else {
-          answerHtml +=
-            '<div style="margin:4px 0;">' + linkify(line) + "</div>";
+          html += '<div style="margin:5px 0;font-size:14px;">' + linkify(fl) + '</div>';
         }
       }
-    } else {
-      // Single paragraph — show up to 4 sentences, end at natural boundary
-      var sentences = answer.match(/[^.!?]+[.!?]+/g) || [answer];
-      var shortAnswer = sentences.slice(0, 4).join(" ").trim();
-      answerHtml = linkify(shortAnswer);
+      if (data.related && data.related.length > 0) {
+        html += '<div style="margin-top:14px;">';
+        data.related.forEach(function (r) {
+          var sourceUrl = (r.sources && r.sources.length) ? r.sources[0].url : '#';
+          html += '<a class="related-link" href="' + esc(sourceUrl) + '" target="_blank" rel="noopener">';
+          html += '<span class="related-title">' + esc(r.title) + '</span>';
+          html += '<span class="arrow">\u203A</span></a>';
+        });
+        html += '</div>';
+      }
+      html += '</div>';
+      resultArea.innerHTML = html;
+      body.scrollTop = 0;
+      addBackButton();
+      return;
     }
-    html += '<div class="answer">' + answerHtml + "</div>";
 
-    // Deadline
+    // --- MATCHED INTENT: clean 3-part layout ---
+
+    // What you asked
+    if (userMessage) {
+      html += '<div style="background:#F5EDE3;border-radius:12px;padding:10px 14px;margin-bottom:12px;font-size:13px;color:#7A6A5E;"><b>You asked:</b> ' + esc(userMessage) + '</div>';
+    }
+
+    // 1. Action button + secondary sources right underneath
+    if (sources.length > 0) {
+      var primary = sources[0];
+      html += '<a class="primary-source" href="' + esc(primary.url) + '" target="_blank" rel="noopener">' + esc(primary.title) + ' \u2197</a>';
+      if (sources.length > 1) {
+        html += '<div style="font-size:11px;color:#9A8E82;margin-top:6px;margin-bottom:14px;">';
+        for (var si = 1; si < sources.length; si++) {
+          if (si > 1) html += ' \u00B7 ';
+          html += '<a href="' + esc(sources[si].url) + '" target="_blank" rel="noopener" style="color:#7A6A5E;text-decoration:underline">' + esc(sources[si].title) + '</a>';
+        }
+        html += '</div>';
+      }
+    }
+
+    // 2. Key info (2 sentences + deadline if relevant)
+    var sentences = answer.match(/[^.!?]+[.!?]+/g) || [answer];
+    var shortAnswer = sentences.slice(0, 2).join(" ").trim();
+    html += '<div class="answer">' + linkify(shortAnswer) + '</div>';
+
     if (data.deadlines) {
-      html +=
-        '<div class="deadline">' +
-        svgClock +
-        " " +
-        linkify(data.deadlines) +
-        "</div>";
+      html += '<div class="deadline">' + svgClock + ' ' + linkify(data.deadlines) + '</div>';
     }
 
-    // All steps (expandable)
-    if (steps.length > 1) {
-      html +=
-        '<button class="more-toggle" id="hey804-more-toggle"><span class="chevron">\u203A</span>' +
-        esc(data.ui_messages.see_steps) +
-        "</button>";
-      html +=
-        '<div class="more-steps" id="hey804-more-steps"><ol class="steps">';
+    // 3. Expandable details (steps, secondary sources)
+    if (steps.length > 0) {
+      html += '<button class="more-toggle" id="hey804-more-toggle"><span class="chevron">\u203A</span> Details & next steps</button>';
+      html += '<div class="more-steps" id="hey804-more-steps">';
+      html += '<ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
-        html += '<li data-n="' + (i + 1) + '">' + linkify(steps[i]) + "</li>";
+        html += '<li data-n="' + (i + 1) + '">' + linkify(steps[i]) + '</li>';
       }
-      html += "</ol></div>";
+      html += '</ol>';
+      html += '</div>';
     }
 
-    // Sources
-    if (data.sources && data.sources.length) {
-      // Primary source — one clear action link
-      var primary = data.sources[0];
-      html +=
-        '<a class="primary-source" href="' +
-        esc(primary.url) +
-        '" target="_blank" rel="noopener">' +
-        esc(primary.title) +
-        " \u2197</a>";
-      // Secondary sources — small footnote
-      if (data.sources.length > 1) {
-        html += '<div class="sources-footnote">';
-        html +=
-          '<span class="sources-label">' +
-          esc(data.ui_messages.also_see) +
-          ": </span>";
-        for (var si = 1; si < data.sources.length; si++) {
-          var s = data.sources[si];
-          if (si > 1) html += " · ";
-          html +=
-            '<a href="' +
-            esc(s.url) +
-            '" target="_blank" rel="noopener" style="color:#7A6A5E;font-size:11px;text-decoration:underline">' +
-            esc(s.title) +
-            "</a>";
-        }
-        html += "</div>";
-      }
+    // Verified footer (small, not competing)
+    var sourceHost = "";
+    if (sources.length > 0) {
+      try { sourceHost = new URL(sources[0].url).hostname.replace("www.", ""); } catch(e) { sourceHost = "rva.gov"; }
     }
+    html += '<div style="text-align:center;margin-top:14px;padding-top:10px;border-top:1px solid #E8DFD4;font-size:11px;color:#9A8E82;">';
+    html += '\u2713 Sourced from ' + esc(sourceHost);
+    html += ' \u00B7 <a href="tel:8046467000" style="color:#9A8E82;text-decoration:underline;">Wrong? Call 311</a>';
+    html += '</div>';
 
-    // Related topics (partial match)
-    if (data.related && data.related.length > 0) {
-      html += '<div class="related-section">';
-      html +=
-        '<div class="related-label">' +
-        esc(data.ui_messages.might_help) +
-        "</div>";
-      data.related.forEach(function (r) {
-        var sourceUrl = r.sources && r.sources.length ? r.sources[0].url : "#";
-        html +=
-          '<a class="related-link" href="' +
-          esc(sourceUrl) +
-          '" target="_blank" rel="noopener">';
-        html += '<span class="related-title">' + esc(r.title) + "</span>";
-        html += '<span class="arrow">\u203A</span>';
-        html += "</a>";
-      });
-      html += "</div>";
-    }
-
-    html += "</div>";
+    html += '</div>';
 
     resultArea.innerHTML = html;
     body.scrollTop = 0;
@@ -704,12 +661,12 @@
       };
     }
 
-    addBackButton(data.ui_messages.back_button);
+    addBackButton();
   }
 
-  function addBackButton(msg) {
+  function addBackButton() {
     var back = h("button", "back");
-    back.innerHTML = svgBack + " " + esc(msg || "Ask me something else");
+    back.innerHTML = svgBack + " Ask me something else";
     back.onclick = function () {
       closeWidget();
       buildHome();
@@ -719,7 +676,5 @@
 
   // --- Mount ---
   document.body.appendChild(host);
-  try {
-    if (sessionStorage.getItem("hey804_open") === "1") openWidget();
-  } catch (e) {}
+  try { if (sessionStorage.getItem("hey804_open") === "1") openWidget(); } catch (e) {}
 })();
