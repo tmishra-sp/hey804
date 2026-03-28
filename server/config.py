@@ -35,3 +35,6 @@ DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'data' / 'hey80
 # LLM
 MAX_LLM_CONCURRENT = int(os.getenv("MAX_LLM_CONCURRENT", "10"))
 LLM_TIMEOUT_SECONDS = int(os.getenv("LLM_TIMEOUT_SECONDS", "8"))
+
+# Google API
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY", "")
