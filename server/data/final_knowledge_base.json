@@ -1093,16 +1093,16 @@
       "deadlines": "Sidewalks: up to 365 days. Roads/alleys/curbs: up to 180 days. Sinkholes: 12-hour response.",
       "sources": [
         {
-          "title": "RVA 311 - Repair Sidewalk or Ramp",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019185025?gid=f803d865-2aac-4172-af11-4c9c01239457"
+          "title": "RVA 311 - Repair Road",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019163752?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
           "title": "RVA 311 - Report Sinkhole",
           "url": "https://www.rva311.com/rvaone#/request/new/new_cs180228155543?gid=f803d865-2aac-4172-af11-4c9c01239457"
         },
         {
-          "title": "RVA 311 - Repair Road",
-          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019163752?gid=f803d865-2aac-4172-af11-4c9c01239457"
+          "title": "RVA 311 - Repair Sidewalk or Ramp",
+          "url": "https://www.rva311.com/rvaone#/request/new/new_cs221019185025?gid=f803d865-2aac-4172-af11-4c9c01239457"
         }
       ],
       "handoff_trigger": "If reporting a sinkhole, stress urgency: call 804-646-4646 and press 1 immediately. Sinkholes can indicate major infrastructure failure."

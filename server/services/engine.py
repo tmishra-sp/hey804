@@ -94,7 +94,7 @@ CRISIS_PATTERNS = [
 ]
 
 REDIRECT_PATTERNS = [
-    (re.compile(r'\b(hit and run|car accident|robbery|robbed|assault|break.?in|broke into|stolen|theft|trespass)\b', re.I),
+    (re.compile(r'\b(hit and run|car accident|robbery|robbed|assault|break.?in|broke into|stole|stolen|theft|trespass)\b', re.I),
      "This is a police matter.\n\n"
      "Richmond Police non-emergency: 804-646-5100\n"
      "If this is happening NOW or someone is in danger: call 911\n"
@@ -230,18 +230,18 @@ class Hey804Engine:
             confidence = result.get("confidence", 0.5)
 
             if confidence >= 0.85:
-                response = self._format_match(match, related, channel, is_first_message)
+                response = self._format_match(match, related, channel, is_first_message, user_message=msg_stripped)
             else:
                 verified = self._llm_verify(msg_stripped, match)
                 if verified:
-                    response = self._format_match(match, related, channel, is_first_message)
+                    response = self._format_match(match, related, channel, is_first_message, user_message=msg_stripped)
                 else:
                     llm_result = self._llm_classify(msg_stripped, language)
                     if llm_result is not None:
                         logger.info(
                             f"LLM reclassified '{msg_stripped[:50]}' from {match['intent']} to {llm_result['intent']}"
                         )
-                        response = self._format_match(llm_result, [], channel, is_first_message)
+                        response = self._format_match(llm_result, [], channel, is_first_message, user_message=msg_stripped)
                     elif related:
                         response = self._format_partial(related, channel, is_first_message)
                     else:
@@ -256,7 +256,8 @@ class Hey804Engine:
                     f"LLM classified partial-match '{msg_stripped[:50]}' as {llm_result['intent']}"
                 )
                 response = self._format_match(
-                    llm_result, result["related"], channel, is_first_message
+                    llm_result, result["related"], channel, is_first_message,
+                    user_message=msg_stripped,
                 )
             else:
                 response = self._format_partial(result["related"], channel, is_first_message)
@@ -267,7 +268,7 @@ class Hey804Engine:
         llm_result = self._llm_classify(msg_stripped, language)
         if llm_result is not None:
             logger.info(f"LLM classified '{msg_stripped[:50]}' as intent={llm_result['intent']}")
-            response = self._format_match(llm_result, [], channel, is_first_message)
+            response = self._format_match(llm_result, [], channel, is_first_message, user_message=msg_stripped)
         else:
             response = self._format_fallback(channel, is_first_message)
 
@@ -338,8 +339,18 @@ class Hey804Engine:
     # ------------------------------------------------------------------
 
     def _format_match(
-        self, match: dict, related: list, channel: str, is_first_message: bool
+        self, match: dict, related: list, channel: str, is_first_message: bool,
+        user_message: str = "",
     ) -> dict | str:
+        # Rerank sources so the most relevant one for this query is first
+        if user_message and len(match.get("sources", [])) > 1:
+            msg_words = set(user_message.lower().split())
+            def source_relevance(s):
+                title_words = set(s.get("title", "").lower().replace("-", " ").split())
+                return len(msg_words & title_words)
+            match = dict(match)  # don't mutate the KB entry
+            match["sources"] = sorted(match["sources"], key=source_relevance, reverse=True)
+
         if channel == "sms":
             response_text = format_sms(match, is_first_message=is_first_message)
             response_text = validate_response_citations(response_text, match)

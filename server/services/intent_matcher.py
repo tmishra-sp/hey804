@@ -399,6 +399,8 @@ BOOST_KEYWORDS = {
         "bees", "wasps", "bugs", "insects",
         "mosquitoes breeding", "mosquito breeding",
         "stagnant water mosquito",
+        # Boost for common queries
+        "rats in my", "mice in my", "roaches in my",
     ],
     "residential_parking": [
         "parking permit", "residential parking", "residential parking permit",
@@ -438,6 +440,7 @@ STOP_WORDS_INDEX = {
     "good", "into", "keep", "next", "over", "take",
     "door", "doing", "looks", "someone", "near", "right",
     "ground", "house", "block", "live", "been",
+    "neighborhood",
 }
 
 
@@ -548,9 +551,10 @@ class IntentMatcher:
 
         if best_score >= 5:
             confidence = min(1.0, 0.5 + (best_score - 5) / 50.0)
-            # Also collect runner-up intents for transparency
+            # Runner-ups must score at least 70% of the winner to be shown
+            min_related_score = max(5, int(best_score * 0.7))
             other_ids = sorted(
-                [iid for iid in scores if iid != best_id and scores[iid] >= 3],
+                [iid for iid in scores if iid != best_id and scores[iid] >= min_related_score],
                 key=scores.get, reverse=True
             )[:3]
             related = []

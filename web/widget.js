@@ -521,10 +521,9 @@
         }
       }
     } else {
-      // Single paragraph — show first 2 sentences
+      // Single paragraph — show up to 4 sentences, end at natural boundary
       var sentences = answer.match(/[^.!?]+[.!?]+/g) || [answer];
-      var shortAnswer = sentences.slice(0, 2).join(" ").trim();
-      if (sentences.length > 2) shortAnswer += "..";
+      var shortAnswer = sentences.slice(0, 4).join(" ").trim();
       answerHtml = linkify(shortAnswer);
     }
     html += '<div class="answer">' + answerHtml + '</div>';
