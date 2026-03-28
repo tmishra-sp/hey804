@@ -629,13 +629,13 @@
         recognition.onresult = function (e) {
           var transcript = e.results[0][0].transcript;
           input.value = transcript;
-          if (e.results[0].isFinal && transcript.trim()) {
+          if (e.results[0].isFinal) {
             mic.style.borderColor = "#E8DFD4";
             mic.style.color = "#9A7B6B";
             recognition.onresult = origOnResult;
             recognition.onend = origOnEnd;
             recognition.onerror = origOnError;
-            submit();
+            input.focus();
           }
         };
         recognition.onend = function () {
