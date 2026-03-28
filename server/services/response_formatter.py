@@ -46,18 +46,19 @@ def format_sms(match: dict, is_first_message: bool = False) -> str:
 
 def format_web(match: dict, related: list[dict] | None = None) -> dict:
     """Web/widget JSON response with full detail + related topics for transparency."""
+    import copy
     result = {
         "answer": match["answer"],
-        "action_steps": match["action_steps"],
+        "action_steps": list(match["action_steps"]),
         "deadlines": match.get("deadlines"),
-        "sources": match["sources"],
+        "sources": copy.deepcopy(match["sources"]),
         "category": match["category"],
         "intent": match["intent"],
         "handoff_available": True,
         "handoff_message": "Need more help? Call RVA 311 at 804-646-7000",
     }
     if related:
-        result["related"] = [
+        result["related"] = copy.deepcopy([
             {
                 "title": r["title"],
                 "answer_preview": r["answer_preview"],
@@ -65,7 +66,7 @@ def format_web(match: dict, related: list[dict] | None = None) -> dict:
                 "category": r["category"],
             }
             for r in related
-        ]
+        ])
     return result
 
 

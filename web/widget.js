@@ -157,13 +157,7 @@
     ".answer{font-size:13.5px;line-height:1.7;color:#4A3A2E;margin-bottom:14px}",
 
     /* More steps — expandable */
-    ".more-toggle{display:flex;align-items:center;gap:6px;padding:0;background:none;border:none;font:500 13px/1 inherit;color:#C2633A;cursor:pointer;margin-bottom:10px;transition:color .15s}",
-    ".more-toggle:hover{color:#8B4228}",
-    ".more-toggle .chevron{transition:transform .2s;font-size:16px}",
-    ".more-toggle.expanded .chevron{transform:rotate(90deg)}",
-    ".more-steps{display:none;margin-bottom:14px}",
-    ".more-steps.show{display:block}",
-    ".steps{list-style:none;padding:0 0 0 14px;margin:0;border-left:3px solid #D4A855}",
+    ".steps{list-style:none;padding:0;margin:0}",
     ".steps li{padding:5px 0 5px 4px;font-size:13px;line-height:1.55;color:#4A3A2E}",
     ".steps li::before{content:attr(data-n);display:inline-flex;align-items:center;justify-content:center;width:18px;height:18px;background:#2D1F14;color:#fff;border-radius:50%;font-size:10px;font-weight:700;margin-right:8px;vertical-align:middle}",
 
@@ -211,8 +205,6 @@
     '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>';
   var svgBack =
     '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>';
-  var svgMic =
-    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="1" width="6" height="11" rx="3"/><path d="M19 10v1a7 7 0 0 1-14 0v-1"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>';
   var svgSkyline =
     '<svg class="skyline" viewBox="0 0 400 28" preserveAspectRatio="none" fill="white"><path d="M0 28V20h8v-5h3v5h6V14h3v6h8V10h3v10h10V15h3v5h10v-6h3v6h6V8h3V5h2v3h3v12h10V16h3v4h6v-5h3v5h10V12h3v8h6V14h2v6h8v-5h3v5h10v-6h3v6h6V10h3v10h10V14h2v6h8v-5h3v5h10V12h3v8h6V14h2v6h10V10h3v10h10V16h2v4h10v8H0z"/></svg>';
   // Compass icon for avatar
@@ -292,8 +284,8 @@
     "button",
     speechSupported ? "trigger-mic" : "trigger-mic unsupported",
   );
-  micBtn.setAttribute("aria-label", "Voice input");
-  micBtn.innerHTML = svgMic;
+  micBtn.setAttribute("aria-label", "Submit");
+  micBtn.innerHTML = svgSend;
   triggerActions.appendChild(micBtn);
 
   var waveDiv = h("div", "trigger-wave");
@@ -847,22 +839,14 @@
       }
     }
 
-    // 2. Steps (open by default, collapsible)
+    // 2. Steps (always visible, no toggle)
     if (steps.length > 0) {
-      var seeStepsLabel = data.ui_messages
-        ? data.ui_messages.see_steps
-        : "Next steps";
-      html +=
-        '<button class="more-toggle expanded" id="hey804-more-toggle"><span class="chevron">\u203A</span> ' +
-        esc(seeStepsLabel) +
-        "</button>";
-      html += '<div class="more-steps show" id="hey804-more-steps">';
+      html += '<div style="font-size:12px;font-weight:600;color:#7A6A5E;margin-bottom:8px;">Next steps</div>';
       html += '<ol class="steps">';
       for (var i = 0; i < steps.length; i++) {
         html += '<li data-n="' + (i + 1) + '">' + linkify(steps[i]) + "</li>";
       }
       html += "</ol>";
-      html += "</div>";
     }
 
     // 3. Deadline
@@ -880,24 +864,6 @@
     resultArea.innerHTML = html;
     body.scrollTop = 0;
     wireYouAsked(resultArea);
-
-    // Wire up the "more steps" toggle
-    var toggle = shadow.getElementById("hey804-more-toggle");
-    var moreDiv = shadow.getElementById("hey804-more-steps");
-    if (toggle && moreDiv) {
-      toggle.onclick = function () {
-        var showing = moreDiv.classList.contains("show");
-        if (showing) {
-          moreDiv.classList.remove("show");
-          toggle.classList.remove("expanded");
-        } else {
-          moreDiv.classList.add("show");
-          toggle.classList.add("expanded");
-        }
-      };
-    }
-
-    addBackButton(data.ui_messages ? data.ui_messages.back_button : null);
   }
 
   function addBackButton(msg) {

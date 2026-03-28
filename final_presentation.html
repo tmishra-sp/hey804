@@ -1294,7 +1294,7 @@ body {
         <div class="sms-screen">
           <div class="sms-header">
             <div class="contact-avatar">804</div>
-            <div class="contact-name">(804) 808-1083</div>
+            <div class="contact-name">(804) XXX-XXXX</div>
             <div class="contact-sub">SMS &middot; Hey804</div>
           </div>
           <div class="sms-messages" id="smsMessages">
@@ -1363,25 +1363,38 @@ body {
           <div class="fk-line short"></div>
         </div>
 
-        <div class="widget-float">
-          <div class="widget-head">
-            <div class="w-avatar">804</div>
-            <div>
-              <div class="w-title">Hey804</div>
-              <div class="w-sub">Your Richmond Navigator</div>
+        <div class="widget-float" style="width:270px;border-radius:18px;">
+          <!-- Real widget header: warm gradient with skyline -->
+          <div style="background:linear-gradient(135deg,#2D1F14,#4A3020);border-radius:18px 18px 0 0;padding:16px 14px 20px;position:relative;overflow:hidden;">
+            <div style="position:absolute;bottom:0;left:0;right:0;height:20px;background:linear-gradient(transparent,rgba(255,255,255,0.05));"></div>
+            <div style="display:flex;align-items:center;gap:10px;">
+              <div style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,#C2633A,#D4A843);display:flex;align-items:center;justify-content:center;">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="rgba(255,255,255,0.3)" stroke="white"/></svg>
+              </div>
+              <div>
+                <div style="color:#fff;font-weight:700;font-size:14px;">Hey <span style="font-weight:400;">neighbor!</span></div>
+                <div style="color:#D4A843;font-size:10px;">Let me help you navigate Richmond</div>
+              </div>
             </div>
           </div>
-          <div class="widget-chat" id="widgetMessages">
-            <div class="widget-msg bot">Hi! Ask me about Richmond city services.</div>
-            <div class="widget-msg user">How do I pay my water bill?</div>
-            <div class="widget-msg bot">
-              <div class="typing-dots" id="widgetTyping"><span></span><span></span><span></span></div>
+          <!-- Real widget response body -->
+          <div style="padding:12px;background:#FFFCF8;font-size:11px;" id="widgetMessages">
+            <!-- You asked (editable input style) -->
+            <div style="background:#F5EDE3;border-radius:10px;padding:7px 10px;margin-bottom:8px;display:flex;align-items:center;gap:4px;">
+              <b style="font-size:11px;color:#7A6A5E;white-space:nowrap;">You asked:</b>
+              <span style="flex:1;color:#4A3A2E;font-size:11px;border:1px solid #D9CFC3;border-radius:6px;background:#fff;padding:3px 6px;">How do I pay my water bill?</span>
             </div>
+            <!-- Source button -->
+            <a style="display:block;background:#2D5F3E;color:#fff;padding:9px 10px;border-radius:10px;text-decoration:none;font-size:11px;font-weight:600;margin-bottom:4px;text-align:center;">DPU Billing | Richmond &#8599;</a>
+            <div style="font-size:9px;color:#9A8E82;margin-bottom:8px;">Also see: <u>DPU FAQ</u></div>
+            <!-- Next steps -->
+            <div style="display:flex;align-items:center;gap:4px;color:#C2633A;font-size:11px;font-weight:500;margin-bottom:6px;">
+              <span style="font-size:13px;">&#9662;</span> Next steps
+            </div>
+            <div class="typing-dots" id="widgetTyping" style="padding:4px 0;"><span></span><span></span><span></span></div>
           </div>
-          <div class="widget-input-row">
-            <input type="text" placeholder="Ask about city services..." readonly>
-            <button>&#10148;</button>
-          </div>
+          <!-- Footer -->
+          <div style="text-align:center;padding:6px;font-size:9px;color:#B0A194;border-top:1px solid #E8DFD4;background:#FFFCF8;border-radius:0 0 18px 18px;">Your Richmond Navigator &middot; Hey804</div>
         </div>
       </div>
     </div>
@@ -1405,34 +1418,39 @@ body {
       <div class="resp-card">
         <div class="rc-channel sms-ch">&#128172; SMS</div>
         <div class="rc-body">
-          <strong>Water Bill Payment</strong><br><br>
-          Pay online, by phone, or in person:<br>
-          &#8226; Online: <a href="#">rva.gov/utilities</a><br>
-          &#8226; Phone: 804-646-4646<br>
-          &#8226; In person: 900 E Broad St<br><br>
-          Due by the 15th monthly.
+          Pay your City of Richmond utility bill online at <a href="#">apps.richmondgov.com</a> or by calling DPU at <strong>804-646-4646</strong>.<br><br>
+          <strong>NEXT STEPS:</strong><br>
+          1. Pay online at apps.richmondgov.com<br>
+          2. Or call DPU at 804-646-4646<br>
+          3. For help: MetroCare &amp; PromisePay at 804-646-4646<br>
+          4. LIHEAP: call 804-646-7046<br><br>
+          <span style="opacity:0.6">Source: rva.gov/public-utilities/billing</span>
         </div>
       </div>
       <div class="resp-card">
         <div class="rc-channel wa-ch">&#128241; WhatsApp</div>
         <div class="rc-body">
-          <strong>Water Bill Payment</strong><br><br>
-          Pay online, by phone, or in person:<br>
-          &#8226; Online: <a href="#">rva.gov/utilities</a><br>
-          &#8226; Phone: 804-646-4646<br>
-          &#8226; In person: 900 E Broad St<br><br>
-          Due by the 15th monthly.
+          Pay your City of Richmond utility bill online at <a href="#">apps.richmondgov.com</a> or by calling DPU at <strong>804-646-4646</strong>.<br><br>
+          <strong>NEXT STEPS:</strong><br>
+          1. Pay online at apps.richmondgov.com<br>
+          2. Or call DPU at 804-646-4646<br>
+          3. For help: MetroCare &amp; PromisePay at 804-646-4646<br>
+          4. LIHEAP: call 804-646-7046<br><br>
+          <span style="opacity:0.6">Source: rva.gov/public-utilities/billing</span>
         </div>
       </div>
       <div class="resp-card">
         <div class="rc-channel web-ch">&#127760; Widget</div>
         <div class="rc-body">
-          <strong>Water Bill Payment</strong><br><br>
-          Pay online, by phone, or in person:<br>
-          &#8226; Online: <a href="#">rva.gov/utilities</a><br>
-          &#8226; Phone: 804-646-4646<br>
-          &#8226; In person: 900 E Broad St<br><br>
-          Due by the 15th monthly.
+          <div style="background:rgba(212,168,67,0.1);border-radius:6px;padding:4px 8px;margin-bottom:6px;font-size:0.7rem;color:rgba(255,255,255,0.5);"><b>You asked:</b> How do I pay my water bill?</div>
+          <div style="background:#2D5F3E;padding:6px 8px;border-radius:6px;margin-bottom:4px;"><strong>DPU Billing | Richmond</strong> &#8599;</div>
+          <span style="opacity:0.5;font-size:0.65rem;">Also see: DPU FAQ</span><br><br>
+          <strong style="color:var(--gold);">&#9662; Next steps</strong><br>
+          1. Pay online at apps.richmondgov.com<br>
+          2. Or call DPU at 804-646-4646<br>
+          3. MetroCare &amp; PromisePay: 804-646-4646<br>
+          4. LIHEAP: call 804-646-7046<br>
+          5. Disconnected? Pay then call for reconnection
         </div>
       </div>
     </div>
@@ -1489,7 +1507,7 @@ body {
     <h2>One city. One backend. Every resident reached.</h2>
     <p>No downloads. No broadband required. No language barrier. Just text, tap, or scan &mdash; and get the real answer.</p>
     <div class="cta-channels">
-      <div class="cta-ch"><span class="cta-icon">💬</span> Text (804) 808-1083</div>
+      <div class="cta-ch"><span class="cta-icon">💬</span> Text (804) XXX-XXXX</div>
       <div class="cta-ch"><span class="cta-icon">🌐</span> hey804 Web App</div>
       <div class="cta-ch"><span class="cta-icon">🧩</span> Embed Widget</div>
       <div class="cta-ch"><span class="cta-icon">📷</span> Scan QR Poster</div>
@@ -1542,9 +1560,9 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // ─── Typing → Real response animation ───
-const RESPONSE_SMS = `<strong>Water Bill Payment</strong><br>Pay online, by phone, or in person:<br>• Online: rva.gov/utilities<br>• Phone: 804-646-4646<br>• In person: 900 E Broad St<br>Due by the 15th monthly.`;
-const RESPONSE_WA = `<strong>💧 Water Bill Payment</strong><br><br>Pay online, by phone, or in person:<br>• Online: rva.gov/utilities<br>• Phone: 804-646-4646<br>• In person: 900 E Broad St<br><br>Due by the 15th monthly.`;
-const RESPONSE_WIDGET = `<strong>Water Bill Payment</strong><br>Pay online, by phone, or in person:<br>• <a style="color:#38BDF8">rva.gov/utilities</a><br>• 804-646-4646<br>• 900 E Broad St`;
+const RESPONSE_SMS = `Pay your City of Richmond utility bill online at apps.richmondgov.com or by calling DPU at 804-646-4646.<br><br><strong>NEXT STEPS:</strong><br>1. Pay online at apps.richmondgov.com<br>2. Or call DPU at 804-646-4646<br>3. For help paying: ask about MetroCare at 804-646-4646<br>4. If disconnected: pay bill, then call for reconnection<br><br><span style="opacity:0.7">Source: rva.gov/public-utilities/billing</span>`;
+const RESPONSE_WA = `Pay your City of Richmond utility bill online at apps.richmondgov.com or by calling DPU at 804-646-4646.<br><br><strong>NEXT STEPS:</strong><br>1. Pay online at apps.richmondgov.com<br>2. Or call DPU at 804-646-4646<br>3. For help paying: ask about MetroCare at 804-646-4646<br>4. If disconnected: pay bill, then call for reconnection<br><br><span style="opacity:0.7">Source: rva.gov/public-utilities/billing</span>`;
+const RESPONSE_WIDGET = `<div style="border-left:2px solid #D4A855;padding-left:8px;font-size:10px;color:#4A3A2E;line-height:1.7;">1. Pay online at apps.richmondgov.com<br>2. Or call DPU at 804-646-4646<br>3. MetroCare &amp; PromisePay: 804-646-4646<br>4. LIHEAP: call 804-646-7046<br>5. Disconnected? Pay then call</div>`;
 
 function replaceTypingWithResponse(typingEl, container, response, bubbleClass, extraHTML = '') {
   const bubble = typingEl.closest(bubbleClass);
