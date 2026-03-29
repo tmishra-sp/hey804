@@ -31,7 +31,7 @@ Richmond's 311 gets 163,000 calls a year. Most are people trying to keep their l
 
 **12% of residents** speak a language other than English at home. Hey804 translates on the fly — Spanish, French, Vietnamese, any language.
 
-**January 2025 water crisis**: the city took 10+ hours to communicate a boil-water advisory. Hey804's broadcast system reaches every opted-in resident simultaneously — SMS, web, and widget.
+**January 2025 water crisis**: the city took 10+ hours to communicate a boil-water advisory. Hey804 already answers "Is the water safe to drink?" instantly — the infrastructure to push alerts to opted-in residents is a natural next step.
 
 **65-75% of 311 calls** are the same questions about taxes, benefits, and utilities. Hey804 answers them instantly so 311 agents can focus on complex cases.
 
@@ -121,7 +121,7 @@ The AI decides *which* answer. A human decided *what* the answer says. The AI ca
 
 ## What it covers
 
-**43 verified intents** across 79 source URLs, built from the official RVA311 service catalog (52 rva311.com service links + 19 rva.gov pages + 8 state/federal resources):
+**42 verified intents** across 79 source URLs, built from the official RVA311 service catalog (52 rva311.com service links + 19 rva.gov pages + 8 state/federal resources):
 
 | Category | Examples |
 |----------|----------|
@@ -141,7 +141,7 @@ The AI decides *which* answer. A human decided *what* the answer says. The AI ca
 **447 automated tests** across four tiers:
 
 ```
-Tier 0 ──  43 intents, one representative query each     ── intent + phone + URL + length
+Tier 0 ──  42 intents, one representative query each     ── intent + phone + URL + length
 Tier A ── 382 sample questions round-tripped against KB   ── every sample hits its own intent
 Tier B ──  20 adversarial queries (typos, slang, emotion) ── "tx bill", "my kids are hungry"
 Tier C ──   3 fallback tests (gibberish, greetings)       ── must NOT match a wrong intent
@@ -149,7 +149,7 @@ Tier C ──   3 fallback tests (gibberish, greetings)       ── must NOT ma
 
 | What we tested | Result |
 |---|---|
-| Correct intent matching (43 intents, 382 sample queries) | **100%** |
+| Correct intent matching (42 intents, 382 sample queries) | **100%** |
 | Department routing (pothole vs sinkhole, sewer vs stormwater, etc.) | **97%** |
 | Adversarial inputs (typos, abbreviations, emotional phrasing, Spanish) | **100%** |
 | Off-topic queries ("what's the weather", "is the mayor doing a good job") | **100% honest fallback** |
@@ -172,7 +172,7 @@ Richmond's digital divide is not evenly distributed. One census tract near Mosby
   No account?         →  Anonymous by default. Just text or scan.
   No tech confidence? →  Tap a card, don't type a question.
   No time?            →  Answer in seconds, not a phone tree.
-  Crisis?             →  Same system pushes emergency alerts to everyone.
+  Crisis?             →  Detects emergencies, routes to 911/hotlines instantly.
 ```
 
 No login. No download. No chatbot. No Wi-Fi required. No literacy assumed.
@@ -189,7 +189,6 @@ Every surface — SMS, web, widget, QR — hits the same engine. A resident text
 | **SMS** | Text a question, get an answer | Residents without broadband (14K households) |
 | **Web app** | Browse by category | Desktop users, library kiosks |
 | **QR posters** | Scan at a library or city office | Walk-in residents |
-| **Emergency broadcast** | One click → all subscribers | City staff during crises |
 
 **Embed on any website:**
 ```html
@@ -271,12 +270,11 @@ server/
     safety.py               # PII redaction, citation validation
     language.py             # Detect + translate (Google API)
   data/
-    knowledge_base.json     # 43 intents, curated answers, 79 verified source URLs
+    knowledge_base.json     # 42 intents, curated answers, 79 verified source URLs
     data-311.json           # Raw service catalog from RVA311 API
   routers/
     chat.py                 # POST /api/chat
     sms.py                  # Twilio webhook
-    broadcast.py            # Emergency alerts
 web/
   widget.js                 # Embeddable widget (Shadow DOM, voice input, smart fallback)
 scripts/
@@ -302,6 +300,12 @@ Open `http://localhost:8000/widget-demo.html` to try the widget.
 python3 -m scripts.test_all_intents
 # 447/447 tests passing
 ```
+
+---
+
+## Future state
+
+Hey804 already tracks opted-in SMS subscribers. A natural extension is integrating with the city's existing emergency broadcast infrastructure — so the same system that answers "Is the water safe?" can push a boil-water advisory to every subscriber simultaneously across SMS, web, and widget. The plumbing for this exists in the codebase; it would need to be coordinated with the city's communications team before going live.
 
 ---
 
