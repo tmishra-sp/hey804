@@ -303,9 +303,11 @@
   }
   triggerActions.appendChild(waveDiv);
 
-  // Removed Hey804 label — shown in panel footer instead
-
   triggerCard.appendChild(triggerActions);
+
+  var triggerFt = h("div", "ft");
+  triggerFt.textContent = "Your Richmond Navigator \u00B7 Hey804";
+  triggerCard.appendChild(triggerFt);
   shadow.appendChild(triggerCard);
 
   // --- Close ---
