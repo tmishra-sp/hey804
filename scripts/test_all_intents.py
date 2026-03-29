@@ -111,7 +111,7 @@ def main():
         (11, "benefits_status_check",        "Check my benefits status"),
         (12, "where_to_go_in_person",        "Where is the social services office"),
         (13, "energy_heating_assistance",    "Help with heating bill"),
-        (14, "report_pothole_streetlight",   "How to report a pothole"),
+        (14, "report_pothole",               "How to report a pothole"),
         (15, "trash_recycling",              "When is trash pickup"),
         (16, "business_license",             "How to get a business license"),
         (17, "free_internet_computer",       "Where can I use a computer for free"),
