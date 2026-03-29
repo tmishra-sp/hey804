@@ -74,36 +74,42 @@ Citizen describes their issue (text, web, or widget)
 Most AI civic tools generate answers. Hey804 doesn't. The LLM is behind a wall — it can only point to an answer, never write one.
 
 ```
-  ┌─────────────────────────────────────────────────────────────────────┐
-  │              THE AI SIDE (classification only)                      │
-  │                                                                     │
-  │  "I can't pay       ┌────────────┐         ┌──────────────┐       │
-  │   my water bill" ──▶│  Keywords   │────────▶│  LLM check   │       │
-  │                      │  (1,099)    │         │              │       │
-  │                      └────────────┘         └──────┬───────┘       │
-  │                                                     │               │
-  │    The LLM can ONLY say:                            │               │
-  │    • YES / NO  (verify keyword match)               │               │
-  │    • An intent name: "utility_bill_help"            │               │
-  │    • NONE  (I don't recognize this)                 │               │
-  │                                                     │               │
-  ╞═══════════════════ WALL ════════════════════════════╪═══════════════╡
-  │                                                     ▼               │
-  │              THE RESIDENT SIDE (curated facts only)                 │
-  │                                                                     │
-  │    ┌────────────────────────────────────────────────────────┐       │
-  │    │  Pre-written answer from knowledge base:               │       │
-  │    │                                                        │       │
-  │    │  "You have options. DPU offers MetroCare (up to 40%   │       │
-  │    │   discount) and PromisePay (payment plans)."           │       │
-  │    │                                                        │       │
-  │    │  Phone: 804-646-4646          ← verified               │       │
-  │    │  URL: rva.gov/public-utilities/billing  ← from rva.gov│       │
-  │    │  Deadline: Apply before disconnection   ← from KB      │       │
-  │    └────────────────────────────────────────────────────────┘       │
-  │                                                                     │
-  │    Every phone number, URL, and fact was verified by a human.       │
-  └─────────────────────────────────────────────────────────────────────┘
+                    "I can't pay my water bill"
+                                |
+  ┌─────────────────────────────┼──────────────────────────────┐
+  │   THE AI SIDE               ▼      (classification only)   │
+  │                                                             │
+  │    ┌─────────────┐     ┌──────────────┐                    │
+  │    │   Keywords   │────▶│  LLM verify   │                    │
+  │    │   (1,099)    │     │              │                    │
+  │    └─────────────┘     └──────┬───────┘                    │
+  │                               │                             │
+  │   LLM can ONLY output:       │                             │
+  │     • YES / NO                │  It cannot write sentences. │
+  │     • "utility_bill_help"     │  It cannot invent facts.    │
+  │     • NONE                    │  It can only pick a label.  │
+  │                               │                             │
+  ╞═══════════════════════════════╪═════════════════════════════╡
+  │ ░░░░░░░░░░░░░░░ THE WALL ░░░░╪░░░░░░░░░░░░░░░░░░░░░░░░░░ │
+  ╞═══════════════════════════════╪═════════════════════════════╡
+  │                               │                             │
+  │   THE RESIDENT SIDE           │  Only a label               │
+  │   (curated facts only)        │  crosses this wall.         │
+  │                               ▼                             │
+  │   ┌──────────────────────────────────────────────────┐     │
+  │   │  Pre-written answer from knowledge base:          │     │
+  │   │                                                   │     │
+  │   │  "You have options. DPU offers MetroCare          │     │
+  │   │   (up to 40% discount) and PromisePay             │     │
+  │   │   (payment plans)."                               │     │
+  │   │                                                   │     │
+  │   │  Phone:    804-646-4646            <- verified     │     │
+  │   │  URL:      rva.gov/public-utilities <- rva.gov    │     │
+  │   │  Deadline: Before disconnection    <- from KB     │     │
+  │   └──────────────────────────────────────────────────┘     │
+  │                                                             │
+  │   Every phone, URL, and fact was verified by a human.      │
+  └─────────────────────────────────────────────────────────────┘
 ```
 
 **What this means in practice:**
