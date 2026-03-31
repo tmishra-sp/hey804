@@ -33,7 +33,7 @@ from server.services.safety import (
     contains_pii,
     sanitize_message_for_storage,
 )
-from server.config import ANTHROPIC_API_KEY, MAX_LLM_CONCURRENT, LLM_TIMEOUT_SECONDS
+from server.config import ANTHROPIC_API_KEY, LLM_TIMEOUT_SECONDS
 
 logger = logging.getLogger(__name__)
 
@@ -308,37 +308,34 @@ class Hey804Engine:
             related = result.get("related", [])
             confidence = result.get("confidence", 0.5)
 
-            if False:  # Always verify with LLM — never skip
-                pass
+            verified = self._llm_verify(msg_stripped, match)
+            if verified:
+                response = self._format_match(
+                    match,
+                    related,
+                    channel,
+                    is_first_message,
+                    user_message=msg_stripped,
+                    confidence=confidence,
+                )
             else:
-                verified = self._llm_verify(msg_stripped, match)
-                if verified:
+                llm_result = self._llm_classify(msg_stripped, language)
+                if llm_result is not None:
+                    logger.info(
+                        f"LLM reclassified '{msg_stripped[:50]}' from {match['intent']} to {llm_result['intent']}"
+                    )
                     response = self._format_match(
-                        match,
-                        related,
+                        llm_result,
+                        [],
                         channel,
                         is_first_message,
                         user_message=msg_stripped,
-                        confidence=confidence,
+                        confidence=0.75,
                     )
+                elif related:
+                    response = self._format_partial(related, channel, is_first_message)
                 else:
-                    llm_result = self._llm_classify(msg_stripped, language)
-                    if llm_result is not None:
-                        logger.info(
-                            f"LLM reclassified '{msg_stripped[:50]}' from {match['intent']} to {llm_result['intent']}"
-                        )
-                        response = self._format_match(
-                            llm_result,
-                            [],
-                            channel,
-                            is_first_message,
-                            user_message=msg_stripped,
-                            confidence=0.75,
-                        )
-                    elif related:
-                        response = self._format_partial(related, channel, is_first_message)
-                    else:
-                        response = self._format_fallback(channel, is_first_message)
+                    response = self._format_fallback(channel, is_first_message)
 
             return self._finalize(response, channel, language)
 

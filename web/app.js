@@ -198,9 +198,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Share button
     document.getElementById("share-btn").addEventListener("click", sharePlan);
 
-    // Alert polling
-    pollAlerts();
-    setInterval(pollAlerts, 30000);
 });
 
 function renderCategories(location) {
@@ -404,38 +401,6 @@ function showScreen(name) {
 
 // Handle browser back button
 window.addEventListener("popstate", () => showScreen("categories"));
-
-// Alert polling
-let alertDismissed = null;
-
-async function pollAlerts() {
-    try {
-        const res = await fetch("/api/alerts/active");
-        const data = await res.json();
-        const banner = document.getElementById("alert-banner");
-
-        if (data.alert && data.alert.id !== alertDismissed) {
-            document.getElementById("alert-message").textContent = data.alert.message;
-            banner.classList.remove("hidden");
-            banner.classList.add("visible", "pulse");
-            // Shift header down
-            document.body.style.paddingTop = banner.offsetHeight + "px";
-
-            document.getElementById("alert-dismiss").onclick = () => {
-                alertDismissed = data.alert.id;
-                banner.classList.remove("visible");
-                banner.classList.add("hidden");
-                document.body.style.paddingTop = "0";
-            };
-        } else if (!data.alert) {
-            banner.classList.remove("visible");
-            banner.classList.add("hidden");
-            document.body.style.paddingTop = "0";
-        }
-    } catch (e) {
-        // Silently fail — alerts are nice-to-have
-    }
-}
 
 function escapeHtml(str) {
     const div = document.createElement("div");

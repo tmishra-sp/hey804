@@ -45,28 +45,9 @@ def init_db():
             created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         );
 
-        CREATE TABLE IF NOT EXISTS broadcasts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            message_en TEXT NOT NULL,
-            message_es TEXT,
-            sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-            recipient_count INTEGER,
-            broadcast_type TEXT
-        );
-
-        CREATE TABLE IF NOT EXISTS alerts (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            message_en TEXT NOT NULL,
-            message_es TEXT,
-            alert_type TEXT DEFAULT 'emergency',
-            is_active INTEGER DEFAULT 1,
-            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-        );
-
         CREATE INDEX IF NOT EXISTS idx_subs_phone ON subscribers(phone_number);
         CREATE INDEX IF NOT EXISTS idx_convos_phone ON conversations(phone_number);
         CREATE INDEX IF NOT EXISTS idx_convos_time ON conversations(created_at);
-        CREATE INDEX IF NOT EXISTS idx_alerts_active ON alerts(is_active);
     """)
     conn.commit()
     conn.close()
@@ -118,35 +99,6 @@ def log_conversation(phone: str, direction: str, message: str, intent: str | Non
     conn.commit()
     conn.close()
 
-
-def create_alert(message_en: str, message_es: str | None = None, alert_type: str = "emergency") -> int:
-    conn = get_db()
-    # Deactivate previous alerts
-    conn.execute("UPDATE alerts SET is_active = 0 WHERE is_active = 1")
-    cursor = conn.execute(
-        "INSERT INTO alerts (message_en, message_es, alert_type) VALUES (?, ?, ?)",
-        (message_en, message_es, alert_type),
-    )
-    alert_id = cursor.lastrowid
-    conn.commit()
-    conn.close()
-    return alert_id
-
-
-def get_active_alert() -> dict | None:
-    conn = get_db()
-    row = conn.execute("SELECT id, message_en, message_es, alert_type, created_at FROM alerts WHERE is_active = 1 ORDER BY id DESC LIMIT 1").fetchone()
-    conn.close()
-    if row is None:
-        return None
-    return {"id": row["id"], "message": row["message_en"], "message_es": row["message_es"], "alert_type": row["alert_type"], "created_at": row["created_at"]}
-
-
-def get_opted_in_subscribers() -> list:
-    conn = get_db()
-    rows = conn.execute("SELECT phone_number, language FROM subscribers WHERE opted_out = 0").fetchall()
-    conn.close()
-    return [{"phone": r["phone_number"], "language": r["language"]} for r in rows]
 
 
 def get_stats() -> dict:

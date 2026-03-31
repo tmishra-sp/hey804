@@ -4,6 +4,7 @@ Same answer, shaped for SMS vs web vs widget.
 """
 from __future__ import annotations
 
+import copy
 import re
 
 
@@ -39,14 +40,13 @@ def format_sms(match: dict, is_first_message: bool = False) -> str:
 
     # First-message opt-in notice (TCPA compliance)
     if is_first_message:
-        lines.append("\n---\nYou'll also get emergency alerts from the City at this number. Reply STOP anytime to opt out.")
+        lines.append("\n---\nReply STOP anytime to opt out.")
 
     return "\n".join(lines)
 
 
 def format_web(match: dict, related: list[dict] | None = None) -> dict:
     """Web/widget JSON response with full detail + related topics for transparency."""
-    import copy
     result = {
         "answer": match["answer"],
         "action_steps": list(match["action_steps"]),
