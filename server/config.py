@@ -6,10 +6,7 @@ load_dotenv()
 
 # Paths
 BASE_DIR = Path(__file__).resolve().parent.parent
-# Check server/data first (deployed), fall back to project-context (local dev)
-_kb_deployed = Path(__file__).resolve().parent / "data" / "knowledge_base.json"
-_kb_local = BASE_DIR / "project-context" / "knowledge_base.json"
-KB_PATH = _kb_deployed if _kb_deployed.exists() else _kb_local
+KB_PATH = Path(__file__).resolve().parent / "data" / "knowledge_base.json"
 
 # Twilio
 TWILIO_ACCOUNT_SID = os.getenv("TWILIO_ACCOUNT_SID", "")
@@ -29,11 +26,7 @@ ADMIN_TOKEN = os.getenv("ADMIN_TOKEN", "")
 if not ADMIN_TOKEN and ENVIRONMENT == "production":
     raise ValueError("ADMIN_TOKEN must be set in production")
 
-# Database
-DATABASE_URL = os.getenv("DATABASE_URL", f"sqlite:///{BASE_DIR / 'data' / 'hey804.db'}")
-
 # LLM
-MAX_LLM_CONCURRENT = int(os.getenv("MAX_LLM_CONCURRENT", "10"))
 LLM_TIMEOUT_SECONDS = int(os.getenv("LLM_TIMEOUT_SECONDS", "8"))
 
 # Google API
