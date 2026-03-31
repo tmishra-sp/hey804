@@ -37,6 +37,12 @@ ngrok.yml
 .claude/
 
 
+# Hackathon presentation artifacts
+final_presentation.html
+hackathon_architecture_technical.html
+hackathon_presentation.html
+posters/poster_template.html
+
 # Logs
 *.log
 
