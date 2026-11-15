@@ -5,6 +5,7 @@ Civic information infrastructure for Richmond, VA.
 from __future__ import annotations
 
 import logging
+from contextlib import asynccontextmanager
 from pathlib import Path
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -22,7 +23,15 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
+@asynccontextmanager
+async def lifespan(_app: FastAPI):
+    init_db()
+    logger.info(f"Hey804 started (env={ENVIRONMENT})")
+    yield
+
+
 app = FastAPI(
+    lifespan=lifespan,
     title="Hey804",
     description="Civic information infrastructure for Richmond, VA",
     version="0.1.0",
@@ -65,12 +74,6 @@ async def admin_stats(request: Request):
     if token != ADMIN_TOKEN:
         return JSONResponse(status_code=403, content={"error": "Unauthorized"})
     return get_stats()
-
-
-@app.on_event("startup")
-async def startup():
-    init_db()
-    logger.info(f"Hey804 started (env={ENVIRONMENT})")
 
 
 @app.get("/health")
